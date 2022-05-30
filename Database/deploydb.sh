@@ -11,7 +11,7 @@ echo "services:
     environment:
       MYSQL_DATABASE: 'progexdb'
       # So you don't have to use root, but you can if you like
-      MYSQL_USER: 'someuser'
+      MYSQL_USER: 'programuser'
       # You can use whatever password you like
       MYSQL_PASSWORD: 'b#oGkx*vnp78P8us'
       # Password for root access
@@ -27,7 +27,7 @@ echo "services:
       - my-db:/var/lib/mysql
 # Names our volume
 volumes:
-  my-db:" >> docker-compose.yml
+  my-db:./" >> docker-compose.yml
   docker compose up -d
 
   
