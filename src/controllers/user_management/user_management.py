@@ -1,5 +1,3 @@
-import time
-from src.controllers import database
 from src.controllers.cryptography.cryptography import hash_passwd
 
 def add_user(db, email, first_name, last_name, sex, birthday, passwd):

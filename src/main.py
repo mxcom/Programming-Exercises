@@ -1,6 +1,6 @@
 import sys
 import datetime
-from src.controllers import database
+from src.controllers.database import database
 from src.controllers.user_management import user_management
 
 def main(args):

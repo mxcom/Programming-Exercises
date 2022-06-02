@@ -2,20 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5db9e4db-cbb9-4f07-9ac6-b2efc05eee42" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/cryptography/cryptography.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/database.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/user_management/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/user_management/user_management.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ProgrammingExercise.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ProgrammingExercise.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/database/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QT - DB Connection" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/placeholder.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/cryptography/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/cryptography/cryptography.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/cryptography/cryptography.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/database/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/user_management/user_management.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user_management/user_management.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +25,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/controllers/database.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/controllers/database/database.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -62,6 +54,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/controllers/database" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
@@ -117,7 +110,7 @@
       <workItem from="1654156237136" duration="2381000" />
       <workItem from="1654162034422" duration="1571000" />
       <workItem from="1654165051332" duration="16763000" />
-      <workItem from="1654187367296" duration="1967000" />
+      <workItem from="1654187367296" duration="2288000" />
     </task>
     <servers />
   </component>
