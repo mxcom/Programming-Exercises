@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>408</width>
-    <height>270</height>
+    <height>294</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -268,6 +268,23 @@
               </item>
               <item row="4" column="1">
                <widget class="QLineEdit" name="leWeight"/>
+              </item>
+              <item row="5" column="0">
+               <widget class="QLabel" name="lbHeight">
+                <property name="text">
+                 <string>Height</string>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="1">
+               <widget class="QDoubleSpinBox" name="sbHeight">
+                <property name="decimals">
+                 <number>0</number>
+                </property>
+                <property name="maximum">
+                 <double>250.000000000000000</double>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
