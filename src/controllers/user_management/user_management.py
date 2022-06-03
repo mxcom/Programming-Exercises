@@ -1,18 +1,17 @@
 import re
 from src.controllers.cryptography.cryptography import hash_passwd
+from src.controllers.database.database import Database
 
 regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
 special_char = ['$', '@', '#', '%', '_', '-']
 
 
-def add_user(db, email, first_name, last_name, sex, birthday, passwd):
-    cursor = db.cursor()
-
+def add_user(email, first_name, last_name, sex, birthday, passwd):
+    db = Database()
+    cursor = db.db_cursor
     cursor.execute("INSERT INTO user (Email, FirstName, LastName, Sex, Birthday, Password)"
                    "VALUES (%s, %s, %s, %s, %s, %s)",
                    (email, first_name, last_name, sex, birthday.strftime('%Y-%m-%d'), hash_passwd(passwd)))
-
-    db.close()
 
 
 def validate_email(email):
