@@ -8,7 +8,7 @@ special_char = ['$', '@', '#', '%', '_', '-']
 
 def add_user(email, first_name, last_name, sex, birthday, passwd):
     db = Database()
-    cursor = db.db_cursor
+    cursor = db.get_cursor()
     cursor.execute("INSERT INTO user (Email, FirstName, LastName, Sex, Birthday, Password)"
                    "VALUES (%s, %s, %s, %s, %s, %s)",
                    (email, first_name, last_name, sex, birthday.strftime('%Y-%m-%d'), hash_passwd(passwd)))
@@ -22,7 +22,7 @@ def validate_email(email):
 
 
 def validate_passwd(passwd):
-    # Password needs to be >= 8 characterss
+    # Password needs to be >= 8 characters
     if len(passwd) < 12:
         return False
 

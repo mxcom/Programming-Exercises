@@ -2,61 +2,62 @@ from datetime import datetime
 
 
 class User:
+
     def __init__(self, email, first_name, last_name, sex, birthday, height, weight, passwd):
-        self.email = email
-        self.first_name = first_name
-        self.last_name = last_name
-        self.sex = sex
-        self.birthday = birthday
-        self.height = height
-        self.weight = weight
-        self.passwd = passwd
+        self._email = email
+        self._first_name = first_name
+        self._last_name = last_name
+        self._sex = sex
+        self._birthday = birthday
+        self._height = height
+        self._weight = weight
+        self._passwd = passwd
 
     def get_email(self):
-        return self.email
+        return self._email
 
     def get_first_name(self):
-        return self.first_name
+        return self._first_name
 
     def get_last_name(self):
-        return self.last_name
+        return self._last_name
 
     def get_sex(self):
-        return self.sex
+        return self._sex
 
     def get_birthday(self):
-        return self.birthday
+        return self._birthday
 
     def get_height(self):
-        return self.height
+        return self._height
 
     def get_weight(self):
-        return self.weight
+        return self._weight
 
     def get_passwd(self):
-        return self.passwd
+        return self._passwd
 
     def set_email(self, email):
-        self.email = email
+        self._email = email
 
     def set_first_name(self, first_name):
-        self.first_name = first_name
+        self._first_name = first_name
 
     def set_last_name(self, last_name):
-        self.last_name = last_name
+        self._last_name = last_name
 
     def set_sex(self, sex):
-        self.sex = sex
+        self._sex = sex
 
     def set_birthday(self, birthday):
         if type(birthday) is datetime:
-            self.birthday = birthday
+            self._birthday = birthday
 
     def set_height(self, height):
-        self.height = height
+        self._height = height
 
     def set_weight(self, weight):
-        self.weight = weight
+        self._weight = weight
 
     def set_passwd(self, passwd):
-        self.passwd = passwd
+        self._passwd = passwd
