@@ -15,16 +15,16 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QDateEdit, QFormLayout,
-    QFrame, QHBoxLayout, QLabel, QLineEdit,
-    QMainWindow, QPushButton, QSizePolicy, QStackedWidget,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QDateEdit, QDoubleSpinBox,
+    QFormLayout, QFrame, QHBoxLayout, QLabel,
+    QLineEdit, QMainWindow, QPushButton, QSizePolicy,
+    QStackedWidget, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(408, 270)
+        MainWindow.resize(408, 311)
         sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -195,6 +195,18 @@ class Ui_MainWindow(object):
 
         self.formLayout_2.setWidget(4, QFormLayout.FieldRole, self.leWeight)
 
+        self.lbHeight = QLabel(self.frame)
+        self.lbHeight.setObjectName(u"lbHeight")
+
+        self.formLayout_2.setWidget(5, QFormLayout.LabelRole, self.lbHeight)
+
+        self.sbHeight = QDoubleSpinBox(self.frame)
+        self.sbHeight.setObjectName(u"sbHeight")
+        self.sbHeight.setDecimals(0)
+        self.sbHeight.setMaximum(250.000000000000000)
+
+        self.formLayout_2.setWidget(5, QFormLayout.FieldRole, self.sbHeight)
+
 
         self.verticalLayout_4.addWidget(self.frame)
 
@@ -210,10 +222,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_3.addWidget(self.btnCancel2)
 
-        self.btnFInish = QPushButton(self.navigation2)
-        self.btnFInish.setObjectName(u"btnFInish")
+        self.btnFinish = QPushButton(self.navigation2)
+        self.btnFinish.setObjectName(u"btnFinish")
 
-        self.horizontalLayout_3.addWidget(self.btnFInish)
+        self.horizontalLayout_3.addWidget(self.btnFinish)
 
 
         self.verticalLayout_4.addWidget(self.navigation2)
@@ -248,7 +260,8 @@ class Ui_MainWindow(object):
         self.lbBirthdate.setText(QCoreApplication.translate("MainWindow", u"Birthdate", None))
         self.lbSex.setText(QCoreApplication.translate("MainWindow", u"Sex", None))
         self.lbWeight.setText(QCoreApplication.translate("MainWindow", u"Weight", None))
+        self.lbHeight.setText(QCoreApplication.translate("MainWindow", u"Height", None))
         self.btnCancel2.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
-        self.btnFInish.setText(QCoreApplication.translate("MainWindow", u"Finish", None))
+        self.btnFinish.setText(QCoreApplication.translate("MainWindow", u"Finish", None))
     # retranslateUi
 
