@@ -278,11 +278,26 @@
               </item>
               <item row="5" column="1">
                <widget class="QDoubleSpinBox" name="sbHeight">
+                <property name="prefix">
+                 <string/>
+                </property>
+                <property name="suffix">
+                 <string/>
+                </property>
                 <property name="decimals">
-                 <number>0</number>
+                 <number>2</number>
+                </property>
+                <property name="minimum">
+                 <double>0.000000000000000</double>
                 </property>
                 <property name="maximum">
                  <double>250.000000000000000</double>
+                </property>
+                <property name="stepType">
+                 <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                </property>
+                <property name="value">
+                 <double>0.000000000000000</double>
                 </property>
                </widget>
               </item>

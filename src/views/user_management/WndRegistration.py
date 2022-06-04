@@ -15,10 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QDateEdit, QDoubleSpinBox,
-    QFormLayout, QFrame, QHBoxLayout, QLabel,
-    QLineEdit, QMainWindow, QPushButton, QSizePolicy,
-    QStackedWidget, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QAbstractSpinBox, QApplication, QComboBox, QDateEdit,
+    QDoubleSpinBox, QFormLayout, QFrame, QHBoxLayout,
+    QLabel, QLineEdit, QMainWindow, QPushButton,
+    QSizePolicy, QStackedWidget, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -202,8 +202,11 @@ class Ui_MainWindow(object):
 
         self.sbHeight = QDoubleSpinBox(self.frame)
         self.sbHeight.setObjectName(u"sbHeight")
-        self.sbHeight.setDecimals(0)
+        self.sbHeight.setDecimals(2)
+        self.sbHeight.setMinimum(0.000000000000000)
         self.sbHeight.setMaximum(250.000000000000000)
+        self.sbHeight.setStepType(QAbstractSpinBox.AdaptiveDecimalStepType)
+        self.sbHeight.setValue(0.000000000000000)
 
         self.formLayout_2.setWidget(5, QFormLayout.FieldRole, self.sbHeight)
 
@@ -261,6 +264,7 @@ class Ui_MainWindow(object):
         self.lbSex.setText(QCoreApplication.translate("MainWindow", u"Sex", None))
         self.lbWeight.setText(QCoreApplication.translate("MainWindow", u"Weight", None))
         self.lbHeight.setText(QCoreApplication.translate("MainWindow", u"Height", None))
+        self.sbHeight.setPrefix("")
         self.btnCancel2.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
         self.btnFinish.setText(QCoreApplication.translate("MainWindow", u"Finish", None))
     # retranslateUi

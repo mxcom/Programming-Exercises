@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5db9e4db-cbb9-4f07-9ac6-b2efc05eee42" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/models/user_management/registration.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/todo/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ProgrammingExercise.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ProgrammingExercise.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/user_management/registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user_management/registration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/user_management/WndRegistration.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/user_management/WndRegistration.ui" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/user_management/WndRegistration.ui" afterDir="false" />
     </list>
@@ -118,7 +114,7 @@
       <workItem from="1654240019521" duration="4875000" />
       <workItem from="1654256485137" duration="13284000" />
       <workItem from="1654360862999" duration="3684000" />
-      <workItem from="1654364590670" duration="5402000" />
+      <workItem from="1654364590670" duration="8027000" />
     </task>
     <servers />
   </component>
@@ -137,6 +133,6 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ProgrammingExercise$main.coverage" NAME="main Coverage Results" MODIFIED="1654369340929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/ProgrammingExercise$main.coverage" NAME="main Coverage Results" MODIFIED="1654374455809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>
