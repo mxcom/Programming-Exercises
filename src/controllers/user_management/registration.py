@@ -13,10 +13,10 @@ regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{
 special_char = ['$', '@', '#', '%', '_', '-', '!']
 
 
-class MainWindow(QMainWindow, Ui_MainWindow):
+class RegistrationWindow(QMainWindow, Ui_MainWindow):
 
     def __init__(self, parent=None):
-        super(MainWindow, self).__init__(parent)
+        super(RegistrationWindow, self).__init__(parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.stackedWidget.setCurrentIndex(0)
@@ -154,9 +154,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def validate_height(self):
         try:
             input = self.ui.sbHeight.text().replace(",", ".").strip("'")
-            input_float = float(input)
-            if 1.40 < input_float < 2.30:
-                self.user.set_height(input_float)
+            input_int = int(input)
+            if 140 < input_int < 250:
+                self.user.set_height(input_int)
                 return True
             else:
                 return False
@@ -171,9 +171,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.cbSex.setCurrentText(self.user.get_sex())
         self.ui.leWeight.setText(self.user.get_weight())
         if self.user.get_height():
-            self.ui.sbHeight.setValue(float(self.user.get_height()))
+            self.ui.sbHeight.setValue(int(self.user.get_height()))
         else:
-            self.ui.sbHeight.setValue(1.65)
+            self.ui.sbHeight.setValue(170)
         #
         if self.validate_email() and self.validate_passwd() and self.confirm_passwd() == True:
             self.ui.lbError.setVisible(False)
@@ -190,11 +190,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.leConfirmPw.setText(self.user.get_passwd())
 
     def finish_registration(self):
-        if self.validate_first_name() and self.validate_last_name() and self.validate_birthday() and self.validate_weight() and self.validate_height() == True:
+        if self.validate_first_name() and self.validate_last_name() and self.validate_birthday() \
+                and self.validate_weight() and self.validate_height() == True:
             self.user.set_sex(self.ui.cbSex.currentText())
             add_user(self.user)
         else:
             print("Fill out open fields")
-
-
-

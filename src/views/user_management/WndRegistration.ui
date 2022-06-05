@@ -295,7 +295,7 @@
               <item row="4" column="0">
                <widget class="QLabel" name="lbWeight">
                 <property name="text">
-                 <string>Weight</string>
+                 <string>Weight (kg)</string>
                 </property>
                </widget>
               </item>
@@ -305,7 +305,7 @@
               <item row="5" column="0">
                <widget class="QLabel" name="lbHeight">
                 <property name="text">
-                 <string>Height</string>
+                 <string>Height (cm)</string>
                 </property>
                </widget>
               </item>
@@ -318,10 +318,10 @@
                  <string/>
                 </property>
                 <property name="decimals">
-                 <number>2</number>
+                 <number>0</number>
                 </property>
                 <property name="minimum">
-                 <double>0.000000000000000</double>
+                 <double>140.000000000000000</double>
                 </property>
                 <property name="maximum">
                  <double>250.000000000000000</double>
@@ -330,7 +330,7 @@
                  <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
                 </property>
                 <property name="value">
-                 <double>0.000000000000000</double>
+                 <double>160.000000000000000</double>
                 </property>
                </widget>
               </item>

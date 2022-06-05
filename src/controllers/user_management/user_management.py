@@ -6,8 +6,9 @@ import datetime
 def add_user(user):
     db = Database()
     cursor = db.get_cursor()
-    cursor.execute("INSERT INTO user (Email, FirstName, LastName, Sex, Birthday, Password)"
-                   "VALUES (%s, %s, %s, %s, %s, %s)",
+    cursor.execute("INSERT INTO user (Email, FirstName, LastName, Sex, Birthday, Height, Password)"
+                   "VALUES (%s, %s, %s, %s, %s, %s, %s)",
                    (user.get_email(), user.get_first_name(), user.get_last_name(), user.get_sex(),
-                    datetime.datetime.strptime(user.get_birthday().replace(".", "-"), '%d-%m-%y'), hash_passwd(user.get_passwd())))
+                    datetime.datetime.strptime(user.get_birthday().replace(".", "-"), '%d-%m-%y'), int(user.get_height()),
+                    hash_passwd(user.get_passwd())))
     db.get_database().close()

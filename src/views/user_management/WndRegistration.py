@@ -214,11 +214,11 @@ class Ui_MainWindow(object):
 
         self.sbHeight = QDoubleSpinBox(self.frame)
         self.sbHeight.setObjectName(u"sbHeight")
-        self.sbHeight.setDecimals(2)
-        self.sbHeight.setMinimum(0.000000000000000)
+        self.sbHeight.setDecimals(0)
+        self.sbHeight.setMinimum(140.000000000000000)
         self.sbHeight.setMaximum(250.000000000000000)
         self.sbHeight.setStepType(QAbstractSpinBox.AdaptiveDecimalStepType)
-        self.sbHeight.setValue(0.000000000000000)
+        self.sbHeight.setValue(160.000000000000000)
 
         self.formLayout_2.setWidget(5, QFormLayout.FieldRole, self.sbHeight)
 
@@ -279,8 +279,8 @@ class Ui_MainWindow(object):
         self.lbLastName.setText(QCoreApplication.translate("MainWindow", u"Last Name", None))
         self.lbBirthdate.setText(QCoreApplication.translate("MainWindow", u"Birthdate", None))
         self.lbSex.setText(QCoreApplication.translate("MainWindow", u"Sex", None))
-        self.lbWeight.setText(QCoreApplication.translate("MainWindow", u"Weight", None))
-        self.lbHeight.setText(QCoreApplication.translate("MainWindow", u"Height", None))
+        self.lbWeight.setText(QCoreApplication.translate("MainWindow", u"Weight (kg)", None))
+        self.lbHeight.setText(QCoreApplication.translate("MainWindow", u"Height (cm)", None))
         self.sbHeight.setPrefix("")
         self.sbHeight.setSuffix("")
         self.btnBack.setText(QCoreApplication.translate("MainWindow", u"Back", None))
