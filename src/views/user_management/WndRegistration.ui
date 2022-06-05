@@ -98,7 +98,7 @@
        <item>
         <widget class="QStackedWidget" name="stackedWidget">
          <property name="currentIndex">
-          <number>1</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="page1">
           <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -144,7 +144,14 @@
                </widget>
               </item>
               <item row="1" column="1">
-               <widget class="QLineEdit" name="lePassword"/>
+               <widget class="QLineEdit" name="lePassword">
+                <property name="inputMask">
+                 <string/>
+                </property>
+                <property name="echoMode">
+                 <enum>QLineEdit::Password</enum>
+                </property>
+               </widget>
               </item>
               <item row="2" column="0">
                <widget class="QLabel" name="lbConfirmPw">
@@ -154,7 +161,33 @@
                </widget>
               </item>
               <item row="2" column="1">
-               <widget class="QLineEdit" name="leConfirmPw"/>
+               <widget class="QLineEdit" name="leConfirmPw">
+                <property name="echoMode">
+                 <enum>QLineEdit::Password</enum>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0" colspan="2">
+               <widget class="QLabel" name="lbError">
+                <property name="layoutDirection">
+                 <enum>Qt::LeftToRight</enum>
+                </property>
+                <property name="text">
+                 <string>TextLabel</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::AutoText</enum>
+                </property>
+                <property name="scaledContents">
+                 <bool>false</bool>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+                <property name="wordWrap">
+                 <bool>false</bool>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -321,8 +354,17 @@
              <layout class="QHBoxLayout" name="horizontalLayout_3">
               <item>
                <widget class="QPushButton" name="btnCancel2">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::WheelFocus</enum>
+                </property>
                 <property name="text">
                  <string>Cancel</string>
+                </property>
+                <property name="autoDefault">
+                 <bool>false</bool>
                 </property>
                </widget>
               </item>

@@ -96,6 +96,7 @@ class Ui_MainWindow(object):
 
         self.lePassword = QLineEdit(self.formular)
         self.lePassword.setObjectName(u"lePassword")
+        self.lePassword.setEchoMode(QLineEdit.Password)
 
         self.formLayout.setWidget(1, QFormLayout.FieldRole, self.lePassword)
 
@@ -106,8 +107,19 @@ class Ui_MainWindow(object):
 
         self.leConfirmPw = QLineEdit(self.formular)
         self.leConfirmPw.setObjectName(u"leConfirmPw")
+        self.leConfirmPw.setEchoMode(QLineEdit.Password)
 
         self.formLayout.setWidget(2, QFormLayout.FieldRole, self.leConfirmPw)
+
+        self.lbError = QLabel(self.formular)
+        self.lbError.setObjectName(u"lbError")
+        self.lbError.setLayoutDirection(Qt.LeftToRight)
+        self.lbError.setTextFormat(Qt.AutoText)
+        self.lbError.setScaledContents(False)
+        self.lbError.setAlignment(Qt.AlignCenter)
+        self.lbError.setWordWrap(False)
+
+        self.formLayout.setWidget(3, QFormLayout.SpanningRole, self.lbError)
 
 
         self.verticalLayout_3.addWidget(self.formular)
@@ -222,6 +234,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.btnCancel2 = QPushButton(self.navigation2)
         self.btnCancel2.setObjectName(u"btnCancel2")
+        self.btnCancel2.setEnabled(True)
+        self.btnCancel2.setFocusPolicy(Qt.WheelFocus)
+        self.btnCancel2.setAutoDefault(False)
 
         self.horizontalLayout_3.addWidget(self.btnCancel2)
 
@@ -244,7 +259,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -255,7 +270,9 @@ class Ui_MainWindow(object):
         self.title.setText(QCoreApplication.translate("MainWindow", u"Registration", None))
         self.lbEmail.setText(QCoreApplication.translate("MainWindow", u"Email", None))
         self.lbPassword.setText(QCoreApplication.translate("MainWindow", u"Password", None))
+        self.lePassword.setInputMask("")
         self.lbConfirmPw.setText(QCoreApplication.translate("MainWindow", u"Confirm Password", None))
+        self.lbError.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.btnCancel.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
         self.btnNext.setText(QCoreApplication.translate("MainWindow", u"Next", None))
         self.lbFirstName.setText(QCoreApplication.translate("MainWindow", u"First Name", None))
@@ -265,6 +282,7 @@ class Ui_MainWindow(object):
         self.lbWeight.setText(QCoreApplication.translate("MainWindow", u"Weight", None))
         self.lbHeight.setText(QCoreApplication.translate("MainWindow", u"Height", None))
         self.sbHeight.setPrefix("")
+        self.sbHeight.setSuffix("")
         self.btnCancel2.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
         self.btnFinish.setText(QCoreApplication.translate("MainWindow", u"Finish", None))
     # retranslateUi
