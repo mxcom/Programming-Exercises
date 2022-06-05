@@ -2,13 +2,13 @@ import sys
 
 from PySide6.QtWidgets import QApplication
 
-from src.controllers.primary.primary import PrimaryWindow
-from src.controllers.user_management.registration import RegistrationWindow
+# from src.controllers.user_management.registration import RegistrationWindow
+from src.controllers.user_management.login import LoginWindow
 
 
 def main():
     app = QApplication(sys.argv)
-    window = RegistrationWindow()
+    window = LoginWindow()
     window.show()
     sys.exit(app.exec())
 

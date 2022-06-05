@@ -31,7 +31,7 @@
      <x>0</x>
      <y>220</y>
      <width>281</width>
-     <height>56</height>
+     <height>58</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="loBtn">
@@ -73,7 +73,7 @@ background-color: transparent;</string>
      <x>0</x>
      <y>110</y>
      <width>281</width>
-     <height>24</height>
+     <height>27</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="loEmail" stretch="0,0,0">
@@ -97,7 +97,7 @@ background-color: transparent;</string>
      </spacer>
     </item>
     <item>
-     <widget class="QLineEdit" name="ipEmial"/>
+     <widget class="QLineEdit" name="leEmail"/>
     </item>
     <item>
      <spacer name="hsRight">
@@ -186,7 +186,7 @@ background-color: transparent;</string>
      <x>0</x>
      <y>180</y>
      <width>281</width>
-     <height>24</height>
+     <height>27</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="loPassword" stretch="0,0,0">
@@ -210,7 +210,11 @@ background-color: transparent;</string>
      </spacer>
     </item>
     <item>
-     <widget class="QLineEdit" name="ipEmial_2"/>
+     <widget class="QLineEdit" name="lePassword">
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+     </widget>
     </item>
     <item>
      <spacer name="hsRight_2">

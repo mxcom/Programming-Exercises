@@ -28,7 +28,7 @@ class Ui_WndLogin(object):
         WndLogin.setMaximumSize(QSize(275, 350))
         self.verticalLayoutWidget_2 = QWidget(WndLogin)
         self.verticalLayoutWidget_2.setObjectName(u"verticalLayoutWidget_2")
-        self.verticalLayoutWidget_2.setGeometry(QRect(0, 220, 281, 56))
+        self.verticalLayoutWidget_2.setGeometry(QRect(0, 220, 281, 58))
         self.loBtn = QVBoxLayout(self.verticalLayoutWidget_2)
         self.loBtn.setObjectName(u"loBtn")
         self.loBtn.setContentsMargins(85, 0, 85, 0)
@@ -51,7 +51,7 @@ class Ui_WndLogin(object):
 
         self.horizontalLayoutWidget = QWidget(WndLogin)
         self.horizontalLayoutWidget.setObjectName(u"horizontalLayoutWidget")
-        self.horizontalLayoutWidget.setGeometry(QRect(0, 110, 281, 24))
+        self.horizontalLayoutWidget.setGeometry(QRect(0, 110, 281, 27))
         self.loEmail = QHBoxLayout(self.horizontalLayoutWidget)
         self.loEmail.setSpacing(0)
         self.loEmail.setObjectName(u"loEmail")
@@ -60,10 +60,10 @@ class Ui_WndLogin(object):
 
         self.loEmail.addItem(self.hsLeft)
 
-        self.ipEmial = QLineEdit(self.horizontalLayoutWidget)
-        self.ipEmial.setObjectName(u"ipEmial")
+        self.leEmail = QLineEdit(self.horizontalLayoutWidget)
+        self.leEmail.setObjectName(u"leEmail")
 
-        self.loEmail.addWidget(self.ipEmial)
+        self.loEmail.addWidget(self.leEmail)
 
         self.hsRight = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -90,7 +90,7 @@ class Ui_WndLogin(object):
         self.lbPassword.setAlignment(Qt.AlignCenter)
         self.horizontalLayoutWidget_2 = QWidget(WndLogin)
         self.horizontalLayoutWidget_2.setObjectName(u"horizontalLayoutWidget_2")
-        self.horizontalLayoutWidget_2.setGeometry(QRect(0, 180, 281, 24))
+        self.horizontalLayoutWidget_2.setGeometry(QRect(0, 180, 281, 27))
         self.loPassword = QHBoxLayout(self.horizontalLayoutWidget_2)
         self.loPassword.setSpacing(0)
         self.loPassword.setObjectName(u"loPassword")
@@ -99,10 +99,11 @@ class Ui_WndLogin(object):
 
         self.loPassword.addItem(self.hsLeft_2)
 
-        self.ipEmial_2 = QLineEdit(self.horizontalLayoutWidget_2)
-        self.ipEmial_2.setObjectName(u"ipEmial_2")
+        self.lePassword = QLineEdit(self.horizontalLayoutWidget_2)
+        self.lePassword.setObjectName(u"lePassword")
+        self.lePassword.setEchoMode(QLineEdit.Password)
 
-        self.loPassword.addWidget(self.ipEmial_2)
+        self.loPassword.addWidget(self.lePassword)
 
         self.hsRight_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 

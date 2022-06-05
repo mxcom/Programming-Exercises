@@ -16,11 +16,9 @@ special_char = ['$', '@', '#', '%', '_', '-', '!']
 
 
 class RegistrationWindow(QMainWindow, Ui_MainWindow):
-
     """
-    Class provides functionalities to interact with ui
+    Class provides functionalities to interact with ui for registration
     """
-
     def __init__(self, parent=None):
         """
         Used to setup the ui and connect widgets with methods
