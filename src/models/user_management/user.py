@@ -3,7 +3,7 @@ from datetime import datetime
 
 class User:
 
-    def __init__(self, email, first_name, last_name, sex, birthday, height, weight, passwd):
+    def __init__(self, email='', first_name='', last_name='', sex='', birthday='', height='', weight='', passwd=''):
         self._email = email
         self._first_name = first_name
         self._last_name = last_name
@@ -50,11 +50,10 @@ class User:
         self._sex = sex
 
     def set_birthday(self, birthday):
-        if type(birthday) is datetime:
-            self._birthday = birthday
+        self._birthday = birthday
 
     def set_height(self, height):
-        self._height = height
+        self._height = float(height)
 
     def set_weight(self, weight):
         self._weight = weight

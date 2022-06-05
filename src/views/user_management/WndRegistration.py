@@ -232,13 +232,13 @@ class Ui_MainWindow(object):
         self.navigation2.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_3 = QHBoxLayout(self.navigation2)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.btnCancel2 = QPushButton(self.navigation2)
-        self.btnCancel2.setObjectName(u"btnCancel2")
-        self.btnCancel2.setEnabled(True)
-        self.btnCancel2.setFocusPolicy(Qt.WheelFocus)
-        self.btnCancel2.setAutoDefault(False)
+        self.btnBack = QPushButton(self.navigation2)
+        self.btnBack.setObjectName(u"btnBack")
+        self.btnBack.setEnabled(True)
+        self.btnBack.setFocusPolicy(Qt.WheelFocus)
+        self.btnBack.setAutoDefault(False)
 
-        self.horizontalLayout_3.addWidget(self.btnCancel2)
+        self.horizontalLayout_3.addWidget(self.btnBack)
 
         self.btnFinish = QPushButton(self.navigation2)
         self.btnFinish.setObjectName(u"btnFinish")
@@ -283,7 +283,7 @@ class Ui_MainWindow(object):
         self.lbHeight.setText(QCoreApplication.translate("MainWindow", u"Height", None))
         self.sbHeight.setPrefix("")
         self.sbHeight.setSuffix("")
-        self.btnCancel2.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
+        self.btnBack.setText(QCoreApplication.translate("MainWindow", u"Back", None))
         self.btnFinish.setText(QCoreApplication.translate("MainWindow", u"Finish", None))
     # retranslateUi
 
