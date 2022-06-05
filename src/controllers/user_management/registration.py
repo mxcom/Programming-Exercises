@@ -6,6 +6,7 @@ from PySide6 import QtCore
 
 from src.views.user_management.WndRegistration import Ui_MainWindow
 from src.models.user_management.user import User
+from src.controllers.user_management.user_management import add_user
 
 sex = ["male", "female", "other"]
 regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
@@ -163,12 +164,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             print(e)
             return False
 
-    def finish_registration(self):
-        if self.validate_first_name() and self.validate_last_name() and self.validate_birthday() and self.validate_weight() and self.validate_height() == True:
-            print("True")
-        else:
-            print("False")
-
     def next_page(self):
         self.ui.leFirstName.setText(self.user.get_first_name())
         self.ui.leLastName.setText(self.user.get_last_name())
@@ -194,6 +189,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.lePassword.setText(self.user.get_passwd())
         self.ui.leConfirmPw.setText(self.user.get_passwd())
 
+    def finish_registration(self):
+        if self.validate_first_name() and self.validate_last_name() and self.validate_birthday() and self.validate_weight() and self.validate_height() == True:
+            self.user.set_sex(self.ui.cbSex.currentText())
+            add_user(self.user)
+        else:
+            print("Fill out open fields")
 
 
 
