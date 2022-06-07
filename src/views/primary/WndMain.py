@@ -19,12 +19,12 @@ from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QMainWindow,
     QPushButton, QSizePolicy, QStackedWidget, QVBoxLayout,
     QWidget)
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        if not MainWindow.objectName():
-            MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1000, 560)
-        self.centralwidget = QWidget(MainWindow)
+class Ui_WndMain(object):
+    def setupUi(self, WndMain):
+        if not WndMain.objectName():
+            WndMain.setObjectName(u"WndMain")
+        WndMain.resize(1000, 560)
+        self.centralwidget = QWidget(WndMain)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
         self.verticalLayout.setSpacing(0)
@@ -174,18 +174,18 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.mainWidget)
 
-        MainWindow.setCentralWidget(self.centralwidget)
+        WndMain.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(MainWindow)
+        self.retranslateUi(WndMain)
 
-        QMetaObject.connectSlotsByName(MainWindow)
+        QMetaObject.connectSlotsByName(WndMain)
     # setupUi
 
-    def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.BtnToggle.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"Home", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Help", None))
+    def retranslateUi(self, WndMain):
+        WndMain.setWindowTitle(QCoreApplication.translate("WndMain", u"MainWindow", None))
+        self.BtnToggle.setText(QCoreApplication.translate("WndMain", u"PushButton", None))
+        self.pushButton_3.setText(QCoreApplication.translate("WndMain", u"Home", None))
+        self.pushButton_2.setText(QCoreApplication.translate("WndMain", u"Settings", None))
+        self.pushButton.setText(QCoreApplication.translate("WndMain", u"Help", None))
     # retranslateUi
 

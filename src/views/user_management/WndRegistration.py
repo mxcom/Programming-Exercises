@@ -20,17 +20,17 @@ from PySide6.QtWidgets import (QAbstractSpinBox, QApplication, QComboBox, QDateE
     QLabel, QLineEdit, QMainWindow, QPushButton,
     QSizePolicy, QStackedWidget, QVBoxLayout, QWidget)
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        if not MainWindow.objectName():
-            MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(408, 311)
+class Ui_WndRegistration(object):
+    def setupUi(self, WndRegistration):
+        if not WndRegistration.objectName():
+            WndRegistration.setObjectName(u"WndRegistration")
+        WndRegistration.resize(408, 311)
         sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
-        MainWindow.setSizePolicy(sizePolicy)
-        self.centralwidget = QWidget(MainWindow)
+        sizePolicy.setHeightForWidth(WndRegistration.sizePolicy().hasHeightForWidth())
+        WndRegistration.setSizePolicy(sizePolicy)
+        self.centralwidget = QWidget(WndRegistration)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
         self.verticalLayout.setSpacing(0)
@@ -255,35 +255,35 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.content)
 
-        MainWindow.setCentralWidget(self.centralwidget)
+        WndRegistration.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(MainWindow)
+        self.retranslateUi(WndRegistration)
 
         self.stackedWidget.setCurrentIndex(0)
 
 
-        QMetaObject.connectSlotsByName(MainWindow)
+        QMetaObject.connectSlotsByName(WndRegistration)
     # setupUi
 
-    def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.title.setText(QCoreApplication.translate("MainWindow", u"Registration", None))
-        self.lbEmail.setText(QCoreApplication.translate("MainWindow", u"Email", None))
-        self.lbPassword.setText(QCoreApplication.translate("MainWindow", u"Password", None))
+    def retranslateUi(self, WndRegistration):
+        WndRegistration.setWindowTitle(QCoreApplication.translate("WndRegistration", u"MainWindow", None))
+        self.title.setText(QCoreApplication.translate("WndRegistration", u"Registration", None))
+        self.lbEmail.setText(QCoreApplication.translate("WndRegistration", u"Email", None))
+        self.lbPassword.setText(QCoreApplication.translate("WndRegistration", u"Password", None))
         self.lePassword.setInputMask("")
-        self.lbConfirmPw.setText(QCoreApplication.translate("MainWindow", u"Confirm Password", None))
-        self.lbError.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.btnCancel.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
-        self.btnNext.setText(QCoreApplication.translate("MainWindow", u"Next", None))
-        self.lbFirstName.setText(QCoreApplication.translate("MainWindow", u"First Name", None))
-        self.lbLastName.setText(QCoreApplication.translate("MainWindow", u"Last Name", None))
-        self.lbBirthdate.setText(QCoreApplication.translate("MainWindow", u"Birthdate", None))
-        self.lbSex.setText(QCoreApplication.translate("MainWindow", u"Sex", None))
-        self.lbWeight.setText(QCoreApplication.translate("MainWindow", u"Weight (kg)", None))
-        self.lbHeight.setText(QCoreApplication.translate("MainWindow", u"Height (cm)", None))
+        self.lbConfirmPw.setText(QCoreApplication.translate("WndRegistration", u"Confirm Password", None))
+        self.lbError.setText(QCoreApplication.translate("WndRegistration", u"TextLabel", None))
+        self.btnCancel.setText(QCoreApplication.translate("WndRegistration", u"Cancel", None))
+        self.btnNext.setText(QCoreApplication.translate("WndRegistration", u"Next", None))
+        self.lbFirstName.setText(QCoreApplication.translate("WndRegistration", u"First Name", None))
+        self.lbLastName.setText(QCoreApplication.translate("WndRegistration", u"Last Name", None))
+        self.lbBirthdate.setText(QCoreApplication.translate("WndRegistration", u"Birthdate", None))
+        self.lbSex.setText(QCoreApplication.translate("WndRegistration", u"Sex", None))
+        self.lbWeight.setText(QCoreApplication.translate("WndRegistration", u"Weight (kg)", None))
+        self.lbHeight.setText(QCoreApplication.translate("WndRegistration", u"Height (cm)", None))
         self.sbHeight.setPrefix("")
         self.sbHeight.setSuffix("")
-        self.btnBack.setText(QCoreApplication.translate("MainWindow", u"Back", None))
-        self.btnFinish.setText(QCoreApplication.translate("MainWindow", u"Finish", None))
+        self.btnBack.setText(QCoreApplication.translate("WndRegistration", u"Back", None))
+        self.btnFinish.setText(QCoreApplication.translate("WndRegistration", u"Finish", None))
     # retranslateUi
 
