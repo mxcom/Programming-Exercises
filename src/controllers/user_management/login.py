@@ -8,6 +8,7 @@ from src.views.user_management.WndLogin import Ui_WndLogin
 
 regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
 
+
 class LoginWindow(QMainWindow, Ui_WndLogin):
     """
     Class provides functionalities to interact with ui for login
