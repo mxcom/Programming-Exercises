@@ -108,10 +108,15 @@ border:none;
             </property>
             <property name="styleSheet">
              <string notr="true">border: none;
-background-color: rgb(65, 43, 173);</string>
+background-color: rgb(65, 43, 173);
+background-image: url(:src/views/icons/btnMenuIcon.png);</string>
             </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../icons/btnMenuIcon.svg</normaloff>../icons/btnMenuIcon.svg</iconset>
             </property>
            </widget>
           </item>
@@ -228,7 +233,7 @@ border:none
               <widget class="QPushButton" name="btnHome">
                <property name="minimumSize">
                 <size>
-                 <width>0</width>
+                 <width>60</width>
                  <height>40</height>
                 </size>
                </property>
@@ -242,7 +247,17 @@ QPushButton:hover{
 }</string>
                </property>
                <property name="text">
-                <string>Home</string>
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../icons/btnHomeIcon.svg</normaloff>../icons/btnHomeIcon.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
                </property>
               </widget>
              </item>
@@ -264,7 +279,17 @@ QPushButton:hover{
 }</string>
                </property>
                <property name="text">
-                <string>Food</string>
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../icons/btnFoodIcon.svg</normaloff>../icons/btnFoodIcon.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
                </property>
               </widget>
              </item>
@@ -286,7 +311,17 @@ QPushButton:hover{
 }</string>
                </property>
                <property name="text">
-                <string>Statistic</string>
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../icons/btnStatisticsIcon_2.svg</normaloff>../icons/btnStatisticsIcon_2.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
                </property>
               </widget>
              </item>
@@ -308,7 +343,17 @@ QPushButton:hover{
 }</string>
                </property>
                <property name="text">
-                <string>Settings</string>
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../icons/btnSettingsIcon.svg</normaloff>../icons/btnSettingsIcon.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
                </property>
               </widget>
              </item>
@@ -357,7 +402,17 @@ QPushButton:hover{
 }</string>
                </property>
                <property name="text">
-                <string>Logout</string>
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../icons/btnLogoutIcon.svg</normaloff>../icons/btnLogoutIcon.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
                </property>
               </widget>
              </item>

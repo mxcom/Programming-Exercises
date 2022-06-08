@@ -60,7 +60,11 @@ class Ui_WndMain(object):
         sizePolicy.setHeightForWidth(self.btnToggle.sizePolicy().hasHeightForWidth())
         self.btnToggle.setSizePolicy(sizePolicy)
         self.btnToggle.setStyleSheet(u"border: none;\n"
-"background-color: rgb(65, 43, 173);")
+"background-color: rgb(65, 43, 173);\n"
+"background-image: url(:src/views/icons/btnMenuIcon.png);")
+        icon = QIcon()
+        icon.addFile(u"../icons/btnMenuIcon.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btnToggle.setIcon(icon)
 
         self.horizontalLayout_3.addWidget(self.btnToggle)
 
@@ -110,7 +114,7 @@ class Ui_WndMain(object):
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.btnHome = QPushButton(self.topMenus)
         self.btnHome.setObjectName(u"btnHome")
-        self.btnHome.setMinimumSize(QSize(0, 40))
+        self.btnHome.setMinimumSize(QSize(60, 40))
         self.btnHome.setStyleSheet(u"QPushButton{\n"
 "color: rgb(255, 255, 255);\n"
 "border: 0px solid;\n"
@@ -118,6 +122,10 @@ class Ui_WndMain(object):
 "QPushButton:hover{\n"
 "	background-color: rgb(65, 43, 173);\n"
 "}")
+        icon1 = QIcon()
+        icon1.addFile(u"../icons/btnHomeIcon.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btnHome.setIcon(icon1)
+        self.btnHome.setIconSize(QSize(25, 25))
 
         self.verticalLayout_3.addWidget(self.btnHome)
 
@@ -131,6 +139,10 @@ class Ui_WndMain(object):
 "QPushButton:hover{\n"
 "	background-color: rgb(65, 43, 173);\n"
 "}")
+        icon2 = QIcon()
+        icon2.addFile(u"../icons/btnFoodIcon.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btnFood.setIcon(icon2)
+        self.btnFood.setIconSize(QSize(25, 25))
 
         self.verticalLayout_3.addWidget(self.btnFood)
 
@@ -144,6 +156,10 @@ class Ui_WndMain(object):
 "QPushButton:hover{\n"
 "	background-color: rgb(65, 43, 173);\n"
 "}")
+        icon3 = QIcon()
+        icon3.addFile(u"../icons/btnStatisticsIcon_2.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btnStatistic.setIcon(icon3)
+        self.btnStatistic.setIconSize(QSize(25, 25))
 
         self.verticalLayout_3.addWidget(self.btnStatistic)
 
@@ -157,6 +173,10 @@ class Ui_WndMain(object):
 "QPushButton:hover{\n"
 "	background-color: rgb(65, 43, 173);\n"
 "}")
+        icon4 = QIcon()
+        icon4.addFile(u"../icons/btnSettingsIcon.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btnSettings.setIcon(icon4)
+        self.btnSettings.setIconSize(QSize(25, 25))
 
         self.verticalLayout_3.addWidget(self.btnSettings)
 
@@ -181,6 +201,10 @@ class Ui_WndMain(object):
 "QPushButton:hover{\n"
 "	background-color: rgb(65, 43, 173);\n"
 "}")
+        icon5 = QIcon()
+        icon5.addFile(u"../icons/btnLogoutIcon.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btnLogout.setIcon(icon5)
+        self.btnLogout.setIconSize(QSize(25, 25))
 
         self.verticalLayout_6.addWidget(self.btnLogout)
 
@@ -271,11 +295,11 @@ class Ui_WndMain(object):
 
     def retranslateUi(self, WndMain):
         WndMain.setWindowTitle(QCoreApplication.translate("WndMain", u"MainWindow", None))
-        self.btnToggle.setText(QCoreApplication.translate("WndMain", u"PushButton", None))
-        self.btnHome.setText(QCoreApplication.translate("WndMain", u"Home", None))
-        self.btnFood.setText(QCoreApplication.translate("WndMain", u"Food", None))
-        self.btnStatistic.setText(QCoreApplication.translate("WndMain", u"Statistic", None))
-        self.btnSettings.setText(QCoreApplication.translate("WndMain", u"Settings", None))
-        self.btnLogout.setText(QCoreApplication.translate("WndMain", u"Logout", None))
+        self.btnToggle.setText("")
+        self.btnHome.setText("")
+        self.btnFood.setText("")
+        self.btnStatistic.setText("")
+        self.btnSettings.setText("")
+        self.btnLogout.setText("")
     # retranslateUi
 
