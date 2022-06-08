@@ -52,17 +52,17 @@ class Ui_WndMain(object):
         self.horizontalLayout_3.setSpacing(0)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.BtnToggle = QPushButton(self.toggle)
-        self.BtnToggle.setObjectName(u"BtnToggle")
+        self.btnToggle = QPushButton(self.toggle)
+        self.btnToggle.setObjectName(u"btnToggle")
         sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.BtnToggle.sizePolicy().hasHeightForWidth())
-        self.BtnToggle.setSizePolicy(sizePolicy)
-        self.BtnToggle.setStyleSheet(u"border: none;\n"
+        sizePolicy.setHeightForWidth(self.btnToggle.sizePolicy().hasHeightForWidth())
+        self.btnToggle.setSizePolicy(sizePolicy)
+        self.btnToggle.setStyleSheet(u"border: none;\n"
 "background-color: rgb(65, 43, 173);")
 
-        self.horizontalLayout_3.addWidget(self.BtnToggle)
+        self.horizontalLayout_3.addWidget(self.btnToggle)
 
 
         self.horizontalLayout.addWidget(self.toggle)
@@ -271,7 +271,7 @@ class Ui_WndMain(object):
 
     def retranslateUi(self, WndMain):
         WndMain.setWindowTitle(QCoreApplication.translate("WndMain", u"MainWindow", None))
-        self.BtnToggle.setText(QCoreApplication.translate("WndMain", u"PushButton", None))
+        self.btnToggle.setText(QCoreApplication.translate("WndMain", u"PushButton", None))
         self.btnHome.setText(QCoreApplication.translate("WndMain", u"Home", None))
         self.btnFood.setText(QCoreApplication.translate("WndMain", u"Food", None))
         self.btnStatistic.setText(QCoreApplication.translate("WndMain", u"Statistic", None))
