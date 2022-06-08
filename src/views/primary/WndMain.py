@@ -33,7 +33,9 @@ class Ui_WndMain(object):
         self.topBar = QFrame(self.centralwidget)
         self.topBar.setObjectName(u"topBar")
         self.topBar.setMaximumSize(QSize(16777215, 40))
-        self.topBar.setStyleSheet(u"background-color: rgb(143, 143, 143);")
+        self.topBar.setStyleSheet(u"background-color: rgb(83, 56, 224);\n"
+"border:none;\n"
+"")
         self.topBar.setFrameShape(QFrame.NoFrame)
         self.topBar.setFrameShadow(QFrame.Raised)
         self.horizontalLayout = QHBoxLayout(self.topBar)
@@ -42,7 +44,7 @@ class Ui_WndMain(object):
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.toggle = QFrame(self.topBar)
         self.toggle.setObjectName(u"toggle")
-        self.toggle.setMaximumSize(QSize(70, 40))
+        self.toggle.setMaximumSize(QSize(60, 40))
         self.toggle.setStyleSheet(u"background-color: rgb(75, 75, 75);")
         self.toggle.setFrameShape(QFrame.StyledPanel)
         self.toggle.setFrameShadow(QFrame.Raised)
@@ -57,7 +59,8 @@ class Ui_WndMain(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.BtnToggle.sizePolicy().hasHeightForWidth())
         self.BtnToggle.setSizePolicy(sizePolicy)
-        self.BtnToggle.setStyleSheet(u"border: none;")
+        self.BtnToggle.setStyleSheet(u"border: none;\n"
+"background-color: rgb(65, 43, 173);")
 
         self.horizontalLayout_3.addWidget(self.BtnToggle)
 
@@ -66,6 +69,8 @@ class Ui_WndMain(object):
 
         self.frame_2 = QFrame(self.topBar)
         self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setStyleSheet(u"border:none;\n"
+"")
         self.frame_2.setFrameShape(QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QFrame.Raised)
 
@@ -84,83 +89,166 @@ class Ui_WndMain(object):
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.leftMenu = QFrame(self.mainWidget)
         self.leftMenu.setObjectName(u"leftMenu")
-        self.leftMenu.setMinimumSize(QSize(70, 0))
-        self.leftMenu.setMaximumSize(QSize(70, 16777215))
-        self.leftMenu.setStyleSheet(u"background-color: rgb(143, 143, 143);")
+        self.leftMenu.setMinimumSize(QSize(60, 0))
+        self.leftMenu.setMaximumSize(QSize(60, 16777215))
+        self.leftMenu.setStyleSheet(u"background-color: rgb(83, 56, 224);\n"
+"border:none\n"
+"")
         self.leftMenu.setFrameShape(QFrame.StyledPanel)
         self.leftMenu.setFrameShadow(QFrame.Raised)
         self.verticalLayout_2 = QVBoxLayout(self.leftMenu)
         self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.topManus = QFrame(self.leftMenu)
-        self.topManus.setObjectName(u"topManus")
-        self.topManus.setFrameShape(QFrame.StyledPanel)
-        self.topManus.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_3 = QVBoxLayout(self.topManus)
+        self.topMenus = QFrame(self.leftMenu)
+        self.topMenus.setObjectName(u"topMenus")
+        self.topMenus.setFrameShape(QFrame.StyledPanel)
+        self.topMenus.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_3 = QVBoxLayout(self.topMenus)
         self.verticalLayout_3.setSpacing(0)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.pushButton_3 = QPushButton(self.topManus)
-        self.pushButton_3.setObjectName(u"pushButton_3")
-        self.pushButton_3.setMinimumSize(QSize(0, 40))
-        self.pushButton_3.setStyleSheet(u"QPushButton{\n"
+        self.btnHome = QPushButton(self.topMenus)
+        self.btnHome.setObjectName(u"btnHome")
+        self.btnHome.setMinimumSize(QSize(0, 40))
+        self.btnHome.setStyleSheet(u"QPushButton{\n"
 "color: rgb(255, 255, 255);\n"
 "border: 0px solid;\n"
 "}\n"
 "QPushButton:hover{\n"
-"	background-color: rgb(75, 75, 75);\n"
+"	background-color: rgb(65, 43, 173);\n"
 "}")
 
-        self.verticalLayout_3.addWidget(self.pushButton_3)
+        self.verticalLayout_3.addWidget(self.btnHome)
 
-        self.pushButton_2 = QPushButton(self.topManus)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setMinimumSize(QSize(0, 40))
-        self.pushButton_2.setStyleSheet(u"QPushButton{\n"
+        self.btnFood = QPushButton(self.topMenus)
+        self.btnFood.setObjectName(u"btnFood")
+        self.btnFood.setMinimumSize(QSize(0, 40))
+        self.btnFood.setStyleSheet(u"QPushButton{\n"
 "color: rgb(255, 255, 255);\n"
 "border: 0px solid;\n"
 "}\n"
 "QPushButton:hover{\n"
-"	background-color: rgb(75, 75, 75);\n"
+"	background-color: rgb(65, 43, 173);\n"
 "}")
 
-        self.verticalLayout_3.addWidget(self.pushButton_2)
+        self.verticalLayout_3.addWidget(self.btnFood)
 
-        self.pushButton = QPushButton(self.topManus)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setMinimumSize(QSize(0, 40))
-        self.pushButton.setStyleSheet(u"QPushButton{\n"
+        self.btnStatistic = QPushButton(self.topMenus)
+        self.btnStatistic.setObjectName(u"btnStatistic")
+        self.btnStatistic.setMinimumSize(QSize(0, 40))
+        self.btnStatistic.setStyleSheet(u"QPushButton{\n"
 "color: rgb(255, 255, 255);\n"
 "border: 0px solid;\n"
 "}\n"
 "QPushButton:hover{\n"
-"	background-color: rgb(75, 75, 75);\n"
+"	background-color: rgb(65, 43, 173);\n"
 "}")
 
-        self.verticalLayout_3.addWidget(self.pushButton)
+        self.verticalLayout_3.addWidget(self.btnStatistic)
+
+        self.btnSettings = QPushButton(self.topMenus)
+        self.btnSettings.setObjectName(u"btnSettings")
+        self.btnSettings.setMinimumSize(QSize(0, 40))
+        self.btnSettings.setStyleSheet(u"QPushButton{\n"
+"color: rgb(255, 255, 255);\n"
+"border: 0px solid;\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(65, 43, 173);\n"
+"}")
+
+        self.verticalLayout_3.addWidget(self.btnSettings)
 
 
-        self.verticalLayout_2.addWidget(self.topManus, 0, Qt.AlignTop)
+        self.verticalLayout_2.addWidget(self.topMenus, 0, Qt.AlignTop)
+
+        self.bottonMenus = QFrame(self.leftMenu)
+        self.bottonMenus.setObjectName(u"bottonMenus")
+        self.bottonMenus.setFrameShape(QFrame.StyledPanel)
+        self.bottonMenus.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_6 = QVBoxLayout(self.bottonMenus)
+        self.verticalLayout_6.setSpacing(0)
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.btnLogout = QPushButton(self.bottonMenus)
+        self.btnLogout.setObjectName(u"btnLogout")
+        self.btnLogout.setMinimumSize(QSize(0, 40))
+        self.btnLogout.setStyleSheet(u"QPushButton{\n"
+"color: rgb(255, 255, 255);\n"
+"border: 0px solid;\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(65, 43, 173);\n"
+"}")
+
+        self.verticalLayout_6.addWidget(self.btnLogout)
+
+
+        self.verticalLayout_2.addWidget(self.bottonMenus, 0, Qt.AlignBottom)
 
 
         self.horizontalLayout_2.addWidget(self.leftMenu)
 
         self.content = QFrame(self.mainWidget)
         self.content.setObjectName(u"content")
+        self.content.setStyleSheet(u"background-color: rgb(143, 126, 230);\n"
+"border-color: rgb(143, 126, 230);\n"
+"border:none;\n"
+"")
         self.content.setFrameShape(QFrame.StyledPanel)
         self.content.setFrameShadow(QFrame.Raised)
         self.verticalLayout_4 = QVBoxLayout(self.content)
+        self.verticalLayout_4.setSpacing(0)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.pages = QStackedWidget(self.content)
         self.pages.setObjectName(u"pages")
+        self.pages.setStyleSheet(u"background-color: rgb(143, 126, 230);\n"
+"border-color: rgb(143, 126, 230);\n"
+"border:none;\n"
+"")
         self.page_1 = QWidget()
         self.page_1.setObjectName(u"page_1")
+        self.page_1.setStyleSheet(u"background-color: rgb(143, 126, 230);\n"
+"border-color: rgb(143, 126, 230);\n"
+"border:none;\n"
+"")
+        self.verticalLayout_5 = QVBoxLayout(self.page_1)
+        self.verticalLayout_5.setSpacing(0)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
         self.prrogressBar = QFrame(self.page_1)
         self.prrogressBar.setObjectName(u"prrogressBar")
-        self.prrogressBar.setGeometry(QRect(250, 70, 381, 311))
         self.prrogressBar.setFrameShape(QFrame.StyledPanel)
         self.prrogressBar.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout_5.addWidget(self.prrogressBar)
+
+        self.frame = QFrame(self.page_1)
+        self.frame.setObjectName(u"frame")
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_4 = QHBoxLayout(self.frame)
+        self.horizontalLayout_4.setSpacing(0)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.frame_4 = QFrame(self.frame)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setFrameShape(QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_4.addWidget(self.frame_4)
+
+        self.frame_5 = QFrame(self.frame)
+        self.frame_5.setObjectName(u"frame_5")
+        self.frame_5.setFrameShape(QFrame.StyledPanel)
+        self.frame_5.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_4.addWidget(self.frame_5)
+
+
+        self.verticalLayout_5.addWidget(self.frame)
+
         self.pages.addWidget(self.page_1)
         self.page_2 = QWidget()
         self.page_2.setObjectName(u"page_2")
@@ -184,8 +272,10 @@ class Ui_WndMain(object):
     def retranslateUi(self, WndMain):
         WndMain.setWindowTitle(QCoreApplication.translate("WndMain", u"MainWindow", None))
         self.BtnToggle.setText(QCoreApplication.translate("WndMain", u"PushButton", None))
-        self.pushButton_3.setText(QCoreApplication.translate("WndMain", u"Home", None))
-        self.pushButton_2.setText(QCoreApplication.translate("WndMain", u"Settings", None))
-        self.pushButton.setText(QCoreApplication.translate("WndMain", u"Help", None))
+        self.btnHome.setText(QCoreApplication.translate("WndMain", u"Home", None))
+        self.btnFood.setText(QCoreApplication.translate("WndMain", u"Food", None))
+        self.btnStatistic.setText(QCoreApplication.translate("WndMain", u"Statistic", None))
+        self.btnSettings.setText(QCoreApplication.translate("WndMain", u"Settings", None))
+        self.btnLogout.setText(QCoreApplication.translate("WndMain", u"Logout", None))
     # retranslateUi
 

@@ -39,7 +39,9 @@
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(143, 143, 143);</string>
+       <string notr="true">background-color: rgb(83, 56, 224);
+border:none;
+</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
@@ -67,7 +69,7 @@
         <widget class="QFrame" name="toggle">
          <property name="maximumSize">
           <size>
-           <width>70</width>
+           <width>60</width>
            <height>40</height>
           </size>
          </property>
@@ -105,7 +107,8 @@
              </sizepolicy>
             </property>
             <property name="styleSheet">
-             <string notr="true">border: none;</string>
+             <string notr="true">border: none;
+background-color: rgb(65, 43, 173);</string>
             </property>
             <property name="text">
              <string>PushButton</string>
@@ -117,6 +120,10 @@
        </item>
        <item>
         <widget class="QFrame" name="frame_2">
+         <property name="styleSheet">
+          <string notr="true">border:none;
+</string>
+         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -156,18 +163,20 @@
         <widget class="QFrame" name="leftMenu">
          <property name="minimumSize">
           <size>
-           <width>70</width>
+           <width>60</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>70</width>
+           <width>60</width>
            <height>16777215</height>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(143, 143, 143);</string>
+          <string notr="true">background-color: rgb(83, 56, 224);
+border:none
+</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
@@ -192,7 +201,7 @@
            <number>0</number>
           </property>
           <item alignment="Qt::AlignTop">
-           <widget class="QFrame" name="topManus">
+           <widget class="QFrame" name="topMenus">
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -216,7 +225,7 @@
               <number>0</number>
              </property>
              <item>
-              <widget class="QPushButton" name="pushButton_3">
+              <widget class="QPushButton" name="btnHome">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -229,7 +238,7 @@ color: rgb(255, 255, 255);
 border: 0px solid;
 }
 QPushButton:hover{
-	background-color: rgb(75, 75, 75);
+	background-color: rgb(65, 43, 173);
 }</string>
                </property>
                <property name="text">
@@ -238,7 +247,7 @@ QPushButton:hover{
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="pushButton_2">
+              <widget class="QPushButton" name="btnFood">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -251,7 +260,51 @@ color: rgb(255, 255, 255);
 border: 0px solid;
 }
 QPushButton:hover{
-	background-color: rgb(75, 75, 75);
+	background-color: rgb(65, 43, 173);
+}</string>
+               </property>
+               <property name="text">
+                <string>Food</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnStatistic">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+color: rgb(255, 255, 255);
+border: 0px solid;
+}
+QPushButton:hover{
+	background-color: rgb(65, 43, 173);
+}</string>
+               </property>
+               <property name="text">
+                <string>Statistic</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnSettings">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+color: rgb(255, 255, 255);
+border: 0px solid;
+}
+QPushButton:hover{
+	background-color: rgb(65, 43, 173);
 }</string>
                </property>
                <property name="text">
@@ -259,8 +312,35 @@ QPushButton:hover{
                </property>
               </widget>
              </item>
+            </layout>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignBottom">
+           <widget class="QFrame" name="bottonMenus">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_6">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
              <item>
-              <widget class="QPushButton" name="pushButton">
+              <widget class="QPushButton" name="btnLogout">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -273,11 +353,11 @@ color: rgb(255, 255, 255);
 border: 0px solid;
 }
 QPushButton:hover{
-	background-color: rgb(75, 75, 75);
+	background-color: rgb(65, 43, 173);
 }</string>
                </property>
                <property name="text">
-                <string>Help</string>
+                <string>Logout</string>
                </property>
               </widget>
              </item>
@@ -289,6 +369,12 @@ QPushButton:hover{
        </item>
        <item>
         <widget class="QFrame" name="content">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(143, 126, 230);
+border-color: rgb(143, 126, 230);
+border:none;
+</string>
+         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -296,25 +382,98 @@ QPushButton:hover{
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_4">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
           <item>
            <widget class="QStackedWidget" name="pages">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(143, 126, 230);
+border-color: rgb(143, 126, 230);
+border:none;
+</string>
+            </property>
             <widget class="QWidget" name="page_1">
-             <widget class="QFrame" name="prrogressBar">
-              <property name="geometry">
-               <rect>
-                <x>250</x>
-                <y>70</y>
-                <width>381</width>
-                <height>311</height>
-               </rect>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(143, 126, 230);
+border-color: rgb(143, 126, 230);
+border:none;
+</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_5">
+              <property name="spacing">
+               <number>0</number>
               </property>
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-             </widget>
+              <item>
+               <widget class="QFrame" name="prrogressBar">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="frame">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_4">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QFrame" name="frame_4">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frame_5">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
             </widget>
             <widget class="QWidget" name="page_2"/>
            </widget>
