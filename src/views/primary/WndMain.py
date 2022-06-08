@@ -115,7 +115,8 @@ class Ui_WndMain(object):
         self.btnHome = QPushButton(self.topMenus)
         self.btnHome.setObjectName(u"btnHome")
         self.btnHome.setMinimumSize(QSize(60, 40))
-        self.btnHome.setStyleSheet(u"QPushButton{\n"
+        self.btnHome.setStyleSheet(u"padding-left:50px;\n"
+"QPushButton{\n"
 "color: rgb(255, 255, 255);\n"
 "border: 0px solid;\n"
 "}\n"
@@ -296,7 +297,7 @@ class Ui_WndMain(object):
     def retranslateUi(self, WndMain):
         WndMain.setWindowTitle(QCoreApplication.translate("WndMain", u"MainWindow", None))
         self.btnToggle.setText("")
-        self.btnHome.setText("")
+        self.btnHome.setText(QCoreApplication.translate("WndMain", u"      Home", None))
         self.btnFood.setText("")
         self.btnStatistic.setText("")
         self.btnSettings.setText("")

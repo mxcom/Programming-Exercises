@@ -238,7 +238,8 @@ border:none
                 </size>
                </property>
                <property name="styleSheet">
-                <string notr="true">QPushButton{
+                <string notr="true">padding-left:50px;
+QPushButton{
 color: rgb(255, 255, 255);
 border: 0px solid;
 }
@@ -247,7 +248,7 @@ QPushButton:hover{
 }</string>
                </property>
                <property name="text">
-                <string/>
+                <string>      Home</string>
                </property>
                <property name="icon">
                 <iconset>
