@@ -144,8 +144,8 @@
         </sizepolicy>
        </property>
        <property name="styleSheet">
-        <string notr="true">border-color: transparent;
-background-color: transparent;</string>
+        <string notr="true">border: none;
+border-color: transparent;</string>
        </property>
        <property name="text">
         <string>Sign Up</string>

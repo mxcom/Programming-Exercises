@@ -83,8 +83,8 @@ class Ui_WndLogin(object):
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.btnSignup.sizePolicy().hasHeightForWidth())
         self.btnSignup.setSizePolicy(sizePolicy1)
-        self.btnSignup.setStyleSheet(u"border-color: transparent;\n"
-"background-color: transparent;")
+        self.btnSignup.setStyleSheet(u"border: none;\n"
+"border-color: transparent;")
 
         self.loBtn.addWidget(self.btnSignup)
 

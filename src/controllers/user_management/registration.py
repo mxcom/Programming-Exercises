@@ -2,12 +2,12 @@ import re
 import sys
 
 from datetime import datetime
-from PySide6.QtWidgets import QMainWindow, QApplication
+from PySide6.QtWidgets import QMainWindow
 from PySide6 import QtCore
 
 from src.controllers.user_management.user_management import add_user
 from src.models.user_management.user import User
-from src.views.user_management.WndRegistration import Ui_MainWindow
+from src.views.user_management.WndRegistration import Ui_WndRegistration
 from src.controllers.primary.primary import PrimaryWindow
 
 sex = ["male", "female", "other"]
@@ -15,7 +15,7 @@ regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{
 special_char = ['$', '@', '#', '%', '_', '-', '!']
 
 
-class RegistrationWindow(QMainWindow, Ui_MainWindow):
+class RegistrationWindow(QMainWindow, Ui_WndRegistration):
     """
     Class provides functionalities to interact with ui for registration
     """
@@ -24,7 +24,7 @@ class RegistrationWindow(QMainWindow, Ui_MainWindow):
         Used to setup the ui and connect widgets with methods
         """
         super(RegistrationWindow, self).__init__(parent)
-        self.ui = Ui_MainWindow()
+        self.ui = Ui_WndRegistration()
         self.ui.setupUi(self)
 
         # Settings for GUI
