@@ -12,7 +12,7 @@ from src.views.primary.uiFunctions import UIFunctions
 
 class PrimaryWindow(QMainWindow, Ui_WndMain):
 
-    def __init__(self, user, parent=None,):
+    def __init__(self, user, parent=None):
         super(PrimaryWindow, self).__init__(parent)
         self.ui = Ui_WndMain()
         self.ui.setupUi(self)
@@ -28,7 +28,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
 
         # Create porgress bar
         self.progress = CircularProgress(calc_kcal(
-            user.get_sex(), user.get_height(), user.get_weight(), user.get_birthday()))
+           user.get_sex(), user.get_height(), user.get_weight(), user.get_birthday()))
 
         # Test data
         # bd = datetime(2001, 1, 27)
