@@ -18,6 +18,11 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.setupUi(self)
         self.user = user
 
+        # Fill top Bar
+        current_date = datetime.now()
+        self.ui.lbName.setText(user.get_first_name() + " " + user.get_last_name())
+        self.ui.lbDate.setText(current_date.strftime("%d.%m.%Y"))
+
         # Create Layout
         self.layout = QVBoxLayout()
 
