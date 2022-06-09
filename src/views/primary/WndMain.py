@@ -192,26 +192,24 @@ class Ui_WndMain(object):
         self.btnHome.setMinimumSize(QSize(60, 40))
         self.btnHome.setFont(font)
         self.btnHome.setLayoutDirection(Qt.LeftToRight)
-        self.btnHome.setStyleSheet(u"QPushButton{\n"
-"background-image: url(:/icons/homeIcon.png);\n"
-"background-position: left center;\n"
-"background-repeat: no-repeat;\n"
-"border: none;\n"
-"border-left: 14px solid rgb(83, 56, 224);\n"
-"text-align: left;\n"
-"padding-left: 45px;\n"
-"background-color: rgb(83, 56, 224);\n"
-"\n"
-"\n"
+        self.btnHome.setStyleSheet(u"\n"
+"QPushButton{\n"
+"color: rgb(0, 0, 0);\n"
+"border: 0px solid;\n"
+"padding-left: 90px;\n"
+"background-repeat:none;\n"
+"background-position: center;\n"
 "\n"
 "}\n"
 "QPushButton:hover{\n"
 "	background-color: rgb(65, 43, 173);\n"
-"	border-left: 14px solid rgb(65, 43, 173);\n"
 "}\n"
 "\n"
 "\n"
 "")
+        icon = QIcon()
+        icon.addFile(u":/icons/homeIcon.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btnHome.setIcon(icon)
         self.btnHome.setIconSize(QSize(25, 25))
 
         self.verticalLayout_3.addWidget(self.btnHome, 0, Qt.AlignLeft)
@@ -220,23 +218,22 @@ class Ui_WndMain(object):
         self.btnFood.setObjectName(u"btnFood")
         self.btnFood.setMinimumSize(QSize(0, 40))
         self.btnFood.setFont(font)
-        self.btnFood.setStyleSheet(u"QPushButton{\n"
-"	background-image: url(:/icons/food.png);\n"
-"background-position: left center;\n"
-"background-repeat: no-repeat;\n"
-"border: none;\n"
-"border-left: 14px solid rgb(83, 56, 224);\n"
-"text-align: left;\n"
-"padding-left: 45px;\n"
-"background-color: rgb(83, 56, 224);\n"
+        self.btnFood.setStyleSheet(u"\n"
 "\n"
-"\n"
-"\n"
+"QPushButton{\n"
+"color: rgb(0, 0, 0);\n"
+"border: 0px solid;\n"
+"background-repeat:none;\n"
+"background-position: center center;\n"
+"padding-left: 80px;\n"
 "}\n"
 "QPushButton:hover{\n"
 "	background-color: rgb(65, 43, 173);\n"
-"	border-left: 14px solid rgb(65, 43, 173);\n"
-"}")
+"}\n"
+"")
+        icon1 = QIcon()
+        icon1.addFile(u":/icons/food.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btnFood.setIcon(icon1)
         self.btnFood.setIconSize(QSize(25, 25))
 
         self.verticalLayout_3.addWidget(self.btnFood, 0, Qt.AlignLeft)
@@ -245,23 +242,20 @@ class Ui_WndMain(object):
         self.btnStatistic.setObjectName(u"btnStatistic")
         self.btnStatistic.setMinimumSize(QSize(0, 40))
         self.btnStatistic.setFont(font)
-        self.btnStatistic.setStyleSheet(u"QPushButton{\n"
-"	background-image: url(:/icons/statisticIcon.png);\n"
-"background-position: left center;\n"
-"background-repeat: no-repeat;\n"
-"border: none;\n"
-"border-left: 14px solid rgb(83, 56, 224);\n"
-"text-align: left;\n"
-"padding-left: 45px;\n"
-"background-color: rgb(83, 56, 224);\n"
-"\n"
-"\n"
-"\n"
+        self.btnStatistic.setStyleSheet(u"\n"
+"QPushButton{\n"
+"color: rgb(0, 0, 0);\n"
+"border: 0px solid;\n"
+"background-repeat:none;\n"
+"background-position: center center;\n"
+"padding-left: 110px;\n"
 "}\n"
 "QPushButton:hover{\n"
 "	background-color: rgb(65, 43, 173);\n"
-"	border-left: 14px solid rgb(65, 43, 173);\n"
 "}")
+        icon2 = QIcon()
+        icon2.addFile(u":/icons/statisticIcon.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btnStatistic.setIcon(icon2)
         self.btnStatistic.setIconSize(QSize(25, 25))
 
         self.verticalLayout_3.addWidget(self.btnStatistic, 0, Qt.AlignLeft)
@@ -270,23 +264,18 @@ class Ui_WndMain(object):
         self.btnSettings.setObjectName(u"btnSettings")
         self.btnSettings.setMinimumSize(QSize(0, 40))
         self.btnSettings.setFont(font)
-        self.btnSettings.setStyleSheet(u"QPushButton{\n"
-"	background-image: url(:/icons/settingsIcon.png);\n"
-"background-position: left center;\n"
-"background-repeat: no-repeat;\n"
-"border: none;\n"
-"border-left: 14px solid rgb(83, 56, 224);\n"
-"text-align: left;\n"
-"padding-left: 45px;\n"
-"background-color: rgb(83, 56, 224);\n"
-"\n"
-"\n"
-"\n"
+        self.btnSettings.setStyleSheet(u"\n"
+"QPushButton{\n"
+"color: rgb(0, 0, 0);\n"
+"border: 0px solid;\n"
+"padding-left: 100px;\n"
 "}\n"
 "QPushButton:hover{\n"
 "	background-color: rgb(65, 43, 173);\n"
-"	border-left: 14px solid rgb(65, 43, 173);\n"
 "}")
+        icon3 = QIcon()
+        icon3.addFile(u":/icons/settingsIcon.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btnSettings.setIcon(icon3)
         self.btnSettings.setIconSize(QSize(25, 25))
 
         self.verticalLayout_3.addWidget(self.btnSettings, 0, Qt.AlignLeft)
@@ -306,23 +295,18 @@ class Ui_WndMain(object):
         self.btnLogout.setObjectName(u"btnLogout")
         self.btnLogout.setMinimumSize(QSize(0, 40))
         self.btnLogout.setFont(font)
-        self.btnLogout.setStyleSheet(u"QPushButton{\n"
-"	background-image: url(:/icons/logoutIcon.png);\n"
-"background-position: left center;\n"
-"background-repeat: no-repeat;\n"
-"border: none;\n"
-"border-left: 14px solid rgb(83, 56, 224);\n"
-"text-align: left;\n"
-"padding-left: 45px;\n"
-"background-color: rgb(83, 56, 224);\n"
-"\n"
-"\n"
-"\n"
+        self.btnLogout.setStyleSheet(u"\n"
+"QPushButton{\n"
+"color: rgb(0, 0, 0);\n"
+"border: 0px solid;\n"
+"padding-left:100px;\n"
 "}\n"
 "QPushButton:hover{\n"
 "	background-color: rgb(65, 43, 173);\n"
-"	border-left: 14px solid rgb(65, 43, 173);\n"
 "}")
+        icon4 = QIcon()
+        icon4.addFile(u":/icons/logoutIcon.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btnLogout.setIcon(icon4)
         self.btnLogout.setIconSize(QSize(25, 25))
 
         self.verticalLayout_6.addWidget(self.btnLogout)
@@ -585,11 +569,11 @@ class Ui_WndMain(object):
         self.lbName.setText(QCoreApplication.translate("WndMain", u" Max Mustermann", None))
         self.lbDate.setText(QCoreApplication.translate("WndMain", u"09.06.2022", None))
         self.lbPageDescription.setText(QCoreApplication.translate("WndMain", u"Home", None))
-        self.btnHome.setText(QCoreApplication.translate("WndMain", u"Home", None))
-        self.btnFood.setText(QCoreApplication.translate("WndMain", u"Food", None))
-        self.btnStatistic.setText(QCoreApplication.translate("WndMain", u"Statistics", None))
-        self.btnSettings.setText(QCoreApplication.translate("WndMain", u"Settings", None))
-        self.btnLogout.setText(QCoreApplication.translate("WndMain", u"Logout", None))
+        self.btnHome.setText(QCoreApplication.translate("WndMain", u"          Home", None))
+        self.btnFood.setText(QCoreApplication.translate("WndMain", u"          Food", None))
+        self.btnStatistic.setText(QCoreApplication.translate("WndMain", u"          Statistics", None))
+        self.btnSettings.setText(QCoreApplication.translate("WndMain", u"          Settings", None))
+        self.btnLogout.setText(QCoreApplication.translate("WndMain", u"          Logout", None))
         self.lbWeight.setText(QCoreApplication.translate("WndMain", u"Weight:", None))
         self.lbSteps.setText(QCoreApplication.translate("WndMain", u"Steps:", None))
         self.lbBloodPressure.setText(QCoreApplication.translate("WndMain", u"Blood Pressure:", None))
