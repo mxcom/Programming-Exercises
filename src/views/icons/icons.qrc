@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>btnFoodIcon.svg</file>
+    <file>btnHomeIcon.svg</file>
+    <file>btnLogoutIcon.svg</file>
+    <file>btnMenuIcon.svg</file>
+    <file>btnSettingsIcon.svg</file>
+    <file>btnStatisticsIcon_1.svg</file>
+    <file>btnStatisticsIcon_2.svg</file>
+    <file>btnStatisticsIcon_3.svg</file>
+  </qresource>
+</RCC>

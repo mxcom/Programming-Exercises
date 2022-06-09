@@ -1,25 +1,25 @@
 from PySide6.QtCore import QPropertyAnimation
-from ui.WndMain import Ui_MainWindow
+from src.views.primary.WndMain import Ui_WndMain
 
 
-class UIFunctions(Ui_MainWindow):
+class UIFunctions(Ui_WndMain):
 
     def toggleMenu(self, maxWidth, enable):
         if enable:
 
             # Get Width
-            width = self.leftMenu.width()
+            width = self.ui.leftMenu.width()
             maxExtend = maxWidth
-            standard = 70
+            standard = 60
 
             # Set Width
-            if width == 70:
+            if width == 60:
                 widthExtended = maxExtend
             else:
                 widthExtended = standard
 
             # Animation
-            self.animation = QPropertyAnimation(self.leftMenu, b"minimumWidth")
+            self.animation = QPropertyAnimation(self.ui.leftMenu, b"minimumWidth")
             self.animation.setDuration(400)
             self.animation.setStartValue(width)
             self.animation.setEndValue(widthExtended)
