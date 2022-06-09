@@ -7,7 +7,8 @@ from src.views.primary.WndMain import Ui_WndMain
 
 class PrimaryWindow(QMainWindow, Ui_WndMain):
 
-    def __init__(self, parent=None):
+    def __init__(self, user, parent=None,):
         super(PrimaryWindow, self).__init__(parent)
         self.ui = Ui_WndMain()
         self.ui.setupUi(self)
+        self.user = user

@@ -56,7 +56,7 @@ class User:
         self._height = float(height)
 
     def set_weight(self, weight):
-        self._weight = weight
+        self._weight = int(weight)
 
     def set_passwd(self, passwd):
         self._passwd = passwd

@@ -3,7 +3,7 @@ import re, sys
 from PySide6.QtWidgets import QMainWindow, QApplication
 from PySide6 import QtCore
 
-from src.controllers.user_management.user_management import search_user, validate_user
+from src.controllers.user_management.user_management import search_user, validate_user, get_user
 from src.views.user_management.WndLogin import Ui_WndLogin
 from src.controllers.primary.primary import PrimaryWindow
 from src.controllers.user_management.registration import RegistrationWindow
@@ -56,6 +56,15 @@ class LoginWindow(QMainWindow, Ui_WndLogin):
             return False
 
     def validate_passwd(self):
+        """
+        validates password
+
+        Return
+        ------
+        bool
+            True if password is >= 8 chars
+            False if password is > 8 chars
+        """
         passwd = self.ui.lePassword.text()
 
         if len(passwd) < 8:
@@ -64,6 +73,9 @@ class LoginWindow(QMainWindow, Ui_WndLogin):
             return True
 
     def validate_login(self):
+        """
+        Validates user login credentials using obove validate methods
+        """
         if self.validate_email() and self.validate_passwd() == True:
             try:
                 email = self.ui.leEmail.text()
@@ -73,9 +85,11 @@ class LoginWindow(QMainWindow, Ui_WndLogin):
                 else:
                     print("user not found")
 
+                user = get_user('mxprivate@protonmail.com')
+
                 if validate_user(email, passwd):
                     self.destroy()
-                    self.mw = PrimaryWindow()
+                    self.mw = PrimaryWindow(user)
                     self.mw.show()
                 else:
                     print("not same passwd")

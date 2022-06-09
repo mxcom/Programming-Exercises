@@ -1,10 +1,11 @@
 import sys
-
+import datetime
 from PySide6.QtWidgets import QApplication, QMainWindow
 
-# from src.controllers.user_management.registration import RegistrationWindow
+from src.controllers.user_management.registration import RegistrationWindow
 from src.controllers.user_management.login import LoginWindow
 from src.controllers.user_management.email import send_mail
+from src.controllers.user_management.user_management import get_user, add_user
 
 
 def main():
