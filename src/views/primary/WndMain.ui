@@ -382,7 +382,7 @@ border:none
              <property name="bottomMargin">
               <number>0</number>
              </property>
-             <item alignment="Qt::AlignLeft">
+             <item>
               <widget class="QPushButton" name="btnHome">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -437,7 +437,7 @@ QPushButton:hover{
                </property>
               </widget>
              </item>
-             <item alignment="Qt::AlignLeft">
+             <item>
               <widget class="QPushButton" name="btnFood">
                <property name="minimumSize">
                 <size>
@@ -481,7 +481,7 @@ QPushButton:hover{
                </property>
               </widget>
              </item>
-             <item alignment="Qt::AlignLeft">
+             <item>
               <widget class="QPushButton" name="btnStatistic">
                <property name="minimumSize">
                 <size>
@@ -525,7 +525,7 @@ QPushButton:hover{
                </property>
               </widget>
              </item>
-             <item alignment="Qt::AlignLeft">
+             <item>
               <widget class="QPushButton" name="btnSettings">
                <property name="minimumSize">
                 <size>
@@ -960,10 +960,10 @@ border-radius: 15px;
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLineEdit" name="leBloodPressure">
+                        <widget class="QLineEdit" name="leBloodPressureLow">
                          <property name="maximumSize">
                           <size>
-                           <width>200</width>
+                           <width>94</width>
                            <height>16777215</height>
                           </size>
                          </property>
@@ -979,6 +979,35 @@ border-radius: 15px;
                          </property>
                          <property name="alignment">
                           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                         </property>
+                         <property name="placeholderText">
+                          <string>Low</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="leBloodPressureHigh">
+                         <property name="maximumSize">
+                          <size>
+                           <width>100</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <pointsize>12</pointsize>
+                           <bold>true</bold>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">border-bottom: 2px solid rgb(143, 126, 230);;
+</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                         </property>
+                         <property name="placeholderText">
+                          <string>High</string>
                          </property>
                         </widget>
                        </item>

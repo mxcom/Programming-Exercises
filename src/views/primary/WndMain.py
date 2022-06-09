@@ -213,7 +213,7 @@ class Ui_WndMain(object):
 "")
         self.btnHome.setIconSize(QSize(25, 25))
 
-        self.verticalLayout_3.addWidget(self.btnHome, 0, Qt.AlignLeft)
+        self.verticalLayout_3.addWidget(self.btnHome)
 
         self.btnFood = QPushButton(self.topMenus)
         self.btnFood.setObjectName(u"btnFood")
@@ -238,7 +238,7 @@ class Ui_WndMain(object):
 "}")
         self.btnFood.setIconSize(QSize(25, 25))
 
-        self.verticalLayout_3.addWidget(self.btnFood, 0, Qt.AlignLeft)
+        self.verticalLayout_3.addWidget(self.btnFood)
 
         self.btnStatistic = QPushButton(self.topMenus)
         self.btnStatistic.setObjectName(u"btnStatistic")
@@ -263,7 +263,7 @@ class Ui_WndMain(object):
 "}")
         self.btnStatistic.setIconSize(QSize(25, 25))
 
-        self.verticalLayout_3.addWidget(self.btnStatistic, 0, Qt.AlignLeft)
+        self.verticalLayout_3.addWidget(self.btnStatistic)
 
         self.btnSettings = QPushButton(self.topMenus)
         self.btnSettings.setObjectName(u"btnSettings")
@@ -288,7 +288,7 @@ class Ui_WndMain(object):
 "}")
         self.btnSettings.setIconSize(QSize(25, 25))
 
-        self.verticalLayout_3.addWidget(self.btnSettings, 0, Qt.AlignLeft)
+        self.verticalLayout_3.addWidget(self.btnSettings)
 
 
         self.verticalLayout_2.addWidget(self.topMenus, 0, Qt.AlignTop)
@@ -492,15 +492,25 @@ class Ui_WndMain(object):
 
         self.horizontalLayout_10.addWidget(self.lbBloodPressure)
 
-        self.leBloodPressure = QLineEdit(self.bloodPressureContent)
-        self.leBloodPressure.setObjectName(u"leBloodPressure")
-        self.leBloodPressure.setMaximumSize(QSize(200, 16777215))
-        self.leBloodPressure.setFont(font)
-        self.leBloodPressure.setStyleSheet(u"border-bottom: 2px solid rgb(143, 126, 230);;\n"
+        self.leBloodPressureLow = QLineEdit(self.bloodPressureContent)
+        self.leBloodPressureLow.setObjectName(u"leBloodPressureLow")
+        self.leBloodPressureLow.setMaximumSize(QSize(94, 16777215))
+        self.leBloodPressureLow.setFont(font)
+        self.leBloodPressureLow.setStyleSheet(u"border-bottom: 2px solid rgb(143, 126, 230);;\n"
 "")
-        self.leBloodPressure.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.leBloodPressureLow.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
-        self.horizontalLayout_10.addWidget(self.leBloodPressure)
+        self.horizontalLayout_10.addWidget(self.leBloodPressureLow)
+
+        self.leBloodPressureHigh = QLineEdit(self.bloodPressureContent)
+        self.leBloodPressureHigh.setObjectName(u"leBloodPressureHigh")
+        self.leBloodPressureHigh.setMaximumSize(QSize(100, 16777215))
+        self.leBloodPressureHigh.setFont(font)
+        self.leBloodPressureHigh.setStyleSheet(u"border-bottom: 2px solid rgb(143, 126, 230);;\n"
+"")
+        self.leBloodPressureHigh.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.horizontalLayout_10.addWidget(self.leBloodPressureHigh)
 
 
         self.verticalLayout_9.addWidget(self.bloodPressureContent)
@@ -602,6 +612,8 @@ class Ui_WndMain(object):
         self.lbWeight.setText(QCoreApplication.translate("WndMain", u"Weight:", None))
         self.lbSteps.setText(QCoreApplication.translate("WndMain", u"Steps:", None))
         self.lbBloodPressure.setText(QCoreApplication.translate("WndMain", u"Blood Pressure:", None))
+        self.leBloodPressureLow.setPlaceholderText(QCoreApplication.translate("WndMain", u"Low", None))
+        self.leBloodPressureHigh.setPlaceholderText(QCoreApplication.translate("WndMain", u"High", None))
         self.btnSubmit.setText(QCoreApplication.translate("WndMain", u"Submit", None))
     # retranslateUi
 
