@@ -6,7 +6,7 @@ from src.controllers.user_management.user_management import *
 
 def calc_kcal(sex, height, weight, birthday):
 
-    current_date = datetime.datetime.today() - birthday
+    current_date = datetime.date.today() - birthday
 
     age = math.floor(current_date.days / 365)
 

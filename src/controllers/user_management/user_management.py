@@ -3,6 +3,7 @@ from src.controllers.cryptography.cryptography import hash_passwd, compare_passw
 from src.controllers.database.database import Database
 from src.models.user_management.user import User
 
+
 def add_user(user):
     global id
     db = Database()
