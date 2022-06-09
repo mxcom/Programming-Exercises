@@ -8,22 +8,22 @@ from src.controllers.user_management.calc_kcal import calc_kcal
 
 class CircularProgress(QWidget):
     def __init__(self, max_value):
-        QWidget.__init__(self, max_value)
+        QWidget.__init__(self)
 
         # Properties
         self.value = 0
         self.width = 200
         self.height = 200
-        self.progress_width = 10
+        self.progress_width = 15
         self.progress_round_cap = True
-        self.progress_color = 0x4198BD1
-        self.progress_color_background = 0x999999
+        self.progress_color = 0x6437ED
+        self.progress_color_background = 0x2E196E
         self.max_value = max_value  # Has to be changed later to max amount of daily calories
-        self.font_size = 12
-        self.font_family = "Sergoe UI"
+        self.font_size = 15
+        self.font_family = "Sergoe UI Black"
         self.slash_text = "/"
         self.suffix = "\nkcal"
-        self.text_color = 0x4198BD1
+        self.text_color = 0x000000
         self.enable_shadow = True
 
         self.resize(self.width, self.height)
@@ -54,7 +54,6 @@ class CircularProgress(QWidget):
         paint.begin(self)
         # Depending on where I put the statment the either way the result is not satesfying
         self.setFont(QFont(self.font_family, self.font_size))
-        self.setFont(QFont.setWeight(QFont.Bold))
         paint.setRenderHint(QPainter.Antialiasing)
 
         # Create Rectangle

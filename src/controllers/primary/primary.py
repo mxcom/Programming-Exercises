@@ -25,6 +25,10 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.progress = CircularProgress(calc_kcal(
             user.get_sex(), user.get_height(), user.get_weight(), user.get_birthday()))
 
+        # Test data
+        # bd = datetime(2001, 1, 27)
+        # self.progress = CircularProgress(calc_kcal("male", 196, 80, bd))
+
         self.progress.setMinimumSize(self.progress.width, self.progress.height)
 
         # Add widgets
@@ -33,4 +37,4 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.btnToggle.clicked.connect(lambda: UIFunctions.toggleMenu(self, 200, True))
 
         # Set layout of the Frame
-        self.frmProgressBar.setLayout(self.layout)
+        self.ui.frmProgressBar.setLayout(self.layout)

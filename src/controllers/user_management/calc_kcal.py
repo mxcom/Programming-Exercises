@@ -1,3 +1,4 @@
+import math
 from datetime import date
 
 from src.controllers.user_management.user_management import *
@@ -5,14 +6,16 @@ from src.controllers.user_management.user_management import *
 
 def calc_kcal(sex, height, weight, birthday):
 
-    current_date = date.today()
-    age = current_date - birthday
+    current_date = datetime.datetime.today() - birthday
+
+    age = math.floor(current_date.days / 365)
+
     print(age)
 
     if sex == 'female':
-        return (10 * weight) + (6, 25 * height) + (5 * age) - 161
+        return int((10 * weight) + (6.25 * height) + (5 * age) - 161)
     else:
-        return (10 * weight) + (6, 25 * height) + (5 * age) + 5
+        return int((10 * weight) + (6.25 * height) + (5 * age) + 5)
 
 
 

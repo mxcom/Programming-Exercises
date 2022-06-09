@@ -210,7 +210,6 @@ class Ui_WndMain(object):
 "	border-left: 14px solid rgb(65, 43, 173);\n"
 "}\n"
 "\n"
-"\n"
 "")
         self.btnHome.setIconSize(QSize(25, 25))
 
@@ -331,7 +330,7 @@ class Ui_WndMain(object):
         self.verticalLayout_2.addWidget(self.bottonMenus, 0, Qt.AlignBottom)
 
 
-        self.horizontalLayout_2.addWidget(self.leftMenu, 0, Qt.AlignLeft)
+        self.horizontalLayout_2.addWidget(self.leftMenu)
 
         self.content = QFrame(self.mainWidget)
         self.content.setObjectName(u"content")
@@ -363,6 +362,7 @@ class Ui_WndMain(object):
         self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
         self.topContent = QFrame(self.pageHome)
         self.topContent.setObjectName(u"topContent")
+        self.topContent.setMaximumSize(QSize(16777215, 260))
         self.topContent.setFrameShape(QFrame.StyledPanel)
         self.topContent.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_12 = QHBoxLayout(self.topContent)
@@ -378,6 +378,15 @@ class Ui_WndMain(object):
 
         self.frmProgressBar = QFrame(self.topContent)
         self.frmProgressBar.setObjectName(u"frmProgressBar")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Preferred)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.frmProgressBar.sizePolicy().hasHeightForWidth())
+        self.frmProgressBar.setSizePolicy(sizePolicy2)
+        self.frmProgressBar.setMaximumSize(QSize(16777215, 260))
+        font1 = QFont()
+        font1.setFamilies([u"Script"])
+        self.frmProgressBar.setFont(font1)
         self.frmProgressBar.setFrameShape(QFrame.StyledPanel)
         self.frmProgressBar.setFrameShadow(QFrame.Raised)
 
@@ -465,11 +474,11 @@ class Ui_WndMain(object):
 
         self.bloodPressureContent = QFrame(self.trackContent)
         self.bloodPressureContent.setObjectName(u"bloodPressureContent")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.bloodPressureContent.sizePolicy().hasHeightForWidth())
-        self.bloodPressureContent.setSizePolicy(sizePolicy2)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.bloodPressureContent.sizePolicy().hasHeightForWidth())
+        self.bloodPressureContent.setSizePolicy(sizePolicy3)
         self.bloodPressureContent.setStyleSheet(u"background-color: rgb(100, 55, 237);\n"
 "border-radius: 15px;\n"
 "")

@@ -317,7 +317,7 @@ background-position: center center;
        <property name="bottomMargin">
         <number>0</number>
        </property>
-       <item alignment="Qt::AlignLeft">
+       <item>
         <widget class="QFrame" name="leftMenu">
          <property name="minimumSize">
           <size>
@@ -423,7 +423,6 @@ QPushButton:hover{
 	background-color: rgb(65, 43, 173);
 	border-left: 14px solid rgb(65, 43, 173);
 }
-
 
 </string>
                </property>
@@ -710,6 +709,12 @@ border:none;
               </property>
               <item>
                <widget class="QFrame" name="topContent">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>260</height>
+                 </size>
+                </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -744,6 +749,23 @@ border:none;
                  </item>
                  <item>
                   <widget class="QFrame" name="frmProgressBar">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>260</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Script</family>
+                    </font>
+                   </property>
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
                    </property>
