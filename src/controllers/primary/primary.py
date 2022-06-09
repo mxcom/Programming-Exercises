@@ -12,3 +12,5 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui = Ui_WndMain()
         self.ui.setupUi(self)
         self.user = user
+
+        self.ui.btnToggle.clicked.connect(lambda: UIFunctions.toggleMenu(self, 200, True))

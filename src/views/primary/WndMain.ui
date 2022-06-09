@@ -406,28 +406,29 @@ border:none
                 <enum>Qt::LeftToRight</enum>
                </property>
                <property name="styleSheet">
-                <string notr="true">
-QPushButton{
-color: rgb(0, 0, 0);
-border: 0px solid;
-padding-left: 90px;
-background-repeat:none;
-background-position: center;
+                <string notr="true">QPushButton{
+background-image: url(:/icons/homeIcon.png);
+background-position: left center;
+background-repeat: no-repeat;
+border: none;
+border-left: 14px solid rgb(83, 56, 224);
+text-align: left;
+padding-left: 45px;
+background-color: rgb(83, 56, 224);
+
+
 
 }
 QPushButton:hover{
 	background-color: rgb(65, 43, 173);
+	border-left: 14px solid rgb(65, 43, 173);
 }
 
 
 </string>
                </property>
                <property name="text">
-                <string>          Home</string>
-               </property>
-               <property name="icon">
-                <iconset resource="../icons/icons.qrc">
-                 <normaloff>:/icons/homeIcon.png</normaloff>:/icons/homeIcon.png</iconset>
+                <string>Home</string>
                </property>
                <property name="iconSize">
                 <size>
@@ -452,26 +453,26 @@ QPushButton:hover{
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">
+                <string notr="true">QPushButton{
+	background-image: url(:/icons/food.png);
+background-position: left center;
+background-repeat: no-repeat;
+border: none;
+border-left: 14px solid rgb(83, 56, 224);
+text-align: left;
+padding-left: 45px;
+background-color: rgb(83, 56, 224);
 
-QPushButton{
-color: rgb(0, 0, 0);
-border: 0px solid;
-background-repeat:none;
-background-position: center center;
-padding-left: 80px;
+
+
 }
 QPushButton:hover{
 	background-color: rgb(65, 43, 173);
-}
-</string>
+	border-left: 14px solid rgb(65, 43, 173);
+}</string>
                </property>
                <property name="text">
-                <string>          Food</string>
-               </property>
-               <property name="icon">
-                <iconset resource="../icons/icons.qrc">
-                 <normaloff>:/icons/food.png</normaloff>:/icons/food.png</iconset>
+                <string>Food</string>
                </property>
                <property name="iconSize">
                 <size>
@@ -496,24 +497,26 @@ QPushButton:hover{
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">
-QPushButton{
-color: rgb(0, 0, 0);
-border: 0px solid;
-background-repeat:none;
-background-position: center center;
-padding-left: 110px;
+                <string notr="true">QPushButton{
+	background-image: url(:/icons/statisticIcon.png);
+background-position: left center;
+background-repeat: no-repeat;
+border: none;
+border-left: 14px solid rgb(83, 56, 224);
+text-align: left;
+padding-left: 45px;
+background-color: rgb(83, 56, 224);
+
+
+
 }
 QPushButton:hover{
 	background-color: rgb(65, 43, 173);
+	border-left: 14px solid rgb(65, 43, 173);
 }</string>
                </property>
                <property name="text">
-                <string>          Statistics</string>
-               </property>
-               <property name="icon">
-                <iconset resource="../icons/icons.qrc">
-                 <normaloff>:/icons/statisticIcon.png</normaloff>:/icons/statisticIcon.png</iconset>
+                <string>Statistics</string>
                </property>
                <property name="iconSize">
                 <size>
@@ -538,22 +541,26 @@ QPushButton:hover{
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">
-QPushButton{
-color: rgb(0, 0, 0);
-border: 0px solid;
-padding-left: 100px;
+                <string notr="true">QPushButton{
+	background-image: url(:/icons/settingsIcon.png);
+background-position: left center;
+background-repeat: no-repeat;
+border: none;
+border-left: 14px solid rgb(83, 56, 224);
+text-align: left;
+padding-left: 45px;
+background-color: rgb(83, 56, 224);
+
+
+
 }
 QPushButton:hover{
 	background-color: rgb(65, 43, 173);
+	border-left: 14px solid rgb(65, 43, 173);
 }</string>
                </property>
                <property name="text">
-                <string>          Settings</string>
-               </property>
-               <property name="icon">
-                <iconset resource="../icons/icons.qrc">
-                 <normaloff>:/icons/settingsIcon.png</normaloff>:/icons/settingsIcon.png</iconset>
+                <string>Settings</string>
                </property>
                <property name="iconSize">
                 <size>
@@ -605,22 +612,26 @@ QPushButton:hover{
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">
-QPushButton{
-color: rgb(0, 0, 0);
-border: 0px solid;
-padding-left:100px;
+                <string notr="true">QPushButton{
+	background-image: url(:/icons/logoutIcon.png);
+background-position: left center;
+background-repeat: no-repeat;
+border: none;
+border-left: 14px solid rgb(83, 56, 224);
+text-align: left;
+padding-left: 45px;
+background-color: rgb(83, 56, 224);
+
+
+
 }
 QPushButton:hover{
 	background-color: rgb(65, 43, 173);
+	border-left: 14px solid rgb(65, 43, 173);
 }</string>
                </property>
                <property name="text">
-                <string>          Logout</string>
-               </property>
-               <property name="icon">
-                <iconset resource="../icons/icons.qrc">
-                 <normaloff>:/icons/logoutIcon.png</normaloff>:/icons/logoutIcon.png</iconset>
+                <string>Logout</string>
                </property>
                <property name="iconSize">
                 <size>
