@@ -15,8 +15,12 @@ class UIFunctions(Ui_WndMain):
             # Set Width
             if width == 60:
                 widthExtended = maxExtend
+
             else:
                 widthExtended = standard
+
+            # set new postioning for the icons
+
 
             # Animation
             self.animation = QPropertyAnimation(self.ui.leftMenu, b"minimumWidth")
