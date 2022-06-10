@@ -107,17 +107,12 @@ border:none;
              </sizepolicy>
             </property>
             <property name="styleSheet">
-             <string notr="true">
-
-QPushButton{
+             <string notr="true">QPushButton{
 border:none;
 background-color: rgb(65, 43, 173);
 background-image: url(:/icons/toggleIcon.png);
 background-repeat:none;
 background-position: center center;
-
-
-
 }
 
 </string>
@@ -424,6 +419,11 @@ QPushButton:hover{
 	border-left: 14px solid rgb(65, 43, 173);
 }
 
+ QPushButton:pressed {
+        background-color: rgb(65, 43, 173);
+        border-left: 14px solid rgb(65, 43, 173);
+    }
+
 </string>
                </property>
                <property name="text">
@@ -461,14 +461,17 @@ border-left: 14px solid rgb(83, 56, 224);
 text-align: left;
 padding-left: 45px;
 background-color: rgb(83, 56, 224);
-
-
-
 }
+
 QPushButton:hover{
 	background-color: rgb(65, 43, 173);
 	border-left: 14px solid rgb(65, 43, 173);
-}</string>
+}
+
+ QPushButton:pressed {
+        background-color: rgb(65, 43, 173);
+        border-left: 14px solid rgb(65, 43, 173);
+    }</string>
                </property>
                <property name="text">
                 <string>Food</string>
@@ -505,14 +508,17 @@ border-left: 14px solid rgb(83, 56, 224);
 text-align: left;
 padding-left: 45px;
 background-color: rgb(83, 56, 224);
-
-
-
 }
+
 QPushButton:hover{
 	background-color: rgb(65, 43, 173);
 	border-left: 14px solid rgb(65, 43, 173);
-}</string>
+}
+
+ QPushButton:pressed {
+        background-color: rgb(65, 43, 173);
+        border-left: 14px solid rgb(65, 43, 173);
+    }</string>
                </property>
                <property name="text">
                 <string>Statistics</string>
@@ -549,13 +555,16 @@ border-left: 14px solid rgb(83, 56, 224);
 text-align: left;
 padding-left: 45px;
 background-color: rgb(83, 56, 224);
-
-
-
 }
+
 QPushButton:hover{
 	background-color: rgb(65, 43, 173);
 	border-left: 14px solid rgb(65, 43, 173);
+}
+
+ QPushButton:pressed {
+        background-color: rgb(65, 43, 173);
+        border-left: 14px solid rgb(65, 43, 173);
 }</string>
                </property>
                <property name="text">
@@ -620,14 +629,17 @@ border-left: 14px solid rgb(83, 56, 224);
 text-align: left;
 padding-left: 45px;
 background-color: rgb(83, 56, 224);
-
-
-
 }
+
 QPushButton:hover{
 	background-color: rgb(65, 43, 173);
 	border-left: 14px solid rgb(65, 43, 173);
-}</string>
+}
+
+ QPushButton:pressed {
+        background-color: rgb(65, 43, 173);
+        border-left: 14px solid rgb(65, 43, 173);
+    }</string>
                </property>
                <property name="text">
                 <string>Logout</string>
@@ -649,7 +661,7 @@ QPushButton:hover{
        <item>
         <widget class="QFrame" name="content">
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(143, 126, 230);
+          <string notr="true">background-color: rgb(255, 255, 255);
 border-color: rgb(143, 126, 230);
 border:none;
 </string>
@@ -679,14 +691,14 @@ border:none;
           <item>
            <widget class="QStackedWidget" name="pages">
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(143, 126, 230);
+             <string notr="true">background-color: rgb(255, 255, 255);
 border-color: rgb(143, 126, 230);
 border:none;
 </string>
             </property>
             <widget class="QWidget" name="pageHome">
              <property name="styleSheet">
-              <string notr="true">background-color: rgb(143, 126, 230);
+              <string notr="true">background-color: rgb(255, 255, 255);
 border-color: rgb(143, 126, 230);
 border:none;
 </string>
@@ -913,6 +925,12 @@ border-radius: 15px;
                            <width>200</width>
                            <height>16777215</height>
                           </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <pointsize>12</pointsize>
+                           <bold>true</bold>
+                          </font>
                          </property>
                          <property name="styleSheet">
                           <string notr="true">border-bottom: 2px solid rgb(143, 126, 230);;

@@ -18,7 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QLineEdit, QMainWindow, QPushButton, QSizePolicy,
     QStackedWidget, QVBoxLayout, QWidget)
-import src.views.icons.rc_icons
+import icons_rc
 
 class Ui_WndMain(object):
     def setupUi(self, WndMain):
@@ -60,17 +60,12 @@ class Ui_WndMain(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.btnToggle.sizePolicy().hasHeightForWidth())
         self.btnToggle.setSizePolicy(sizePolicy)
-        self.btnToggle.setStyleSheet(u"\n"
-"\n"
-"QPushButton{\n"
+        self.btnToggle.setStyleSheet(u"QPushButton{\n"
 "border:none;\n"
 "background-color: rgb(65, 43, 173);\n"
 "background-image: url(:/icons/toggleIcon.png);\n"
 "background-repeat:none;\n"
 "background-position: center center;\n"
-"\n"
-"\n"
-"\n"
 "}\n"
 "\n"
 "")
@@ -210,6 +205,11 @@ class Ui_WndMain(object):
 "	border-left: 14px solid rgb(65, 43, 173);\n"
 "}\n"
 "\n"
+" QPushButton:pressed {\n"
+"        background-color: rgb(65, 43, 173);\n"
+"        border-left: 14px solid rgb(65, 43, 173);\n"
+"    }\n"
+"\n"
 "")
         self.btnHome.setIconSize(QSize(25, 25))
 
@@ -228,14 +228,17 @@ class Ui_WndMain(object):
 "text-align: left;\n"
 "padding-left: 45px;\n"
 "background-color: rgb(83, 56, 224);\n"
-"\n"
-"\n"
-"\n"
 "}\n"
+"\n"
 "QPushButton:hover{\n"
 "	background-color: rgb(65, 43, 173);\n"
 "	border-left: 14px solid rgb(65, 43, 173);\n"
-"}")
+"}\n"
+"\n"
+" QPushButton:pressed {\n"
+"        background-color: rgb(65, 43, 173);\n"
+"        border-left: 14px solid rgb(65, 43, 173);\n"
+"    }")
         self.btnFood.setIconSize(QSize(25, 25))
 
         self.verticalLayout_3.addWidget(self.btnFood)
@@ -253,14 +256,17 @@ class Ui_WndMain(object):
 "text-align: left;\n"
 "padding-left: 45px;\n"
 "background-color: rgb(83, 56, 224);\n"
-"\n"
-"\n"
-"\n"
 "}\n"
+"\n"
 "QPushButton:hover{\n"
 "	background-color: rgb(65, 43, 173);\n"
 "	border-left: 14px solid rgb(65, 43, 173);\n"
-"}")
+"}\n"
+"\n"
+" QPushButton:pressed {\n"
+"        background-color: rgb(65, 43, 173);\n"
+"        border-left: 14px solid rgb(65, 43, 173);\n"
+"    }")
         self.btnStatistic.setIconSize(QSize(25, 25))
 
         self.verticalLayout_3.addWidget(self.btnStatistic)
@@ -278,13 +284,16 @@ class Ui_WndMain(object):
 "text-align: left;\n"
 "padding-left: 45px;\n"
 "background-color: rgb(83, 56, 224);\n"
-"\n"
-"\n"
-"\n"
 "}\n"
+"\n"
 "QPushButton:hover{\n"
 "	background-color: rgb(65, 43, 173);\n"
 "	border-left: 14px solid rgb(65, 43, 173);\n"
+"}\n"
+"\n"
+" QPushButton:pressed {\n"
+"        background-color: rgb(65, 43, 173);\n"
+"        border-left: 14px solid rgb(65, 43, 173);\n"
 "}")
         self.btnSettings.setIconSize(QSize(25, 25))
 
@@ -314,14 +323,17 @@ class Ui_WndMain(object):
 "text-align: left;\n"
 "padding-left: 45px;\n"
 "background-color: rgb(83, 56, 224);\n"
-"\n"
-"\n"
-"\n"
 "}\n"
+"\n"
 "QPushButton:hover{\n"
 "	background-color: rgb(65, 43, 173);\n"
 "	border-left: 14px solid rgb(65, 43, 173);\n"
-"}")
+"}\n"
+"\n"
+" QPushButton:pressed {\n"
+"        background-color: rgb(65, 43, 173);\n"
+"        border-left: 14px solid rgb(65, 43, 173);\n"
+"    }")
         self.btnLogout.setIconSize(QSize(25, 25))
 
         self.verticalLayout_6.addWidget(self.btnLogout)
@@ -334,7 +346,7 @@ class Ui_WndMain(object):
 
         self.content = QFrame(self.mainWidget)
         self.content.setObjectName(u"content")
-        self.content.setStyleSheet(u"background-color: rgb(143, 126, 230);\n"
+        self.content.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "border-color: rgb(143, 126, 230);\n"
 "border:none;\n"
 "")
@@ -346,13 +358,13 @@ class Ui_WndMain(object):
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.pages = QStackedWidget(self.content)
         self.pages.setObjectName(u"pages")
-        self.pages.setStyleSheet(u"background-color: rgb(143, 126, 230);\n"
+        self.pages.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "border-color: rgb(143, 126, 230);\n"
 "border:none;\n"
 "")
         self.pageHome = QWidget()
         self.pageHome.setObjectName(u"pageHome")
-        self.pageHome.setStyleSheet(u"background-color: rgb(143, 126, 230);\n"
+        self.pageHome.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "border-color: rgb(143, 126, 230);\n"
 "border:none;\n"
 "")
@@ -463,6 +475,7 @@ class Ui_WndMain(object):
         self.leSteps = QLineEdit(self.stepContent)
         self.leSteps.setObjectName(u"leSteps")
         self.leSteps.setMaximumSize(QSize(200, 16777215))
+        self.leSteps.setFont(font)
         self.leSteps.setStyleSheet(u"border-bottom: 2px solid rgb(143, 126, 230);;\n"
 "")
         self.leSteps.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
