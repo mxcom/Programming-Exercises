@@ -15,9 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
-    QLineEdit, QMainWindow, QPushButton, QSizePolicy,
-    QStackedWidget, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QHeaderView,
+    QLabel, QLineEdit, QMainWindow, QPushButton,
+    QSizePolicy, QStackedWidget, QTableWidget, QTableWidgetItem,
+    QVBoxLayout, QWidget)
 import icons_rc
 
 class Ui_WndMain(object):
@@ -595,6 +596,89 @@ class Ui_WndMain(object):
         self.pageSettings = QWidget()
         self.pageSettings.setObjectName(u"pageSettings")
         self.pages.addWidget(self.pageSettings)
+        self.pageAdmin = QWidget()
+        self.pageAdmin.setObjectName(u"pageAdmin")
+        self.horizontalLayout_13 = QHBoxLayout(self.pageAdmin)
+        self.horizontalLayout_13.setSpacing(0)
+        self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
+        self.horizontalLayout_13.setContentsMargins(0, 0, 0, 0)
+        self.frmContent = QFrame(self.pageAdmin)
+        self.frmContent.setObjectName(u"frmContent")
+        self.frmContent.setFrameShape(QFrame.StyledPanel)
+        self.frmContent.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_10 = QVBoxLayout(self.frmContent)
+        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+        self.frmSearchbar = QFrame(self.frmContent)
+        self.frmSearchbar.setObjectName(u"frmSearchbar")
+        self.frmSearchbar.setMinimumSize(QSize(0, 50))
+        self.frmSearchbar.setMaximumSize(QSize(16777215, 50))
+        self.frmSearchbar.setStyleSheet(u"background-color: rgb(100, 55, 237);\n"
+"border-radius: 15px;\n"
+"")
+        self.frmSearchbar.setFrameShape(QFrame.StyledPanel)
+        self.frmSearchbar.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout_10.addWidget(self.frmSearchbar)
+
+        self.frame_4 = QFrame(self.frmContent)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setMaximumSize(QSize(16777215, 16777215))
+        self.frame_4.setFrameShape(QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_12 = QVBoxLayout(self.frame_4)
+        self.verticalLayout_12.setSpacing(0)
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
+        self.tblUser = QTableWidget(self.frame_4)
+        self.tblUser.setObjectName(u"tblUser")
+        font2 = QFont()
+        font2.setPointSize(12)
+        self.tblUser.setFont(font2)
+        self.tblUser.setStyleSheet(u"background-color: rgb(100, 55, 237);\n"
+"border-radius: 15px;\n"
+"")
+
+        self.verticalLayout_12.addWidget(self.tblUser)
+
+
+        self.verticalLayout_10.addWidget(self.frame_4)
+
+
+        self.horizontalLayout_13.addWidget(self.frmContent)
+
+        self.frmControl = QFrame(self.pageAdmin)
+        self.frmControl.setObjectName(u"frmControl")
+        self.frmControl.setMinimumSize(QSize(250, 0))
+        self.frmControl.setMaximumSize(QSize(250, 16777215))
+        self.frmControl.setFrameShape(QFrame.StyledPanel)
+        self.frmControl.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_11 = QVBoxLayout(self.frmControl)
+        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
+        self.bufferTop = QFrame(self.frmControl)
+        self.bufferTop.setObjectName(u"bufferTop")
+        self.bufferTop.setFrameShape(QFrame.StyledPanel)
+        self.bufferTop.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout_11.addWidget(self.bufferTop)
+
+        self.frmControlBtns = QFrame(self.frmControl)
+        self.frmControlBtns.setObjectName(u"frmControlBtns")
+        self.frmControlBtns.setFrameShape(QFrame.StyledPanel)
+        self.frmControlBtns.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout_11.addWidget(self.frmControlBtns)
+
+        self.bufferBottom = QFrame(self.frmControl)
+        self.bufferBottom.setObjectName(u"bufferBottom")
+        self.bufferBottom.setFrameShape(QFrame.StyledPanel)
+        self.bufferBottom.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout_11.addWidget(self.bufferBottom)
+
+
+        self.horizontalLayout_13.addWidget(self.frmControl)
+
+        self.pages.addWidget(self.pageAdmin)
 
         self.verticalLayout_4.addWidget(self.pages)
 
@@ -607,6 +691,9 @@ class Ui_WndMain(object):
         WndMain.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(WndMain)
+
+        self.pages.setCurrentIndex(4)
+
 
         QMetaObject.connectSlotsByName(WndMain)
     # setupUi
