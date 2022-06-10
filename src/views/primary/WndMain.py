@@ -207,7 +207,7 @@ class Ui_WndMain(object):
 "\n"
 "QPushButton:pressed {\n"
 "		background-color: rgb(155, 127, 240);\n"
-"        border-left: 14px solid rgb(65, 43, 173);\n"
+"        border-left: 14px solid rgb(155, 127, 240);\n"
 "}\n"
 "\n"
 "")
@@ -237,7 +237,7 @@ class Ui_WndMain(object):
 "\n"
 "QPushButton:pressed {\n"
 "		background-color: rgb(155, 127, 240);\n"
-"        border-left: 14px solid rgb(65, 43, 173);\n"
+"        border-left: 14px solid rgb(155, 127, 240);\n"
 "}")
         self.btnFood.setIconSize(QSize(25, 25))
 
@@ -265,7 +265,7 @@ class Ui_WndMain(object):
 "\n"
 "QPushButton:pressed {\n"
 "		background-color: rgb(155, 127, 240);\n"
-"        border-left: 14px solid rgb(65, 43, 173);\n"
+"        border-left: 14px solid rgb(155, 127, 240);\n"
 "}")
         self.btnStatistic.setIconSize(QSize(25, 25))
 
@@ -293,7 +293,7 @@ class Ui_WndMain(object):
 "\n"
 "QPushButton:pressed {\n"
 "		background-color: rgb(155, 127, 240);\n"
-"        border-left: 14px solid rgb(65, 43, 173);\n"
+"        border-left: 14px solid rgb(155, 127, 240);\n"
 "}")
         self.btnSettings.setIconSize(QSize(25, 25))
 
@@ -332,7 +332,7 @@ class Ui_WndMain(object):
 "\n"
 "QPushButton:pressed {\n"
 "		background-color: rgb(155, 127, 240);\n"
-"        border-left: 14px solid rgb(65, 43, 173);\n"
+"        border-left: 14px solid rgb(155, 127, 240);\n"
 "}")
         self.btnLogout.setIconSize(QSize(25, 25))
 
