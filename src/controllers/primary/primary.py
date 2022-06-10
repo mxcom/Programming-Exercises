@@ -28,7 +28,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
 
         # Create porgress bar
         self.progress = CircularProgress(calc_kcal(
-           user.get_sex(), user.get_height(), user.get_weight(), user.get_birthday()))
+            user.get_sex(), user.get_height(), user.get_weight(), user.get_birthday()))
 
         # Test data
         # bd = datetime(2001, 1, 27)
@@ -43,3 +43,11 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
 
         # Set layout of the Frame
         self.ui.frmProgressBar.setLayout(self.layout)
+
+        # Set Menu Button interaction
+        # 0 Home Page
+        # 1 Food Page
+        # 2 Statistics Page
+        # 3 Settings Page
+        # 4 Admin Page
+
