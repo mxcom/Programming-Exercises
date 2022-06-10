@@ -419,10 +419,10 @@ QPushButton:hover{
 	border-left: 14px solid rgb(65, 43, 173);
 }
 
- QPushButton:pressed {
-        background-color: rgb(65, 43, 173);
+QPushButton:pressed {
+		background-color: rgb(155, 127, 240);
         border-left: 14px solid rgb(65, 43, 173);
-    }
+}
 
 </string>
                </property>
@@ -468,10 +468,10 @@ QPushButton:hover{
 	border-left: 14px solid rgb(65, 43, 173);
 }
 
- QPushButton:pressed {
-        background-color: rgb(65, 43, 173);
+QPushButton:pressed {
+		background-color: rgb(155, 127, 240);
         border-left: 14px solid rgb(65, 43, 173);
-    }</string>
+}</string>
                </property>
                <property name="text">
                 <string>Food</string>
@@ -515,10 +515,10 @@ QPushButton:hover{
 	border-left: 14px solid rgb(65, 43, 173);
 }
 
- QPushButton:pressed {
-        background-color: rgb(65, 43, 173);
+QPushButton:pressed {
+		background-color: rgb(155, 127, 240);
         border-left: 14px solid rgb(65, 43, 173);
-    }</string>
+}</string>
                </property>
                <property name="text">
                 <string>Statistics</string>
@@ -562,8 +562,8 @@ QPushButton:hover{
 	border-left: 14px solid rgb(65, 43, 173);
 }
 
- QPushButton:pressed {
-        background-color: rgb(65, 43, 173);
+QPushButton:pressed {
+		background-color: rgb(155, 127, 240);
         border-left: 14px solid rgb(65, 43, 173);
 }</string>
                </property>
@@ -636,10 +636,10 @@ QPushButton:hover{
 	border-left: 14px solid rgb(65, 43, 173);
 }
 
- QPushButton:pressed {
-        background-color: rgb(65, 43, 173);
+QPushButton:pressed {
+		background-color: rgb(155, 127, 240);
         border-left: 14px solid rgb(65, 43, 173);
-    }</string>
+}</string>
                </property>
                <property name="text">
                 <string>Logout</string>

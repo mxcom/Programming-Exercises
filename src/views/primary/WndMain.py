@@ -205,10 +205,10 @@ class Ui_WndMain(object):
 "	border-left: 14px solid rgb(65, 43, 173);\n"
 "}\n"
 "\n"
-" QPushButton:pressed {\n"
-"        background-color: rgb(65, 43, 173);\n"
+"QPushButton:pressed {\n"
+"		background-color: rgb(155, 127, 240);\n"
 "        border-left: 14px solid rgb(65, 43, 173);\n"
-"    }\n"
+"}\n"
 "\n"
 "")
         self.btnHome.setIconSize(QSize(25, 25))
@@ -235,10 +235,10 @@ class Ui_WndMain(object):
 "	border-left: 14px solid rgb(65, 43, 173);\n"
 "}\n"
 "\n"
-" QPushButton:pressed {\n"
-"        background-color: rgb(65, 43, 173);\n"
+"QPushButton:pressed {\n"
+"		background-color: rgb(155, 127, 240);\n"
 "        border-left: 14px solid rgb(65, 43, 173);\n"
-"    }")
+"}")
         self.btnFood.setIconSize(QSize(25, 25))
 
         self.verticalLayout_3.addWidget(self.btnFood)
@@ -263,10 +263,10 @@ class Ui_WndMain(object):
 "	border-left: 14px solid rgb(65, 43, 173);\n"
 "}\n"
 "\n"
-" QPushButton:pressed {\n"
-"        background-color: rgb(65, 43, 173);\n"
+"QPushButton:pressed {\n"
+"		background-color: rgb(155, 127, 240);\n"
 "        border-left: 14px solid rgb(65, 43, 173);\n"
-"    }")
+"}")
         self.btnStatistic.setIconSize(QSize(25, 25))
 
         self.verticalLayout_3.addWidget(self.btnStatistic)
@@ -291,8 +291,8 @@ class Ui_WndMain(object):
 "	border-left: 14px solid rgb(65, 43, 173);\n"
 "}\n"
 "\n"
-" QPushButton:pressed {\n"
-"        background-color: rgb(65, 43, 173);\n"
+"QPushButton:pressed {\n"
+"		background-color: rgb(155, 127, 240);\n"
 "        border-left: 14px solid rgb(65, 43, 173);\n"
 "}")
         self.btnSettings.setIconSize(QSize(25, 25))
@@ -330,10 +330,10 @@ class Ui_WndMain(object):
 "	border-left: 14px solid rgb(65, 43, 173);\n"
 "}\n"
 "\n"
-" QPushButton:pressed {\n"
-"        background-color: rgb(65, 43, 173);\n"
+"QPushButton:pressed {\n"
+"		background-color: rgb(155, 127, 240);\n"
 "        border-left: 14px solid rgb(65, 43, 173);\n"
-"    }")
+"}")
         self.btnLogout.setIconSize(QSize(25, 25))
 
         self.verticalLayout_6.addWidget(self.btnLogout)
