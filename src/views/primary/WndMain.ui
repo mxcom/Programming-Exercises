@@ -697,7 +697,7 @@ border:none;
 </string>
             </property>
             <property name="currentIndex">
-             <number>4</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="pageHome">
              <property name="styleSheet">
@@ -769,6 +769,12 @@ border:none;
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>260</width>
+                     <height>0</height>
+                    </size>
                    </property>
                    <property name="maximumSize">
                     <size>
@@ -968,7 +974,7 @@ border-radius: 15px;
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_10">
                        <item>
-                        <widget class="QLabel" name="lbBloodPressure">
+                        <widget class="QLabel" name="lbBP">
                          <property name="font">
                           <font>
                            <pointsize>12</pointsize>
@@ -981,7 +987,7 @@ border-radius: 15px;
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLineEdit" name="leBloodPressureLow">
+                        <widget class="QLineEdit" name="leBPLow">
                          <property name="maximumSize">
                           <size>
                            <width>94</width>
@@ -1007,7 +1013,7 @@ border-radius: 15px;
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLineEdit" name="leBloodPressureHigh">
+                        <widget class="QLineEdit" name="leBPHigh">
                          <property name="maximumSize">
                           <size>
                            <width>100</width>
@@ -1166,7 +1172,209 @@ border-radius: 15px;
              </layout>
             </widget>
             <widget class="QWidget" name="pageFood"/>
-            <widget class="QWidget" name="pageStatistics"/>
+            <widget class="QWidget" name="pageStatKcal">
+             <layout class="QVBoxLayout" name="verticalLayout_13">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QFrame" name="frmTopContentStat">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_14">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QFrame" name="frmTopLeftStat">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frmbtnStat">
+                   <property name="minimumSize">
+                    <size>
+                     <width>500</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_15">
+                    <item>
+                     <widget class="QPushButton" name="btnKcal">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+background-color: rgb(100, 55, 237);
+border-radius: 15px;
+}
+
+QPushButton:hover{
+	background-color: rgb(65, 43, 173);
+}
+
+QPushButton:pressed {
+		background-color: rgb(155, 127, 240);
+}
+
+</string>
+                      </property>
+                      <property name="text">
+                       <string>Kcal</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="btnSteps">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+background-color: rgb(100, 55, 237);
+border-radius: 15px;
+}
+
+QPushButton:hover{
+	background-color: rgb(65, 43, 173);
+}
+
+QPushButton:pressed {
+		background-color: rgb(155, 127, 240);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Steps</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="btnBP">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+background-color: rgb(100, 55, 237);
+border-radius: 15px;
+}
+
+QPushButton:hover{
+	background-color: rgb(65, 43, 173);
+}
+
+QPushButton:pressed {
+		background-color: rgb(155, 127, 240);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Blood Pressure</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frmTopRightStat">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="frmContentStat">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="pageStatSteps"/>
+            <widget class="QWidget" name="pageStatBP"/>
             <widget class="QWidget" name="pageSettings"/>
             <widget class="QWidget" name="pageAdmin">
              <layout class="QHBoxLayout" name="horizontalLayout_13">
@@ -1186,7 +1394,7 @@ border-radius: 15px;
                <number>0</number>
               </property>
               <item>
-               <widget class="QFrame" name="frmContent">
+               <widget class="QFrame" name="frmContentAdmin">
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -1222,7 +1430,7 @@ border-radius: 15px;
                   </widget>
                  </item>
                  <item>
-                  <widget class="QFrame" name="frame_4">
+                  <widget class="QFrame" name="frmUserTbl">
                    <property name="maximumSize">
                     <size>
                      <width>16777215</width>
@@ -1272,7 +1480,7 @@ border-radius: 15px;
                </widget>
               </item>
               <item>
-               <widget class="QFrame" name="frmControl">
+               <widget class="QFrame" name="frmContorlAdmin">
                 <property name="minimumSize">
                  <size>
                   <width>250</width>

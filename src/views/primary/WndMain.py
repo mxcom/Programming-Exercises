@@ -396,6 +396,7 @@ class Ui_WndMain(object):
         sizePolicy2.setVerticalStretch(0)
         sizePolicy2.setHeightForWidth(self.frmProgressBar.sizePolicy().hasHeightForWidth())
         self.frmProgressBar.setSizePolicy(sizePolicy2)
+        self.frmProgressBar.setMinimumSize(QSize(260, 0))
         self.frmProgressBar.setMaximumSize(QSize(16777215, 260))
         font1 = QFont()
         font1.setFamilies([u"Script"])
@@ -500,31 +501,31 @@ class Ui_WndMain(object):
         self.bloodPressureContent.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_10 = QHBoxLayout(self.bloodPressureContent)
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
-        self.lbBloodPressure = QLabel(self.bloodPressureContent)
-        self.lbBloodPressure.setObjectName(u"lbBloodPressure")
-        self.lbBloodPressure.setFont(font)
+        self.lbBP = QLabel(self.bloodPressureContent)
+        self.lbBP.setObjectName(u"lbBP")
+        self.lbBP.setFont(font)
 
-        self.horizontalLayout_10.addWidget(self.lbBloodPressure)
+        self.horizontalLayout_10.addWidget(self.lbBP)
 
-        self.leBloodPressureLow = QLineEdit(self.bloodPressureContent)
-        self.leBloodPressureLow.setObjectName(u"leBloodPressureLow")
-        self.leBloodPressureLow.setMaximumSize(QSize(94, 16777215))
-        self.leBloodPressureLow.setFont(font)
-        self.leBloodPressureLow.setStyleSheet(u"border-bottom: 2px solid rgb(143, 126, 230);;\n"
+        self.leBPLow = QLineEdit(self.bloodPressureContent)
+        self.leBPLow.setObjectName(u"leBPLow")
+        self.leBPLow.setMaximumSize(QSize(94, 16777215))
+        self.leBPLow.setFont(font)
+        self.leBPLow.setStyleSheet(u"border-bottom: 2px solid rgb(143, 126, 230);;\n"
 "")
-        self.leBloodPressureLow.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.leBPLow.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
-        self.horizontalLayout_10.addWidget(self.leBloodPressureLow)
+        self.horizontalLayout_10.addWidget(self.leBPLow)
 
-        self.leBloodPressureHigh = QLineEdit(self.bloodPressureContent)
-        self.leBloodPressureHigh.setObjectName(u"leBloodPressureHigh")
-        self.leBloodPressureHigh.setMaximumSize(QSize(100, 16777215))
-        self.leBloodPressureHigh.setFont(font)
-        self.leBloodPressureHigh.setStyleSheet(u"border-bottom: 2px solid rgb(143, 126, 230);;\n"
+        self.leBPHigh = QLineEdit(self.bloodPressureContent)
+        self.leBPHigh.setObjectName(u"leBPHigh")
+        self.leBPHigh.setMaximumSize(QSize(100, 16777215))
+        self.leBPHigh.setFont(font)
+        self.leBPHigh.setStyleSheet(u"border-bottom: 2px solid rgb(143, 126, 230);;\n"
 "")
-        self.leBloodPressureHigh.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.leBPHigh.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
-        self.horizontalLayout_10.addWidget(self.leBloodPressureHigh)
+        self.horizontalLayout_10.addWidget(self.leBPHigh)
 
 
         self.verticalLayout_9.addWidget(self.bloodPressureContent)
@@ -590,9 +591,127 @@ class Ui_WndMain(object):
         self.pageFood = QWidget()
         self.pageFood.setObjectName(u"pageFood")
         self.pages.addWidget(self.pageFood)
-        self.pageStatistics = QWidget()
-        self.pageStatistics.setObjectName(u"pageStatistics")
-        self.pages.addWidget(self.pageStatistics)
+        self.pageStatKcal = QWidget()
+        self.pageStatKcal.setObjectName(u"pageStatKcal")
+        self.verticalLayout_13 = QVBoxLayout(self.pageStatKcal)
+        self.verticalLayout_13.setSpacing(0)
+        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
+        self.frmTopContentStat = QFrame(self.pageStatKcal)
+        self.frmTopContentStat.setObjectName(u"frmTopContentStat")
+        self.frmTopContentStat.setMaximumSize(QSize(16777215, 50))
+        self.frmTopContentStat.setFrameShape(QFrame.StyledPanel)
+        self.frmTopContentStat.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_14 = QHBoxLayout(self.frmTopContentStat)
+        self.horizontalLayout_14.setSpacing(0)
+        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
+        self.horizontalLayout_14.setContentsMargins(0, 0, 0, 0)
+        self.frmTopLeftStat = QFrame(self.frmTopContentStat)
+        self.frmTopLeftStat.setObjectName(u"frmTopLeftStat")
+        self.frmTopLeftStat.setFrameShape(QFrame.StyledPanel)
+        self.frmTopLeftStat.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_14.addWidget(self.frmTopLeftStat)
+
+        self.frmbtnStat = QFrame(self.frmTopContentStat)
+        self.frmbtnStat.setObjectName(u"frmbtnStat")
+        self.frmbtnStat.setMinimumSize(QSize(500, 0))
+        self.frmbtnStat.setFrameShape(QFrame.StyledPanel)
+        self.frmbtnStat.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_15 = QHBoxLayout(self.frmbtnStat)
+        self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
+        self.btnKcal = QPushButton(self.frmbtnStat)
+        self.btnKcal.setObjectName(u"btnKcal")
+        sizePolicy4 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.btnKcal.sizePolicy().hasHeightForWidth())
+        self.btnKcal.setSizePolicy(sizePolicy4)
+        self.btnKcal.setFont(font)
+        self.btnKcal.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(100, 55, 237);\n"
+"border-radius: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(65, 43, 173);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"		background-color: rgb(155, 127, 240);\n"
+"}\n"
+"\n"
+"")
+
+        self.horizontalLayout_15.addWidget(self.btnKcal)
+
+        self.btnSteps = QPushButton(self.frmbtnStat)
+        self.btnSteps.setObjectName(u"btnSteps")
+        sizePolicy4.setHeightForWidth(self.btnSteps.sizePolicy().hasHeightForWidth())
+        self.btnSteps.setSizePolicy(sizePolicy4)
+        self.btnSteps.setFont(font)
+        self.btnSteps.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(100, 55, 237);\n"
+"border-radius: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(65, 43, 173);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"		background-color: rgb(155, 127, 240);\n"
+"}")
+
+        self.horizontalLayout_15.addWidget(self.btnSteps)
+
+        self.btnBP = QPushButton(self.frmbtnStat)
+        self.btnBP.setObjectName(u"btnBP")
+        sizePolicy4.setHeightForWidth(self.btnBP.sizePolicy().hasHeightForWidth())
+        self.btnBP.setSizePolicy(sizePolicy4)
+        self.btnBP.setFont(font)
+        self.btnBP.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(100, 55, 237);\n"
+"border-radius: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(65, 43, 173);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"		background-color: rgb(155, 127, 240);\n"
+"}")
+
+        self.horizontalLayout_15.addWidget(self.btnBP)
+
+
+        self.horizontalLayout_14.addWidget(self.frmbtnStat)
+
+        self.frmTopRightStat = QFrame(self.frmTopContentStat)
+        self.frmTopRightStat.setObjectName(u"frmTopRightStat")
+        self.frmTopRightStat.setFrameShape(QFrame.StyledPanel)
+        self.frmTopRightStat.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_14.addWidget(self.frmTopRightStat)
+
+
+        self.verticalLayout_13.addWidget(self.frmTopContentStat)
+
+        self.frmContentStat = QFrame(self.pageStatKcal)
+        self.frmContentStat.setObjectName(u"frmContentStat")
+        self.frmContentStat.setFrameShape(QFrame.StyledPanel)
+        self.frmContentStat.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout_13.addWidget(self.frmContentStat)
+
+        self.pages.addWidget(self.pageStatKcal)
+        self.pageStatSteps = QWidget()
+        self.pageStatSteps.setObjectName(u"pageStatSteps")
+        self.pages.addWidget(self.pageStatSteps)
+        self.pageStatBP = QWidget()
+        self.pageStatBP.setObjectName(u"pageStatBP")
+        self.pages.addWidget(self.pageStatBP)
         self.pageSettings = QWidget()
         self.pageSettings.setObjectName(u"pageSettings")
         self.pages.addWidget(self.pageSettings)
@@ -602,13 +721,13 @@ class Ui_WndMain(object):
         self.horizontalLayout_13.setSpacing(0)
         self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
         self.horizontalLayout_13.setContentsMargins(0, 0, 0, 0)
-        self.frmContent = QFrame(self.pageAdmin)
-        self.frmContent.setObjectName(u"frmContent")
-        self.frmContent.setFrameShape(QFrame.StyledPanel)
-        self.frmContent.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_10 = QVBoxLayout(self.frmContent)
+        self.frmContentAdmin = QFrame(self.pageAdmin)
+        self.frmContentAdmin.setObjectName(u"frmContentAdmin")
+        self.frmContentAdmin.setFrameShape(QFrame.StyledPanel)
+        self.frmContentAdmin.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_10 = QVBoxLayout(self.frmContentAdmin)
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
-        self.frmSearchbar = QFrame(self.frmContent)
+        self.frmSearchbar = QFrame(self.frmContentAdmin)
         self.frmSearchbar.setObjectName(u"frmSearchbar")
         self.frmSearchbar.setMinimumSize(QSize(0, 50))
         self.frmSearchbar.setMaximumSize(QSize(16777215, 50))
@@ -620,16 +739,16 @@ class Ui_WndMain(object):
 
         self.verticalLayout_10.addWidget(self.frmSearchbar)
 
-        self.frame_4 = QFrame(self.frmContent)
-        self.frame_4.setObjectName(u"frame_4")
-        self.frame_4.setMaximumSize(QSize(16777215, 16777215))
-        self.frame_4.setFrameShape(QFrame.StyledPanel)
-        self.frame_4.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_12 = QVBoxLayout(self.frame_4)
+        self.frmUserTbl = QFrame(self.frmContentAdmin)
+        self.frmUserTbl.setObjectName(u"frmUserTbl")
+        self.frmUserTbl.setMaximumSize(QSize(16777215, 16777215))
+        self.frmUserTbl.setFrameShape(QFrame.StyledPanel)
+        self.frmUserTbl.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_12 = QVBoxLayout(self.frmUserTbl)
         self.verticalLayout_12.setSpacing(0)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
-        self.tblUser = QTableWidget(self.frame_4)
+        self.tblUser = QTableWidget(self.frmUserTbl)
         self.tblUser.setObjectName(u"tblUser")
         font2 = QFont()
         font2.setPointSize(12)
@@ -641,34 +760,34 @@ class Ui_WndMain(object):
         self.verticalLayout_12.addWidget(self.tblUser)
 
 
-        self.verticalLayout_10.addWidget(self.frame_4)
+        self.verticalLayout_10.addWidget(self.frmUserTbl)
 
 
-        self.horizontalLayout_13.addWidget(self.frmContent)
+        self.horizontalLayout_13.addWidget(self.frmContentAdmin)
 
-        self.frmControl = QFrame(self.pageAdmin)
-        self.frmControl.setObjectName(u"frmControl")
-        self.frmControl.setMinimumSize(QSize(250, 0))
-        self.frmControl.setMaximumSize(QSize(250, 16777215))
-        self.frmControl.setFrameShape(QFrame.StyledPanel)
-        self.frmControl.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_11 = QVBoxLayout(self.frmControl)
+        self.frmContorlAdmin = QFrame(self.pageAdmin)
+        self.frmContorlAdmin.setObjectName(u"frmContorlAdmin")
+        self.frmContorlAdmin.setMinimumSize(QSize(250, 0))
+        self.frmContorlAdmin.setMaximumSize(QSize(250, 16777215))
+        self.frmContorlAdmin.setFrameShape(QFrame.StyledPanel)
+        self.frmContorlAdmin.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_11 = QVBoxLayout(self.frmContorlAdmin)
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
-        self.bufferTop = QFrame(self.frmControl)
+        self.bufferTop = QFrame(self.frmContorlAdmin)
         self.bufferTop.setObjectName(u"bufferTop")
         self.bufferTop.setFrameShape(QFrame.StyledPanel)
         self.bufferTop.setFrameShadow(QFrame.Raised)
 
         self.verticalLayout_11.addWidget(self.bufferTop)
 
-        self.frmControlBtns = QFrame(self.frmControl)
+        self.frmControlBtns = QFrame(self.frmContorlAdmin)
         self.frmControlBtns.setObjectName(u"frmControlBtns")
         self.frmControlBtns.setFrameShape(QFrame.StyledPanel)
         self.frmControlBtns.setFrameShadow(QFrame.Raised)
 
         self.verticalLayout_11.addWidget(self.frmControlBtns)
 
-        self.bufferBottom = QFrame(self.frmControl)
+        self.bufferBottom = QFrame(self.frmContorlAdmin)
         self.bufferBottom.setObjectName(u"bufferBottom")
         self.bufferBottom.setFrameShape(QFrame.StyledPanel)
         self.bufferBottom.setFrameShadow(QFrame.Raised)
@@ -676,7 +795,7 @@ class Ui_WndMain(object):
         self.verticalLayout_11.addWidget(self.bufferBottom)
 
 
-        self.horizontalLayout_13.addWidget(self.frmControl)
+        self.horizontalLayout_13.addWidget(self.frmContorlAdmin)
 
         self.pages.addWidget(self.pageAdmin)
 
@@ -692,7 +811,7 @@ class Ui_WndMain(object):
 
         self.retranslateUi(WndMain)
 
-        self.pages.setCurrentIndex(4)
+        self.pages.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(WndMain)
@@ -711,9 +830,12 @@ class Ui_WndMain(object):
         self.btnLogout.setText(QCoreApplication.translate("WndMain", u"Logout", None))
         self.lbWeight.setText(QCoreApplication.translate("WndMain", u"Weight:", None))
         self.lbSteps.setText(QCoreApplication.translate("WndMain", u"Steps:", None))
-        self.lbBloodPressure.setText(QCoreApplication.translate("WndMain", u"Blood Pressure:", None))
-        self.leBloodPressureLow.setPlaceholderText(QCoreApplication.translate("WndMain", u"Low", None))
-        self.leBloodPressureHigh.setPlaceholderText(QCoreApplication.translate("WndMain", u"High", None))
+        self.lbBP.setText(QCoreApplication.translate("WndMain", u"Blood Pressure:", None))
+        self.leBPLow.setPlaceholderText(QCoreApplication.translate("WndMain", u"Low", None))
+        self.leBPHigh.setPlaceholderText(QCoreApplication.translate("WndMain", u"High", None))
         self.btnSubmit.setText(QCoreApplication.translate("WndMain", u"Submit", None))
+        self.btnKcal.setText(QCoreApplication.translate("WndMain", u"Kcal", None))
+        self.btnSteps.setText(QCoreApplication.translate("WndMain", u"Steps", None))
+        self.btnBP.setText(QCoreApplication.translate("WndMain", u"Blood Pressure", None))
     # retranslateUi
 
