@@ -7,6 +7,7 @@ from PySide6 import QtCore
 from src.controllers.primary.progress_bar import CircularProgress
 from src.controllers.user_management.calc_kcal import calc_kcal
 from src.views.primary.WndMain import Ui_WndMain
+from src.views.primary.btn_style import Style
 from src.views.primary.uiFunctions import UIFunctions
 from src.controllers.user_management.user_management import add_steps, add_weight, add_bp
 
@@ -18,6 +19,8 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui = Ui_WndMain()
         self.ui.setupUi(self)
         self.user = user
+
+        self.ui.pages.setCurrentIndex(0)
 
         # Fill top Bar
         current_date = datetime.now()
@@ -31,44 +34,6 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.progress = CircularProgress(calc_kcal(
             user.get_sex(), user.get_height(), user.get_weight(), user.get_birthday()))
 
-        # Set Menu Button interaction
-        # 0 Home Page
-        # 1 Food Page
-        # 2 Statistics Page Kcal
-        # 3 Statistics Page Steps
-        # 4 Statistics Page Blood Pressure
-        # 5 Settings Page
-        # 6 Admin Page
-        self.ui.pages.setCurrentIndex(0)
-        self.ui.btnHome.setStyleSheet(Style.style_btn_clicked_home)
-
-        self.ui.btnHome.clicked.connect(self.home_page())
-        self.ui.btnFood.clicked.connect(self.food_page())
-        self.ui.btnStatistic.clicked.connect(self.stat_page())
-        self.ui.btnSettings.clicked.connect(self.settings_page())
-
-        # Functions for Button clicked
-
-    def home_page(self):
-        self.ui.pages.setCurrentIndex(0)
-        self.ui.btnHome.setStyleSheet(Style.style_btn_clicked_home)
-        self.ui.lbPageDescription.setText("Home")
-
-    def food_page(self):
-        self.ui.pages.setCurrentIndex(1)
-        self.ui.btnFood.setStyleSheet(Style.style_btn_clicked_food)
-        self.ui.lbPageDescription.setText("Food")
-
-    def stat_page(self):
-        self.ui.pages.setCurrentIndex(2)
-        self.ui.btnStatistic.setStyleSheet(Style.style_btn_clicked_statistic)
-        self.ui.lbPageDescription.setText("Statistics - Kcal")
-
-    def settings_page(self):
-        self.ui.pages.setCurrentIndex(5)
-        self.ui.pageSettings.setStyleSheet(Style.style_btn_clicked_settings)
-        self.ui.lbPageDescription.setText("Settings")
-
         # Test data
         # bd = datetime(2001, 1, 27)
         # self.progress = CircularProgress(calc_kcal("male", 196, 80, bd))
@@ -78,8 +43,36 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         # Add widgets
         self.layout.addWidget(self.progress, Qt.AlignCenter, Qt.AlignCenter)
 
+        # Set layout of the Frame
+        self.ui.frmProgressBar.setLayout(self.layout)
+
+        # Set Menu Button interaction
+        # 0 Home Page
+        # 1 Food Page
+        # 2 Statistics Page Kcal
+        # 3 Statistics Page Steps
+        # 4 Statistics Page Blood Pressure
+        # 5 Settings Page
+        # 6 Admin Page
+
+        self.ui.btnHome.setStyleSheet(Style.style_btn_selected_home)
+
+        self.ui.btnHome.clicked.connect(self.home_page)
+        self.ui.btnFood.clicked.connect(self.food_page)
+        self.ui.btnStatistic.clicked.connect(self.stat_page_kcal)
+        self.ui.btnSettings.clicked.connect(self.settings_page)
+        self.ui.btnKcal1.clicked.connect(self.stat_page_kcal)
+        self.ui.btnKcal2.clicked.connect(self.stat_page_kcal)
+        self.ui.btnKcal3.clicked.connect(self.stat_page_kcal)
+        self.ui.btnSteps1.clicked.connect(self.stat_page_steps)
+        self.ui.btnSteps2.clicked.connect(self.stat_page_steps)
+        self.ui.btnSteps3.clicked.connect(self.stat_page_steps)
+        self.ui.btnBP1.clicked.connect(self.stat_page_bp)
+        self.ui.btnBP2.clicked.connect(self.stat_page_bp)
+        self.ui.btnBP3.clicked.connect(self.stat_page_bp)
         self.ui.btnToggle.clicked.connect(lambda: UIFunctions.toggleMenu(self, 200, True))
 
+        # Tracking interface button / line edit interaction
         self.ui.btnSubmit.clicked.connect(self.set_value)
 
         self.ui.leSteps.textChanged.connect(self.validate_steps)
@@ -89,9 +82,60 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.leBPLow.textChanged.connect(self.validate_bp_low)
         self.ui.leBPHigh.textChanged.connect(self.validate_bp_high)
 
-        # Set layout of the Frame
-        self.ui.frmProgressBar.setLayout(self.layout)
+    # Methods for Menu Button clicked
+    def home_page(self):
+        self.ui.pages.setCurrentIndex(0)
+        self.ui.btnHome.setStyleSheet(Style.style_btn_selected_home)
+        self.ui.btnFood.setStyleSheet(Style.style_btn_default_food)
+        self.ui.btnStatistic.setStyleSheet(Style.style_btn_default_statistic)
+        self.ui.btnSettings.setStyleSheet(Style.style_btn_default_settings)
+        self.ui.lbPageDescription.setText("Home")
 
+    def food_page(self):
+        self.ui.pages.setCurrentIndex(1)
+        self.ui.btnHome.setStyleSheet(Style.style_btn_default_home)
+        self.ui.btnFood.setStyleSheet(Style.style_btn_selected_food)
+        self.ui.btnStatistic.setStyleSheet(Style.style_btn_default_statistic)
+        self.ui.btnSettings.setStyleSheet(Style.style_btn_default_settings)
+        self.ui.lbPageDescription.setText("Food")
+
+    def stat_page_kcal(self):
+        self.ui.pages.setCurrentIndex(2)
+        self.ui.btnHome.setStyleSheet(Style.style_btn_default_home)
+        self.ui.btnFood.setStyleSheet(Style.style_btn_default_food)
+        self.ui.btnStatistic.setStyleSheet(Style.style_btn_selected_statistic)
+        self.ui.btnKcal1.setStyleSheet(Style.style_btn_selected_stat_controle)
+        self.ui.btnSettings.setStyleSheet(Style.style_btn_default_settings)
+        self.ui.lbPageDescription.setText("Statistics - Kcal")
+
+    def stat_page_steps(self):
+        self.ui.pages.setCurrentIndex(3)
+        self.ui.btnHome.setStyleSheet(Style.style_btn_default_home)
+        self.ui.btnFood.setStyleSheet(Style.style_btn_default_food)
+        self.ui.btnStatistic.setStyleSheet(Style.style_btn_selected_statistic)
+        self.ui.btnSteps2.setStyleSheet(Style.style_btn_selected_stat_controle)
+        self.ui.btnSettings.setStyleSheet(Style.style_btn_default_settings)
+        self.ui.lbPageDescription.setText("Statistics - Steps")
+
+    def stat_page_bp(self):
+        self.ui.pages.setCurrentIndex(4)
+        self.ui.btnHome.setStyleSheet(Style.style_btn_default_home)
+        self.ui.btnFood.setStyleSheet(Style.style_btn_default_food)
+        self.ui.btnStatistic.setStyleSheet(Style.style_btn_selected_statistic)
+        self.ui.btnBP3.setStyleSheet(Style.style_btn_selected_stat_controle)
+        self.ui.btnSettings.setStyleSheet(Style.style_btn_default_settings)
+        self.ui.lbPageDescription.setText("Statistics - Blood Pressure")
+
+    def settings_page(self):
+        self.ui.pages.setCurrentIndex(5)
+        self.ui.btnHome.setStyleSheet(Style.style_btn_default_home)
+        self.ui.btnFood.setStyleSheet(Style.style_btn_default_food)
+        self.ui.btnStatistic.setStyleSheet(Style.style_btn_default_statistic)
+        self.ui.pageSettings.setStyleSheet(Style.style_btn_selected_settings)
+
+        self.ui.lbPageDescription.setText("Settings")
+
+    # Methods to validate the entered tracking data
     def validate_weight(self):
         try:
             input = int(self.ui.leWeight.text())

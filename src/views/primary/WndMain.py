@@ -571,11 +571,13 @@ class Ui_WndMain(object):
 "QPushButton:hover{\n"
 "	background-color: rgb(65, 43, 173);\n"
 "	border-left: 14px solid rgb(65, 43, 173);\n"
+"	border-radius: 15px;\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
 "		background-color: rgb(155, 127, 240);\n"
 "        border-left: 14px solid rgb(155, 127, 240);\n"
+"	border-radius: 15px;\n"
 "}")
 
         self.verticalLayout_8.addWidget(self.btnSubmit)
