@@ -96,7 +96,11 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         try:
             input = int(self.ui.leWeight.text())
             self.ui.leWeight.setStyleSheet("color: black")
-            return True
+            if input < 0:
+                self.ui.leWeight.setStyleSheet("color: rgb(255, 0, 65);")
+                return False
+            else:
+                return False
         except:
             self.ui.leWeight.setStyleSheet("color: rgb(255, 0, 65);")
             return False

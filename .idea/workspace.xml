@@ -5,8 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/primary/primary.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/primary/primary.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/user_management/user_management.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user_management/user_management.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/user_management/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/user_management/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/primary/WndMain.ui" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/primary/WndMain.ui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +127,7 @@
       <workItem from="1654772766573" duration="4968000" />
       <workItem from="1654798052213" duration="245000" />
       <workItem from="1654941991072" duration="1607000" />
-      <workItem from="1654943707601" duration="1632000" />
+      <workItem from="1654943707601" duration="2547000" />
     </task>
     <servers />
   </component>
