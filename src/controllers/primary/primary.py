@@ -31,6 +31,44 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.progress = CircularProgress(calc_kcal(
             user.get_sex(), user.get_height(), user.get_weight(), user.get_birthday()))
 
+        # Set Menu Button interaction
+        # 0 Home Page
+        # 1 Food Page
+        # 2 Statistics Page Kcal
+        # 3 Statistics Page Steps
+        # 4 Statistics Page Blood Pressure
+        # 5 Settings Page
+        # 6 Admin Page
+        self.ui.pages.setCurrentIndex(0)
+        self.ui.btnHome.setStyleSheet(Style.style_btn_clicked_home)
+
+        self.ui.btnHome.clicked.connect(self.home_page())
+        self.ui.btnFood.clicked.connect(self.food_page())
+        self.ui.btnStatistic.clicked.connect(self.stat_page())
+        self.ui.btnSettings.clicked.connect(self.settings_page())
+
+        # Functions for Button clicked
+
+    def home_page(self):
+        self.ui.pages.setCurrentIndex(0)
+        self.ui.btnHome.setStyleSheet(Style.style_btn_clicked_home)
+        self.ui.lbPageDescription.setText("Home")
+
+    def food_page(self):
+        self.ui.pages.setCurrentIndex(1)
+        self.ui.btnFood.setStyleSheet(Style.style_btn_clicked_food)
+        self.ui.lbPageDescription.setText("Food")
+
+    def stat_page(self):
+        self.ui.pages.setCurrentIndex(2)
+        self.ui.btnStatistic.setStyleSheet(Style.style_btn_clicked_statistic)
+        self.ui.lbPageDescription.setText("Statistics - Kcal")
+
+    def settings_page(self):
+        self.ui.pages.setCurrentIndex(5)
+        self.ui.pageSettings.setStyleSheet(Style.style_btn_clicked_settings)
+        self.ui.lbPageDescription.setText("Settings")
+
         # Test data
         # bd = datetime(2001, 1, 27)
         # self.progress = CircularProgress(calc_kcal("male", 196, 80, bd))

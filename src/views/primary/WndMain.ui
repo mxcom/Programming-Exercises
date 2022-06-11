@@ -1004,9 +1004,6 @@ border-radius: 15px;
                           <string notr="true">border-bottom: 2px solid rgb(143, 126, 230);;
 </string>
                          </property>
-                         <property name="text">
-                          <string>Low</string>
-                         </property>
                          <property name="alignment">
                           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                          </property>
@@ -1032,9 +1029,6 @@ border-radius: 15px;
                          <property name="styleSheet">
                           <string notr="true">border-bottom: 2px solid rgb(143, 126, 230);;
 </string>
-                         </property>
-                         <property name="text">
-                          <string>High</string>
                          </property>
                          <property name="alignment">
                           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1130,7 +1124,7 @@ border-radius: 15px;
                          </property>
                          <property name="minimumSize">
                           <size>
-                           <width>0</width>
+                           <width>140</width>
                            <height>40</height>
                           </size>
                          </property>
@@ -1141,9 +1135,19 @@ border-radius: 15px;
                           </font>
                          </property>
                          <property name="styleSheet">
-                          <string notr="true">background-color: rgb(100, 55, 237);
+                          <string notr="true">QPushButton{
+background-color: rgb(100, 55, 237);
 border-radius: 15px;
-</string>
+}
+QPushButton:hover{
+	background-color: rgb(65, 43, 173);
+	border-left: 14px solid rgb(65, 43, 173);
+}
+
+QPushButton:pressed {
+		background-color: rgb(155, 127, 240);
+        border-left: 14px solid rgb(155, 127, 240);
+}</string>
                          </property>
                          <property name="text">
                           <string>Submit</string>
