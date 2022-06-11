@@ -1,0 +1,10 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>food.png</file>
+    <file>homeIcon.png</file>
+    <file>logoutIcon.png</file>
+    <file>settingsIcon.png</file>
+    <file>statisticIcon.png</file>
+    <file>toggleIcon.png</file>
+  </qresource>
+</RCC>

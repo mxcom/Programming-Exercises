@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>WndMain</class>
+ <widget class="QMainWindow" name="WndMain">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -39,7 +39,9 @@
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(143, 143, 143);</string>
+       <string notr="true">background-color: rgb(83, 56, 224);
+border:none;
+</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
@@ -67,12 +69,12 @@
         <widget class="QFrame" name="toggle">
          <property name="maximumSize">
           <size>
-           <width>70</width>
+           <width>60</width>
            <height>40</height>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(75, 75, 75);</string>
+          <string notr="true">background-color: rgb(65, 43, 173);</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
@@ -97,7 +99,7 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QPushButton" name="BtnToggle">
+           <widget class="QPushButton" name="btnToggle">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
               <horstretch>0</horstretch>
@@ -105,10 +107,18 @@
              </sizepolicy>
             </property>
             <property name="styleSheet">
-             <string notr="true">border: none;</string>
+             <string notr="true">QPushButton{
+border:none;
+background-color: rgb(65, 43, 173);
+background-image: url(:/icons/toggleIcon.png);
+background-repeat:none;
+background-position: center center;
+}
+
+</string>
             </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -116,13 +126,163 @@
         </widget>
        </item>
        <item>
-        <widget class="QFrame" name="frame_2">
+        <widget class="QFrame" name="description">
+         <property name="styleSheet">
+          <string notr="true">border:none;
+</string>
+         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QFrame" name="frName">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_6">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="lbName">
+               <property name="font">
+                <font>
+                 <pointsize>12</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string> Max Mustermann</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frDate">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="lbDate">
+               <property name="font">
+                <font>
+                 <pointsize>12</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>09.06.2022</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frPageDescription">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_8">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="lbPageDescription">
+               <property name="font">
+                <font>
+                 <pointsize>12</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>Home</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="margin">
+                <number>5</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </item>
       </layout>
@@ -156,18 +316,20 @@
         <widget class="QFrame" name="leftMenu">
          <property name="minimumSize">
           <size>
-           <width>70</width>
+           <width>60</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>70</width>
+           <width>60</width>
            <height>16777215</height>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(143, 143, 143);</string>
+          <string notr="true">background-color: rgb(83, 56, 224);
+border:none
+</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
@@ -192,7 +354,7 @@
            <number>0</number>
           </property>
           <item alignment="Qt::AlignTop">
-           <widget class="QFrame" name="topManus">
+           <widget class="QFrame" name="topMenus">
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -216,68 +378,277 @@
               <number>0</number>
              </property>
              <item>
-              <widget class="QPushButton" name="pushButton_3">
+              <widget class="QPushButton" name="btnHome">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="minimumSize">
                 <size>
-                 <width>0</width>
+                 <width>60</width>
                  <height>40</height>
                 </size>
                </property>
+               <property name="font">
+                <font>
+                 <pointsize>12</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="layoutDirection">
+                <enum>Qt::LeftToRight</enum>
+               </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton{
-color: rgb(255, 255, 255);
-border: 0px solid;
+background-image: url(:/icons/homeIcon.png);
+background-position: left center;
+background-repeat: no-repeat;
+border: none;
+border-left: 14px solid rgb(83, 56, 224);
+text-align: left;
+padding-left: 45px;
+background-color: rgb(83, 56, 224);
+
+
+
 }
 QPushButton:hover{
-	background-color: rgb(75, 75, 75);
-}</string>
+	background-color: rgb(65, 43, 173);
+	border-left: 14px solid rgb(65, 43, 173);
+}
+
+QPushButton:pressed {
+		background-color: rgb(155, 127, 240);
+        border-left: 14px solid rgb(155, 127, 240);
+}
+
+</string>
                </property>
                <property name="text">
                 <string>Home</string>
                </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="pushButton_2">
+              <widget class="QPushButton" name="btnFood">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
                  <height>40</height>
                 </size>
                </property>
+               <property name="font">
+                <font>
+                 <pointsize>12</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton{
-color: rgb(255, 255, 255);
-border: 0px solid;
+	background-image: url(:/icons/food.png);
+background-position: left center;
+background-repeat: no-repeat;
+border: none;
+border-left: 14px solid rgb(83, 56, 224);
+text-align: left;
+padding-left: 45px;
+background-color: rgb(83, 56, 224);
 }
+
 QPushButton:hover{
-	background-color: rgb(75, 75, 75);
+	background-color: rgb(65, 43, 173);
+	border-left: 14px solid rgb(65, 43, 173);
+}
+
+QPushButton:pressed {
+		background-color: rgb(155, 127, 240);
+        border-left: 14px solid rgb(155, 127, 240);
+}</string>
+               </property>
+               <property name="text">
+                <string>Food</string>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnStatistic">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>12</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+	background-image: url(:/icons/statisticIcon.png);
+background-position: left center;
+background-repeat: no-repeat;
+border: none;
+border-left: 14px solid rgb(83, 56, 224);
+text-align: left;
+padding-left: 45px;
+background-color: rgb(83, 56, 224);
+}
+
+QPushButton:hover{
+	background-color: rgb(65, 43, 173);
+	border-left: 14px solid rgb(65, 43, 173);
+}
+
+QPushButton:pressed {
+		background-color: rgb(155, 127, 240);
+        border-left: 14px solid rgb(155, 127, 240);
+}</string>
+               </property>
+               <property name="text">
+                <string>Statistics</string>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnSettings">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>12</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+	background-image: url(:/icons/settingsIcon.png);
+background-position: left center;
+background-repeat: no-repeat;
+border: none;
+border-left: 14px solid rgb(83, 56, 224);
+text-align: left;
+padding-left: 45px;
+background-color: rgb(83, 56, 224);
+}
+
+QPushButton:hover{
+	background-color: rgb(65, 43, 173);
+	border-left: 14px solid rgb(65, 43, 173);
+}
+
+QPushButton:pressed {
+		background-color: rgb(155, 127, 240);
+        border-left: 14px solid rgb(155, 127, 240);
 }</string>
                </property>
                <property name="text">
                 <string>Settings</string>
                </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
               </widget>
              </item>
+            </layout>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignBottom">
+           <widget class="QFrame" name="bottonMenus">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_6">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
              <item>
-              <widget class="QPushButton" name="pushButton">
+              <widget class="QPushButton" name="btnLogout">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
                  <height>40</height>
                 </size>
                </property>
+               <property name="font">
+                <font>
+                 <pointsize>12</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton{
-color: rgb(255, 255, 255);
-border: 0px solid;
+	background-image: url(:/icons/logoutIcon.png);
+background-position: left center;
+background-repeat: no-repeat;
+border: none;
+border-left: 14px solid rgb(83, 56, 224);
+text-align: left;
+padding-left: 45px;
+background-color: rgb(83, 56, 224);
 }
+
 QPushButton:hover{
-	background-color: rgb(75, 75, 75);
+	background-color: rgb(65, 43, 173);
+	border-left: 14px solid rgb(65, 43, 173);
+}
+
+QPushButton:pressed {
+		background-color: rgb(155, 127, 240);
+        border-left: 14px solid rgb(155, 127, 240);
 }</string>
                </property>
                <property name="text">
-                <string>Help</string>
+                <string>Logout</string>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
                </property>
               </widget>
              </item>
@@ -289,6 +660,12 @@ QPushButton:hover{
        </item>
        <item>
         <widget class="QFrame" name="content">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);
+border-color: rgb(143, 126, 230);
+border:none;
+</string>
+         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -296,27 +673,1268 @@ QPushButton:hover{
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_4">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
           <item>
            <widget class="QStackedWidget" name="pages">
-            <widget class="QWidget" name="page_1">
-             <widget class="QFrame" name="prrogressBar">
-              <property name="geometry">
-               <rect>
-                <x>250</x>
-                <y>70</y>
-                <width>381</width>
-                <height>311</height>
-               </rect>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);
+border-color: rgb(143, 126, 230);
+border:none;
+</string>
+            </property>
+            <property name="currentIndex">
+             <number>0</number>
+            </property>
+            <widget class="QWidget" name="pageHome">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-color: rgb(143, 126, 230);
+border:none;
+</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_5">
+              <property name="spacing">
+               <number>0</number>
               </property>
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
+              <property name="leftMargin">
+               <number>0</number>
               </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
+              <property name="topMargin">
+               <number>0</number>
               </property>
-             </widget>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QFrame" name="topContent">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>260</height>
+                 </size>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_12">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QFrame" name="frame">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frmProgressBar">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>260</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>260</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Script</family>
+                    </font>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frame_3">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="bottemContent">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_7">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>5</number>
+                 </property>
+                 <item>
+                  <widget class="QFrame" name="trackContent">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_9">
+                    <item>
+                     <widget class="QFrame" name="weightContent">
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(100, 55, 237);
+border-radius: 15px;
+</string>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_4">
+                       <item>
+                        <widget class="QLabel" name="lbWeight">
+                         <property name="font">
+                          <font>
+                           <pointsize>12</pointsize>
+                           <bold>true</bold>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>Weight:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="leWeight">
+                         <property name="maximumSize">
+                          <size>
+                           <width>200</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <pointsize>12</pointsize>
+                           <bold>true</bold>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">border-bottom: 2px solid rgb(143, 126, 230);;
+</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QFrame" name="stepContent">
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(100, 55, 237);
+border-radius: 15px;
+</string>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_9">
+                       <item>
+                        <widget class="QLabel" name="lbSteps">
+                         <property name="font">
+                          <font>
+                           <pointsize>12</pointsize>
+                           <bold>true</bold>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>Steps:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="leSteps">
+                         <property name="maximumSize">
+                          <size>
+                           <width>200</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <pointsize>12</pointsize>
+                           <bold>true</bold>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">border-bottom: 2px solid rgb(143, 126, 230);;
+</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QFrame" name="bpContent">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(100, 55, 237);
+border-radius: 15px;
+</string>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_10">
+                       <item>
+                        <widget class="QLabel" name="lbBP">
+                         <property name="font">
+                          <font>
+                           <pointsize>12</pointsize>
+                           <bold>true</bold>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>Blood Pressure:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="leBPLow">
+                         <property name="maximumSize">
+                          <size>
+                           <width>94</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <pointsize>12</pointsize>
+                           <bold>true</bold>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">border-bottom: 2px solid rgb(143, 126, 230);;
+</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                         </property>
+                         <property name="placeholderText">
+                          <string>Low</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="leBPHigh">
+                         <property name="maximumSize">
+                          <size>
+                           <width>100</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <pointsize>12</pointsize>
+                           <bold>true</bold>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">border-bottom: 2px solid rgb(143, 126, 230);;
+</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                         </property>
+                         <property name="placeholderText">
+                          <string>High</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frmButtonSubmit">
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_11">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QFrame" name="bufferLeft">
+                      <property name="minimumSize">
+                       <size>
+                        <width>400</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QFrame" name="frmBtn">
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QVBoxLayout" name="verticalLayout_8">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QPushButton" name="btnSubmit">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>40</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <pointsize>12</pointsize>
+                           <bold>true</bold>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(100, 55, 237);
+border-radius: 15px;
+</string>
+                         </property>
+                         <property name="text">
+                          <string>Submit</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QFrame" name="bufferRight">
+                      <property name="minimumSize">
+                       <size>
+                        <width>400</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
             </widget>
-            <widget class="QWidget" name="page_2"/>
+            <widget class="QWidget" name="pageFood"/>
+            <widget class="QWidget" name="pageStatKcal">
+             <layout class="QVBoxLayout" name="verticalLayout_13">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QFrame" name="frmTopContentStat1">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_14">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QFrame" name="frmTopLeftStat1">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frmbtnStat1">
+                   <property name="minimumSize">
+                    <size>
+                     <width>500</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_15">
+                    <item>
+                     <widget class="QPushButton" name="btnKcal1">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+background-color: rgb(100, 55, 237);
+border-radius: 15px;
+}
+
+QPushButton:hover{
+	background-color: rgb(65, 43, 173);
+}
+
+QPushButton:pressed {
+		background-color: rgb(155, 127, 240);
+}
+
+</string>
+                      </property>
+                      <property name="text">
+                       <string>Kcal</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="btnSteps1">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+background-color: rgb(100, 55, 237);
+border-radius: 15px;
+}
+
+QPushButton:hover{
+	background-color: rgb(65, 43, 173);
+}
+
+QPushButton:pressed {
+		background-color: rgb(155, 127, 240);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Steps</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="btnBP1">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+background-color: rgb(100, 55, 237);
+border-radius: 15px;
+}
+
+QPushButton:hover{
+	background-color: rgb(65, 43, 173);
+}
+
+QPushButton:pressed {
+		background-color: rgb(155, 127, 240);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Blood Pressure</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frmTopRightStat1">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="frmContentStat1">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="pageStatSteps">
+             <layout class="QVBoxLayout" name="verticalLayout_15">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QFrame" name="frmTopContentStat2">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_20">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QFrame" name="frmTopLeftStat2">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frmbtnStat2">
+                   <property name="minimumSize">
+                    <size>
+                     <width>500</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_21">
+                    <item>
+                     <widget class="QPushButton" name="btnKcal2">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+background-color: rgb(100, 55, 237);
+border-radius: 15px;
+}
+
+QPushButton:hover{
+	background-color: rgb(65, 43, 173);
+}
+
+QPushButton:pressed {
+		background-color: rgb(155, 127, 240);
+}
+
+</string>
+                      </property>
+                      <property name="text">
+                       <string>Kcal</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="btnSteps2">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+background-color: rgb(100, 55, 237);
+border-radius: 15px;
+}
+
+QPushButton:hover{
+	background-color: rgb(65, 43, 173);
+}
+
+QPushButton:pressed {
+		background-color: rgb(155, 127, 240);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Steps</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="btnBP2">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+background-color: rgb(100, 55, 237);
+border-radius: 15px;
+}
+
+QPushButton:hover{
+	background-color: rgb(65, 43, 173);
+}
+
+QPushButton:pressed {
+		background-color: rgb(155, 127, 240);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Blood Pressure</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frmTopRightStat2">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="frmContentStat2">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="pageStatBP">
+             <layout class="QVBoxLayout" name="verticalLayout_14">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QFrame" name="frmTopContentStat3">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_18">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QFrame" name="frmTopLeftStat3">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frmbtnStat3">
+                   <property name="minimumSize">
+                    <size>
+                     <width>500</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_19">
+                    <item>
+                     <widget class="QPushButton" name="btnKcal3">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+background-color: rgb(100, 55, 237);
+border-radius: 15px;
+}
+
+QPushButton:hover{
+	background-color: rgb(65, 43, 173);
+}
+
+QPushButton:pressed {
+		background-color: rgb(155, 127, 240);
+}
+
+</string>
+                      </property>
+                      <property name="text">
+                       <string>Kcal</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="btnSteps3">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+background-color: rgb(100, 55, 237);
+border-radius: 15px;
+}
+
+QPushButton:hover{
+	background-color: rgb(65, 43, 173);
+}
+
+QPushButton:pressed {
+		background-color: rgb(155, 127, 240);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Steps</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="btnBP3">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+background-color: rgb(100, 55, 237);
+border-radius: 15px;
+}
+
+QPushButton:hover{
+	background-color: rgb(65, 43, 173);
+}
+
+QPushButton:pressed {
+		background-color: rgb(155, 127, 240);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Blood Pressure</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frmTopRightStat3">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="frmContentStat3">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="pageSettings"/>
+            <widget class="QWidget" name="pageAdmin">
+             <layout class="QHBoxLayout" name="horizontalLayout_13">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QFrame" name="frmContentAdmin">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_10">
+                 <item>
+                  <widget class="QFrame" name="frmSearchbar">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(100, 55, 237);
+border-radius: 15px;
+</string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frmUserTbl">
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_12">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QTableWidget" name="tblUser">
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(100, 55, 237);
+border-radius: 15px;
+</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="frmContorlAdmin">
+                <property name="minimumSize">
+                 <size>
+                  <width>250</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>250</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_11">
+                 <item>
+                  <widget class="QFrame" name="bufferTop">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frmControlBtns">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="bufferBottom">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
            </widget>
           </item>
          </layout>
@@ -328,6 +1946,8 @@ QPushButton:hover{
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../icons/icons.qrc"/>
+ </resources>
  <connections/>
 </ui>

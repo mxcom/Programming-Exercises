@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>WndLogin</class>
- <widget class="QWidget" name="WndLogin">
+ <widget class="QMainWindow" name="WndLogin">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -10,229 +10,225 @@
     <height>350</height>
    </rect>
   </property>
-  <property name="minimumSize">
-   <size>
-    <width>275</width>
-    <height>350</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>275</width>
-    <height>350</height>
-   </size>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="verticalLayoutWidget_2">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>220</y>
-     <width>281</width>
-     <height>58</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="loBtn">
-    <property name="leftMargin">
-     <number>85</number>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>111</y>
+      <width>281</width>
+      <height>27</height>
+     </rect>
     </property>
-    <property name="rightMargin">
-     <number>85</number>
+    <layout class="QHBoxLayout" name="loEmail" stretch="0,0,0">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <spacer name="hsLeft">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="leEmail"/>
+     </item>
+     <item>
+      <spacer name="hsRight">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Expanding</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="lbEmail">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>80</y>
+      <width>275</width>
+      <height>27</height>
+     </rect>
     </property>
-    <item>
-     <widget class="QPushButton" name="btnLogin">
-      <property name="text">
-       <string>Login</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="btnSignup">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border-color: transparent;
-background-color: transparent;</string>
-      </property>
-      <property name="text">
-       <string>Sign Up</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>110</y>
-     <width>281</width>
-     <height>27</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="loEmail" stretch="0,0,0">
-    <property name="spacing">
-     <number>0</number>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
     </property>
-    <property name="leftMargin">
-     <number>0</number>
+    <property name="text">
+     <string>Email</string>
     </property>
-    <item>
-     <spacer name="hsLeft">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="leEmail"/>
-    </item>
-    <item>
-     <spacer name="hsRight">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeType">
-       <enum>QSizePolicy::Expanding</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QLabel" name="lbEmail">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>79</y>
-     <width>275</width>
-     <height>27</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>15</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Email</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbTitle">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>275</width>
-     <height>36</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>20</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Login</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbPassword">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>149</y>
-     <width>275</width>
-     <height>27</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>15</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Password</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget_2">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>180</y>
-     <width>281</width>
-     <height>27</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="loPassword" stretch="0,0,0">
-    <property name="spacing">
-     <number>0</number>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
-    <property name="leftMargin">
-     <number>0</number>
+   </widget>
+   <widget class="QLabel" name="lbTitle">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>1</y>
+      <width>275</width>
+      <height>36</height>
+     </rect>
     </property>
-    <item>
-     <spacer name="hsLeft_2">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="lePassword">
-      <property name="echoMode">
-       <enum>QLineEdit::Password</enum>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <spacer name="hsRight_2">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeType">
-       <enum>QSizePolicy::Expanding</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-   </layout>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Login</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>221</y>
+      <width>281</width>
+      <height>58</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="loBtn">
+     <property name="leftMargin">
+      <number>85</number>
+     </property>
+     <property name="rightMargin">
+      <number>85</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="btnLogin">
+       <property name="text">
+        <string>Login</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnSignup">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;
+border-color: transparent;</string>
+       </property>
+       <property name="text">
+        <string>Sign Up</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>181</y>
+      <width>281</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="loPassword" stretch="0,0,0">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <spacer name="hsLeft_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lePassword">
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="hsRight_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Expanding</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="lbPassword">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>150</y>
+      <width>275</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Password</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
