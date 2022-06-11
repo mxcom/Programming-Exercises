@@ -3,7 +3,7 @@ This class contains buttons styles which will can be applied
 """
 
 
-class Style():
+class Style:
     style_btn_clicked_settings = (u"QPushButton{\n"
                                   "background-image: url(:/icons/settingsIcon.png);\n"
                                   "background-position: left center;\n"

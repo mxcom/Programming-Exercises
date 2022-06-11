@@ -9,6 +9,7 @@ from src.controllers.user_management.calc_kcal import calc_kcal
 from src.views.primary.WndMain import Ui_WndMain
 from src.views.primary.uiFunctions import UIFunctions
 from src.controllers.user_management.user_management import add_steps, add_weight, add_bp
+from src.views.primary.btn_style import Style
 
 
 class PrimaryWindow(QMainWindow, Ui_WndMain):
@@ -39,22 +40,24 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         # 4 Statistics Page Blood Pressure
         # 5 Settings Page
         # 6 Admin Page
-        self.ui.pages.setCurrentIndex(0)
+        self.ui.pages.setCurrentIndex(1)
         self.ui.btnHome.setStyleSheet(Style.style_btn_clicked_home)
 
-        self.ui.btnHome.clicked.connect(self.home_page())
-        self.ui.btnFood.clicked.connect(self.food_page())
-        self.ui.btnStatistic.clicked.connect(self.stat_page())
-        self.ui.btnSettings.clicked.connect(self.settings_page())
+        self.ui.btnHome.clicked.connect(self.home_page)
+        self.ui.btnFood.clicked.connect(self.food_page)
+        self.ui.btnStatistic.clicked.connect(self.stat_page)
+        self.ui.btnSettings.clicked.connect(self.settings_page)
 
         # Functions for Button clicked
 
     def home_page(self):
+        print("hallo")
         self.ui.pages.setCurrentIndex(0)
         self.ui.btnHome.setStyleSheet(Style.style_btn_clicked_home)
         self.ui.lbPageDescription.setText("Home")
 
     def food_page(self):
+        print("hallo2")
         self.ui.pages.setCurrentIndex(1)
         self.ui.btnFood.setStyleSheet(Style.style_btn_clicked_food)
         self.ui.lbPageDescription.setText("Food")
