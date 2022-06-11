@@ -3,7 +3,8 @@ from datetime import datetime
 
 class User:
 
-    def __init__(self, email='', first_name='', last_name='', sex='', birthday='', height='', weight='', passwd=''):
+    def __init__(self, id='', email='', first_name='', last_name='', sex='', birthday='', height='', weight='', passwd=''):
+        self._id = id
         self._email = email
         self._first_name = first_name
         self._last_name = last_name
@@ -12,6 +13,9 @@ class User:
         self._height = height
         self._weight = weight
         self._passwd = passwd
+
+    def get_id(self):
+        return self._id
 
     def get_email(self):
         return self._email
@@ -36,6 +40,9 @@ class User:
 
     def get_passwd(self):
         return self._passwd
+
+    def set_id(self, id):
+        self._id = id
 
     def set_email(self, email):
         self._email = email

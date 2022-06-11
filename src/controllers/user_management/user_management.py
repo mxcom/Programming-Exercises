@@ -32,6 +32,7 @@ def get_user(email):
         cursor.execute("SELECT * FROM user WHERE Email LIKE %s", (email,))
         user = User()
         for i in cursor.fetchall():
+            user.set_id(i[0])
             user.set_email(i[1])
             user.set_first_name(i[2])
             user.set_last_name(i[3])
@@ -42,8 +43,46 @@ def get_user(email):
         cursor.execute("SELECT Grams FROM weight JOIN user u on weight.UserID = u.UserID WHERE u.Email = %s", (email,))
         for i in cursor.fetchall():
             user.set_weight(i[0])
+        db.get_database().close()
         return user
     except Exception as e:
         print(e)
         return False
+
+
+def add_steps(id, steps):
+    try:
+        db = Database()
+        cursor = db.get_cursor()
+        date = datetime.datetime.now().date().strftime("%Y-%m-%d")
+        cursor.execute("INSERT INTO steps (UserID, Steps, Date)"
+                       "VALUES (%s, %s, %s)",
+                       (id, steps, date))
+        db.get_database().close()
+    except Exception as e:
+        print(e)
+
+def add_weight(id, weight):
+    try:
+        db = Database()
+        cursor = db.get_cursor()
+        date = datetime.datetime.now().date().strftime("%Y-%m-%d")
+        cursor.execute("INSERT INTO weight (UserID, Grams, TrackDate)"
+                       "VALUES (%s, %s, %s)",
+                       (id, weight, date))
+        db.get_database().close()
+    except Exception as e:
+        print(e)
+
+def add_bp(id, low, high):
+    try:
+        db = Database()
+        cursor = db.get_cursor()
+        date = datetime.datetime.now().date().strftime("%Y-%m-%d")
+        cursor.execute("INSERT INTO bloodpressure (UserID, Diastolic, Systolic, Date)"
+                       "VALUES (%s, %s, %s, %s)",
+                       (id, low, high, date))
+        db.get_database().close()
+    except Exception as e:
+        print(e)
 
