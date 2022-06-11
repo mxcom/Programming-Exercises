@@ -14,7 +14,8 @@ def add_user(user):
                     datetime.datetime.strptime(user.get_birthday().replace(".", "-"), '%d-%m-%y'), int(user.get_height()),
                     hash_passwd(user.get_passwd())))
     cursor.execute("SELECT UserID FROM user WHERE Email LIKE %s", (user.get_email(),))
-    date = datetime.datetime.now().date().strftime('%d-%m-%y')
+    date = datetime.datetime.now().date().strftime("%Y-%m-%d")
+    print(date)
     data = cursor.fetchall()
     for i in data:
         id = i[0]
