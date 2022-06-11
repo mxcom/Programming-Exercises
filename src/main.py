@@ -6,6 +6,7 @@ from src.controllers.user_management.registration import RegistrationWindow
 from src.controllers.user_management.login import LoginWindow
 from src.controllers.user_management.email import send_mail
 from src.controllers.user_management.user_management import get_user, add_user
+from src.controllers.cryptography.cryptography import hash_passwd
 
 
 def main():
@@ -17,7 +18,6 @@ def main():
     window = LoginWindow()
     window.show()
     app.exec()
-
 
 if __name__ == "__main__":
     main()

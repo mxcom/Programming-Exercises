@@ -10,7 +10,7 @@ from src.models.user_management.user import User
 from src.views.user_management.WndRegistration import Ui_WndRegistration
 from src.controllers.primary.primary import PrimaryWindow
 
-sex = ["male", "female", "other"]
+sex = ["male", "female"]
 regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
 special_char = ['$', '@', '#', '%', '_', '-', '!']
 
@@ -244,6 +244,9 @@ class RegistrationWindow(QMainWindow, Ui_WndRegistration):
         except Exception as e:
             print(e)
             return False
+
+    # def cancel_registration(self):
+
 
     def next_page(self):
         """
