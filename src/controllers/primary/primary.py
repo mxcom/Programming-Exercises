@@ -4,6 +4,7 @@ from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QMainWindow, QVBoxLayout
 from PySide6 import QtCore
 
+from src.controllers.user_management.calorie_management import get_daily_calories, update_calories
 from src.controllers.primary.progress_bar import CircularProgress
 from src.controllers.user_management.calc_kcal import calc_kcal
 from src.views.primary.WndMain import Ui_WndMain
@@ -22,6 +23,8 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
 
         self.ui.pages.setCurrentIndex(0)
 
+        kcal = get_daily_calories(user)
+
         # Fill top Bar
         current_date = datetime.now()
         self.ui.lbName.setText(user.get_first_name() + " " + user.get_last_name())
@@ -31,8 +34,8 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.layout = QVBoxLayout()
 
         # Create porgress bar
-        self.progress = CircularProgress(calc_kcal(
-            user.get_sex(), user.get_height(), user.get_weight(), user.get_birthday()))
+        self.progress = CircularProgress(0, kcal, calc_kcal(
+            self.user.get_sex(), self.user.get_height(), self.user.get_weight(), self.user.get_birthday()))
 
         # Test data
         # bd = datetime(2001, 1, 27)
@@ -176,12 +179,29 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             self.ui.leBPHigh.setStyleSheet("color: rgb(255, 0, 65);")
             return False
 
+    def add_calories(self, old_calories, new_calories):
+        self.progress.hide()
+        self.progress = CircularProgress(old_calories, new_calories,
+                                         calc_kcal(self.user.get_sex(), self.user.get_height(), self.user.get_weight(),
+                                                   self.user.get_birthday()))
+        self.progress.setMinimumSize(self.progress.width, self.progress.height)
+
+        # Add widgets
+        self.layout.addWidget(self.progress, Qt.AlignCenter, Qt.AlignCenter)
+
+        # Set layout of the Frame
+        self.ui.frmProgressBar.setLayout(self.layout)
+
     def set_value(self):
-        if self.validate_steps():
-            add_steps(self.user.get_id(), int(self.ui.leSteps.text()))
+        old_calories = get_daily_calories(self.user)
+        new_calories = update_calories(self.user, old_calories, 250)
+        self.add_calories(old_calories, new_calories)
 
-        if self.validate_steps():
-            add_weight(self.user.get_id(), int(self.ui.leWeight.text()))
+        # if self.validate_steps():
+        #     add_steps(self.user.get_id(), int(self.ui.leSteps.text()))
 
-        if self.validate_bp_low() and self.validate_bp_high():
-            add_bp(self.user.get_id(), int(self.ui.leBPLow.text()), int(self.ui.leBPHigh.text()))
+        # if self.validate_steps():
+        #     add_weight(self.user.get_id(), int(self.ui.leWeight.text()))
+
+        # if self.validate_bp_low() and self.validate_bp_high():
+        #     add_bp(self.user.get_id(), int(self.ui.leBPLow.text()), int(self.ui.leBPHigh.text()))

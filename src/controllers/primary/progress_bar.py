@@ -3,11 +3,8 @@ from PySide6.QtWidgets import *
 from PySide6.QtGui import *
 from PySide6.QtCore import *
 
-from src.controllers.user_management.calc_kcal import calc_kcal
-
-
 class CircularProgress(QWidget):
-    def __init__(self, max_value):
+    def __init__(self, start_value, end_value, max_value):
         QWidget.__init__(self)
 
         # Properties
@@ -31,8 +28,8 @@ class CircularProgress(QWidget):
         # Animation of the progress
         self.animation = QtCore.QVariantAnimation(self)
         self.animation.setDuration(2000)
-        self.animation.setStartValue(0)
-        self.animation.setEndValue(1000)
+        self.animation.setStartValue(start_value)
+        self.animation.setEndValue(end_value)
         self.animation.setEasingCurve(QtCore.QEasingCurve.InOutQuart)
         self.animation.valueChanged.connect(self.update)
         self.animation.start()
