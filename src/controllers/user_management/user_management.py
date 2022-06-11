@@ -36,8 +36,8 @@ def get_user(email):
             user.set_last_name(i[3])
             user.set_sex(i[4])
             user.set_birthday(i[5])
-            user.set_passwd(i[6])
-            user.set_height(i[7])
+            user.set_height(i[6])
+            user.set_passwd(i[7])
         cursor.execute("SELECT Grams FROM weight JOIN user u on weight.UserID = u.UserID WHERE u.Email = %s", (email,))
         for i in cursor.fetchall():
             user.set_weight(i[0])
