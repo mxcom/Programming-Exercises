@@ -79,6 +79,8 @@ def add_bp(id, low, high):
         db = Database()
         cursor = db.get_cursor()
         date = datetime.datetime.now().date().strftime("%Y-%m-%d")
+        cursor.execute()
+
         cursor.execute("INSERT INTO bloodpressure (UserID, Diastolic, Systolic, Date)"
                        "VALUES (%s, %s, %s, %s)",
                        (id, low, high, date))
