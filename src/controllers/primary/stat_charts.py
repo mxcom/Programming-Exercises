@@ -1,6 +1,6 @@
 import datetime
 
-from PySide6.QtCharts import QLineSeries, QChart, QChartView, QBarSeries, QBarSet, QBarCategoryAxis
+from PySide6.QtCharts import QLineSeries, QChart, QChartView, QBarSeries, QBarSet, QBarCategoryAxis, QValueAxis
 from PySide6.QtGui import QPen, QColor, Qt, QPainter
 from PySide6.QtWidgets import QWidget, QVBoxLayout
 from datetime import date
@@ -37,13 +37,19 @@ def create_chart():
     axisX.append(categories)
     series.attachAxis(axisX)
 
+    axisY = QValueAxis()
+    axisY.setRange(0, 2400)
+    axisY.setLabelFormat("%.0f")
+    axisY.s
+    series.attachAxis(axisY)
+
     # Create chart and set properties
     chart = QChart()
     chart.addSeries(series)
     chart.addAxis(axisX, Qt.AlignBottom)
+    chart.addAxis(axisY, Qt.AlignLeft)
     chart.setAnimationOptions(QChart.SeriesAnimations)
-    chart.legend().setVisible(True)
-    chart.legend().setAlignment(Qt.AlignBottom)
+    chart.legend().setVisible(False)
 
 
     # Create Chart View and add created chart to chart view
