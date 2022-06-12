@@ -13,8 +13,8 @@ class CircularProgress(QWidget):
         self.height = 200
         self.progress_width = 15
         self.progress_round_cap = True
-        self.progress_color = 0x6437ED
-        self.progress_color_background = 0x2E196E
+        self.progress_color = 0x9B7FF0
+        self.progress_color_background = 0xD3C9F2
         self.max_value = max_value  # Has to be changed later to max amount of daily calories
         self.font_size = 15
         self.font_family = "Sergoe UI Black"

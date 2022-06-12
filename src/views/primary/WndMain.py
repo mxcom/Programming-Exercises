@@ -15,11 +15,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QHeaderView,
-    QLabel, QLineEdit, QMainWindow, QPushButton,
-    QSizePolicy, QStackedWidget, QTableWidget, QTableWidgetItem,
-    QVBoxLayout, QWidget)
-import src.views.icons.rc_icons
+from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
+    QHeaderView, QLabel, QLineEdit, QMainWindow,
+    QPushButton, QSizePolicy, QStackedWidget, QTableWidget,
+    QTableWidgetItem, QVBoxLayout, QWidget)
+import icons_rc
 
 class Ui_WndMain(object):
     def setupUi(self, WndMain):
@@ -35,7 +35,7 @@ class Ui_WndMain(object):
         self.topBar = QFrame(self.centralwidget)
         self.topBar.setObjectName(u"topBar")
         self.topBar.setMaximumSize(QSize(16777215, 40))
-        self.topBar.setStyleSheet(u"background-color: rgb(83, 56, 224);\n"
+        self.topBar.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
 "border:none;\n"
 "")
         self.topBar.setFrameShape(QFrame.NoFrame)
@@ -63,7 +63,7 @@ class Ui_WndMain(object):
         self.btnToggle.setSizePolicy(sizePolicy)
         self.btnToggle.setStyleSheet(u"QPushButton{\n"
 "border:none;\n"
-"background-color: rgb(65, 43, 173);\n"
+"background-color: rgb(122, 100, 189);\n"
 "background-image: url(:/icons/toggleIcon.png);\n"
 "background-repeat:none;\n"
 "background-position: center center;\n"
@@ -161,7 +161,7 @@ class Ui_WndMain(object):
         self.leftMenu.setObjectName(u"leftMenu")
         self.leftMenu.setMinimumSize(QSize(60, 0))
         self.leftMenu.setMaximumSize(QSize(60, 16777215))
-        self.leftMenu.setStyleSheet(u"background-color: rgb(83, 56, 224);\n"
+        self.leftMenu.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
 "border:none\n"
 "")
         self.leftMenu.setFrameShape(QFrame.StyledPanel)
@@ -193,22 +193,23 @@ class Ui_WndMain(object):
 "background-position: left center;\n"
 "background-repeat: no-repeat;\n"
 "border: none;\n"
-"border-left: 14px solid rgb(83, 56, 224);\n"
+"border-left: 14px solid rgb(155, 127, 240);\n"
 "text-align: left;\n"
 "padding-left: 45px;\n"
-"background-color: rgb(83, 56, 224);\n"
+"background-color: rgb(155, 127, 240);\n"
 "\n"
 "\n"
 "\n"
 "}\n"
 "QPushButton:hover{\n"
-"	background-color: rgb(65, 43, 173);\n"
-"	border-left: 14px solid rgb(65, 43, 173);\n"
+"	\n"
+"	background-color: rgb(122, 100, 189);\n"
+"	border-left: 14px solid rgb(122, 100, 189);\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"		background-color: rgb(155, 127, 240);\n"
-"        border-left: 14px solid rgb(155, 127, 240);\n"
+"	background-color: rgb(211, 201, 242);\n"
+"    border-left: 14px solid rgb(211, 201, 242);\n"
 "}\n"
 "\n"
 "")
@@ -221,24 +222,27 @@ class Ui_WndMain(object):
         self.btnFood.setMinimumSize(QSize(0, 40))
         self.btnFood.setFont(font)
         self.btnFood.setStyleSheet(u"QPushButton{\n"
-"	background-image: url(:/icons/food.png);\n"
+"background-image: url(:/icons/food.png);\n"
 "background-position: left center;\n"
 "background-repeat: no-repeat;\n"
 "border: none;\n"
-"border-left: 14px solid rgb(83, 56, 224);\n"
+"border-left: 14px solid rgb(155, 127, 240);\n"
 "text-align: left;\n"
 "padding-left: 45px;\n"
-"background-color: rgb(83, 56, 224);\n"
-"}\n"
+"background-color: rgb(155, 127, 240);\n"
 "\n"
+"\n"
+"\n"
+"}\n"
 "QPushButton:hover{\n"
-"	background-color: rgb(65, 43, 173);\n"
-"	border-left: 14px solid rgb(65, 43, 173);\n"
+"	\n"
+"	background-color: rgb(122, 100, 189);\n"
+"	border-left: 14px solid rgb(122, 100, 189);\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"		background-color: rgb(155, 127, 240);\n"
-"        border-left: 14px solid rgb(155, 127, 240);\n"
+"	background-color: rgb(211, 201, 242);\n"
+"    border-left: 14px solid rgb(211, 201, 242);\n"
 "}")
         self.btnFood.setIconSize(QSize(25, 25))
 
@@ -249,24 +253,27 @@ class Ui_WndMain(object):
         self.btnStatistic.setMinimumSize(QSize(0, 40))
         self.btnStatistic.setFont(font)
         self.btnStatistic.setStyleSheet(u"QPushButton{\n"
-"	background-image: url(:/icons/statisticIcon.png);\n"
+"background-image: url(:/icons/statisticIcon.png);\n"
 "background-position: left center;\n"
 "background-repeat: no-repeat;\n"
 "border: none;\n"
-"border-left: 14px solid rgb(83, 56, 224);\n"
+"border-left: 14px solid rgb(155, 127, 240);\n"
 "text-align: left;\n"
 "padding-left: 45px;\n"
-"background-color: rgb(83, 56, 224);\n"
-"}\n"
+"background-color: rgb(155, 127, 240);\n"
 "\n"
+"\n"
+"\n"
+"}\n"
 "QPushButton:hover{\n"
-"	background-color: rgb(65, 43, 173);\n"
-"	border-left: 14px solid rgb(65, 43, 173);\n"
+"	\n"
+"	background-color: rgb(122, 100, 189);\n"
+"	border-left: 14px solid rgb(122, 100, 189);\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"		background-color: rgb(155, 127, 240);\n"
-"        border-left: 14px solid rgb(155, 127, 240);\n"
+"	background-color: rgb(211, 201, 242);\n"
+"    border-left: 14px solid rgb(211, 201, 242);\n"
 "}")
         self.btnStatistic.setIconSize(QSize(25, 25))
 
@@ -277,24 +284,27 @@ class Ui_WndMain(object):
         self.btnSettings.setMinimumSize(QSize(0, 40))
         self.btnSettings.setFont(font)
         self.btnSettings.setStyleSheet(u"QPushButton{\n"
-"	background-image: url(:/icons/settingsIcon.png);\n"
+"background-image: url(:/icons/settingsIcon.png);\n"
 "background-position: left center;\n"
 "background-repeat: no-repeat;\n"
 "border: none;\n"
-"border-left: 14px solid rgb(83, 56, 224);\n"
+"border-left: 14px solid rgb(155, 127, 240);\n"
 "text-align: left;\n"
 "padding-left: 45px;\n"
-"background-color: rgb(83, 56, 224);\n"
-"}\n"
+"background-color: rgb(155, 127, 240);\n"
 "\n"
+"\n"
+"\n"
+"}\n"
 "QPushButton:hover{\n"
-"	background-color: rgb(65, 43, 173);\n"
-"	border-left: 14px solid rgb(65, 43, 173);\n"
+"	\n"
+"	background-color: rgb(122, 100, 189);\n"
+"	border-left: 14px solid rgb(122, 100, 189);\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"		background-color: rgb(155, 127, 240);\n"
-"        border-left: 14px solid rgb(155, 127, 240);\n"
+"	background-color: rgb(211, 201, 242);\n"
+"    border-left: 14px solid rgb(211, 201, 242);\n"
 "}")
         self.btnSettings.setIconSize(QSize(25, 25))
 
@@ -316,24 +326,27 @@ class Ui_WndMain(object):
         self.btnLogout.setMinimumSize(QSize(0, 40))
         self.btnLogout.setFont(font)
         self.btnLogout.setStyleSheet(u"QPushButton{\n"
-"	background-image: url(:/icons/logoutIcon.png);\n"
+"background-image: url(:/icons/logoutIcon.png);\n"
 "background-position: left center;\n"
 "background-repeat: no-repeat;\n"
 "border: none;\n"
-"border-left: 14px solid rgb(83, 56, 224);\n"
+"border-left: 14px solid rgb(155, 127, 240);\n"
 "text-align: left;\n"
 "padding-left: 45px;\n"
-"background-color: rgb(83, 56, 224);\n"
-"}\n"
+"background-color: rgb(155, 127, 240);\n"
 "\n"
+"\n"
+"\n"
+"}\n"
 "QPushButton:hover{\n"
-"	background-color: rgb(65, 43, 173);\n"
-"	border-left: 14px solid rgb(65, 43, 173);\n"
+"	\n"
+"	background-color: rgb(122, 100, 189);\n"
+"	border-left: 14px solid rgb(122, 100, 189);\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"		background-color: rgb(155, 127, 240);\n"
-"        border-left: 14px solid rgb(155, 127, 240);\n"
+"	background-color: rgb(211, 201, 242);\n"
+"    border-left: 14px solid rgb(211, 201, 242);\n"
 "}")
         self.btnLogout.setIconSize(QSize(25, 25))
 
@@ -432,7 +445,7 @@ class Ui_WndMain(object):
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
         self.weightContent = QFrame(self.trackContent)
         self.weightContent.setObjectName(u"weightContent")
-        self.weightContent.setStyleSheet(u"background-color: rgb(100, 55, 237);\n"
+        self.weightContent.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
 "border-radius: 15px;\n"
 "")
         self.weightContent.setFrameShape(QFrame.StyledPanel)
@@ -461,7 +474,7 @@ class Ui_WndMain(object):
         self.stepContent = QFrame(self.trackContent)
         self.stepContent.setObjectName(u"stepContent")
         self.stepContent.setFont(font)
-        self.stepContent.setStyleSheet(u"background-color: rgb(100, 55, 237);\n"
+        self.stepContent.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
 "border-radius: 15px;\n"
 "")
         self.stepContent.setFrameShape(QFrame.StyledPanel)
@@ -471,6 +484,7 @@ class Ui_WndMain(object):
         self.lbSteps = QLabel(self.stepContent)
         self.lbSteps.setObjectName(u"lbSteps")
         self.lbSteps.setFont(font)
+        self.lbSteps.setStyleSheet(u"")
 
         self.horizontalLayout_9.addWidget(self.lbSteps)
 
@@ -494,7 +508,7 @@ class Ui_WndMain(object):
         sizePolicy3.setVerticalStretch(0)
         sizePolicy3.setHeightForWidth(self.bpContent.sizePolicy().hasHeightForWidth())
         self.bpContent.setSizePolicy(sizePolicy3)
-        self.bpContent.setStyleSheet(u"background-color: rgb(100, 55, 237);\n"
+        self.bpContent.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
 "border-radius: 15px;\n"
 "")
         self.bpContent.setFrameShape(QFrame.StyledPanel)
@@ -563,22 +577,22 @@ class Ui_WndMain(object):
         sizePolicy1.setHeightForWidth(self.btnSubmit.sizePolicy().hasHeightForWidth())
         self.btnSubmit.setSizePolicy(sizePolicy1)
         self.btnSubmit.setMinimumSize(QSize(140, 40))
+        self.btnSubmit.setMaximumSize(QSize(16777215, 140))
         self.btnSubmit.setFont(font)
         self.btnSubmit.setStyleSheet(u"QPushButton{\n"
-"background-color: rgb(100, 55, 237);\n"
-"border-radius: 15px;\n"
+"	background-color: rgb(155, 127, 240);\n"
+"	border-radius: 15px;\n"
 "}\n"
 "QPushButton:hover{\n"
-"	background-color: rgb(65, 43, 173);\n"
-"	border-left: 14px solid rgb(65, 43, 173);\n"
+"	background-color: rgb(122, 100, 189);\n"
 "	border-radius: 15px;\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"		background-color: rgb(155, 127, 240);\n"
-"        border-left: 14px solid rgb(155, 127, 240);\n"
+"	background-color: rgb(211, 201, 242);\n"
 "	border-radius: 15px;\n"
-"}")
+"}\n"
+"")
 
         self.verticalLayout_8.addWidget(self.btnSubmit)
 
@@ -641,18 +655,18 @@ class Ui_WndMain(object):
         self.btnKcal1.setSizePolicy(sizePolicy4)
         self.btnKcal1.setFont(font)
         self.btnKcal1.setStyleSheet(u"QPushButton{\n"
-"background-color: rgb(100, 55, 237);\n"
-"border-radius: 15px;\n"
+"	background-color: rgb(155, 127, 240);\n"
+"	border-radius: 15px;\n"
 "}\n"
-"\n"
 "QPushButton:hover{\n"
-"	background-color: rgb(65, 43, 173);\n"
+"	background-color: rgb(122, 100, 189);\n"
+"	border-radius: 15px;\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"		background-color: rgb(155, 127, 240);\n"
+"	background-color: rgb(211, 201, 242);\n"
+"	border-radius: 15px;\n"
 "}\n"
-"\n"
 "")
 
         self.horizontalLayout_15.addWidget(self.btnKcal1)
@@ -663,17 +677,19 @@ class Ui_WndMain(object):
         self.btnSteps1.setSizePolicy(sizePolicy4)
         self.btnSteps1.setFont(font)
         self.btnSteps1.setStyleSheet(u"QPushButton{\n"
-"background-color: rgb(100, 55, 237);\n"
-"border-radius: 15px;\n"
+"	background-color: rgb(155, 127, 240);\n"
+"	border-radius: 15px;\n"
 "}\n"
-"\n"
 "QPushButton:hover{\n"
-"	background-color: rgb(65, 43, 173);\n"
+"	background-color: rgb(122, 100, 189);\n"
+"	border-radius: 15px;\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"		background-color: rgb(155, 127, 240);\n"
-"}")
+"	background-color: rgb(211, 201, 242);\n"
+"	border-radius: 15px;\n"
+"}\n"
+"")
 
         self.horizontalLayout_15.addWidget(self.btnSteps1)
 
@@ -683,17 +699,19 @@ class Ui_WndMain(object):
         self.btnBP1.setSizePolicy(sizePolicy4)
         self.btnBP1.setFont(font)
         self.btnBP1.setStyleSheet(u"QPushButton{\n"
-"background-color: rgb(100, 55, 237);\n"
-"border-radius: 15px;\n"
+"	background-color: rgb(155, 127, 240);\n"
+"	border-radius: 15px;\n"
 "}\n"
-"\n"
 "QPushButton:hover{\n"
-"	background-color: rgb(65, 43, 173);\n"
+"	background-color: rgb(122, 100, 189);\n"
+"	border-radius: 15px;\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"		background-color: rgb(155, 127, 240);\n"
-"}")
+"	background-color: rgb(211, 201, 242);\n"
+"	border-radius: 15px;\n"
+"}\n"
+"")
 
         self.horizontalLayout_15.addWidget(self.btnBP1)
 
@@ -710,12 +728,100 @@ class Ui_WndMain(object):
 
         self.verticalLayout_13.addWidget(self.frmTopContentStat1)
 
-        self.frmContentStat1 = QFrame(self.pageStatKcal)
-        self.frmContentStat1.setObjectName(u"frmContentStat1")
-        self.frmContentStat1.setFrameShape(QFrame.StyledPanel)
-        self.frmContentStat1.setFrameShadow(QFrame.Raised)
+        self.frmContentKcal = QFrame(self.pageStatKcal)
+        self.frmContentKcal.setObjectName(u"frmContentKcal")
+        self.frmContentKcal.setFrameShape(QFrame.StyledPanel)
+        self.frmContentKcal.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_16 = QHBoxLayout(self.frmContentKcal)
+        self.horizontalLayout_16.setSpacing(0)
+        self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
+        self.horizontalLayout_16.setContentsMargins(9, 0, 0, 0)
+        self.frame_2 = QFrame(self.frmContentKcal)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
 
-        self.verticalLayout_13.addWidget(self.frmContentStat1)
+        self.horizontalLayout_16.addWidget(self.frame_2)
+
+        self.frmleftContetnKcal = QFrame(self.frmContentKcal)
+        self.frmleftContetnKcal.setObjectName(u"frmleftContetnKcal")
+        self.frmleftContetnKcal.setFrameShape(QFrame.StyledPanel)
+        self.frmleftContetnKcal.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_16 = QVBoxLayout(self.frmleftContetnKcal)
+        self.verticalLayout_16.setObjectName(u"verticalLayout_16")
+        self.kcalChart = QFrame(self.frmleftContetnKcal)
+        self.kcalChart.setObjectName(u"kcalChart")
+        self.kcalChart.setFrameShape(QFrame.StyledPanel)
+        self.kcalChart.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout_16.addWidget(self.kcalChart)
+
+        self.frmChartSelection = QFrame(self.frmleftContetnKcal)
+        self.frmChartSelection.setObjectName(u"frmChartSelection")
+        self.frmChartSelection.setMaximumSize(QSize(16777215, 100))
+        self.frmChartSelection.setFrameShape(QFrame.StyledPanel)
+        self.frmChartSelection.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_17 = QHBoxLayout(self.frmChartSelection)
+        self.horizontalLayout_17.setSpacing(0)
+        self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
+        self.horizontalLayout_17.setContentsMargins(0, 0, -1, 0)
+        self.frame_4 = QFrame(self.frmChartSelection)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setMaximumSize(QSize(100, 16777215))
+        self.frame_4.setFrameShape(QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_17.addWidget(self.frame_4)
+
+        self.frame_6 = QFrame(self.frmChartSelection)
+        self.frame_6.setObjectName(u"frame_6")
+        self.frame_6.setMaximumSize(QSize(16777215, 50))
+        self.frame_6.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
+"border-radius: 15px;")
+        self.frame_6.setFrameShape(QFrame.StyledPanel)
+        self.frame_6.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_22 = QHBoxLayout(self.frame_6)
+        self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
+        self.label = QLabel(self.frame_6)
+        self.label.setObjectName(u"label")
+        self.label.setFont(font)
+
+        self.horizontalLayout_22.addWidget(self.label)
+
+        self.comboBox = QComboBox(self.frame_6)
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.setObjectName(u"comboBox")
+        self.comboBox.setMinimumSize(QSize(120, 0))
+        self.comboBox.setMaximumSize(QSize(120, 16777215))
+        self.comboBox.setFont(font)
+        self.comboBox.setStyleSheet(u"")
+        self.comboBox.setEditable(False)
+        self.comboBox.setMaxCount(2147483645)
+
+        self.horizontalLayout_22.addWidget(self.comboBox)
+
+
+        self.horizontalLayout_17.addWidget(self.frame_6)
+
+        self.frame_5 = QFrame(self.frmChartSelection)
+        self.frame_5.setObjectName(u"frame_5")
+        self.frame_5.setMaximumSize(QSize(100, 16777215))
+        self.frame_5.setFrameShape(QFrame.StyledPanel)
+        self.frame_5.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_17.addWidget(self.frame_5)
+
+
+        self.verticalLayout_16.addWidget(self.frmChartSelection)
+
+
+        self.horizontalLayout_16.addWidget(self.frmleftContetnKcal)
+
+
+        self.verticalLayout_13.addWidget(self.frmContentKcal)
 
         self.pages.addWidget(self.pageStatKcal)
         self.pageStatSteps = QWidget()
@@ -753,18 +859,18 @@ class Ui_WndMain(object):
         self.btnKcal2.setSizePolicy(sizePolicy4)
         self.btnKcal2.setFont(font)
         self.btnKcal2.setStyleSheet(u"QPushButton{\n"
-"background-color: rgb(100, 55, 237);\n"
-"border-radius: 15px;\n"
+"	background-color: rgb(155, 127, 240);\n"
+"	border-radius: 15px;\n"
 "}\n"
-"\n"
 "QPushButton:hover{\n"
-"	background-color: rgb(65, 43, 173);\n"
+"	background-color: rgb(122, 100, 189);\n"
+"	border-radius: 15px;\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"		background-color: rgb(155, 127, 240);\n"
+"	background-color: rgb(211, 201, 242);\n"
+"	border-radius: 15px;\n"
 "}\n"
-"\n"
 "")
 
         self.horizontalLayout_21.addWidget(self.btnKcal2)
@@ -775,17 +881,19 @@ class Ui_WndMain(object):
         self.btnSteps2.setSizePolicy(sizePolicy4)
         self.btnSteps2.setFont(font)
         self.btnSteps2.setStyleSheet(u"QPushButton{\n"
-"background-color: rgb(100, 55, 237);\n"
-"border-radius: 15px;\n"
+"	background-color: rgb(155, 127, 240);\n"
+"	border-radius: 15px;\n"
 "}\n"
-"\n"
 "QPushButton:hover{\n"
-"	background-color: rgb(65, 43, 173);\n"
+"	background-color: rgb(122, 100, 189);\n"
+"	border-radius: 15px;\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"		background-color: rgb(155, 127, 240);\n"
-"}")
+"	background-color: rgb(211, 201, 242);\n"
+"	border-radius: 15px;\n"
+"}\n"
+"")
 
         self.horizontalLayout_21.addWidget(self.btnSteps2)
 
@@ -795,17 +903,19 @@ class Ui_WndMain(object):
         self.btnBP2.setSizePolicy(sizePolicy4)
         self.btnBP2.setFont(font)
         self.btnBP2.setStyleSheet(u"QPushButton{\n"
-"background-color: rgb(100, 55, 237);\n"
-"border-radius: 15px;\n"
+"	background-color: rgb(155, 127, 240);\n"
+"	border-radius: 15px;\n"
 "}\n"
-"\n"
 "QPushButton:hover{\n"
-"	background-color: rgb(65, 43, 173);\n"
+"	background-color: rgb(122, 100, 189);\n"
+"	border-radius: 15px;\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"		background-color: rgb(155, 127, 240);\n"
-"}")
+"	background-color: rgb(211, 201, 242);\n"
+"	border-radius: 15px;\n"
+"}\n"
+"")
 
         self.horizontalLayout_21.addWidget(self.btnBP2)
 
@@ -865,18 +975,18 @@ class Ui_WndMain(object):
         self.btnKcal3.setSizePolicy(sizePolicy4)
         self.btnKcal3.setFont(font)
         self.btnKcal3.setStyleSheet(u"QPushButton{\n"
-"background-color: rgb(100, 55, 237);\n"
-"border-radius: 15px;\n"
+"	background-color: rgb(155, 127, 240);\n"
+"	border-radius: 15px;\n"
 "}\n"
-"\n"
 "QPushButton:hover{\n"
-"	background-color: rgb(65, 43, 173);\n"
+"	background-color: rgb(122, 100, 189);\n"
+"	border-radius: 15px;\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"		background-color: rgb(155, 127, 240);\n"
+"	background-color: rgb(211, 201, 242);\n"
+"	border-radius: 15px;\n"
 "}\n"
-"\n"
 "")
 
         self.horizontalLayout_19.addWidget(self.btnKcal3)
@@ -887,17 +997,19 @@ class Ui_WndMain(object):
         self.btnSteps3.setSizePolicy(sizePolicy4)
         self.btnSteps3.setFont(font)
         self.btnSteps3.setStyleSheet(u"QPushButton{\n"
-"background-color: rgb(100, 55, 237);\n"
-"border-radius: 15px;\n"
+"	background-color: rgb(155, 127, 240);\n"
+"	border-radius: 15px;\n"
 "}\n"
-"\n"
 "QPushButton:hover{\n"
-"	background-color: rgb(65, 43, 173);\n"
+"	background-color: rgb(122, 100, 189);\n"
+"	border-radius: 15px;\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"		background-color: rgb(155, 127, 240);\n"
-"}")
+"	background-color: rgb(211, 201, 242);\n"
+"	border-radius: 15px;\n"
+"}\n"
+"")
 
         self.horizontalLayout_19.addWidget(self.btnSteps3)
 
@@ -907,17 +1019,19 @@ class Ui_WndMain(object):
         self.btnBP3.setSizePolicy(sizePolicy4)
         self.btnBP3.setFont(font)
         self.btnBP3.setStyleSheet(u"QPushButton{\n"
-"background-color: rgb(100, 55, 237);\n"
-"border-radius: 15px;\n"
+"	background-color: rgb(155, 127, 240);\n"
+"	border-radius: 15px;\n"
 "}\n"
-"\n"
 "QPushButton:hover{\n"
-"	background-color: rgb(65, 43, 173);\n"
+"	background-color: rgb(122, 100, 189);\n"
+"	border-radius: 15px;\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"		background-color: rgb(155, 127, 240);\n"
-"}")
+"	background-color: rgb(211, 201, 242);\n"
+"	border-radius: 15px;\n"
+"}\n"
+"")
 
         self.horizontalLayout_19.addWidget(self.btnBP3)
 
@@ -961,7 +1075,7 @@ class Ui_WndMain(object):
         self.frmSearchbar.setObjectName(u"frmSearchbar")
         self.frmSearchbar.setMinimumSize(QSize(0, 50))
         self.frmSearchbar.setMaximumSize(QSize(16777215, 50))
-        self.frmSearchbar.setStyleSheet(u"background-color: rgb(100, 55, 237);\n"
+        self.frmSearchbar.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
 "border-radius: 15px;\n"
 "")
         self.frmSearchbar.setFrameShape(QFrame.StyledPanel)
@@ -983,7 +1097,7 @@ class Ui_WndMain(object):
         font2 = QFont()
         font2.setPointSize(12)
         self.tblUser.setFont(font2)
-        self.tblUser.setStyleSheet(u"background-color: rgb(100, 55, 237);\n"
+        self.tblUser.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
 "border-radius: 15px;\n"
 "")
 
@@ -1067,6 +1181,13 @@ class Ui_WndMain(object):
         self.btnKcal1.setText(QCoreApplication.translate("WndMain", u"Kcal", None))
         self.btnSteps1.setText(QCoreApplication.translate("WndMain", u"Steps", None))
         self.btnBP1.setText(QCoreApplication.translate("WndMain", u"Blood Pressure", None))
+        self.label.setText(QCoreApplication.translate("WndMain", u"Time Priod:", None))
+        self.comboBox.setItemText(0, QCoreApplication.translate("WndMain", u"1 week", None))
+        self.comboBox.setItemText(1, QCoreApplication.translate("WndMain", u"1 month", None))
+        self.comboBox.setItemText(2, QCoreApplication.translate("WndMain", u"3 month", None))
+        self.comboBox.setItemText(3, QCoreApplication.translate("WndMain", u"complete", None))
+
+        self.comboBox.setCurrentText(QCoreApplication.translate("WndMain", u"1 week", None))
         self.btnKcal2.setText(QCoreApplication.translate("WndMain", u"Kcal", None))
         self.btnSteps2.setText(QCoreApplication.translate("WndMain", u"Steps", None))
         self.btnBP2.setText(QCoreApplication.translate("WndMain", u"Blood Pressure", None))
