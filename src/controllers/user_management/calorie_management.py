@@ -1,6 +1,6 @@
 import datetime
 from src.controllers.database.database import Database
-from src.controllers.user_management import calc_kcal
+from src.controllers.user_management.calc_kcal import calc_kcal
 
 
 def get_daily_calories(user):
