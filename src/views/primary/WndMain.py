@@ -623,30 +623,30 @@ class Ui_WndMain(object):
         self.verticalLayout_13.setSpacing(0)
         self.verticalLayout_13.setObjectName(u"verticalLayout_13")
         self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
-        self.frmTopContentStat1 = QFrame(self.pageStatKcal)
-        self.frmTopContentStat1.setObjectName(u"frmTopContentStat1")
-        self.frmTopContentStat1.setMaximumSize(QSize(16777215, 50))
-        self.frmTopContentStat1.setFrameShape(QFrame.StyledPanel)
-        self.frmTopContentStat1.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_14 = QHBoxLayout(self.frmTopContentStat1)
+        self.frmTopContentKcal = QFrame(self.pageStatKcal)
+        self.frmTopContentKcal.setObjectName(u"frmTopContentKcal")
+        self.frmTopContentKcal.setMaximumSize(QSize(16777215, 50))
+        self.frmTopContentKcal.setFrameShape(QFrame.StyledPanel)
+        self.frmTopContentKcal.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_14 = QHBoxLayout(self.frmTopContentKcal)
         self.horizontalLayout_14.setSpacing(0)
         self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
         self.horizontalLayout_14.setContentsMargins(0, 0, 0, 0)
-        self.frmTopLeftStat1 = QFrame(self.frmTopContentStat1)
+        self.frmTopLeftStat1 = QFrame(self.frmTopContentKcal)
         self.frmTopLeftStat1.setObjectName(u"frmTopLeftStat1")
         self.frmTopLeftStat1.setFrameShape(QFrame.StyledPanel)
         self.frmTopLeftStat1.setFrameShadow(QFrame.Raised)
 
         self.horizontalLayout_14.addWidget(self.frmTopLeftStat1)
 
-        self.frmbtnStat1 = QFrame(self.frmTopContentStat1)
-        self.frmbtnStat1.setObjectName(u"frmbtnStat1")
-        self.frmbtnStat1.setMinimumSize(QSize(500, 0))
-        self.frmbtnStat1.setFrameShape(QFrame.StyledPanel)
-        self.frmbtnStat1.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_15 = QHBoxLayout(self.frmbtnStat1)
+        self.frmTopBtnKcal = QFrame(self.frmTopContentKcal)
+        self.frmTopBtnKcal.setObjectName(u"frmTopBtnKcal")
+        self.frmTopBtnKcal.setMinimumSize(QSize(500, 0))
+        self.frmTopBtnKcal.setFrameShape(QFrame.StyledPanel)
+        self.frmTopBtnKcal.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_15 = QHBoxLayout(self.frmTopBtnKcal)
         self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
-        self.btnKcal1 = QPushButton(self.frmbtnStat1)
+        self.btnKcal1 = QPushButton(self.frmTopBtnKcal)
         self.btnKcal1.setObjectName(u"btnKcal1")
         sizePolicy4 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
         sizePolicy4.setHorizontalStretch(0)
@@ -671,7 +671,7 @@ class Ui_WndMain(object):
 
         self.horizontalLayout_15.addWidget(self.btnKcal1)
 
-        self.btnSteps1 = QPushButton(self.frmbtnStat1)
+        self.btnSteps1 = QPushButton(self.frmTopBtnKcal)
         self.btnSteps1.setObjectName(u"btnSteps1")
         sizePolicy4.setHeightForWidth(self.btnSteps1.sizePolicy().hasHeightForWidth())
         self.btnSteps1.setSizePolicy(sizePolicy4)
@@ -693,7 +693,7 @@ class Ui_WndMain(object):
 
         self.horizontalLayout_15.addWidget(self.btnSteps1)
 
-        self.btnBP1 = QPushButton(self.frmbtnStat1)
+        self.btnBP1 = QPushButton(self.frmTopBtnKcal)
         self.btnBP1.setObjectName(u"btnBP1")
         sizePolicy4.setHeightForWidth(self.btnBP1.sizePolicy().hasHeightForWidth())
         self.btnBP1.setSizePolicy(sizePolicy4)
@@ -716,9 +716,9 @@ class Ui_WndMain(object):
         self.horizontalLayout_15.addWidget(self.btnBP1)
 
 
-        self.horizontalLayout_14.addWidget(self.frmbtnStat1)
+        self.horizontalLayout_14.addWidget(self.frmTopBtnKcal)
 
-        self.frmTopRightStat1 = QFrame(self.frmTopContentStat1)
+        self.frmTopRightStat1 = QFrame(self.frmTopContentKcal)
         self.frmTopRightStat1.setObjectName(u"frmTopRightStat1")
         self.frmTopRightStat1.setFrameShape(QFrame.StyledPanel)
         self.frmTopRightStat1.setFrameShadow(QFrame.Raised)
@@ -726,7 +726,7 @@ class Ui_WndMain(object):
         self.horizontalLayout_14.addWidget(self.frmTopRightStat1)
 
 
-        self.verticalLayout_13.addWidget(self.frmTopContentStat1)
+        self.verticalLayout_13.addWidget(self.frmTopContentKcal)
 
         self.frmContentKcal = QFrame(self.pageStatKcal)
         self.frmContentKcal.setObjectName(u"frmContentKcal")
@@ -736,36 +736,36 @@ class Ui_WndMain(object):
         self.horizontalLayout_16.setSpacing(0)
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
         self.horizontalLayout_16.setContentsMargins(9, 0, 0, 0)
-        self.frame_2 = QFrame(self.frmContentKcal)
-        self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setFrameShape(QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.frmLeftContentKcal = QFrame(self.frmContentKcal)
+        self.frmLeftContentKcal.setObjectName(u"frmLeftContentKcal")
+        self.frmLeftContentKcal.setFrameShape(QFrame.StyledPanel)
+        self.frmLeftContentKcal.setFrameShadow(QFrame.Raised)
 
-        self.horizontalLayout_16.addWidget(self.frame_2)
+        self.horizontalLayout_16.addWidget(self.frmLeftContentKcal)
 
-        self.frmleftContetnKcal = QFrame(self.frmContentKcal)
-        self.frmleftContetnKcal.setObjectName(u"frmleftContetnKcal")
-        self.frmleftContetnKcal.setFrameShape(QFrame.StyledPanel)
-        self.frmleftContetnKcal.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_16 = QVBoxLayout(self.frmleftContetnKcal)
+        self.frmRightContentKcal = QFrame(self.frmContentKcal)
+        self.frmRightContentKcal.setObjectName(u"frmRightContentKcal")
+        self.frmRightContentKcal.setFrameShape(QFrame.StyledPanel)
+        self.frmRightContentKcal.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_16 = QVBoxLayout(self.frmRightContentKcal)
         self.verticalLayout_16.setObjectName(u"verticalLayout_16")
-        self.kcalChart = QFrame(self.frmleftContetnKcal)
+        self.kcalChart = QFrame(self.frmRightContentKcal)
         self.kcalChart.setObjectName(u"kcalChart")
         self.kcalChart.setFrameShape(QFrame.StyledPanel)
         self.kcalChart.setFrameShadow(QFrame.Raised)
 
         self.verticalLayout_16.addWidget(self.kcalChart)
 
-        self.frmChartSelection = QFrame(self.frmleftContetnKcal)
-        self.frmChartSelection.setObjectName(u"frmChartSelection")
-        self.frmChartSelection.setMaximumSize(QSize(16777215, 100))
-        self.frmChartSelection.setFrameShape(QFrame.StyledPanel)
-        self.frmChartSelection.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_17 = QHBoxLayout(self.frmChartSelection)
+        self.frmChartSelectionKcal = QFrame(self.frmRightContentKcal)
+        self.frmChartSelectionKcal.setObjectName(u"frmChartSelectionKcal")
+        self.frmChartSelectionKcal.setMaximumSize(QSize(16777215, 100))
+        self.frmChartSelectionKcal.setFrameShape(QFrame.StyledPanel)
+        self.frmChartSelectionKcal.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_17 = QHBoxLayout(self.frmChartSelectionKcal)
         self.horizontalLayout_17.setSpacing(0)
         self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
         self.horizontalLayout_17.setContentsMargins(0, 0, -1, 0)
-        self.frame_4 = QFrame(self.frmChartSelection)
+        self.frame_4 = QFrame(self.frmChartSelectionKcal)
         self.frame_4.setObjectName(u"frame_4")
         self.frame_4.setMaximumSize(QSize(100, 16777215))
         self.frame_4.setFrameShape(QFrame.StyledPanel)
@@ -773,40 +773,40 @@ class Ui_WndMain(object):
 
         self.horizontalLayout_17.addWidget(self.frame_4)
 
-        self.frame_6 = QFrame(self.frmChartSelection)
-        self.frame_6.setObjectName(u"frame_6")
-        self.frame_6.setMaximumSize(QSize(16777215, 50))
-        self.frame_6.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
+        self.frmSelectionBtnKcal = QFrame(self.frmChartSelectionKcal)
+        self.frmSelectionBtnKcal.setObjectName(u"frmSelectionBtnKcal")
+        self.frmSelectionBtnKcal.setMaximumSize(QSize(16777215, 50))
+        self.frmSelectionBtnKcal.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
 "border-radius: 15px;")
-        self.frame_6.setFrameShape(QFrame.StyledPanel)
-        self.frame_6.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_22 = QHBoxLayout(self.frame_6)
+        self.frmSelectionBtnKcal.setFrameShape(QFrame.StyledPanel)
+        self.frmSelectionBtnKcal.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_22 = QHBoxLayout(self.frmSelectionBtnKcal)
         self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
-        self.label = QLabel(self.frame_6)
-        self.label.setObjectName(u"label")
-        self.label.setFont(font)
+        self.lbSelectionKcal = QLabel(self.frmSelectionBtnKcal)
+        self.lbSelectionKcal.setObjectName(u"lbSelectionKcal")
+        self.lbSelectionKcal.setFont(font)
 
-        self.horizontalLayout_22.addWidget(self.label)
+        self.horizontalLayout_22.addWidget(self.lbSelectionKcal)
 
-        self.comboBox = QComboBox(self.frame_6)
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.setObjectName(u"comboBox")
-        self.comboBox.setMinimumSize(QSize(120, 0))
-        self.comboBox.setMaximumSize(QSize(120, 16777215))
-        self.comboBox.setFont(font)
-        self.comboBox.setStyleSheet(u"")
-        self.comboBox.setEditable(False)
-        self.comboBox.setMaxCount(2147483645)
+        self.cbKcal = QComboBox(self.frmSelectionBtnKcal)
+        self.cbKcal.addItem("")
+        self.cbKcal.addItem("")
+        self.cbKcal.addItem("")
+        self.cbKcal.addItem("")
+        self.cbKcal.setObjectName(u"cbKcal")
+        self.cbKcal.setMinimumSize(QSize(120, 0))
+        self.cbKcal.setMaximumSize(QSize(120, 16777215))
+        self.cbKcal.setFont(font)
+        self.cbKcal.setStyleSheet(u"")
+        self.cbKcal.setEditable(False)
+        self.cbKcal.setMaxCount(2147483645)
 
-        self.horizontalLayout_22.addWidget(self.comboBox)
+        self.horizontalLayout_22.addWidget(self.cbKcal)
 
 
-        self.horizontalLayout_17.addWidget(self.frame_6)
+        self.horizontalLayout_17.addWidget(self.frmSelectionBtnKcal)
 
-        self.frame_5 = QFrame(self.frmChartSelection)
+        self.frame_5 = QFrame(self.frmChartSelectionKcal)
         self.frame_5.setObjectName(u"frame_5")
         self.frame_5.setMaximumSize(QSize(100, 16777215))
         self.frame_5.setFrameShape(QFrame.StyledPanel)
@@ -815,10 +815,10 @@ class Ui_WndMain(object):
         self.horizontalLayout_17.addWidget(self.frame_5)
 
 
-        self.verticalLayout_16.addWidget(self.frmChartSelection)
+        self.verticalLayout_16.addWidget(self.frmChartSelectionKcal)
 
 
-        self.horizontalLayout_16.addWidget(self.frmleftContetnKcal)
+        self.horizontalLayout_16.addWidget(self.frmRightContentKcal)
 
 
         self.verticalLayout_13.addWidget(self.frmContentKcal)
@@ -830,30 +830,30 @@ class Ui_WndMain(object):
         self.verticalLayout_15.setSpacing(0)
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
         self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
-        self.frmTopContentStat2 = QFrame(self.pageStatSteps)
-        self.frmTopContentStat2.setObjectName(u"frmTopContentStat2")
-        self.frmTopContentStat2.setMaximumSize(QSize(16777215, 50))
-        self.frmTopContentStat2.setFrameShape(QFrame.StyledPanel)
-        self.frmTopContentStat2.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_20 = QHBoxLayout(self.frmTopContentStat2)
+        self.frmTopContentSteps = QFrame(self.pageStatSteps)
+        self.frmTopContentSteps.setObjectName(u"frmTopContentSteps")
+        self.frmTopContentSteps.setMaximumSize(QSize(16777215, 50))
+        self.frmTopContentSteps.setFrameShape(QFrame.StyledPanel)
+        self.frmTopContentSteps.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_20 = QHBoxLayout(self.frmTopContentSteps)
         self.horizontalLayout_20.setSpacing(0)
         self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
         self.horizontalLayout_20.setContentsMargins(0, 0, 0, 0)
-        self.frmTopLeftStat2 = QFrame(self.frmTopContentStat2)
+        self.frmTopLeftStat2 = QFrame(self.frmTopContentSteps)
         self.frmTopLeftStat2.setObjectName(u"frmTopLeftStat2")
         self.frmTopLeftStat2.setFrameShape(QFrame.StyledPanel)
         self.frmTopLeftStat2.setFrameShadow(QFrame.Raised)
 
         self.horizontalLayout_20.addWidget(self.frmTopLeftStat2)
 
-        self.frmbtnStat2 = QFrame(self.frmTopContentStat2)
-        self.frmbtnStat2.setObjectName(u"frmbtnStat2")
-        self.frmbtnStat2.setMinimumSize(QSize(500, 0))
-        self.frmbtnStat2.setFrameShape(QFrame.StyledPanel)
-        self.frmbtnStat2.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_21 = QHBoxLayout(self.frmbtnStat2)
+        self.frmTopBtnSteps = QFrame(self.frmTopContentSteps)
+        self.frmTopBtnSteps.setObjectName(u"frmTopBtnSteps")
+        self.frmTopBtnSteps.setMinimumSize(QSize(500, 0))
+        self.frmTopBtnSteps.setFrameShape(QFrame.StyledPanel)
+        self.frmTopBtnSteps.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_21 = QHBoxLayout(self.frmTopBtnSteps)
         self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
-        self.btnKcal2 = QPushButton(self.frmbtnStat2)
+        self.btnKcal2 = QPushButton(self.frmTopBtnSteps)
         self.btnKcal2.setObjectName(u"btnKcal2")
         sizePolicy4.setHeightForWidth(self.btnKcal2.sizePolicy().hasHeightForWidth())
         self.btnKcal2.setSizePolicy(sizePolicy4)
@@ -875,7 +875,7 @@ class Ui_WndMain(object):
 
         self.horizontalLayout_21.addWidget(self.btnKcal2)
 
-        self.btnSteps2 = QPushButton(self.frmbtnStat2)
+        self.btnSteps2 = QPushButton(self.frmTopBtnSteps)
         self.btnSteps2.setObjectName(u"btnSteps2")
         sizePolicy4.setHeightForWidth(self.btnSteps2.sizePolicy().hasHeightForWidth())
         self.btnSteps2.setSizePolicy(sizePolicy4)
@@ -897,7 +897,7 @@ class Ui_WndMain(object):
 
         self.horizontalLayout_21.addWidget(self.btnSteps2)
 
-        self.btnBP2 = QPushButton(self.frmbtnStat2)
+        self.btnBP2 = QPushButton(self.frmTopBtnSteps)
         self.btnBP2.setObjectName(u"btnBP2")
         sizePolicy4.setHeightForWidth(self.btnBP2.sizePolicy().hasHeightForWidth())
         self.btnBP2.setSizePolicy(sizePolicy4)
@@ -920,9 +920,9 @@ class Ui_WndMain(object):
         self.horizontalLayout_21.addWidget(self.btnBP2)
 
 
-        self.horizontalLayout_20.addWidget(self.frmbtnStat2)
+        self.horizontalLayout_20.addWidget(self.frmTopBtnSteps)
 
-        self.frmTopRightStat2 = QFrame(self.frmTopContentStat2)
+        self.frmTopRightStat2 = QFrame(self.frmTopContentSteps)
         self.frmTopRightStat2.setObjectName(u"frmTopRightStat2")
         self.frmTopRightStat2.setFrameShape(QFrame.StyledPanel)
         self.frmTopRightStat2.setFrameShadow(QFrame.Raised)
@@ -930,14 +930,102 @@ class Ui_WndMain(object):
         self.horizontalLayout_20.addWidget(self.frmTopRightStat2)
 
 
-        self.verticalLayout_15.addWidget(self.frmTopContentStat2)
+        self.verticalLayout_15.addWidget(self.frmTopContentSteps)
 
-        self.frmContentStat2 = QFrame(self.pageStatSteps)
-        self.frmContentStat2.setObjectName(u"frmContentStat2")
-        self.frmContentStat2.setFrameShape(QFrame.StyledPanel)
-        self.frmContentStat2.setFrameShadow(QFrame.Raised)
+        self.frmContentSteps = QFrame(self.pageStatSteps)
+        self.frmContentSteps.setObjectName(u"frmContentSteps")
+        self.frmContentSteps.setFrameShape(QFrame.StyledPanel)
+        self.frmContentSteps.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_26 = QHBoxLayout(self.frmContentSteps)
+        self.horizontalLayout_26.setSpacing(0)
+        self.horizontalLayout_26.setObjectName(u"horizontalLayout_26")
+        self.horizontalLayout_26.setContentsMargins(9, 0, 0, 0)
+        self.frmLeftContentSteps = QFrame(self.frmContentSteps)
+        self.frmLeftContentSteps.setObjectName(u"frmLeftContentSteps")
+        self.frmLeftContentSteps.setFrameShape(QFrame.StyledPanel)
+        self.frmLeftContentSteps.setFrameShadow(QFrame.Raised)
 
-        self.verticalLayout_15.addWidget(self.frmContentStat2)
+        self.horizontalLayout_26.addWidget(self.frmLeftContentSteps)
+
+        self.frmRightContentSteps = QFrame(self.frmContentSteps)
+        self.frmRightContentSteps.setObjectName(u"frmRightContentSteps")
+        self.frmRightContentSteps.setFrameShape(QFrame.StyledPanel)
+        self.frmRightContentSteps.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_18 = QVBoxLayout(self.frmRightContentSteps)
+        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
+        self.chartSteps = QFrame(self.frmRightContentSteps)
+        self.chartSteps.setObjectName(u"chartSteps")
+        self.chartSteps.setFrameShape(QFrame.StyledPanel)
+        self.chartSteps.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout_18.addWidget(self.chartSteps)
+
+        self.frmChartSelectionSteps = QFrame(self.frmRightContentSteps)
+        self.frmChartSelectionSteps.setObjectName(u"frmChartSelectionSteps")
+        self.frmChartSelectionSteps.setMaximumSize(QSize(16777215, 100))
+        self.frmChartSelectionSteps.setFrameShape(QFrame.StyledPanel)
+        self.frmChartSelectionSteps.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_28 = QHBoxLayout(self.frmChartSelectionSteps)
+        self.horizontalLayout_28.setSpacing(0)
+        self.horizontalLayout_28.setObjectName(u"horizontalLayout_28")
+        self.horizontalLayout_28.setContentsMargins(0, 0, 9, 0)
+        self.frame_15 = QFrame(self.frmChartSelectionSteps)
+        self.frame_15.setObjectName(u"frame_15")
+        self.frame_15.setMaximumSize(QSize(100, 16777215))
+        self.frame_15.setFrameShape(QFrame.StyledPanel)
+        self.frame_15.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_28.addWidget(self.frame_15)
+
+        self.frmSelectionBtnSteps = QFrame(self.frmChartSelectionSteps)
+        self.frmSelectionBtnSteps.setObjectName(u"frmSelectionBtnSteps")
+        self.frmSelectionBtnSteps.setMaximumSize(QSize(16777215, 50))
+        self.frmSelectionBtnSteps.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
+"border-radius: 15px;")
+        self.frmSelectionBtnSteps.setFrameShape(QFrame.StyledPanel)
+        self.frmSelectionBtnSteps.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_27 = QHBoxLayout(self.frmSelectionBtnSteps)
+        self.horizontalLayout_27.setObjectName(u"horizontalLayout_27")
+        self.lbSelectionSteps = QLabel(self.frmSelectionBtnSteps)
+        self.lbSelectionSteps.setObjectName(u"lbSelectionSteps")
+        self.lbSelectionSteps.setFont(font)
+
+        self.horizontalLayout_27.addWidget(self.lbSelectionSteps)
+
+        self.cbSteps = QComboBox(self.frmSelectionBtnSteps)
+        self.cbSteps.addItem("")
+        self.cbSteps.addItem("")
+        self.cbSteps.addItem("")
+        self.cbSteps.addItem("")
+        self.cbSteps.setObjectName(u"cbSteps")
+        self.cbSteps.setMinimumSize(QSize(120, 0))
+        self.cbSteps.setMaximumSize(QSize(120, 16777215))
+        self.cbSteps.setFont(font)
+        self.cbSteps.setStyleSheet(u"")
+        self.cbSteps.setEditable(False)
+        self.cbSteps.setMaxCount(2147483645)
+
+        self.horizontalLayout_27.addWidget(self.cbSteps)
+
+
+        self.horizontalLayout_28.addWidget(self.frmSelectionBtnSteps)
+
+        self.frame_17 = QFrame(self.frmChartSelectionSteps)
+        self.frame_17.setObjectName(u"frame_17")
+        self.frame_17.setMaximumSize(QSize(100, 16777215))
+        self.frame_17.setFrameShape(QFrame.StyledPanel)
+        self.frame_17.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_28.addWidget(self.frame_17)
+
+
+        self.verticalLayout_18.addWidget(self.frmChartSelectionSteps)
+
+
+        self.horizontalLayout_26.addWidget(self.frmRightContentSteps)
+
+
+        self.verticalLayout_15.addWidget(self.frmContentSteps)
 
         self.pages.addWidget(self.pageStatSteps)
         self.pageStatBP = QWidget()
@@ -946,30 +1034,30 @@ class Ui_WndMain(object):
         self.verticalLayout_14.setSpacing(0)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
-        self.frmTopContentStat3 = QFrame(self.pageStatBP)
-        self.frmTopContentStat3.setObjectName(u"frmTopContentStat3")
-        self.frmTopContentStat3.setMaximumSize(QSize(16777215, 50))
-        self.frmTopContentStat3.setFrameShape(QFrame.StyledPanel)
-        self.frmTopContentStat3.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_18 = QHBoxLayout(self.frmTopContentStat3)
+        self.frmTopContentBP = QFrame(self.pageStatBP)
+        self.frmTopContentBP.setObjectName(u"frmTopContentBP")
+        self.frmTopContentBP.setMaximumSize(QSize(16777215, 50))
+        self.frmTopContentBP.setFrameShape(QFrame.StyledPanel)
+        self.frmTopContentBP.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_18 = QHBoxLayout(self.frmTopContentBP)
         self.horizontalLayout_18.setSpacing(0)
         self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
         self.horizontalLayout_18.setContentsMargins(0, 0, 0, 0)
-        self.frmTopLeftStat3 = QFrame(self.frmTopContentStat3)
+        self.frmTopLeftStat3 = QFrame(self.frmTopContentBP)
         self.frmTopLeftStat3.setObjectName(u"frmTopLeftStat3")
         self.frmTopLeftStat3.setFrameShape(QFrame.StyledPanel)
         self.frmTopLeftStat3.setFrameShadow(QFrame.Raised)
 
         self.horizontalLayout_18.addWidget(self.frmTopLeftStat3)
 
-        self.frmbtnStat3 = QFrame(self.frmTopContentStat3)
-        self.frmbtnStat3.setObjectName(u"frmbtnStat3")
-        self.frmbtnStat3.setMinimumSize(QSize(500, 0))
-        self.frmbtnStat3.setFrameShape(QFrame.StyledPanel)
-        self.frmbtnStat3.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_19 = QHBoxLayout(self.frmbtnStat3)
+        self.frmTopBtnBP = QFrame(self.frmTopContentBP)
+        self.frmTopBtnBP.setObjectName(u"frmTopBtnBP")
+        self.frmTopBtnBP.setMinimumSize(QSize(500, 0))
+        self.frmTopBtnBP.setFrameShape(QFrame.StyledPanel)
+        self.frmTopBtnBP.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_19 = QHBoxLayout(self.frmTopBtnBP)
         self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
-        self.btnKcal3 = QPushButton(self.frmbtnStat3)
+        self.btnKcal3 = QPushButton(self.frmTopBtnBP)
         self.btnKcal3.setObjectName(u"btnKcal3")
         sizePolicy4.setHeightForWidth(self.btnKcal3.sizePolicy().hasHeightForWidth())
         self.btnKcal3.setSizePolicy(sizePolicy4)
@@ -991,7 +1079,7 @@ class Ui_WndMain(object):
 
         self.horizontalLayout_19.addWidget(self.btnKcal3)
 
-        self.btnSteps3 = QPushButton(self.frmbtnStat3)
+        self.btnSteps3 = QPushButton(self.frmTopBtnBP)
         self.btnSteps3.setObjectName(u"btnSteps3")
         sizePolicy4.setHeightForWidth(self.btnSteps3.sizePolicy().hasHeightForWidth())
         self.btnSteps3.setSizePolicy(sizePolicy4)
@@ -1013,7 +1101,7 @@ class Ui_WndMain(object):
 
         self.horizontalLayout_19.addWidget(self.btnSteps3)
 
-        self.btnBP3 = QPushButton(self.frmbtnStat3)
+        self.btnBP3 = QPushButton(self.frmTopBtnBP)
         self.btnBP3.setObjectName(u"btnBP3")
         sizePolicy4.setHeightForWidth(self.btnBP3.sizePolicy().hasHeightForWidth())
         self.btnBP3.setSizePolicy(sizePolicy4)
@@ -1036,9 +1124,9 @@ class Ui_WndMain(object):
         self.horizontalLayout_19.addWidget(self.btnBP3)
 
 
-        self.horizontalLayout_18.addWidget(self.frmbtnStat3)
+        self.horizontalLayout_18.addWidget(self.frmTopBtnBP)
 
-        self.frmTopRightStat3 = QFrame(self.frmTopContentStat3)
+        self.frmTopRightStat3 = QFrame(self.frmTopContentBP)
         self.frmTopRightStat3.setObjectName(u"frmTopRightStat3")
         self.frmTopRightStat3.setFrameShape(QFrame.StyledPanel)
         self.frmTopRightStat3.setFrameShadow(QFrame.Raised)
@@ -1046,14 +1134,102 @@ class Ui_WndMain(object):
         self.horizontalLayout_18.addWidget(self.frmTopRightStat3)
 
 
-        self.verticalLayout_14.addWidget(self.frmTopContentStat3)
+        self.verticalLayout_14.addWidget(self.frmTopContentBP)
 
-        self.frmContentStat3 = QFrame(self.pageStatBP)
-        self.frmContentStat3.setObjectName(u"frmContentStat3")
-        self.frmContentStat3.setFrameShape(QFrame.StyledPanel)
-        self.frmContentStat3.setFrameShadow(QFrame.Raised)
+        self.frmContentBP = QFrame(self.pageStatBP)
+        self.frmContentBP.setObjectName(u"frmContentBP")
+        self.frmContentBP.setFrameShape(QFrame.StyledPanel)
+        self.frmContentBP.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_29 = QHBoxLayout(self.frmContentBP)
+        self.horizontalLayout_29.setSpacing(0)
+        self.horizontalLayout_29.setObjectName(u"horizontalLayout_29")
+        self.horizontalLayout_29.setContentsMargins(9, 0, 0, 0)
+        self.frmLeftContentBP = QFrame(self.frmContentBP)
+        self.frmLeftContentBP.setObjectName(u"frmLeftContentBP")
+        self.frmLeftContentBP.setFrameShape(QFrame.StyledPanel)
+        self.frmLeftContentBP.setFrameShadow(QFrame.Raised)
 
-        self.verticalLayout_14.addWidget(self.frmContentStat3)
+        self.horizontalLayout_29.addWidget(self.frmLeftContentBP)
+
+        self.frmRightContentBP = QFrame(self.frmContentBP)
+        self.frmRightContentBP.setObjectName(u"frmRightContentBP")
+        self.frmRightContentBP.setFrameShape(QFrame.StyledPanel)
+        self.frmRightContentBP.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_19 = QVBoxLayout(self.frmRightContentBP)
+        self.verticalLayout_19.setObjectName(u"verticalLayout_19")
+        self.bpChart = QFrame(self.frmRightContentBP)
+        self.bpChart.setObjectName(u"bpChart")
+        self.bpChart.setFrameShape(QFrame.StyledPanel)
+        self.bpChart.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout_19.addWidget(self.bpChart)
+
+        self.frmChartSelectionBP = QFrame(self.frmRightContentBP)
+        self.frmChartSelectionBP.setObjectName(u"frmChartSelectionBP")
+        self.frmChartSelectionBP.setMaximumSize(QSize(16777215, 100))
+        self.frmChartSelectionBP.setFrameShape(QFrame.StyledPanel)
+        self.frmChartSelectionBP.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_31 = QHBoxLayout(self.frmChartSelectionBP)
+        self.horizontalLayout_31.setSpacing(0)
+        self.horizontalLayout_31.setObjectName(u"horizontalLayout_31")
+        self.horizontalLayout_31.setContentsMargins(0, 0, 9, 0)
+        self.frame_22 = QFrame(self.frmChartSelectionBP)
+        self.frame_22.setObjectName(u"frame_22")
+        self.frame_22.setMaximumSize(QSize(100, 16777215))
+        self.frame_22.setFrameShape(QFrame.StyledPanel)
+        self.frame_22.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_31.addWidget(self.frame_22)
+
+        self.frmSelectionBtnBP = QFrame(self.frmChartSelectionBP)
+        self.frmSelectionBtnBP.setObjectName(u"frmSelectionBtnBP")
+        self.frmSelectionBtnBP.setMaximumSize(QSize(16777215, 50))
+        self.frmSelectionBtnBP.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
+"border-radius: 15px;")
+        self.frmSelectionBtnBP.setFrameShape(QFrame.StyledPanel)
+        self.frmSelectionBtnBP.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_30 = QHBoxLayout(self.frmSelectionBtnBP)
+        self.horizontalLayout_30.setObjectName(u"horizontalLayout_30")
+        self.lbSelectionBP = QLabel(self.frmSelectionBtnBP)
+        self.lbSelectionBP.setObjectName(u"lbSelectionBP")
+        self.lbSelectionBP.setFont(font)
+
+        self.horizontalLayout_30.addWidget(self.lbSelectionBP)
+
+        self.cbBP = QComboBox(self.frmSelectionBtnBP)
+        self.cbBP.addItem("")
+        self.cbBP.addItem("")
+        self.cbBP.addItem("")
+        self.cbBP.addItem("")
+        self.cbBP.setObjectName(u"cbBP")
+        self.cbBP.setMinimumSize(QSize(120, 0))
+        self.cbBP.setMaximumSize(QSize(120, 16777215))
+        self.cbBP.setFont(font)
+        self.cbBP.setStyleSheet(u"")
+        self.cbBP.setEditable(False)
+        self.cbBP.setMaxCount(2147483645)
+
+        self.horizontalLayout_30.addWidget(self.cbBP)
+
+
+        self.horizontalLayout_31.addWidget(self.frmSelectionBtnBP)
+
+        self.frame_23 = QFrame(self.frmChartSelectionBP)
+        self.frame_23.setObjectName(u"frame_23")
+        self.frame_23.setMaximumSize(QSize(100, 16777215))
+        self.frame_23.setFrameShape(QFrame.StyledPanel)
+        self.frame_23.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_31.addWidget(self.frame_23)
+
+
+        self.verticalLayout_19.addWidget(self.frmChartSelectionBP)
+
+
+        self.horizontalLayout_29.addWidget(self.frmRightContentBP)
+
+
+        self.verticalLayout_14.addWidget(self.frmContentBP)
 
         self.pages.addWidget(self.pageStatBP)
         self.pageSettings = QWidget()
@@ -1155,7 +1331,7 @@ class Ui_WndMain(object):
 
         self.retranslateUi(WndMain)
 
-        self.pages.setCurrentIndex(0)
+        self.pages.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(WndMain)
@@ -1181,18 +1357,32 @@ class Ui_WndMain(object):
         self.btnKcal1.setText(QCoreApplication.translate("WndMain", u"Kcal", None))
         self.btnSteps1.setText(QCoreApplication.translate("WndMain", u"Steps", None))
         self.btnBP1.setText(QCoreApplication.translate("WndMain", u"Blood Pressure", None))
-        self.label.setText(QCoreApplication.translate("WndMain", u"Time Priod:", None))
-        self.comboBox.setItemText(0, QCoreApplication.translate("WndMain", u"1 week", None))
-        self.comboBox.setItemText(1, QCoreApplication.translate("WndMain", u"1 month", None))
-        self.comboBox.setItemText(2, QCoreApplication.translate("WndMain", u"3 month", None))
-        self.comboBox.setItemText(3, QCoreApplication.translate("WndMain", u"complete", None))
+        self.lbSelectionKcal.setText(QCoreApplication.translate("WndMain", u"Time Priod:", None))
+        self.cbKcal.setItemText(0, QCoreApplication.translate("WndMain", u"1 week", None))
+        self.cbKcal.setItemText(1, QCoreApplication.translate("WndMain", u"1 month", None))
+        self.cbKcal.setItemText(2, QCoreApplication.translate("WndMain", u"3 month", None))
+        self.cbKcal.setItemText(3, QCoreApplication.translate("WndMain", u"complete", None))
 
-        self.comboBox.setCurrentText(QCoreApplication.translate("WndMain", u"1 week", None))
+        self.cbKcal.setCurrentText(QCoreApplication.translate("WndMain", u"1 week", None))
         self.btnKcal2.setText(QCoreApplication.translate("WndMain", u"Kcal", None))
         self.btnSteps2.setText(QCoreApplication.translate("WndMain", u"Steps", None))
         self.btnBP2.setText(QCoreApplication.translate("WndMain", u"Blood Pressure", None))
+        self.lbSelectionSteps.setText(QCoreApplication.translate("WndMain", u"Time Priod:", None))
+        self.cbSteps.setItemText(0, QCoreApplication.translate("WndMain", u"1 week", None))
+        self.cbSteps.setItemText(1, QCoreApplication.translate("WndMain", u"1 month", None))
+        self.cbSteps.setItemText(2, QCoreApplication.translate("WndMain", u"3 month", None))
+        self.cbSteps.setItemText(3, QCoreApplication.translate("WndMain", u"complete", None))
+
+        self.cbSteps.setCurrentText(QCoreApplication.translate("WndMain", u"1 week", None))
         self.btnKcal3.setText(QCoreApplication.translate("WndMain", u"Kcal", None))
         self.btnSteps3.setText(QCoreApplication.translate("WndMain", u"Steps", None))
         self.btnBP3.setText(QCoreApplication.translate("WndMain", u"Blood Pressure", None))
+        self.lbSelectionBP.setText(QCoreApplication.translate("WndMain", u"Time Priod:", None))
+        self.cbBP.setItemText(0, QCoreApplication.translate("WndMain", u"1 week", None))
+        self.cbBP.setItemText(1, QCoreApplication.translate("WndMain", u"1 month", None))
+        self.cbBP.setItemText(2, QCoreApplication.translate("WndMain", u"3 month", None))
+        self.cbBP.setItemText(3, QCoreApplication.translate("WndMain", u"complete", None))
+
+        self.cbBP.setCurrentText(QCoreApplication.translate("WndMain", u"1 week", None))
     # retranslateUi
 
