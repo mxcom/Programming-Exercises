@@ -1,9 +1,13 @@
 from datetime import datetime
 
-from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QMainWindow, QVBoxLayout
+from PySide6.QtCharts import QLineSeries, QChartView, QChart
+from PySide6.QtCore import Qt, QPointF
+from PySide6.QtGui import QPainter
+from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QHBoxLayout
 from PySide6 import QtCore
+from PySide6.examples.charts.dynamicspline import chart
 
+from src.controllers.primary.stat_charts import create_chart
 from src.controllers.user_management.calorie_management import get_daily_calories, update_calories
 from src.controllers.primary.progress_bar import CircularProgress
 from src.controllers.user_management.calc_kcal import calc_kcal
@@ -22,6 +26,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.user = user
 
         self.ui.pages.setCurrentIndex(0)
+        self.ui.frmLeftContentKcal.setMinimumSize(466, 470)
 
         kcal = get_daily_calories(user)
 
@@ -84,6 +89,12 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
 
         self.ui.leBPLow.textChanged.connect(self.validate_bp_low)
         self.ui.leBPHigh.textChanged.connect(self.validate_bp_high)
+
+        # Set statistics
+        self.chart = create_chart()
+        self.layoutChart = QHBoxLayout()
+        self.layoutChart.addWidget(self.chart)
+        self.ui.kcalChart.setLayout(self.layoutChart)
 
     # Methods for Menu Button clicked
     def home_page(self):
