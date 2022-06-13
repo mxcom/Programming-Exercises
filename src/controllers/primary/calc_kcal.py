@@ -10,8 +10,6 @@ def calc_kcal(sex, height, weight, birthday):
 
     age = math.floor(current_date.days / 365)
 
-    print(age)
-
     if sex == 'female':
         return int((10 * weight) + (6.25 * height) + (5 * age) - 161)
     else:

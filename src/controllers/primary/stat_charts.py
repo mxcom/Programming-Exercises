@@ -40,7 +40,6 @@ def create_chart():
     axisY = QValueAxis()
     axisY.setRange(0, 2400)
     axisY.setLabelFormat("%.0f")
-    axisY.s
     series.attachAxis(axisY)
 
     # Create chart and set properties
