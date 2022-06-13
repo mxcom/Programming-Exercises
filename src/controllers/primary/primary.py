@@ -100,6 +100,21 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.layoutChart.addWidget(self.chart)
         self.ui.kcalChart.setLayout(self.layoutChart)
 
+        # Set Setting page Functionalities
+        self.ui.lbSetFirstNameValue.setText(self.user.get_first_name())
+        self.ui.lbSetFirstNameValue.setStyleSheet("color: rgb(211, 201, 242);")
+        self.ui.lbSetLastNameValue.setText(self.user.get_last_name())
+        self.ui.lbSetLastNameValue.setStyleSheet("color: rgb(211, 201, 242);")
+        self.ui.lbSetBirthdayValue.setText(self.user.get_birthday().strftime("%d.%m.%Y"))
+        self.ui.lbSetBirthdayValue.setStyleSheet("color: rgb(211, 201, 242);")
+        self.ui.lbSetSexValue.setText(self.user.get_sex())
+        self.ui.lbSetSexValue.setStyleSheet("color: rgb(211, 201, 242);")
+        self.ui.lbSetHeightValue.setText((str(int(self.user.get_height()))))
+        self.ui.lbSetHeightValue.setStyleSheet("color: rgb(211, 201, 242);")
+        self.ui.lbSetEmailValue.setText(self.user.get_email())
+        self.ui.lbSetEmailValue.setStyleSheet("color: rgb(211, 201, 242);")
+
+
     # Methods for Menu Button clicked
     def home_page(self):
         self.ui.pages.setCurrentIndex(0)
