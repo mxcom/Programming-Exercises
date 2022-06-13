@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/primary/primary.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/primary/primary.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/primary/stat_charts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/primary/stat_charts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/user_management/calorie_management.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user_management/calorie_management.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +134,7 @@
       <workItem from="1655092109726" duration="71000" />
       <workItem from="1655107226087" duration="1739000" />
       <workItem from="1655126239656" duration="3054000" />
-      <workItem from="1655129402216" duration="5770000" />
+      <workItem from="1655129402216" duration="7362000" />
     </task>
     <servers />
   </component>
@@ -153,7 +152,18 @@
       </map>
     </option>
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/controllers/primary/stat_charts.py</url>
+          <line>14</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ProgrammingExercise$main.coverage" NAME="main Coverage Results" MODIFIED="1655140188976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/ProgrammingExercise$main.coverage" NAME="main Coverage Results" MODIFIED="1655141628454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>

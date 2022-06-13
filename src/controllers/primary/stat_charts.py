@@ -36,6 +36,14 @@ def create_chart(user, period):
         categories.append(temp_date[0:3])
         i += 1
 
+    # Create chart and set properties
+    chart = QChart()
+    chart.addSeries(series)
+
+    # Create Chart View and add created chart to chart view
+    chartview = QChartView(chart)
+    chartview.setRenderHint(QPainter.Antialiasing)
+
     axisX = QBarCategoryAxis()
     axisX.append(categories)
     series.attachAxis(axisX)
@@ -46,16 +54,11 @@ def create_chart(user, period):
     axisY.setLabelFormat("%.0f")
     series.attachAxis(axisY)
 
-    # Create chart and set properties
-    chart = QChart()
-    chart.addSeries(series)
     chart.addAxis(axisX, Qt.AlignBottom)
     chart.addAxis(axisY, Qt.AlignLeft)
     chart.setAnimationOptions(QChart.SeriesAnimations)
     chart.legend().setVisible(False)
 
 
-    # Create Chart View and add created chart to chart view
-    chartview = QChartView(chart)
-    chartview.setRenderHint(QPainter.Antialiasing)
+
     return chartview

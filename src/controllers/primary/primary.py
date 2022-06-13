@@ -21,6 +21,8 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
 
     def __init__(self, user, parent=None):
         super(PrimaryWindow, self).__init__(parent)
+        self.chart3 = None
+        self.chart2 = None
         self.ui = Ui_WndMain()
         self.ui.setupUi(self)
         self.user = user
@@ -217,11 +219,20 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
 
     def date_selected(self):
         if self.ui.cbKcal.currentText() == '1 week':
-            print(1)
-            return 1
+            self.chart.destroy()
+            self.chart = create_chart(self.user, 1)
+            self.layoutChart = QHBoxLayout()
+            self.layoutChart.addWidget(self.chart)
+            self.ui.kcalChart.setLayout(self.layoutChart)
         if self.ui.cbKcal.currentText() == '1 month':
-            print(2)
-            return 2
+            self.chart.hide()
+            self.chart2 = create_chart(self.user, 2)
+            self.layoutChart = QHBoxLayout()
+            self.layoutChart.addWidget(self.chart2)
+            self.ui.kcalChart.setLayout(self.layoutChart)
         if self.ui.cbKcal.currentText() == 'complete':
-            print(3)
-            return 3
+            self.chart.hide()
+            self.chart3 = create_chart(self.user, 3)
+            self.layoutChart = QHBoxLayout()
+            self.layoutChart.addWidget(self.chart3)
+            self.ui.kcalChart.setLayout(self.layoutChart)
