@@ -175,19 +175,15 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
     def validate_bp_low(self):
         try:
             input = int(self.ui.leBPLow.text())
-            self.ui.leBPLow.setStyleSheet("color: Black")
             return True
         except:
-            self.ui.leBPLow.setStyleSheet("color: rgb(255, 0, 65);")
             return False
 
     def validate_bp_high(self):
         try:
             text = int(self.ui.leBPLow.text())
-            self.ui.leBPHigh.setStyleSheet("color: Black")
             return True
         except:
-            self.ui.leBPHigh.setStyleSheet("color: rgb(255, 0, 65);")
             return False
 
     def add_calories(self, old_calories, new_calories):
