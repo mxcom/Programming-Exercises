@@ -7,6 +7,7 @@ from datetime import date
 import calendar
 from src.controllers.user_management.calorie_management import get_stat_kcal
 from src.models.user_management.user import User
+from src.controllers.user_management.calc_kcal import calc_kcal
 
 
 def create_chart(user, period):
@@ -40,7 +41,8 @@ def create_chart(user, period):
     series.attachAxis(axisX)
 
     axisY = QValueAxis()
-    axisY.setRange(0, 2400)
+    limit = calc_kcal(user.get_sex(), user.get_height(), user.get_weight(), user.get_birthday())
+    axisY.setRange(0, limit)
     axisY.setLabelFormat("%.0f")
     series.attachAxis(axisY)
 

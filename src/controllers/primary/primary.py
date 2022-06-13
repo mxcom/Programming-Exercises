@@ -90,6 +90,8 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.leBPLow.textChanged.connect(self.validate_bp_low)
         self.ui.leBPHigh.textChanged.connect(self.validate_bp_high)
 
+        self.ui.cbKcal.activated.connect(self.date_selected)
+
         # Set statistics
         self.chart = create_chart(self.user, 1)
         self.layoutChart = QHBoxLayout()
@@ -212,3 +214,14 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
 
         # if self.validate_bp_low() and self.validate_bp_high():
         #     add_bp(self.user.get_id(), int(self.ui.leBPLow.text()), int(self.ui.leBPHigh.text()))
+
+    def date_selected(self):
+        if self.ui.cbKcal.currentText() == '1 week':
+            print(1)
+            return 1
+        if self.ui.cbKcal.currentText() == '1 month':
+            print(2)
+            return 2
+        if self.ui.cbKcal.currentText() == 'complete':
+            print(3)
+            return 3
