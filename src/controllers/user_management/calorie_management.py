@@ -1,6 +1,7 @@
 import datetime
 from src.controllers.database.database import Database
 from src.controllers.user_management.calc_kcal import calc_kcal
+from PySide6.QtCharts import QBarSet
 
 
 def get_daily_calories(user):
@@ -57,11 +58,10 @@ def get_stat_kcal(user, period):
         else:
             return None
 
-        results = set()
+        results = QBarSet("kcal")
         for i in cursor.fetchall():
-            results.add(i[0])
-            print(results)
+            results << i[0]
 
-        print(results)
+        return results
     except Exception as e:
         print(e)

@@ -5,12 +5,13 @@ from PySide6.QtGui import QPen, QColor, Qt, QPainter
 from PySide6.QtWidgets import QWidget, QVBoxLayout
 from datetime import date
 import calendar
+from src.controllers.user_management.calorie_management import get_stat_kcal
+from src.models.user_management.user import User
 
 
-def create_chart():
+def create_chart(user, period):
     # Create Set of Kcal for one week
-    set0 = QBarSet("kcal")
-    set0 << 2000 << 2400 << 1900 << 2100 << 2000 << 2350 << 1900
+    set0 = get_stat_kcal(user, period)
     set0.setColor(QColor(0x7A64BD))
 
     # Create Series where given set is added
@@ -27,7 +28,8 @@ def create_chart():
     temp_date = calendar.day_name[curr_date.weekday()]
     categories = [temp_date[0:3]]
     i = 0
-    for i in range(6):
+    myrange = set0.count()-1
+    for i in range(myrange):
         curr_date += datetime.timedelta(days=1)
         temp_date = calendar.day_name[curr_date.weekday()]
         categories.append(temp_date[0:3])

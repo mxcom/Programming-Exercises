@@ -91,7 +91,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.leBPHigh.textChanged.connect(self.validate_bp_high)
 
         # Set statistics
-        self.chart = create_chart()
+        self.chart = create_chart(self.user, 1)
         self.layoutChart = QHBoxLayout()
         self.layoutChart.addWidget(self.chart)
         self.ui.kcalChart.setLayout(self.layoutChart)
