@@ -43,20 +43,19 @@ def get_stat_kcal(user, period):
         db = Database()
         cursor = db.get_cursor()
         date = datetime.datetime.today().date().strftime("%Y-%m-%d")
-        match period:
-            case 1:
-                cursor.execute("SELECT CaloriesEaten FROM calories WHERE UserID LIKE %s AND DAYOFWEEK(%s)"
-                               "ORDER BY Date",
-                               (user.get_id(), date))
-            case 2:
-                cursor.execute("SELECT CaloriesEaten FROM calories WHERE UserID LIKE %s AND DAYOFMONTH(%s)"
-                               "ORDER BY Date",
-                               (user.get_id(), date))
-            case 3:
-                cursor.execute("SELECT CaloriesEaten FROM calories WHERE UserID LIKE %s ORDER BY Date",
-                               (user.get_id(),))
-            case _:
-                return "Invalid number"
+        if period == 1:
+            cursor.execute("SELECT CaloriesEaten FROM calories WHERE UserID LIKE %s AND DAYOFWEEK(%s)"
+                           "ORDER BY Date",
+                           (user.get_id(), date))
+        elif period == 2:
+            cursor.execute("SELECT CaloriesEaten FROM calories WHERE UserID LIKE %s AND DAYOFMONTH(%s)"
+                           "ORDER BY Date",
+                           (user.get_id(), date))
+        elif period == 3:
+            cursor.execute("SELECT CaloriesEaten FROM calories WHERE UserID LIKE %s ORDER BY Date",
+                           (user.get_id(),))
+        else:
+            return None
 
         results = set()
         for i in cursor.fetchall():
