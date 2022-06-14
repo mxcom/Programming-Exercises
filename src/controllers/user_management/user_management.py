@@ -88,3 +88,15 @@ def add_bp(id, low, high):
         db.get_database().close()
     except Exception as e:
         print(e)
+
+
+def update_email(user, new_email):
+    try:
+        db = Database()
+        cursor = db.get_cursor()
+        cursor.execute("UPDATE user SET Email = %s WHERE Email LIKE %s;", (new_email, user.get_email()))
+        return True
+    except Exception as e:
+        print(e)
+        return False
+

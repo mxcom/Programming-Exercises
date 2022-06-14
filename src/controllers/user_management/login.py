@@ -82,7 +82,7 @@ class LoginWindow(QMainWindow, Ui_WndLogin):
                 email = self.ui.leEmail.text()
                 passwd = self.ui.lePassword.text()
 
-                user = get_user('mxprivate@protonmail.com')
+                user = get_user(self.ui.leEmail.text())
 
                 if compare_passwd(self.ui.lePassword.text(), user.get_passwd()):
                     self.destroy()
