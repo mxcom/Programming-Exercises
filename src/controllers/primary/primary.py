@@ -9,7 +9,7 @@ from PySide6 import QtCore
 from PySide6.examples.charts.dynamicspline import chart
 
 from src.controllers.primary.stat_charts import create_chart
-from src.controllers.user_management.user_management import update_email
+from src.controllers.user_management.user_management import update_email, update_passwd
 from src.controllers.user_management.calorie_management import get_daily_calories, update_calories
 from src.controllers.primary.progress_bar import CircularProgress
 from src.controllers.user_management.calc_kcal import calc_kcal
@@ -19,6 +19,7 @@ from src.views.primary.uiFunctions import UIFunctions
 from src.controllers.user_management.user_management import add_steps, add_weight, add_bp
 
 regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
+special_char = ['$', '@', '#', '%', '_', '-', '!']
 
 class PrimaryWindow(QMainWindow, Ui_WndMain):
 
@@ -262,7 +263,6 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             email = self.ui.leSetEmail.text()
             if re.fullmatch(regex, email):
                 if self.ui.leSetEmail.text() == self.ui.leSetConfirmEmail.text():
-                    print("true 2")
                     return True
                 else:
                     return False
@@ -272,11 +272,44 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             print(e)
             return False
 
+    def validate_height(self):
+        try:
+            passwd = self.ui.leSetPassword.text()
+            if not any(char.isupper() for char in passwd):
+                return False
+
+            # Password needs to contain at least 1 lowercase letter
+            if not any(char.islower() for char in passwd):
+                return False
+
+            # Password needs to contain at least 1 digit
+            if not any(char.isdigit() for char in passwd):
+                return False
+
+            # Password needs to contain at least 1 special character
+            if not any(char in special_char for char in passwd):
+                return False
+
+            # Password needs to be >= 8 characters
+            if len(passwd) < 8:
+                return False
+
+            if passwd == self.ui.leSetConfirmPassword.text():
+                return True
+        except Exception as e:
+            print(e)
+            return False
+
     def change_infos(self):
-        print("button pressed")
         if self.validate_email():
             if update_email(self.user, self.ui.leSetEmail.text()):
                 self.ui.lbSetEmailValue.setText(self.ui.leSetEmail.text())
                 self.ui.leSetEmail.setText('')
                 self.ui.leSetConfirmEmail.setText('')
+
+        if self.validate_height():
+            if update_passwd(self.user, self.ui.leSetPassword.text()):
+                self.ui.leSetPassword.setText('')
+                self.ui.leSetConfirmPassword.setText('')
+
 

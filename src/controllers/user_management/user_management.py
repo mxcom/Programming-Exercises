@@ -95,8 +95,20 @@ def update_email(user, new_email):
         db = Database()
         cursor = db.get_cursor()
         cursor.execute("UPDATE user SET Email = %s WHERE Email LIKE %s;", (new_email, user.get_email()))
+        db.get_database().close()
         return True
     except Exception as e:
         print(e)
         return False
 
+
+def update_passwd(user, new_passwd):
+    try:
+        db = Database()
+        cursor = db.get_cursor()
+        cursor.execute("UPDATE user SET Password = %s WHERE UserID LIKE %s", (hash_passwd(new_passwd), user.get_id()))
+        db.get_database().close()
+        return True
+    except Exception as e:
+        print(e)
+        return False
