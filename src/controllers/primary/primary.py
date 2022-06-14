@@ -118,7 +118,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.lbSetBirthdayValue.setStyleSheet("color: rgb(211, 201, 242);")
         self.ui.lbSetSexValue.setText(self.user.get_sex())
         self.ui.lbSetSexValue.setStyleSheet("color: rgb(211, 201, 242);")
-        self.ui.lbSetHeightValue.setText((str(int(self.user.get_height()))))
+        self.ui.lbSetHeightValue.setText((str(int(self.user.get_height()))) + " cm")
         self.ui.lbSetHeightValue.setStyleSheet("color: rgb(211, 201, 242);")
         self.ui.lbSetEmailValue.setText(self.user.get_email())
         self.ui.lbSetEmailValue.setStyleSheet("color: rgb(211, 201, 242);")
