@@ -11,7 +11,7 @@ from src.models.user_management.user import User
 from src.controllers.user_management.calc_kcal import calc_kcal
 
 
-class Chart():
+class Chart:
     def __init__(self, user, period):
         # Create Set of Kcal for one week
         self.results = get_stat_kcal(user, period)
@@ -20,8 +20,9 @@ class Chart():
         # for i in cursor.fetchall():
         #    results << i[0]
         self.set0 = QBarSet("kcal")
-        for i in self.results:
-            self.set0 << self.results[i]
+        self.result_set = set(self.results)
+        for i in self.result_set:
+            self.set0 << i
 
         self.set0.setColor(QColor(0x7A64BD))
 

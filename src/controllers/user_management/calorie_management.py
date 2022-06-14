@@ -59,10 +59,8 @@ def get_stat_kcal(user, period):
             return None
 
         results = []
-        print(results)
         for i in cursor.fetchall():
-
-
+            results.append(i[0])
 
         # results = QBarSet("kcal")
         # for i in cursor.fetchall():
