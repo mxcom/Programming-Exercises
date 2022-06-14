@@ -59,6 +59,4 @@ def create_chart(user, period):
     chart.setAnimationOptions(QChart.SeriesAnimations)
     chart.legend().setVisible(False)
 
-
-
     return chartview

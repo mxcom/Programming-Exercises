@@ -1767,8 +1767,7 @@ border-radius: 15px;</string>
                              </font>
                             </property>
                             <property name="styleSheet">
-                             <string notr="true">
-</string>
+                             <string notr="true"/>
                             </property>
                             <property name="editable">
                              <bool>false</bool>
@@ -3784,6 +3783,9 @@ border-radius: 15px;</string>
                         <height>0</height>
                        </size>
                       </property>
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
                       <property name="frameShape">
                        <enum>QFrame::StyledPanel</enum>
                       </property>
@@ -3843,6 +3845,12 @@ QPushButton:pressed {
                          </property>
                          <property name="text">
                           <string>Submit</string>
+                         </property>
+                         <property name="iconSize">
+                          <size>
+                           <width>0</width>
+                           <height>0</height>
+                          </size>
                          </property>
                         </widget>
                        </item>

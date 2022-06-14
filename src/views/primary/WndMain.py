@@ -1900,6 +1900,7 @@ class Ui_WndMain(object):
         self.frame_36 = QFrame(self.frame_20)
         self.frame_36.setObjectName(u"frame_36")
         self.frame_36.setMinimumSize(QSize(0, 0))
+        self.frame_36.setStyleSheet(u"")
         self.frame_36.setFrameShape(QFrame.StyledPanel)
         self.frame_36.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_45 = QHBoxLayout(self.frame_36)
@@ -1924,6 +1925,7 @@ class Ui_WndMain(object):
 "	background-color: rgb(211, 201, 242);\n"
 "	border-radius: 15px;\n"
 "}")
+        self.btnChangeInfo.setIconSize(QSize(0, 0))
 
         self.horizontalLayout_45.addWidget(self.btnChangeInfo)
 

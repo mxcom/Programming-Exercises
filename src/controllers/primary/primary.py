@@ -22,6 +22,7 @@ from src.controllers.cryptography.cryptography import hash_passwd
 regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
 special_char = ['$', '@', '#', '%', '_', '-', '!']
 
+
 class PrimaryWindow(QMainWindow, Ui_WndMain):
 
     def __init__(self, user, parent=None):
@@ -121,7 +122,6 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
 
         self.ui.btnChangeInfo.clicked.connect(self.change_infos)
 
-
     # Methods for Menu Button clicked
     def home_page(self):
         self.ui.pages.setCurrentIndex(0)
@@ -171,8 +171,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.btnHome.setStyleSheet(Style.style_btn_default_home)
         self.ui.btnFood.setStyleSheet(Style.style_btn_default_food)
         self.ui.btnStatistic.setStyleSheet(Style.style_btn_default_statistic)
-        self.ui.pageSettings.setStyleSheet(Style.style_btn_selected_settings)
-
+        self.ui.btnSettings.setStyleSheet(Style.style_btn_selected_settings)
         self.ui.lbPageDescription.setText("Settings")
 
     # Methods to validate the entered tracking data
@@ -319,19 +318,20 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
                 self.ui.lbSetEmailValue.setText(self.ui.leSetEmail.text())
                 self.ui.leSetEmail.setText('')
                 self.ui.leSetConfirmEmail.setText('')
-
+            else:
+                self.lbSetError.setText("Email could not be updated")
 
         if self.validate_passwd():
             if update_passwd(self.user, self.ui.leSetPassword.text()):
                 self.ui.leSetPassword.setText('')
                 self.ui.leSetConfirmPassword.setText('')
+            else:
+                self.lbSetError.setText("Password could not be updated")
 
         if self.validate_height():
             if update_height(self.user, self.ui.leSetHeight.text()):
                 self.user.set_height(self.ui.leSetHeight.text())
                 self.ui.lbSetHeightValue.setText(self.ui.leSetHeight.text())
                 self.ui.leSetHeight.setText('')
-
-
-
-
+            else:
+                self.lbSetError.setText("Height could not be updated")
