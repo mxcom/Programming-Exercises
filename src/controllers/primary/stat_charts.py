@@ -1,6 +1,7 @@
 import datetime
 
-from PySide6.QtCharts import QLineSeries, QChart, QChartView, QBarSeries, QBarSet, QBarCategoryAxis, QValueAxis
+from PySide6.QtCharts import QLineSeries, QChart, QChartView, QBarSeries, QBarSet, QBarCategoryAxis, QValueAxis, \
+    QPercentBarSeries
 from PySide6.QtGui import QPen, QColor, Qt, QPainter
 from PySide6.QtWidgets import QWidget, QVBoxLayout
 from datetime import date
@@ -10,53 +11,40 @@ from src.models.user_management.user import User
 from src.controllers.user_management.calc_kcal import calc_kcal
 
 
-def create_chart(user, period):
-    # Create Set of Kcal for one week
-    set0 = get_stat_kcal(user, period)
-    set0.setColor(QColor(0x7A64BD))
+class Chart():
+    def __init__(self, user, period):
+        # Create Set of Kcal for one week
+        self.set0 = get_stat_kcal(user, period)
+        self.set0.setColor(QColor(0x7A64BD))
 
-    # Create Series where given set is added
-    series = QBarSeries()
-    series.append(set0)
-    series.setBarWidth(series.count())
+        # Create Series where given set is added
+        self.series = QBarSeries()
+        self.series.append(self.set0)
+        self.series.setBarWidth(self.series.count())
 
-    pen = QPen()
-    pen.setColor(QColor(0x7A64BD))
+        # create chart
+        self.chart = QChart()
+        self.chart.addSeries(self.series)
+        self.chart.setAnimationOptions(QChart.SeriesAnimations)
 
-    # Create Axis
-
-    curr_date = datetime.datetime.today()
-    temp_date = calendar.day_name[curr_date.weekday()]
-    categories = [temp_date[0:3]]
-    i = 0
-    myrange = set0.count()-1
-    for i in range(myrange):
-        curr_date += datetime.timedelta(days=1)
+        curr_date = datetime.datetime.today()
         temp_date = calendar.day_name[curr_date.weekday()]
-        categories.append(temp_date[0:3])
-        i += 1
+        categories = [temp_date[0:3]]
+        i = 0
+        myrange = self.set0.count() - 1
+        for i in range(myrange):
+            curr_date += datetime.timedelta(days=1)
+            temp_date = calendar.day_name[curr_date.weekday()]
+            categories.append(temp_date[0:3])
+            i += 1
 
-    # Create chart and set properties
-    chart = QChart()
-    chart.addSeries(series)
+        self.axis = QBarCategoryAxis()
+        self.axis.append(categories)
+        self.chart.createDefaultAxes()
+        self.chart.setAxisX(self.axis, self.series)
+        self.chart.setAxisY(self.axis)
 
-    # Create Chart View and add created chart to chart view
-    chartview = QChartView(chart)
-    chartview.setRenderHint(QPainter.Antialiasing)
+        self.chartview = QChartView(self.chart)
 
-    axisX = QBarCategoryAxis()
-    axisX.append(categories)
-    series.attachAxis(axisX)
-
-    axisY = QValueAxis()
-    limit = calc_kcal(user.get_sex(), user.get_height(), user.get_weight(), user.get_birthday())
-    axisY.setRange(0, limit)
-    axisY.setLabelFormat("%.0f")
-    series.attachAxis(axisY)
-
-    chart.addAxis(axisX, Qt.AlignBottom)
-    chart.addAxis(axisY, Qt.AlignLeft)
-    chart.setAnimationOptions(QChart.SeriesAnimations)
-    chart.legend().setVisible(False)
-
-    return chartview
+    def get_chartview(self):
+        return self.chartview

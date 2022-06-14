@@ -8,7 +8,7 @@ from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QHBoxLayout
 from PySide6 import QtCore
 from PySide6.examples.charts.dynamicspline import chart
 
-from src.controllers.primary.stat_charts import create_chart
+# from src.controllers.primary.stat_charts import create_chart
 from src.controllers.user_management.user_management import update_email, update_passwd, update_height
 from src.controllers.user_management.calorie_management import get_daily_calories, update_calories
 from src.controllers.primary.progress_bar import CircularProgress
@@ -16,6 +16,7 @@ from src.controllers.user_management.calc_kcal import calc_kcal
 from src.views.primary.WndMain import Ui_WndMain
 from src.views.primary.btn_style import Style
 from src.views.primary.uiFunctions import UIFunctions
+from src.controllers.primary.stat_charts import Chart
 from src.controllers.user_management.user_management import add_steps, add_weight, add_bp
 from src.controllers.cryptography.cryptography import hash_passwd
 
@@ -101,9 +102,11 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.cbKcal.activated.connect(self.date_selected)
 
         # Set statistics
-        self.chart = create_chart(self.user, 1)
+        self.chart = Chart(self.user, 1)
+        self.kcal_chart = self.chart.get_chartview()
+        # self.chart = create_chart(self.user, 1)
         self.layoutChart = QHBoxLayout()
-        self.layoutChart.addWidget(self.chart)
+        self.layoutChart.addWidget(self.kcal_chart)
         self.ui.kcalChart.setLayout(self.layoutChart)
 
         # Set Setting page Functionalities
@@ -240,22 +243,24 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
 
     def date_selected(self):
         if self.ui.cbKcal.currentText() == '1 week':
-            self.chart.destroy()
-            self.chart = create_chart(self.user, 1)
+            self.chart = Chart(self.user, 1)
+            self.kcal_chart = self.chart.get_chartview()
             self.layoutChart = QHBoxLayout()
-            self.layoutChart.addWidget(self.chart)
+            self.layoutChart.addWidget(self.kcal_chart)
             self.ui.kcalChart.setLayout(self.layoutChart)
         if self.ui.cbKcal.currentText() == '1 month':
-            self.chart.hide()
-            self.chart2 = create_chart(self.user, 2)
+            self.kcal_chart.hide()
+            self.kcal_chart.destroy()
+            chart1 = Chart(self.user, 2)
+            kcal_chart2 = chart1.get_chartview()
             self.layoutChart = QHBoxLayout()
-            self.layoutChart.addWidget(self.chart2)
+            self.layoutChart.addWidget(kcal_chart2)
             self.ui.kcalChart.setLayout(self.layoutChart)
         if self.ui.cbKcal.currentText() == 'complete':
-            self.chart.hide()
-            self.chart3 = create_chart(self.user, 3)
+            self.chart = Chart(self.user, 3)
+            self.kcal_chart = self.chart.get_chartview()
             self.layoutChart = QHBoxLayout()
-            self.layoutChart.addWidget(self.chart3)
+            self.layoutChart.addWidget(self.kcal_chart)
             self.ui.kcalChart.setLayout(self.layoutChart)
 
     def validate_email(self):
