@@ -15,13 +15,14 @@ class Chart:
     def __init__(self, user, period):
         # Create Set of Kcal for one week
         self.results = get_stat_kcal(user, period)
+        self.results = self.results[::-1]
 
         # results = QBarSet("kcal")
         # for i in cursor.fetchall():
         #    results << i[0]
         self.set0 = QBarSet("kcal")
-        self.result_set = set(self.results)
-        for i in self.result_set:
+
+        for i in self.results:
             self.set0 << i
 
         self.set0.setColor(QColor(0x7A64BD))
@@ -35,6 +36,7 @@ class Chart:
         self.chart = QChart()
         self.chart.addSeries(self.series)
         self.chart.setAnimationOptions(QChart.SeriesAnimations)
+        self.chart.legend().setVisible(False)
 
         curr_date = datetime.datetime.today()
         temp_date = calendar.day_name[curr_date.weekday()]
@@ -54,10 +56,12 @@ class Chart:
         self.chart.setAxisY(self.axis)'''
 
         self.axisX = QBarCategoryAxis()
-        self.axisX.append(categories)
+        self.axisX.append(categories[::-1])
         self.axisY = QValueAxis()
         self.axisY.setRange(0, max(self.results))
+        self.axisY.setLabelFormat("%.0f")
         self.chart.setAxisY(self.axisY)
+        self.chart.setAxisX(self.axisX)
 
         self.chartview = QChartView(self.chart)
 

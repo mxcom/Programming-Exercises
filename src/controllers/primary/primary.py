@@ -100,7 +100,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.leBPHigh.textChanged.connect(self.validate_bp_high)
 
         self.ui.cbKcal.activated.connect(self.date_selected)
-
+        
         # Set statistics
         self.chart = Chart(self.user, 1)
         self.kcal_chart = self.chart.get_chartview()
@@ -108,6 +108,10 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.layoutChart = QHBoxLayout()
         self.layoutChart.addWidget(self.kcal_chart)
         self.ui.kcalChart.setLayout(self.layoutChart)
+        self.ui.lbAvgKcalValue.setText(self.chart.get_avg_value())
+        self.ui.lbMaxKcalValue.setText(self.chart.get_max_value())
+        self.ui.lbMinKcalValue.setText(self.chart.get_min_value())
+
 
         # Set Setting page Functionalities
         self.ui.lbSetFirstNameValue.setText(self.user.get_first_name())
@@ -248,6 +252,9 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             self.layoutChart = QHBoxLayout()
             self.layoutChart.addWidget(self.kcal_chart)
             self.ui.kcalChart.setLayout(self.layoutChart)
+            self.ui.lbAvgKcalValue.setText(self.chart.get_avg_value())
+            self.ui.lbMaxKcalValue.setText(self.chart.get_max_value())
+            self.ui.lbMinKcalValue.setText(self.chart.get_min_value())
         if self.ui.cbKcal.currentText() == '1 month':
             self.kcal_chart.hide()
             self.kcal_chart.destroy()
