@@ -112,3 +112,15 @@ def update_passwd(user, new_passwd):
     except Exception as e:
         print(e)
         return False
+
+
+def update_height(user, new_height):
+    try:
+        db = Database()
+        cursor = db.get_cursor()
+        cursor.execute("UPDATE user SET Height = %s WHERE UserID LIKE %s", (int(new_height), user.get_id()))
+        db.get_database().close()
+        return True
+    except Exception as e:
+        print(e)
+        return False
