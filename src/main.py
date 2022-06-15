@@ -4,6 +4,7 @@ from PySide6.QtWidgets import QApplication, QMainWindow
 
 from src.controllers.user_management.registration import RegistrationWindow
 from src.controllers.user_management.login import LoginWindow
+from src.controllers.primary.admin import PrimaryWindow
 from src.controllers.user_management.email import send_mail
 from src.controllers.user_management.user_management import get_user, add_user
 from src.controllers.cryptography.cryptography import hash_passwd
@@ -15,9 +16,8 @@ def main():
     # print("hello, world")
     # uncomment next line for email (and replace receiver mail)
     # send_mail('reciever@gmail.com')
-
     app = QApplication(sys.argv)
-    window = LoginWindow()
+    window = PrimaryWindow()
     window.show()
     app.exec()
 

@@ -124,3 +124,19 @@ def update_height(user, new_height):
     except Exception as e:
         print(e)
         return False
+
+
+def get_all_users():
+    try:
+        db = Database()
+        cursor = db.get_cursor()
+        cursor.execute("SELECT * FROM user")
+
+        users = []
+        for i in cursor.fetchall():
+            users.append({"ID":str(i[0]), "Email":str(i[1]), "FirstName":str(i[2]), "LastName":str(i[3]), "Sex":str(i[4]), "Birthday":str(i[5]),
+                          "Height":str(i[6]), "Password":str(i[7])})
+        return users
+    except Exception as e:
+        print(e)
+        return None

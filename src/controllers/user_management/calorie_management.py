@@ -43,7 +43,6 @@ def get_stat_kcal(user, period):
     try:
         db = Database()
         cursor = db.get_cursor()
-        date = datetime.datetime.today().date().strftime("%Y-%m-%d")
         if period == 1:
             cursor.execute("SELECT CaloriesEaten FROM calories WHERE UserID LIKE %s AND "
                            "Date BETWEEN  DATE_SUB(now(), INTERVAL 1 WEEK) AND now();",
@@ -65,6 +64,32 @@ def get_stat_kcal(user, period):
         # results = QBarSet("kcal")
         # for i in cursor.fetchall():
         #    results << i[0]
+
+        return results
+    except Exception as e:
+        print(e)
+
+def get_steps(user, period):
+    try:
+        db = Database()
+        cursor = db.get_cursor()
+        if period == 1:
+            cursor.execute("SELECT CaloriesEaten FROM calories WHERE UserID LIKE %s AND "
+                           "Date BETWEEN  DATE_SUB(now(), INTERVAL 1 WEEK) AND now();",
+                           (user.get_id(),))
+        elif period == 2:
+            cursor.execute(
+                "SELECT CaloriesEaten FROM calories WHERE MONTH(now() - INTERVAL 1 MONTH) AND UserID LIKE %s",
+                (user.get_id(),))
+        elif period == 3:
+            cursor.execute("SELECT CaloriesEaten FROM calories WHERE UserID LIKE %s ORDER BY Date",
+                           (user.get_id(),))
+        else:
+            return None
+
+        results = []
+        for i in cursor.fetchall():
+            results.append(i[0])
 
         return results
     except Exception as e:
