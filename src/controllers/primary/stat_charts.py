@@ -15,7 +15,7 @@ class Chart:
     def __init__(self, user, period):
         # Create Set of Kcal for one week
         self.results = get_stat_kcal(user, period)
-        self.results = self.results[::-1]
+
 
         # results = QBarSet("kcal")
         # for i in cursor.fetchall():
@@ -75,4 +75,4 @@ class Chart:
         return str(min(self.results))
 
     def get_avg_value(self):
-        return str(sum(self.results) / len(self.results))
+        return str(int(sum(self.results) / len(self.results)))

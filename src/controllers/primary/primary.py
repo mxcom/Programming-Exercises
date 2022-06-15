@@ -100,7 +100,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.leBPHigh.textChanged.connect(self.validate_bp_high)
 
         self.ui.cbKcal.activated.connect(self.date_selected)
-        
+
         # Set statistics
         self.chart = Chart(self.user, 1)
         self.kcal_chart = self.chart.get_chartview()
@@ -248,27 +248,32 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
     def date_selected(self):
         if self.ui.cbKcal.currentText() == '1 week':
             self.chart = Chart(self.user, 1)
+            self.layoutChart.removeWidget(self.kcal_chart)
             self.kcal_chart = self.chart.get_chartview()
-            self.layoutChart = QHBoxLayout()
             self.layoutChart.addWidget(self.kcal_chart)
             self.ui.kcalChart.setLayout(self.layoutChart)
             self.ui.lbAvgKcalValue.setText(self.chart.get_avg_value())
             self.ui.lbMaxKcalValue.setText(self.chart.get_max_value())
             self.ui.lbMinKcalValue.setText(self.chart.get_min_value())
         if self.ui.cbKcal.currentText() == '1 month':
-            self.kcal_chart.hide()
-            self.kcal_chart.destroy()
-            chart1 = Chart(self.user, 2)
-            kcal_chart2 = chart1.get_chartview()
-            self.layoutChart = QHBoxLayout()
-            self.layoutChart.addWidget(kcal_chart2)
-            self.ui.kcalChart.setLayout(self.layoutChart)
-        if self.ui.cbKcal.currentText() == 'complete':
-            self.chart = Chart(self.user, 3)
-            self.kcal_chart = self.chart.get_chartview()
-            self.layoutChart = QHBoxLayout()
+            chart2 = Chart(self.user, 2)
+            self.layoutChart.removeWidget(self.kcal_chart)
+            self.kcal_chart = chart2.get_chartview()
             self.layoutChart.addWidget(self.kcal_chart)
             self.ui.kcalChart.setLayout(self.layoutChart)
+            self.ui.lbAvgKcalValue.setText(chart2.get_avg_value())
+            self.ui.lbMaxKcalValue.setText(chart2.get_max_value())
+            self.ui.lbMinKcalValue.setText(chart2.get_min_value())
+
+        if self.ui.cbKcal.currentText() == 'complete':
+            chart3 = Chart(self.user, 3)
+            self.layoutChart.removeWidget(self.kcal_chart)
+            self.kcal_chart = chart3.get_chartview()
+            self.layoutChart.addWidget(self.kcal_chart)
+            self.ui.kcalChart.setLayout(self.layoutChart)
+            self.ui.lbAvgKcalValue.setText(chart3.get_avg_value())
+            self.ui.lbMaxKcalValue.setText(chart3.get_max_value())
+            self.ui.lbMinKcalValue.setText(chart3.get_min_value())
 
     def validate_email(self):
         try:
