@@ -7,12 +7,24 @@ from src.views.primary.WndAdmin import Ui_WndAdmin
 from src.controllers.user_management.user_management import get_all_users
 
 
-class PrimaryWindow(QMainWindow, Ui_WndAdmin):
+class AdminWindow(QMainWindow, Ui_WndAdmin):
 
-    def __init__(self, parent=None):
-        super(PrimaryWindow, self).__init__(parent)
+    def __init__(self, admin, parent=None):
+        super(AdminWindow, self).__init__(parent)
         self.ui = Ui_WndAdmin()
         self.ui.setupUi(self)
+        self.admin = admin
+
+        self.ui.twUsers.setColumnWidth(0, 10)
+        self.ui.twUsers.setColumnWidth(1, 200)
+        self.ui.twUsers.setColumnWidth(2, 150)
+        self.ui.twUsers.setColumnWidth(3, 150)
+        self.ui.twUsers.setColumnWidth(4, 60)
+        self.ui.twUsers.setColumnWidth(5, 90)
+        self.ui.twUsers.setColumnWidth(6, 60)
+        self.ui.twUsers.setColumnWidth(7, 250)
+
+        self.ui.lbName.setText(self.admin.get_identifier())
 
         users = get_all_users()
         self.fill_table(users)
@@ -30,5 +42,3 @@ class PrimaryWindow(QMainWindow, Ui_WndAdmin):
             self.ui.twUsers.setItem(row, 6, QTableWidgetItem(i["Height"]))
             self.ui.twUsers.setItem(row, 7, QTableWidgetItem(i["Password"]))
             row = row + 1
-
-

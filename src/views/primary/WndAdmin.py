@@ -115,13 +115,6 @@ class Ui_WndAdmin(object):
         self.horizontalLayout_7.setSpacing(0)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
         self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
-        self.lbDate = QLabel(self.frDate)
-        self.lbDate.setObjectName(u"lbDate")
-        self.lbDate.setFont(font)
-        self.lbDate.setAlignment(Qt.AlignCenter)
-
-        self.horizontalLayout_7.addWidget(self.lbDate)
-
 
         self.horizontalLayout_5.addWidget(self.frDate)
 
@@ -260,7 +253,7 @@ class Ui_WndAdmin(object):
         __qtablewidgetitem7 = QTableWidgetItem()
         self.twUsers.setHorizontalHeaderItem(7, __qtablewidgetitem7)
         self.twUsers.setObjectName(u"twUsers")
-        self.twUsers.setGeometry(QRect(20, 50, 891, 481))
+        self.twUsers.setGeometry(QRect(20, 50, 961, 481))
         self.twUsers.setStyleSheet(u"")
         self.lineEdit = QLineEdit(self.scrollAreaWidgetContents)
         self.lineEdit.setObjectName(u"lineEdit")
@@ -270,6 +263,7 @@ class Ui_WndAdmin(object):
         self.lineEdit.setFont(font1)
         self.lineEdit.setAutoFillBackground(False)
         self.lineEdit.setStyleSheet(u"border: 0.5px solid black")
+        self.lineEdit.setText(u"")
         self.comboBox = QComboBox(self.scrollAreaWidgetContents)
         self.comboBox.addItem("")
         self.comboBox.addItem("")
@@ -310,8 +304,7 @@ class Ui_WndAdmin(object):
         WndAdmin.setWindowTitle(QCoreApplication.translate("WndAdmin", u"MainWindow", None))
         self.btnToggle.setText("")
         self.lbName.setText(QCoreApplication.translate("WndAdmin", u" Max Mustermann", None))
-        self.lbDate.setText(QCoreApplication.translate("WndAdmin", u"09.06.2022", None))
-        self.lbPageDescription.setText(QCoreApplication.translate("WndAdmin", u"Home", None))
+        self.lbPageDescription.setText(QCoreApplication.translate("WndAdmin", u"Admin Panel", None))
         self.btnLogout.setText(QCoreApplication.translate("WndAdmin", u"Logout", None))
         ___qtablewidgetitem = self.twUsers.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("WndAdmin", u"ID", None));
@@ -329,7 +322,7 @@ class Ui_WndAdmin(object):
         ___qtablewidgetitem6.setText(QCoreApplication.translate("WndAdmin", u"Height", None));
         ___qtablewidgetitem7 = self.twUsers.horizontalHeaderItem(7)
         ___qtablewidgetitem7.setText(QCoreApplication.translate("WndAdmin", u"Password", None));
-        self.lineEdit.setText(QCoreApplication.translate("WndAdmin", u"Search", None))
+        self.lineEdit.setPlaceholderText(QCoreApplication.translate("WndAdmin", u"Search", None))
         self.comboBox.setItemText(0, QCoreApplication.translate("WndAdmin", u"ID", None))
         self.comboBox.setItemText(1, QCoreApplication.translate("WndAdmin", u"Email", None))
         self.comboBox.setItemText(2, QCoreApplication.translate("WndAdmin", u"First Name", None))

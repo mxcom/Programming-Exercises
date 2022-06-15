@@ -223,22 +223,6 @@ background-position: center center;
              <property name="bottomMargin">
               <number>0</number>
              </property>
-             <item>
-              <widget class="QLabel" name="lbDate">
-               <property name="font">
-                <font>
-                 <pointsize>12</pointsize>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="text">
-                <string>09.06.2022</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
             </layout>
            </widget>
           </item>
@@ -275,7 +259,7 @@ background-position: center center;
                 </font>
                </property>
                <property name="text">
-                <string>Home</string>
+                <string>Admin Panel</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -504,7 +488,7 @@ border:none;
                  <rect>
                   <x>20</x>
                   <y>50</y>
-                  <width>891</width>
+                  <width>961</width>
                   <height>481</height>
                  </rect>
                 </property>
@@ -573,6 +557,9 @@ border:none;
                  <string notr="true">border: 0.5px solid black</string>
                 </property>
                 <property name="text">
+                 <string notr="true"/>
+                </property>
+                <property name="placeholderText">
                  <string>Search</string>
                 </property>
                </widget>
