@@ -142,6 +142,7 @@ def get_all_users():
         print(e)
         return None
 
+
 def insert_random():
     try:
         db = Database()
@@ -155,3 +156,23 @@ def insert_random():
     except Exception as e:
         print(e)
 
+
+def update_first_name(user, name):
+    try:
+        db = Database()
+        cursor = db.get_cursor()
+        print(user.get_id)
+        print(name)
+        cursor.execute("UPDATE user SET FirstName = %s WHERE UserID LIKE %s", (name, user.get_id()))
+    except Exception as e:
+        print(e)
+
+def update_last_name(user, name):
+    try:
+        db = Database()
+        cursor = db.get_cursor()
+        print(user.get_id)
+        print(name)
+        cursor.execute("UPDATE user SET LastName = %s WHERE UserID LIKE %s", (name, user.get_id()))
+    except Exception as e:
+        print(e)

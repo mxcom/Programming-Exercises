@@ -15,11 +15,10 @@ def main():
     # print("hello, world")
     # uncomment next line for email (and replace receiver mail)
     # send_mail('reciever@gmail.com')
-    # app = QApplication(sys.argv)
-    # window = LoginWindow()
-    # window.show()
-    # app.exec()
-    insert_random()
+    app = QApplication(sys.argv)
+    window = LoginWindow()
+    window.show()
+    app.exec()
 
 if __name__ == "__main__":
     main()

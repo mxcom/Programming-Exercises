@@ -30,10 +30,6 @@ class Database(object):
         except Exception as e:
             print(e)
 
-    def __del__(self):
-        self._db.close()
-        self._ssh_tunnel.close()
-
     def get_database(self):
         return self._db
 

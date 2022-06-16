@@ -5,8 +5,9 @@ import re
 from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QHBoxLayout, QTableWidgetItem, QTableWidget
 from PySide6 import QtCore
 from src.views.primary.WndAdmin import Ui_WndAdmin
-from src.controllers.user_management.user_management import get_all_users
+from src.controllers.user_management.user_management import get_all_users, update_email, update_first_name
 from src.controllers.cryptography.cryptography import hash_passwd
+from src.models.user_management.user import User
 
 regex_email = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
 regex_name = re.compile('[A-Z]+[a-z]*')
@@ -71,13 +72,16 @@ class AdminWindow(QMainWindow, Ui_WndAdmin):
             try:
                 cell = int(self.ui.twUsers.currentItem().text())
             except Exception as e:
+                previous_email = self.previous
                 self.ui.twUsers.currentItem().setText(self.previous)
                 print(e)
 
         if column == 1:
             try:
                 if re.fullmatch(regex_email, self.ui.twUsers.currentItem().text()):
+                    user = User(email=self.previous)
                     cell = self.ui.twUsers.currentItem().text()
+                    update_email(user, cell)
                 else:
                     self.ui.twUsers.currentItem().setText(self.previous)
                     return
@@ -88,7 +92,10 @@ class AdminWindow(QMainWindow, Ui_WndAdmin):
         if column == 2:
             try:
                 if re.fullmatch(regex_name, self.ui.twUsers.currentItem().text()):
+                    id = self.ui.twUsers.item(self.ui.twUsers.currentRow(), 0).text()
                     cell = self.ui.twUsers.currentItem().text()
+                    user = User(id=id, first_name=self.previous)
+                    update_first_name(user, cell)
                 else:
                     self.ui.twUsers.currentItem().setText(self.previous)
                     return
@@ -99,7 +106,10 @@ class AdminWindow(QMainWindow, Ui_WndAdmin):
         if column == 3:
             try:
                 if re.fullmatch(regex_name, self.ui.twUsers.currentItem().text()):
+                    id = self.ui.twUsers.item(self.ui.twUsers.currentRow(), 0).text()
                     cell = self.ui.twUsers.currentItem().text()
+                    user = User(id=id, last_name=self.previous)
+                    update_first_name(user, cell)
                 else:
                     self.ui.twUsers.currentItem().setText(self.previous)
                     return
