@@ -12,7 +12,9 @@ class Database(object):
                 ('185.237.96.134', 22),
                 ssh_password=keyring.get_credential(service_name="ssh_login", username=None).password,
                 ssh_username=keyring.get_credential(service_name="ssh_login", username=None).username,
-                remote_bind_address=('127.0.0.1', 3306)
+                remote_bind_address=('127.0.0.1', 3306),
+                host_pkey_directories=None,
+                allow_agent=False
             )
 
             self._ssh_tunnel.start()
