@@ -6,30 +6,30 @@ from PySide6.QtGui import QPen, QColor, Qt, QPainter
 from PySide6.QtWidgets import QWidget, QVBoxLayout
 from datetime import date
 import calendar
-from src.controllers.user_management.calorie_management import *
+from src.controllers.user_management.calorie_management import get_stat_kcal
+from src.models.user_management.user import User
+from src.controllers.user_management.calc_kcal import calc_kcal
 
 
-class ChartBp:
+class Chart:
     def __init__(self, user, period):
-        self.results_sys = get_stat_sys(user, period)
-        self.results_dia = get_stat_dia(user, period)
+        # Create Set of Kcal for one week
+        self.results = get_stat_kcal(user, period)
 
-        self.set_sys = QBarSet("Systolic")
-        self.set_dia = QBarSet("Diastolic")
 
-        for i in self.results_sys:
-            self.set_sys << i
+        # results = QBarSet("kcal")
+        # for i in cursor.fetchall():
+        #    results << i[0]
+        self.set0 = QBarSet("kcal")
 
-        for i in self.results_dia:
-            self.set_dia << i
+        for i in self.results:
+            self.set0 << i
 
-        self.set_sys.setColor(QColor(0x7A64BD))
-        self.set_dia.setColor(QColor(0xD3C9F2))
+        self.set0.setColor(QColor(0x7A64BD))
 
         # Create Series where given set is added
         self.series = QBarSeries()
-        self.series.append(self.set_dia)
-        self.series.append(self.set_sys)
+        self.series.append(self.set0)
         self.series.setBarWidth(self.series.count())
 
         # create chart
@@ -42,7 +42,7 @@ class ChartBp:
         temp_date = calendar.day_name[curr_date.weekday()]
         categories = [temp_date[0:3]]
         i = 0
-        myrange = self.set_sys.count() - 1
+        myrange = self.set0.count() - 1
         for i in range(myrange):
             curr_date -= datetime.timedelta(days=1)
             temp_date = calendar.day_name[curr_date.weekday()]
@@ -58,7 +58,7 @@ class ChartBp:
         self.axisX = QBarCategoryAxis()
         self.axisX.append(categories[::-1])
         self.axisY = QValueAxis()
-        self.axisY.setRange(0, max(self.results_sys))
+        self.axisY.setRange(0, max(self.results))
         self.axisY.setLabelFormat("%.0f")
         self.chart.setAxisY(self.axisY)
         self.chart.setAxisX(self.axisX)
@@ -69,10 +69,10 @@ class ChartBp:
         return self.chartview
 
     def get_max_value(self):
-        return str(max(self.results_sys)) + "/" + str(max(self.results_dia))
+        return str(max(self.results))
 
     def get_min_value(self):
-        return str(min(self.results_sys)) + "/" + str(min(self.results_dia))
+        return str(min(self.results))
 
     def get_avg_value(self):
-        return str(int(sum(self.results_sys) / len(self.results_sys))) + "/" + str(int(sum(self.results_dia) / len(self.results_dia)))
+        return str(int(sum(self.results) / len(self.results)))

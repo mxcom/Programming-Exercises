@@ -97,7 +97,7 @@ def get_stat_steps(user, period):
         print(e)
 
 
-def get_db_sys(user, period):
+def get_stat_sys(user, period):
     try:
         db = Database()
         cursor = db.get_cursor()
@@ -122,7 +122,7 @@ def get_db_sys(user, period):
         print(e)
 
 
-def get_db_dia(user, period):
+def get_stat_dia(user, period):
     try:
         db = Database()
         cursor = db.get_cursor()
