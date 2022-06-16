@@ -5,7 +5,8 @@ import re
 from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QHBoxLayout, QTableWidgetItem, QTableWidget
 from PySide6 import QtCore
 from src.views.primary.WndAdmin import Ui_WndAdmin
-from src.controllers.user_management.user_management import get_all_users, update_email, update_first_name
+from src.controllers.user_management.user_management import get_all_users, update_email, update_first_name, update_sex, \
+    update_birthday, update_height, update_passwd
 from src.controllers.cryptography.cryptography import hash_passwd
 from src.models.user_management.user import User
 
@@ -120,9 +121,13 @@ class AdminWindow(QMainWindow, Ui_WndAdmin):
         if column == 4:
             try:
                 if self.ui.twUsers.currentItem().text() == 'male':
-                    cell = self.ui.twUsers.currentItem().text()
+                    id = self.ui.twUsers.item(self.ui.twUsers.currentRow(), 0).text()
+                    user = User(id=id, last_name=self.previous)
+                    update_sex(user, 'male')
                 elif self.ui.twUsers.currentItem().text() == 'female':
-                    cell = self.ui.twUsers.currentItem().text()
+                    id = self.ui.twUsers.item(self.ui.twUsers.currentRow(), 0).text()
+                    user = User(id=id, last_name=self.previous)
+                    update_sex(user, 'female')
                 else:
                     self.ui.twUsers.currentItem().setText(self.previous)
                     return
@@ -132,34 +137,56 @@ class AdminWindow(QMainWindow, Ui_WndAdmin):
 
         if column == 5:
             try:
+                id = self.ui.twUsers.item(self.ui.twUsers.currentRow(), 0).text()
+                user = User(id=id, birthday=self.previous)
                 cell = self.ui.twUsers.currentItem().text()
                 date = datetime.strptime(cell, "%Y-%m-%d")
-                print(date)
+                update_birthday(user, date)
             except Exception as e:
                 self.ui.twUsers.currentItem().setText(self.previous)
                 print(e)
 
         if column == 6:
             try:
-                cell = int(self.ui.twUsers.currentItem().text())
+                id = self.ui.twUsers.item(self.ui.twUsers.currentRow(), 0).text()
+                user = User(id=id, height=self.previous)
+                cell = self.ui.twUsers.currentItem().text()
+                update_height(user, cell)
             except Exception as e:
                 self.ui.twUsers.currentItem().setText(self.previous)
                 print(e)
 
         if column == 7:
             try:
-                print(self.previous)
                 cell = self.ui.twUsers.currentItem().text()
-
                 # Password needs to contain at least 1 uppercase letter
                 if not any(char.isupper() for char in cell):
-                    # self.ui.twUsers.currentItem().setText(self.previous)
-                    print("invalid input")
+                    self.ui.twUsers.currentItem().setText(self.previous)
                     return
 
-                hashed = hash_passwd(cell).decode("utf-8")
-                print(hashed)
-                print(type(hashed))
+                # Password needs to contain at least 1 lowercase letter
+                if not any(char.islower() for char in cell):
+                    self.ui.twUsers.currentItem().setText(self.previous)
+                    return
+
+                # Password needs to contain at least 1 digit
+                if not any(char.isdigit() for char in cell):
+                    self.ui.twUsers.currentItem().setText(self.previous)
+                    return
+
+                # Password needs to contain at least 1 special character
+                if not any(char in special_char for char in cell):
+                    self.ui.twUsers.currentItem().setText(self.previous)
+                    return
+
+                # Password needs to be >= 8 characters
+                if len(cell) < 8:
+                    self.ui.twUsers.currentItem().setText(self.previous)
+                    return
+
+                id = self.ui.twUsers.item(self.ui.twUsers.currentRow(), 0).text()
+                user = User(id=id, passwd=self.previous)
+                update_passwd(user, self.ui.twUsers.currentItem().text())
             except Exception as e:
                 print(e)
 

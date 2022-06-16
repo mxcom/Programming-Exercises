@@ -161,18 +161,42 @@ def update_first_name(user, name):
     try:
         db = Database()
         cursor = db.get_cursor()
-        print(user.get_id)
-        print(name)
         cursor.execute("UPDATE user SET FirstName = %s WHERE UserID LIKE %s", (name, user.get_id()))
     except Exception as e:
         print(e)
+
 
 def update_last_name(user, name):
     try:
         db = Database()
         cursor = db.get_cursor()
-        print(user.get_id)
-        print(name)
         cursor.execute("UPDATE user SET LastName = %s WHERE UserID LIKE %s", (name, user.get_id()))
+    except Exception as e:
+        print(e)
+
+
+def update_sex(user, sex):
+    try:
+        db = Database()
+        cursor = db.get_cursor()
+        cursor.execute("UPDATE user SET Sex = %s WHERE UserID LIKE %s", (sex, user.get_id()))
+    except Exception as e:
+        print(e)
+
+
+def update_birthday(user, date):
+    try:
+        db = Database()
+        cursor = db.get_cursor()
+        cursor.execute("UPDATE user SET Birthday = %s WHERE UserID LIKE %s", (date, user.get_id()))
+    except Exception as e:
+        print(e)
+
+
+def update_height(user, height):
+    try:
+        db = Database()
+        cursor = db.get_cursor()
+        cursor.execute("UPDATE user SET Height = %s WHERE UserID LIKE %s", (height, user.get_id()))
     except Exception as e:
         print(e)
