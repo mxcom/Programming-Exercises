@@ -536,7 +536,7 @@ border:none;
                  </property>
                 </column>
                </widget>
-               <widget class="QLineEdit" name="lineEdit">
+               <widget class="QLineEdit" name="leSearch">
                 <property name="geometry">
                  <rect>
                   <x>20</x>
@@ -563,7 +563,7 @@ border:none;
                  <string>Search</string>
                 </property>
                </widget>
-               <widget class="QComboBox" name="comboBox">
+               <widget class="QComboBox" name="cbSelection">
                 <property name="geometry">
                  <rect>
                   <x>190</x>

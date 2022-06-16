@@ -3,6 +3,7 @@ import re
 
 
 from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QHBoxLayout, QTableWidgetItem
+from PySide6 import QtCore
 from src.views.primary.WndAdmin import Ui_WndAdmin
 from src.controllers.user_management.user_management import get_all_users
 
@@ -29,6 +30,8 @@ class AdminWindow(QMainWindow, Ui_WndAdmin):
         users = get_all_users()
         self.fill_table(users)
 
+        self.ui.leSearch.textChanged.connect(self.search_user)
+
     def fill_table(self, users):
         row = 0
         self.ui.twUsers.setRowCount(len(users))
@@ -42,3 +45,17 @@ class AdminWindow(QMainWindow, Ui_WndAdmin):
             self.ui.twUsers.setItem(row, 6, QTableWidgetItem(i["Height"]))
             self.ui.twUsers.setItem(row, 7, QTableWidgetItem(i["Password"]))
             row = row + 1
+
+    def search_user(self):
+        self.ui.twUsers.setCurrentItem(None)
+
+        if not self.ui.leSearch.text():
+            return
+
+        match = self.ui.twUsers.findItems(self.ui.leSearch.text(), QtCore.Qt.MatchContains)
+        if match:
+            item = match[0]
+            self.ui.twUsers.setCurrentItem(item)
+
+
+
