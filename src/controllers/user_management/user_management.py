@@ -1,4 +1,6 @@
 import datetime
+import random
+
 from src.controllers.cryptography.cryptography import hash_passwd, compare_passwd
 from src.controllers.database.database import Database
 from src.models.user_management.user import User
@@ -16,11 +18,10 @@ def add_user(user):
                     hash_passwd(user.get_passwd())))
     cursor.execute("SELECT UserID FROM user WHERE Email LIKE %s;", (user.get_email(),))
     date = datetime.datetime.now().date().strftime("%Y-%m-%d")
-    print(date)
     data = cursor.fetchall()
     for i in data:
         id = i[0]
-    cursor.execute("INSERT INTO weight (UserID, Grams, TrackDate)"
+    cursor.execute("INSERT INTO weight (UserID, Grams, Date)"
                    " VALUES (%s, %s, %s);",
                    (id, user.get_weight(), date))
     db.get_database().close()
@@ -69,7 +70,7 @@ def add_weight(id, weight):
         db = Database()
         cursor = db.get_cursor()
         date = datetime.datetime.now().date().strftime("%Y-%m-%d")
-        cursor.execute("INSERT INTO weight (UserID, Grams, TrackDate)"
+        cursor.execute("INSERT INTO weight (UserID, Grams, Date)"
                        "VALUES (%s, %s, %s);",
                        (id, weight, date))
         db.get_database().close()
@@ -140,3 +141,17 @@ def get_all_users():
     except Exception as e:
         print(e)
         return None
+
+def insert_random():
+    try:
+        db = Database()
+        cursor = db.get_cursor()
+        date = datetime.datetime.now()
+        for i in range(100):
+            date = date - datetime.timedelta(1)
+            cursor.execute("INSERT INTO steps (UserID, Steps, Date) "
+                           "VALUES (55, %s, %s)", (random.randint(5000, 12000), date.strftime("%Y-%m-%d")))
+
+    except Exception as e:
+        print(e)
+
