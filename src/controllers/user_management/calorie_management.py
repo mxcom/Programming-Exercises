@@ -69,7 +69,8 @@ def get_stat_kcal(user, period):
     except Exception as e:
         print(e)
 
-def get_steps(user, period):
+
+def get_stat_steps(user, period):
     try:
         db = Database()
         cursor = db.get_cursor()
