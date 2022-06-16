@@ -116,7 +116,6 @@ class AdminWindow(QMainWindow, Ui_WndAdmin):
                 print("input not valid")
                 print(e)
 
-
         if column == 6:
             try:
                 cell = int(self.ui.twUsers.currentItem().text())
@@ -131,24 +130,30 @@ class AdminWindow(QMainWindow, Ui_WndAdmin):
                 # Password needs to contain at least 1 uppercase letter
                 if not any(char.isupper() for char in cell):
                     print("input not valid")
+                    return
 
                 # Password needs to contain at least 1 lowercase letter
                 if not any(char.islower() for char in cell):
                     print("input not valid")
+                    return
 
                 # Password needs to contain at least 1 digit
                 if not any(char.isdigit() for char in cell):
                     print("input not valid")
+                    return
 
                 # Password needs to contain at least 1 special character
                 if not any(char in special_char for char in cell):
                     print("input not valid")
+                    return
 
                 # Password needs to be >= 8 characters
                 if len(cell) < 8:
                     print("input not valid")
+                    return
 
-                hashed = hash_passwd(cell)
+                hashed = hash_passwd(cell).decode("utf-8")
+                self.ui.twUsers.currentItem().setText("asdf")
             except Exception as e:
                 print("input not valid")
                 print(e)

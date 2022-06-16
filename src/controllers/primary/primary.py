@@ -18,7 +18,6 @@ from src.controllers.user_management.calc_kcal import calc_kcal
 from src.views.primary.WndMain import Ui_WndMain
 from src.views.primary.btn_style import Style
 from src.views.primary.uiFunctions import UIFunctions
-from src.controllers.primary.stat_charts import Chart
 from src.controllers.user_management.user_management import add_steps, add_weight, add_bp
 from src.controllers.cryptography.cryptography import hash_passwd
 
