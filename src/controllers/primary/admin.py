@@ -2,7 +2,7 @@ from datetime import datetime
 import re
 
 
-from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QHBoxLayout, QTableWidgetItem
+from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QHBoxLayout, QTableWidgetItem, QTableWidget
 from PySide6 import QtCore
 from src.views.primary.WndAdmin import Ui_WndAdmin
 from src.controllers.user_management.user_management import get_all_users
@@ -30,6 +30,7 @@ class AdminWindow(QMainWindow, Ui_WndAdmin):
         users = get_all_users()
         self.fill_table(users)
 
+        self.ui.twUsers.itemChanged.connect(self.item_changed)
         self.ui.leSearch.textChanged.connect(self.search_user)
 
     def fill_table(self, users):
@@ -54,8 +55,15 @@ class AdminWindow(QMainWindow, Ui_WndAdmin):
 
         match = self.ui.twUsers.findItems(self.ui.leSearch.text(), QtCore.Qt.MatchContains)
         if match:
-            item = match[0]
-            self.ui.twUsers.setCurrentItem(item)
+            for item in match:
+                item.setSelected(True)
+
+    def item_changed(self):
+        print(self.ui.twUsers.currentItem().text())
+
+        # if self.ui.twUsers.currentColumn():
+
+
 
 
 

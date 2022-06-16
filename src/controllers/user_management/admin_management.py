@@ -21,5 +21,12 @@ def get_admin(identifier):
         print(e)
         return None
 
+def change_user_info(user_id):
+    try:
+        print("asdf")
+    except Exception as e:
+        print(e)
+
+
 
 

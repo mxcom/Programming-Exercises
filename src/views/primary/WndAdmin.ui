@@ -497,7 +497,12 @@ border:none;
                 </property>
                 <column>
                  <property name="text">
-                  <string>ID</string>
+                  <string notr="true">ID</string>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <bold>false</bold>
+                  </font>
                  </property>
                 </column>
                 <column>
@@ -562,59 +567,6 @@ border:none;
                 <property name="placeholderText">
                  <string>Search</string>
                 </property>
-               </widget>
-               <widget class="QComboBox" name="cbSelection">
-                <property name="geometry">
-                 <rect>
-                  <x>190</x>
-                  <y>20</y>
-                  <width>161</width>
-                  <height>21</height>
-                 </rect>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border: 0.5px solid black</string>
-                </property>
-                <item>
-                 <property name="text">
-                  <string>ID</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Email</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>First Name</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Last Name</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Sex</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Birthday</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Height</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Password</string>
-                 </property>
-                </item>
                </widget>
               </widget>
              </widget>

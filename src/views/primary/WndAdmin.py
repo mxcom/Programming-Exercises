@@ -15,10 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
-    QHeaderView, QLabel, QLineEdit, QMainWindow,
-    QPushButton, QScrollArea, QSizePolicy, QStackedWidget,
-    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QHeaderView,
+    QLabel, QLineEdit, QMainWindow, QPushButton,
+    QScrollArea, QSizePolicy, QStackedWidget, QTableWidget,
+    QTableWidgetItem, QVBoxLayout, QWidget)
 import src.views.icons.rc_icons
 
 class Ui_WndAdmin(object):
@@ -236,7 +236,11 @@ class Ui_WndAdmin(object):
         self.twUsers = QTableWidget(self.scrollAreaWidgetContents)
         if (self.twUsers.columnCount() < 8):
             self.twUsers.setColumnCount(8)
+        font1 = QFont()
+        font1.setBold(False)
         __qtablewidgetitem = QTableWidgetItem()
+        __qtablewidgetitem.setText(u"ID");
+        __qtablewidgetitem.setFont(font1);
         self.twUsers.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
         self.twUsers.setHorizontalHeaderItem(1, __qtablewidgetitem1)
@@ -258,24 +262,12 @@ class Ui_WndAdmin(object):
         self.leSearch = QLineEdit(self.scrollAreaWidgetContents)
         self.leSearch.setObjectName(u"leSearch")
         self.leSearch.setGeometry(QRect(20, 20, 161, 22))
-        font1 = QFont()
-        font1.setUnderline(False)
-        self.leSearch.setFont(font1)
+        font2 = QFont()
+        font2.setUnderline(False)
+        self.leSearch.setFont(font2)
         self.leSearch.setAutoFillBackground(False)
         self.leSearch.setStyleSheet(u"border: 0.5px solid black")
         self.leSearch.setText(u"")
-        self.cbSelection = QComboBox(self.scrollAreaWidgetContents)
-        self.cbSelection.addItem("")
-        self.cbSelection.addItem("")
-        self.cbSelection.addItem("")
-        self.cbSelection.addItem("")
-        self.cbSelection.addItem("")
-        self.cbSelection.addItem("")
-        self.cbSelection.addItem("")
-        self.cbSelection.addItem("")
-        self.cbSelection.setObjectName(u"cbSelection")
-        self.cbSelection.setGeometry(QRect(190, 20, 161, 21))
-        self.cbSelection.setStyleSheet(u"border: 0.5px solid black")
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.stackedWidget.addWidget(self.page)
         self.page2 = QWidget()
@@ -306,31 +298,20 @@ class Ui_WndAdmin(object):
         self.lbName.setText(QCoreApplication.translate("WndAdmin", u" Max Mustermann", None))
         self.lbPageDescription.setText(QCoreApplication.translate("WndAdmin", u"Admin Panel", None))
         self.btnLogout.setText(QCoreApplication.translate("WndAdmin", u"Logout", None))
-        ___qtablewidgetitem = self.twUsers.horizontalHeaderItem(0)
-        ___qtablewidgetitem.setText(QCoreApplication.translate("WndAdmin", u"ID", None));
-        ___qtablewidgetitem1 = self.twUsers.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("WndAdmin", u"Email", None));
-        ___qtablewidgetitem2 = self.twUsers.horizontalHeaderItem(2)
-        ___qtablewidgetitem2.setText(QCoreApplication.translate("WndAdmin", u"First Name", None));
-        ___qtablewidgetitem3 = self.twUsers.horizontalHeaderItem(3)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("WndAdmin", u"Last Name", None));
-        ___qtablewidgetitem4 = self.twUsers.horizontalHeaderItem(4)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("WndAdmin", u"Sex", None));
-        ___qtablewidgetitem5 = self.twUsers.horizontalHeaderItem(5)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("WndAdmin", u"Birthday", None));
-        ___qtablewidgetitem6 = self.twUsers.horizontalHeaderItem(6)
-        ___qtablewidgetitem6.setText(QCoreApplication.translate("WndAdmin", u"Height", None));
-        ___qtablewidgetitem7 = self.twUsers.horizontalHeaderItem(7)
-        ___qtablewidgetitem7.setText(QCoreApplication.translate("WndAdmin", u"Password", None));
+        ___qtablewidgetitem = self.twUsers.horizontalHeaderItem(1)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("WndAdmin", u"Email", None));
+        ___qtablewidgetitem1 = self.twUsers.horizontalHeaderItem(2)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("WndAdmin", u"First Name", None));
+        ___qtablewidgetitem2 = self.twUsers.horizontalHeaderItem(3)
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("WndAdmin", u"Last Name", None));
+        ___qtablewidgetitem3 = self.twUsers.horizontalHeaderItem(4)
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("WndAdmin", u"Sex", None));
+        ___qtablewidgetitem4 = self.twUsers.horizontalHeaderItem(5)
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("WndAdmin", u"Birthday", None));
+        ___qtablewidgetitem5 = self.twUsers.horizontalHeaderItem(6)
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("WndAdmin", u"Height", None));
+        ___qtablewidgetitem6 = self.twUsers.horizontalHeaderItem(7)
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("WndAdmin", u"Password", None));
         self.leSearch.setPlaceholderText(QCoreApplication.translate("WndAdmin", u"Search", None))
-        self.cbSelection.setItemText(0, QCoreApplication.translate("WndAdmin", u"ID", None))
-        self.cbSelection.setItemText(1, QCoreApplication.translate("WndAdmin", u"Email", None))
-        self.cbSelection.setItemText(2, QCoreApplication.translate("WndAdmin", u"First Name", None))
-        self.cbSelection.setItemText(3, QCoreApplication.translate("WndAdmin", u"Last Name", None))
-        self.cbSelection.setItemText(4, QCoreApplication.translate("WndAdmin", u"Sex", None))
-        self.cbSelection.setItemText(5, QCoreApplication.translate("WndAdmin", u"Birthday", None))
-        self.cbSelection.setItemText(6, QCoreApplication.translate("WndAdmin", u"Height", None))
-        self.cbSelection.setItemText(7, QCoreApplication.translate("WndAdmin", u"Password", None))
-
     # retranslateUi
 
