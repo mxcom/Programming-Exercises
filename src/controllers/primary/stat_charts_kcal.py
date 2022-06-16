@@ -20,16 +20,16 @@ class ChartKcal:
             # results = QBarSet("kcal")
             # for i in cursor.fetchall():
             #    results << i[0]
-            self.sete1 = QBarSet("kcal")
+            self.set1 = QBarSet("kcal")
 
             for i in self.results:
-                self.sete1 << i
+                self.set1 << i
 
-            self.sete1.setColor(QColor(0x7A64BD))
+            self.set1.setColor(QColor(0x7A64BD))
 
             # Create Series where given set is added
             self.series = QBarSeries()
-            self.series.append(self.sete1)
+            self.series.append(self.set1)
             self.series.setBarWidth(self.series.count())
 
             # create chart
@@ -42,7 +42,7 @@ class ChartKcal:
             temp_date = calendar.day_name[curr_date.weekday()]
             categories = [temp_date[0:3]]
             i = 0
-            myrange = self.sete1.count() - 1
+            myrange = self.set1.count() - 1
             for i in range(myrange):
                 curr_date -= datetime.timedelta(days=1)
             temp_date = calendar.day_name[curr_date.weekday()]
@@ -62,7 +62,7 @@ class ChartKcal:
             # results = QBarSet("kcal")
             # for i in cursor.fetchall():
             #    results << i[0]
-            self.sete1 = QBarSet("kcal")
+            self.set2 = QBarSet("kcal")
 
             for i in self.results:
                 self.set2 << i
