@@ -95,3 +95,53 @@ def get_stat_steps(user, period):
         return results
     except Exception as e:
         print(e)
+
+
+def get_db_sys(user, period):
+    try:
+        db = Database()
+        cursor = db.get_cursor()
+        if period == 1:
+            cursor.execute("SELECT Systolic FROM bloodpressure WHERE UserID LIKE %s AND "
+                           "Date BETWEEN DATE_SUB(now(), INTERVAL 1 WEEK) AND now();",
+                           (user.get_id(),))
+        elif period == 2:
+            cursor.execute(
+                "SELECT Systolic FROM bloodpressure WHERE MONTH(now() - INTERVAL 1 MONTH) AND UserID LIKE %s",
+                (user.get_id(),))
+        elif period == 3:
+            cursor.execute("SELECT Systolic FROM bloodpressure WHERE UserID LIKE %s ORDER BY Date",
+                           (user.get_id(),))
+
+        results = []
+        for i in cursor.fetchall():
+            results.append(i[0])
+
+        return results
+    except Exception as e:
+        print(e)
+
+
+def get_db_dia(user, period):
+    try:
+        db = Database()
+        cursor = db.get_cursor()
+        if period == 1:
+            cursor.execute("SELECT Diastolic FROM bloodpressure WHERE UserID LIKE %s AND "
+                           "Date BETWEEN DATE_SUB(now(), INTERVAL 1 WEEK) AND now();",
+                           (user.get_id(),))
+        elif period == 2:
+            cursor.execute(
+                "SELECT Diastolic FROM bloodpressure WHERE MONTH(now() - INTERVAL 1 MONTH) AND UserID LIKE %s",
+                (user.get_id(),))
+        elif period == 3:
+            cursor.execute("SELECT Diastolic FROM bloodpressure WHERE UserID LIKE %s ORDER BY Date",
+                           (user.get_id(),))
+
+        results = []
+        for i in cursor.fetchall():
+            results.append(i[0])
+
+        return results
+    except Exception as e:
+        print(e)

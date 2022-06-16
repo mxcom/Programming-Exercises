@@ -6,7 +6,11 @@ from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QHBoxLayout, QTableWidge
 from PySide6 import QtCore
 from src.views.primary.WndAdmin import Ui_WndAdmin
 from src.controllers.user_management.user_management import get_all_users
+from src.controllers.cryptography.cryptography import hash_passwd
 
+regex_email = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
+regex_name = re.compile('[A-Z]+[a-z]*')
+special_char = ['$', '@', '#', '%', '_', '-', '!']
 
 class AdminWindow(QMainWindow, Ui_WndAdmin):
 
@@ -30,6 +34,7 @@ class AdminWindow(QMainWindow, Ui_WndAdmin):
         users = get_all_users()
         self.fill_table(users)
 
+        self.selected = self.ui.twUsers.itemClicked.connect(self.item_selected)
         self.ui.twUsers.itemChanged.connect(self.item_changed)
         self.ui.leSearch.textChanged.connect(self.search_user)
 
@@ -59,9 +64,100 @@ class AdminWindow(QMainWindow, Ui_WndAdmin):
                 item.setSelected(True)
 
     def item_changed(self):
-        print(self.ui.twUsers.currentItem().text())
+        column = self.ui.twUsers.currentColumn()
 
-        # if self.ui.twUsers.currentColumn():
+        if column == 0:
+            try:
+                cell = int(self.ui.twUsers.currentItem().text())
+            except Exception as e:
+                print("input not valid")
+                print(e)
+
+        if column == 1:
+            try:
+                if re.fullmatch(regex_email, self.ui.twUsers.currentItem().text()):
+                    cell = self.ui.twUsers.currentItem().text()
+                else:
+                    print("input not valid")
+                    self.fill_table()
+            except Exception as e:
+                self.fill_table()
+                print(e)
+
+        if column == 2:
+            try:
+                if re.fullmatch(regex_name, self.ui.twUsers.currentItem().text()):
+                    cell = self.ui.twUsers.currentItem().text()
+                else:
+                    print("input not valid")
+            except Exception as e:
+                print("input not valid")
+                print(e)
+
+        if column == 3:
+            try:
+                if re.fullmatch(regex_name, self.ui.twUsers.currentItem().text()):
+                    cell = self.ui.twUsers.currentItem().text()
+                else:
+                    print("input not valid")
+            except Exception as e:
+                print("input not valid")
+                print(e)
+
+        if column == 4:
+            try:
+                if self.ui.twUsers.currentItem().text() == 'male':
+                    cell = self.ui.twUsers.currentItem().text()
+                elif self.ui.twUsers.currentItem().text() == 'female':
+                    cell = self.ui.twUsers.currentItem().text()
+                else:
+                    print("input not valid")
+            except Exception as e:
+                print("input not valid")
+                print(e)
+
+
+        if column == 6:
+            try:
+                cell = int(self.ui.twUsers.currentItem().text())
+            except Exception as e:
+                print("input not valid")
+                print(e)
+
+        if column == 7:
+            try:
+                cell = self.ui.twUsers.currentItem().text()
+
+                # Password needs to contain at least 1 uppercase letter
+                if not any(char.isupper() for char in cell):
+                    print("input not valid")
+
+                # Password needs to contain at least 1 lowercase letter
+                if not any(char.islower() for char in cell):
+                    print("input not valid")
+
+                # Password needs to contain at least 1 digit
+                if not any(char.isdigit() for char in cell):
+                    print("input not valid")
+
+                # Password needs to contain at least 1 special character
+                if not any(char in special_char for char in cell):
+                    print("input not valid")
+
+                # Password needs to be >= 8 characters
+                if len(cell) < 8:
+                    print("input not valid")
+
+                hashed = hash_passwd(cell)
+            except Exception as e:
+                print("input not valid")
+                print(e)
+
+    def item_selected(self):
+        selection = self.ui.twUsers.currentItem().text()
+        return selection
+
+
 
 
 
