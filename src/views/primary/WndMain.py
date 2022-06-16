@@ -640,19 +640,19 @@ class Ui_WndMain(object):
         self.frmSearchbar.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_47 = QHBoxLayout(self.frmSearchbar)
         self.horizontalLayout_47.setObjectName(u"horizontalLayout_47")
-        self.label_3 = QLabel(self.frmSearchbar)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setFont(font)
+        self.lbSearchFood = QLabel(self.frmSearchbar)
+        self.lbSearchFood.setObjectName(u"lbSearchFood")
+        self.lbSearchFood.setFont(font)
 
-        self.horizontalLayout_47.addWidget(self.label_3)
+        self.horizontalLayout_47.addWidget(self.lbSearchFood)
 
-        self.lineEdit = QLineEdit(self.frmSearchbar)
-        self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setFont(font)
-        self.lineEdit.setStyleSheet(u"border-bottom: 2px solid rgb(211, 201, 242);\n"
+        self.leSearchFood = QLineEdit(self.frmSearchbar)
+        self.leSearchFood.setObjectName(u"leSearchFood")
+        self.leSearchFood.setFont(font)
+        self.leSearchFood.setStyleSheet(u"border-bottom: 2px solid rgb(211, 201, 242);\n"
 "")
 
-        self.horizontalLayout_47.addWidget(self.lineEdit)
+        self.horizontalLayout_47.addWidget(self.leSearchFood)
 
 
         self.verticalLayout_10.addWidget(self.frmSearchbar)
@@ -718,20 +718,20 @@ class Ui_WndMain(object):
         self.frame_45.setFrameShadow(QFrame.Raised)
         self.verticalLayout_43 = QVBoxLayout(self.frame_45)
         self.verticalLayout_43.setObjectName(u"verticalLayout_43")
-        self.label_4 = QLabel(self.frame_45)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setMinimumSize(QSize(0, 0))
-        self.label_4.setMaximumSize(QSize(16777215, 40))
-        self.label_4.setFont(font)
+        self.lbAmount = QLabel(self.frame_45)
+        self.lbAmount.setObjectName(u"lbAmount")
+        self.lbAmount.setMinimumSize(QSize(0, 0))
+        self.lbAmount.setMaximumSize(QSize(16777215, 40))
+        self.lbAmount.setFont(font)
 
-        self.verticalLayout_43.addWidget(self.label_4)
+        self.verticalLayout_43.addWidget(self.lbAmount)
 
-        self.lineEdit_2 = QLineEdit(self.frame_45)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
-        self.lineEdit_2.setFont(font)
-        self.lineEdit_2.setStyleSheet(u"border-bottom: 2px solid rgb(211, 201, 242);")
+        self.leAmount = QLineEdit(self.frame_45)
+        self.leAmount.setObjectName(u"leAmount")
+        self.leAmount.setFont(font)
+        self.leAmount.setStyleSheet(u"border-bottom: 2px solid rgb(211, 201, 242);")
 
-        self.verticalLayout_43.addWidget(self.lineEdit_2)
+        self.verticalLayout_43.addWidget(self.leAmount)
 
 
         self.verticalLayout_42.addWidget(self.frame_45)
@@ -751,14 +751,14 @@ class Ui_WndMain(object):
 
         self.horizontalLayout_48.addWidget(self.frame_47)
 
-        self.btnSubmit_2 = QPushButton(self.frame_46)
-        self.btnSubmit_2.setObjectName(u"btnSubmit_2")
-        sizePolicy1.setHeightForWidth(self.btnSubmit_2.sizePolicy().hasHeightForWidth())
-        self.btnSubmit_2.setSizePolicy(sizePolicy1)
-        self.btnSubmit_2.setMinimumSize(QSize(140, 40))
-        self.btnSubmit_2.setMaximumSize(QSize(140, 40))
-        self.btnSubmit_2.setFont(font)
-        self.btnSubmit_2.setStyleSheet(u"QPushButton{\n"
+        self.btnAddFood = QPushButton(self.frame_46)
+        self.btnAddFood.setObjectName(u"btnAddFood")
+        sizePolicy1.setHeightForWidth(self.btnAddFood.sizePolicy().hasHeightForWidth())
+        self.btnAddFood.setSizePolicy(sizePolicy1)
+        self.btnAddFood.setMinimumSize(QSize(140, 40))
+        self.btnAddFood.setMaximumSize(QSize(140, 40))
+        self.btnAddFood.setFont(font)
+        self.btnAddFood.setStyleSheet(u"QPushButton{\n"
 "	background-color: rgb(155, 127, 240);\n"
 "	border-radius: 15px;\n"
 "}\n"
@@ -773,7 +773,7 @@ class Ui_WndMain(object):
 "}\n"
 "")
 
-        self.horizontalLayout_48.addWidget(self.btnSubmit_2)
+        self.horizontalLayout_48.addWidget(self.btnAddFood)
 
         self.frame_48 = QFrame(self.frame_46)
         self.frame_48.setObjectName(u"frame_48")
@@ -2198,9 +2198,9 @@ class Ui_WndMain(object):
         self.leBPLow.setPlaceholderText(QCoreApplication.translate("WndMain", u"Low", None))
         self.leBPHigh.setPlaceholderText(QCoreApplication.translate("WndMain", u"High", None))
         self.btnSubmit.setText(QCoreApplication.translate("WndMain", u"Submit", None))
-        self.label_3.setText(QCoreApplication.translate("WndMain", u"Search:", None))
-        self.label_4.setText(QCoreApplication.translate("WndMain", u"Amount:", None))
-        self.btnSubmit_2.setText(QCoreApplication.translate("WndMain", u"Add", None))
+        self.lbSearchFood.setText(QCoreApplication.translate("WndMain", u"Search:", None))
+        self.lbAmount.setText(QCoreApplication.translate("WndMain", u"Amount:", None))
+        self.btnAddFood.setText(QCoreApplication.translate("WndMain", u"Add", None))
         self.btnKcal1.setText(QCoreApplication.translate("WndMain", u"Kcal", None))
         self.btnSteps1.setText(QCoreApplication.translate("WndMain", u"Steps", None))
         self.btnBP1.setText(QCoreApplication.translate("WndMain", u"Blood Pressure", None))

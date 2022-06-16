@@ -1275,7 +1275,7 @@ border-radius: 15px;
                    </property>
                    <layout class="QHBoxLayout" name="horizontalLayout_47">
                     <item>
-                     <widget class="QLabel" name="label_3">
+                     <widget class="QLabel" name="lbSearchFood">
                       <property name="font">
                        <font>
                         <pointsize>12</pointsize>
@@ -1288,7 +1288,7 @@ border-radius: 15px;
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="lineEdit">
+                     <widget class="QLineEdit" name="leSearchFood">
                       <property name="font">
                        <font>
                         <pointsize>12</pointsize>
@@ -1445,7 +1445,7 @@ border-radius: 15px;
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_43">
                        <item>
-                        <widget class="QLabel" name="label_4">
+                        <widget class="QLabel" name="lbAmount">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
@@ -1470,7 +1470,7 @@ border-radius: 15px;
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLineEdit" name="lineEdit_2">
+                        <widget class="QLineEdit" name="leAmount">
                          <property name="font">
                           <font>
                            <pointsize>12</pointsize>
@@ -1520,7 +1520,7 @@ border-radius: 15px;
                         </widget>
                        </item>
                        <item>
-                        <widget class="QPushButton" name="btnSubmit_2">
+                        <widget class="QPushButton" name="btnAddFood">
                          <property name="sizePolicy">
                           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                            <horstretch>0</horstretch>
