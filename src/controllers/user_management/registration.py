@@ -1,14 +1,12 @@
 import re
-import sys
-
 from datetime import datetime
-from PySide6.QtWidgets import QMainWindow
+
 from PySide6 import QtCore
+from PySide6.QtWidgets import QMainWindow
 
 from src.controllers.user_management.user_management import add_user
 from src.models.user_management.user import User
 from src.views.user_management.WndRegistration import Ui_WndRegistration
-from src.controllers.primary.primary import PrimaryWindow
 
 sex = ["male", "female"]
 regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
@@ -19,11 +17,13 @@ class RegistrationWindow(QMainWindow, Ui_WndRegistration):
     """
     Class provides functionalities to interact with ui for registration
     """
-    def __init__(self, parent=None):
+    def __init__(self, LoginWindow, parent=None):
         """
         Used to setup the ui and connect widgets with methods
         """
+        self.LoginWindow = LoginWindow
         super(RegistrationWindow, self).__init__(parent)
+        self.mw = None
         self.ui = Ui_WndRegistration()
         self.ui.setupUi(self)
 
@@ -43,6 +43,7 @@ class RegistrationWindow(QMainWindow, Ui_WndRegistration):
         self.ui.sbHeight.valueChanged.connect(self.validate_height)
         self.ui.btnFinish.clicked.connect(self.finish_registration)
         self.ui.btnBack.clicked.connect(self.last_page)
+        self.ui.btnCancel.clicked.connect(self.cancel_registration)
 
         self.user = User()
 
@@ -295,3 +296,10 @@ class RegistrationWindow(QMainWindow, Ui_WndRegistration):
 
         else:
             print("Fill out open fields")
+
+    def cancel_registration(self):
+        try:
+            self.destroy()
+            self.LoginWindow.show()
+        except Exception as e:
+            print(e)

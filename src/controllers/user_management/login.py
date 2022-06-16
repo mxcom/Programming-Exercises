@@ -37,8 +37,8 @@ class LoginWindow(QMainWindow, Ui_WndLogin):
         self.ui.btnSignup.clicked.connect(self.switch_to_registration)
 
     def switch_to_registration(self):
-        self.destroy()
-        self.mw = RegistrationWindow()
+        self.mw = RegistrationWindow(LoginWindow=self)
+        self.hide()
         self.mw.show()
 
     def validate_email(self):
