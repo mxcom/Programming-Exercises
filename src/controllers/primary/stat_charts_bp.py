@@ -13,15 +13,13 @@ class ChartBp:
     def __init__(self, user, period):
         self.results_sys = get_stat_sys(user, period)
         self.results_dia = get_stat_dia(user, period)
+        print(self.results_dia)
+        print(self.results_sys)
 
         self.set_sys = QBarSet("Systolic")
         self.set_dia = QBarSet("Diastolic")
-
-        for i in self.results_sys:
-            self.set_sys << i
-
-        for i in self.results_dia:
-            self.set_dia << i
+        self.set_sys.append(self.results_sys)
+        self.set_dia.append(self.results_dia)
 
         self.set_sys.setColor(QColor(0x7A64BD))
         self.set_dia.setColor(QColor(0xD3C9F2))
@@ -30,7 +28,7 @@ class ChartBp:
         self.series = QBarSeries()
         self.series.append(self.set_dia)
         self.series.append(self.set_sys)
-        self.series.setBarWidth(self.series.count())
+        self.series.setBarWidth(self.series.count()/2)
 
         # create chart
         self.chart = QChart()

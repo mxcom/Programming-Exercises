@@ -716,7 +716,7 @@ border:none;
 </string>
             </property>
             <property name="currentIndex">
-             <number>1</number>
+             <number>4</number>
             </property>
             <widget class="QWidget" name="pageHome">
              <property name="styleSheet">
@@ -1026,11 +1026,14 @@ border-radius: 15px;
                           <string notr="true">border-bottom: 2px solid rgb(211, 201, 242);
 </string>
                          </property>
+                         <property name="text">
+                          <string/>
+                         </property>
                          <property name="alignment">
                           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                          </property>
                          <property name="placeholderText">
-                          <string>Low</string>
+                          <string>Diastolic</string>
                          </property>
                         </widget>
                        </item>
@@ -1056,7 +1059,7 @@ border-radius: 15px;
                           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                          </property>
                          <property name="placeholderText">
-                          <string>High</string>
+                          <string>Systolic</string>
                          </property>
                         </widget>
                        </item>
@@ -3100,6 +3103,12 @@ QPushButton:pressed {
                        </property>
                        <item>
                         <widget class="QFrame" name="frmAvgBP">
+                         <property name="minimumSize">
+                          <size>
+                           <width>448</width>
+                           <height>0</height>
+                          </size>
+                         </property>
                          <property name="styleSheet">
                           <string notr="true">background-color: rgb(155, 127, 240);
 border-radius: 15px;
@@ -3146,6 +3155,12 @@ border-radius: 15px;
                        </item>
                        <item>
                         <widget class="QFrame" name="frmMaxBP">
+                         <property name="minimumSize">
+                          <size>
+                           <width>448</width>
+                           <height>0</height>
+                          </size>
+                         </property>
                          <property name="styleSheet">
                           <string notr="true">background-color: rgb(155, 127, 240);
 border-radius: 15px;
@@ -3192,6 +3207,12 @@ border-radius: 15px;
                        </item>
                        <item>
                         <widget class="QFrame" name="frmMin">
+                         <property name="minimumSize">
+                          <size>
+                           <width>448</width>
+                           <height>0</height>
+                          </size>
+                         </property>
                          <property name="styleSheet">
                           <string notr="true">background-color: rgb(155, 127, 240);
 border-radius: 15px;

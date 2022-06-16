@@ -114,10 +114,9 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.lbAvgKcalValue.setText(self.chart_kcal_1.get_avg_value())
         self.ui.lbMaxKcalValue.setText(self.chart_kcal_1.get_max_value())
         self.ui.lbMinKcalValue.setText(self.chart_kcal_1.get_min_value())
-        self.chart_kcal_2 = ChartKcal(self.user, 2)
         self.chart_kcal_3 = ChartKcal(self.user, 3)
         self.kcal_chart_3 = self.chart_kcal_3.get_chartview()
-        self.kcal_chart_2 = self.chart_kcal_2.get_chartview()
+        self.kcal_chart_2 = self.chart_kcal_1.get_chartview()
 
         self.chart_steps_1 = ChartSteps(self.user, 1)
         self.steps_chart = self.chart_steps_1.get_chartview()
@@ -127,10 +126,8 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.lbAvgStepsValue.setText(self.chart_steps_1.get_avg_value())
         self.ui.lbMaxStepsValue.setText(self.chart_steps_1.get_max_value())
         self.ui.lbMinStepsValue.setText(self.chart_steps_1.get_min_value())
-        self.chart_steps_2 = ChartSteps(self.user, 2)
-        self.chart_steps_3 = ChartSteps(self.user, 3)
-        self.steps_chart_2 = self.chart_steps_2.get_chartview()
-        self.steps_chart_3 = self.chart_steps_3.get_chartview()
+        self.steps_chart_2 = self.chart_steps_1.get_chartview()
+        self.steps_chart_3 = self.chart_steps_1.get_chartview()
 
         self.chart_bp_1 = ChartBp(self.user, 1)
         self.bp_chart = self.chart_bp_1.get_chartview()
@@ -140,10 +137,8 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.lbAvgBpValue.setText(self.chart_bp_1.get_avg_value())
         self.ui.lbMaxBpValue.setText(self.chart_bp_1.get_max_value())
         self.ui.lbMinBpValue.setText(self.chart_bp_1.get_min_value())
-        self.chart_bp_2 = ChartBp(self.user, 2)
-        self.chart_bp_3 = ChartBp(self.user, 3)
-        self.bp_chart_2 = self.chart_bp_2.get_chartview()
-        self.bp_chart_3 = self.chart_bp_3.get_chartview()
+        self.bp_chart_2 = self.chart_bp_1.get_chartview()
+        self.bp_chart_3 = self.chart_bp_1.get_chartview()
 
         # Set Setting page Functionalities
         self.ui.lbSetFirstNameValue.setText(self.user.get_first_name())
@@ -331,13 +326,13 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
 
         # steps 1 month
         if self.ui.cbSteps.currentText() == '1 month':
-            self.chart_steps_2 = ChartSteps(self.user, 2)
+            self.chart_steps_2 = ChartKcal(self.user, 2)
             self.steps_chart.hide()
             self.steps_chart_3.hide()
-            self.layout_chart_steps.removeWidget(self.kcal_chart)
+            self.layout_chart_steps.removeWidget(self.steps_chart)
             self.steps_chart_2 = self.chart_steps_2.get_chartview()
             self.layout_chart_steps.addWidget(self.steps_chart_2)
-            self.ui.kcalChart.setLayout(self.layout_chart_steps)
+            self.ui.stepsChart.setLayout(self.layout_chart_steps)
             self.ui.lbAvgStepsValue.setText(self.chart_steps_2.get_avg_value())
             self.ui.lbMaxStepsValue.setText(self.chart_steps_2.get_max_value())
             self.ui.lbMinStepsValue.setText(self.chart_steps_2.get_min_value())
@@ -347,10 +342,10 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             self.chart_steps_3 = ChartKcal(self.user, 3)
             self.steps_chart.hide()
             self.steps_chart_2.hide()
-            self.layout_chart_steps.removeWidget(self.kcal_chart)
+            self.layout_chart_steps.removeWidget(self.steps_chart)
             self.steps_chart_3 = self.chart_steps_3.get_chartview()
             self.layout_chart_steps.addWidget(self.steps_chart_3)
-            self.ui.kcalChart.setLayout(self.layout_chart_steps)
+            self.ui.stepsChart.setLayout(self.layout_chart_steps)
             self.ui.lbAvgStepsValue.setText(self.chart_steps_3.get_avg_value())
             self.ui.lbMaxStepsValue.setText(self.chart_steps_3.get_max_value())
             self.ui.lbMinStepsValue.setText(self.chart_steps_3.get_min_value())
@@ -368,7 +363,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             self.ui.lbMinBpValue.setText(self.chart_bp_1.get_min_value())
 
         if self.ui.cbBP.currentText() == '1 month':
-            self.chart_bp_2 = ChartBp(self.user, 1)
+            self.chart_bp_2 = ChartBp(self.user, 2)
             self.bp_chart.hide()
             self.bp_chart_3.hide()
             self.bp_chart_2 = self.chart_bp_2.get_chartview()
@@ -379,7 +374,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             self.ui.lbMinBpValue.setText(self.chart_bp_2.get_min_value())
 
         if self.ui.cbBP.currentText() == 'complete':
-            self.chart_bp_3 = ChartBp(self.user, 1)
+            self.chart_bp_3 = ChartBp(self.user, 3)
             self.bp_chart.hide()
             self.bp_chart_2.hide()
             self.bp_chart_3 = self.chart_bp_3.get_chartview()

@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
     QHeaderView, QLabel, QLineEdit, QMainWindow,
     QPushButton, QSizePolicy, QStackedWidget, QTableWidget,
     QTableWidgetItem, QVBoxLayout, QWidget)
-import src.views.icons.rc_icons
+import icons_rc
 
 class Ui_WndMain(object):
     def setupUi(self, WndMain):
@@ -1563,6 +1563,7 @@ class Ui_WndMain(object):
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
         self.frmAvgBP = QFrame(self.frame_21)
         self.frmAvgBP.setObjectName(u"frmAvgBP")
+        self.frmAvgBP.setMinimumSize(QSize(448, 0))
         self.frmAvgBP.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
 "border-radius: 15px;\n"
 "")
@@ -1588,6 +1589,7 @@ class Ui_WndMain(object):
 
         self.frmMaxBP = QFrame(self.frame_21)
         self.frmMaxBP.setObjectName(u"frmMaxBP")
+        self.frmMaxBP.setMinimumSize(QSize(448, 0))
         self.frmMaxBP.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
 "border-radius: 15px;\n"
 "")
@@ -1613,6 +1615,7 @@ class Ui_WndMain(object):
 
         self.frmMin = QFrame(self.frame_21)
         self.frmMin.setObjectName(u"frmMin")
+        self.frmMin.setMinimumSize(QSize(448, 0))
         self.frmMin.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
 "border-radius: 15px;\n"
 "")
@@ -2175,7 +2178,7 @@ class Ui_WndMain(object):
 
         self.retranslateUi(WndMain)
 
-        self.pages.setCurrentIndex(1)
+        self.pages.setCurrentIndex(4)
 
 
         QMetaObject.connectSlotsByName(WndMain)
@@ -2195,8 +2198,9 @@ class Ui_WndMain(object):
         self.lbWeight.setText(QCoreApplication.translate("WndMain", u"Weight:", None))
         self.lbSteps.setText(QCoreApplication.translate("WndMain", u"Steps:", None))
         self.lbBP.setText(QCoreApplication.translate("WndMain", u"Blood Pressure:", None))
-        self.leBPLow.setPlaceholderText(QCoreApplication.translate("WndMain", u"Low", None))
-        self.leBPHigh.setPlaceholderText(QCoreApplication.translate("WndMain", u"High", None))
+        self.leBPLow.setText("")
+        self.leBPLow.setPlaceholderText(QCoreApplication.translate("WndMain", u"Diastolic", None))
+        self.leBPHigh.setPlaceholderText(QCoreApplication.translate("WndMain", u"Systolic", None))
         self.btnSubmit.setText(QCoreApplication.translate("WndMain", u"Submit", None))
         self.lbSearchFood.setText(QCoreApplication.translate("WndMain", u"Search:", None))
         self.lbAmount.setText(QCoreApplication.translate("WndMain", u"Amount:", None))
