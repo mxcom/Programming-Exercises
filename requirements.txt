@@ -1,2 +1,6 @@
 PySide6
 openfoodfacts
+mysql-connector-python
+bcrypt
+sshtunnel
+pyotp
