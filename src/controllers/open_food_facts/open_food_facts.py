@@ -1,6 +1,6 @@
-import requests ,json
+import requests ,json,openfoodfacts
 from src.controllers.database.database import Database
-import datetime
+import dateti
 def search_id(id):
     db = Database()
     cursor = db.get_cursor()
@@ -16,12 +16,18 @@ def search_id(id):
         return False
 
 def fetch_id_from_api(id):
-    response = requests.get('https://world.openfoodfacts.org/api/v0/product/'+id).text
-    response_info = json.loads(response)
+    response_info = openfoodfacts.products.get_product(id)
     db = Database()
     cursor = db.get_cursor()
+
+
     if response_info['status'] != "0":
         cursor.execute("INSERT INTO table_name (id, name, energy-kcal_100g ) VALUES ("+id+", "+int(response_info['product']['nutriments']['energy-kcal_100g'])+", "+int(response_info['product']['product_name'])+"); "+id)
         return int(response_info['product']['nutriments']['energy-kcal_100g'])
     else:
         return None
+
+def search_name(name):
+    for product in openfoodfacts.products.search_all(name):
+        print(product['product_name'])
+
