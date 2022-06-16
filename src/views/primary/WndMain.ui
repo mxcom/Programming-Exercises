@@ -716,7 +716,7 @@ border:none;
 </string>
             </property>
             <property name="currentIndex">
-             <number>5</number>
+             <number>3</number>
             </property>
             <widget class="QWidget" name="pageHome">
              <property name="styleSheet">
@@ -1767,7 +1767,8 @@ border-radius: 15px;</string>
                              </font>
                             </property>
                             <property name="styleSheet">
-                             <string notr="true"/>
+                             <string notr="true">
+</string>
                             </property>
                             <property name="editable">
                              <bool>false</bool>
@@ -2050,6 +2051,12 @@ QPushButton:pressed {
                  </property>
                  <item>
                   <widget class="QFrame" name="frmLeftContentSteps">
+                   <property name="minimumSize">
+                    <size>
+                     <width>456</width>
+                     <height>0</height>
+                    </size>
+                   </property>
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
                    </property>
@@ -2102,6 +2109,12 @@ QPushButton:pressed {
                        </property>
                        <item>
                         <widget class="QFrame" name="frmAvgSteps">
+                         <property name="minimumSize">
+                          <size>
+                           <width>448</width>
+                           <height>0</height>
+                          </size>
+                         </property>
                          <property name="styleSheet">
                           <string notr="true">background-color: rgb(155, 127, 240);
 border-radius: 15px;
@@ -2148,6 +2161,12 @@ border-radius: 15px;
                        </item>
                        <item>
                         <widget class="QFrame" name="frmMaxSteps">
+                         <property name="minimumSize">
+                          <size>
+                           <width>448</width>
+                           <height>0</height>
+                          </size>
+                         </property>
                          <property name="styleSheet">
                           <string notr="true">background-color: rgb(155, 127, 240);
 border-radius: 15px;
@@ -2194,6 +2213,12 @@ border-radius: 15px;
                        </item>
                        <item>
                         <widget class="QFrame" name="frmMinSteps">
+                         <property name="minimumSize">
+                          <size>
+                           <width>448</width>
+                           <height>0</height>
+                          </size>
+                         </property>
                          <property name="styleSheet">
                           <string notr="true">background-color: rgb(155, 127, 240);
 border-radius: 15px;
@@ -3783,9 +3808,6 @@ border-radius: 15px;</string>
                         <height>0</height>
                        </size>
                       </property>
-                      <property name="styleSheet">
-                       <string notr="true"/>
-                      </property>
                       <property name="frameShape">
                        <enum>QFrame::StyledPanel</enum>
                       </property>
@@ -3845,12 +3867,6 @@ QPushButton:pressed {
                          </property>
                          <property name="text">
                           <string>Submit</string>
-                         </property>
-                         <property name="iconSize">
-                          <size>
-                           <width>0</width>
-                           <height>0</height>
-                          </size>
                          </property>
                         </widget>
                        </item>

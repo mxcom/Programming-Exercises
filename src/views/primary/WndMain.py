@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
     QHeaderView, QLabel, QLineEdit, QMainWindow,
     QPushButton, QSizePolicy, QStackedWidget, QTableWidget,
     QTableWidgetItem, QVBoxLayout, QWidget)
-import src.views.icons.rc_icons
+import icons_rc
 
 class Ui_WndMain(object):
     def setupUi(self, WndMain):
@@ -1050,6 +1050,7 @@ class Ui_WndMain(object):
         self.horizontalLayout_26.setContentsMargins(9, 0, 0, 0)
         self.frmLeftContentSteps = QFrame(self.frmContentSteps)
         self.frmLeftContentSteps.setObjectName(u"frmLeftContentSteps")
+        self.frmLeftContentSteps.setMinimumSize(QSize(456, 0))
         self.frmLeftContentSteps.setFrameShape(QFrame.StyledPanel)
         self.frmLeftContentSteps.setFrameShadow(QFrame.Raised)
         self.verticalLayout_24 = QVBoxLayout(self.frmLeftContentSteps)
@@ -1073,6 +1074,7 @@ class Ui_WndMain(object):
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
         self.frmAvgSteps = QFrame(self.frame_16)
         self.frmAvgSteps.setObjectName(u"frmAvgSteps")
+        self.frmAvgSteps.setMinimumSize(QSize(448, 0))
         self.frmAvgSteps.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
 "border-radius: 15px;\n"
 "")
@@ -1098,6 +1100,7 @@ class Ui_WndMain(object):
 
         self.frmMaxSteps = QFrame(self.frame_16)
         self.frmMaxSteps.setObjectName(u"frmMaxSteps")
+        self.frmMaxSteps.setMinimumSize(QSize(448, 0))
         self.frmMaxSteps.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
 "border-radius: 15px;\n"
 "")
@@ -1123,6 +1126,7 @@ class Ui_WndMain(object):
 
         self.frmMinSteps = QFrame(self.frame_16)
         self.frmMinSteps.setObjectName(u"frmMinSteps")
+        self.frmMinSteps.setMinimumSize(QSize(448, 0))
         self.frmMinSteps.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
 "border-radius: 15px;\n"
 "")
@@ -1900,7 +1904,6 @@ class Ui_WndMain(object):
         self.frame_36 = QFrame(self.frame_20)
         self.frame_36.setObjectName(u"frame_36")
         self.frame_36.setMinimumSize(QSize(0, 0))
-        self.frame_36.setStyleSheet(u"")
         self.frame_36.setFrameShape(QFrame.StyledPanel)
         self.frame_36.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_45 = QHBoxLayout(self.frame_36)
@@ -1925,7 +1928,6 @@ class Ui_WndMain(object):
 "	background-color: rgb(211, 201, 242);\n"
 "	border-radius: 15px;\n"
 "}")
-        self.btnChangeInfo.setIconSize(QSize(0, 0))
 
         self.horizontalLayout_45.addWidget(self.btnChangeInfo)
 
@@ -2040,7 +2042,7 @@ class Ui_WndMain(object):
 
         self.retranslateUi(WndMain)
 
-        self.pages.setCurrentIndex(5)
+        self.pages.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(WndMain)

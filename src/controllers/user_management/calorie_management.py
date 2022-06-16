@@ -75,15 +75,15 @@ def get_stat_steps(user, period):
         db = Database()
         cursor = db.get_cursor()
         if period == 1:
-            cursor.execute("SELECT CaloriesEaten FROM calories WHERE UserID LIKE %s AND "
+            cursor.execute("SELECT Steps FROM steps WHERE UserID LIKE %s AND "
                            "Date BETWEEN  DATE_SUB(now(), INTERVAL 1 WEEK) AND now();",
                            (user.get_id(),))
         elif period == 2:
             cursor.execute(
-                "SELECT CaloriesEaten FROM calories WHERE MONTH(now() - INTERVAL 1 MONTH) AND UserID LIKE %s",
+                "SELECT Steps FROM steps WHERE MONTH(now() - INTERVAL 1 MONTH) AND UserID LIKE %s",
                 (user.get_id(),))
         elif period == 3:
-            cursor.execute("SELECT CaloriesEaten FROM calories WHERE UserID LIKE %s ORDER BY Date",
+            cursor.execute("SELECT Steps FROM steps WHERE UserID LIKE %s ORDER BY Date",
                            (user.get_id(),))
         else:
             return None
