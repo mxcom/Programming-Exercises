@@ -11,6 +11,7 @@ from PySide6.examples.charts.dynamicspline import chart
 # from src.controllers.primary.stat_charts import create_chart
 from src.controllers.primary.stat_charts_kcal import ChartKcal
 from src.controllers.primary.stat_charts_steps import ChartSteps
+from src.controllers.primary.stat_charts_bp import ChartBp
 from src.controllers.user_management.user_management import update_email, update_passwd, update_height
 from src.controllers.user_management.calorie_management import get_daily_calories, update_calories
 from src.controllers.primary.progress_bar import CircularProgress
@@ -18,6 +19,7 @@ from src.controllers.user_management.calc_kcal import calc_kcal
 from src.views.primary.WndMain import Ui_WndMain
 from src.views.primary.btn_style import Style
 from src.views.primary.uiFunctions import UIFunctions
+from src.controllers.primary.stat_charts import Chart
 from src.controllers.user_management.user_management import add_steps, add_weight, add_bp
 from src.controllers.cryptography.cryptography import hash_passwd
 
@@ -29,8 +31,6 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
 
     def __init__(self, user, parent=None):
         super(PrimaryWindow, self).__init__(parent)
-        self.chart3 = None
-        self.chart2 = None
         self.ui = Ui_WndMain()
         self.ui.setupUi(self)
         self.user = user
@@ -100,7 +100,10 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.leBPLow.textChanged.connect(self.validate_bp_low)
         self.ui.leBPHigh.textChanged.connect(self.validate_bp_high)
 
-        self.ui.cbKcal.activated.connect(self.date_selected)
+        # Connect Combooxes for Chart selcetion to methods
+        self.ui.cbKcal.activated.connect(self.date_selected_kcal)
+        self.ui.cbSteps.activated.connect(self.date_selected_steps)
+        self.ui.cbBP.activated.connect(self.date_selected_bp)
 
         # Set statistics
         self.chart_kcal_1 = ChartKcal(self.user, 1)
@@ -111,6 +114,10 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.lbAvgKcalValue.setText(self.chart_kcal_1.get_avg_value())
         self.ui.lbMaxKcalValue.setText(self.chart_kcal_1.get_max_value())
         self.ui.lbMinKcalValue.setText(self.chart_kcal_1.get_min_value())
+        self.chart_kcal_2 = ChartKcal(self.user, 2)
+        self.chart_kcal_3 = ChartKcal(self.user, 3)
+        self.kcal_chart_3 = self.chart_kcal_3.get_chartview()
+        self.kcal_chart_2 = self.chart_kcal_2.get_chartview()
 
         self.chart_steps_1 = ChartSteps(self.user, 1)
         self.steps_chart = self.chart_steps_1.get_chartview()
@@ -120,7 +127,23 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.lbAvgStepsValue.setText(self.chart_steps_1.get_avg_value())
         self.ui.lbMaxStepsValue.setText(self.chart_steps_1.get_max_value())
         self.ui.lbMinStepsValue.setText(self.chart_steps_1.get_min_value())
+        self.chart_steps_2 = ChartSteps(self.user, 2)
+        self.chart_steps_3 = ChartSteps(self.user, 3)
+        self.steps_chart_2 = self.chart_steps_2.get_chartview()
+        self.steps_chart_3 = self.chart_steps_3.get_chartview()
 
+        self.chart_bp_1 = ChartBp(self.user, 1)
+        self.bp_chart = self.chart_bp_1.get_chartview()
+        self.layout_chart_bp = QHBoxLayout()
+        self.layout_chart_bp.addWidget(self.bp_chart)
+        self.ui.bpChart.setLayout(self.layout_chart_bp)
+        self.ui.lbAvgBpValue.setText(self.chart_bp_1.get_avg_value())
+        self.ui.lbMaxBpValue.setText(self.chart_bp_1.get_max_value())
+        self.ui.lbMinBpValue.setText(self.chart_bp_1.get_min_value())
+        self.chart_bp_2 = ChartBp(self.user, 2)
+        self.chart_bp_3 = ChartBp(self.user, 3)
+        self.bp_chart_2 = self.chart_bp_2.get_chartview()
+        self.bp_chart_3 = self.chart_bp_3.get_chartview()
 
         # Set Setting page Functionalities
         self.ui.lbSetFirstNameValue.setText(self.user.get_first_name())
@@ -254,12 +277,14 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         # if self.validate_bp_low() and self.validate_bp_high():
         #     add_bp(self.user.get_id(), int(self.ui.leBPLow.text()), int(self.ui.leBPHigh.text()))
 
-    def date_selected(self):
+    def date_selected_kcal(self):
         # kcla 1 week
         if self.ui.cbKcal.currentText() == '1 week':
             self.chart_kcal_1 = ChartKcal(self.user, 1)
-            self.layout_chart_kcal.removeWidget(self.kcal_chart)
+            self.kcal_chart_2.hide()
+            self.kcal_chart_3.hide()
             self.kcal_chart = self.chart_kcal_1.get_chartview()
+            self.layout_chart_kcal.removeWidget(self.kcal_chart)
             self.layout_chart_kcal.addWidget(self.kcal_chart)
             self.ui.kcalChart.setLayout(self.layout_chart_kcal)
             self.ui.lbAvgKcalValue.setText(self.chart_kcal_1.get_avg_value())
@@ -267,47 +292,102 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             self.ui.lbMinKcalValue.setText(self.chart_kcal_1.get_min_value())
         # kcal 1 month
         if self.ui.cbKcal.currentText() == '1 month':
-            chart_kcal_2 = ChartKcal(self.user, 2)
+            self.chart_kcal_2 = ChartKcal(self.user, 2)
+            self.kcal_chart_3.hide()
+            self.kcal_chart.hide()
+            self.kcal_chart_2 = self.chart_kcal_2.get_chartview()
             self.layout_chart_kcal.removeWidget(self.kcal_chart)
-            self.kcal_chart = chart_kcal_2.get_chartview()
-            self.layout_chart_kcal.addWidget(self.kcal_chart)
+            self.layout_chart_kcal.addWidget(self.kcal_chart_2)
             self.ui.kcalChart.setLayout(self.layout_chart_kcal)
-            self.ui.lbAvgKcalValue.setText(chart_kcal_2.get_avg_value())
-            self.ui.lbMaxKcalValue.setText(chart_kcal_2.get_max_value())
-            self.ui.lbMinKcalValue.setText(chart_kcal_2.get_min_value())
+            self.ui.lbAvgKcalValue.setText(self.chart_kcal_2.get_avg_value())
+            self.ui.lbMaxKcalValue.setText(self.chart_kcal_2.get_max_value())
+            self.ui.lbMinKcalValue.setText(self.chart_kcal_2.get_min_value())
         # kcal complete
         if self.ui.cbKcal.currentText() == 'complete':
-            chart_kcal_3 = ChartKcal(self.user, 3)
+            self.chart_kcal_3 = ChartKcal(self.user, 3)
+            self.kcal_chart_2.hide()
+            self.kcal_chart.hide()
+            self.kcal_chart_3 = self.chart_kcal_3.get_chartview()
             self.layout_chart_kcal.removeWidget(self.kcal_chart)
-            self.kcal_chart = chart_kcal_3.get_chartview()
-            self.layout_chart_kcal.addWidget(self.kcal_chart)
+            self.layout_chart_kcal.addWidget(self.kcal_chart_3)
             self.ui.kcalChart.setLayout(self.layout_chart_kcal)
-            self.ui.lbAvgKcalValue.setText(chart_kcal_3.get_avg_value())
-            self.ui.lbMaxKcalValue.setText(chart_kcal_3.get_max_value())
-            self.ui.lbMinKcalValue.setText(chart_kcal_3.get_min_value())
+            self.ui.lbAvgKcalValue.setText(self.chart_kcal_3.get_avg_value())
+            self.ui.lbMaxKcalValue.setText(self.chart_kcal_3.get_max_value())
+            self.ui.lbMinKcalValue.setText(self.chart_kcal_3.get_min_value())
+
+    def date_selected_steps(self):
         # steps 1 week
-        if self.ui.cbKcal.currentText() == '1 week':
+        if self.ui.cbSteps.currentText() == '1 week':
             self.chart_steps_1 = ChartSteps(self.user, 1)
+            self.steps_chart_2.hide()
+            self.steps_chart_3.hide()
             self.layout_chart_steps.removeWidget(self.steps_chart)
             self.steps_chart = self.chart_steps_1.get_chartview()
             self.layout_chart_steps.addWidget(self.steps_chart)
             self.ui.stepsChart.setLayout(self.layout_chart_steps)
+            self.ui.lbAvgStepsValue.setText(self.chart_steps_1.get_avg_value())
+            self.ui.lbMaxStepsValue.setText(self.chart_steps_1.get_max_value())
+            self.ui.lbMinStepsValue.setText(self.chart_steps_1.get_min_value())
 
         # steps 1 month
-        if self.ui.cbKcal.currentText() == '1 month':
-            chart_steps_2 = ChartSteps(self.user, 2)
+        if self.ui.cbSteps.currentText() == '1 month':
+            self.chart_steps_2 = ChartSteps(self.user, 2)
+            self.steps_chart.hide()
+            self.steps_chart_3.hide()
             self.layout_chart_steps.removeWidget(self.kcal_chart)
-            self.kcal_chart = chart_steps_2.get_chartview()
-            self.layout_chart_steps.addWidget(self.kcal_chart)
+            self.steps_chart_2 = self.chart_steps_2.get_chartview()
+            self.layout_chart_steps.addWidget(self.steps_chart_2)
             self.ui.kcalChart.setLayout(self.layout_chart_steps)
+            self.ui.lbAvgStepsValue.setText(self.chart_steps_2.get_avg_value())
+            self.ui.lbMaxStepsValue.setText(self.chart_steps_2.get_max_value())
+            self.ui.lbMinStepsValue.setText(self.chart_steps_2.get_min_value())
 
         # steps complete
-        if self.ui.cbKcal.currentText() == 'complete':
-            chart_steps_3 = ChartKcal(self.user, 3)
+        if self.ui.cbSteps.currentText() == 'complete':
+            self.chart_steps_3 = ChartKcal(self.user, 3)
+            self.steps_chart.hide()
+            self.steps_chart_2.hide()
             self.layout_chart_steps.removeWidget(self.kcal_chart)
-            self.kcal_chart = chart_steps_3.get_chartview()
-            self.layout_chart_steps.addWidget(self.kcal_chart)
+            self.steps_chart_3 = self.chart_steps_3.get_chartview()
+            self.layout_chart_steps.addWidget(self.steps_chart_3)
             self.ui.kcalChart.setLayout(self.layout_chart_steps)
+            self.ui.lbAvgStepsValue.setText(self.chart_steps_3.get_avg_value())
+            self.ui.lbMaxStepsValue.setText(self.chart_steps_3.get_max_value())
+            self.ui.lbMinStepsValue.setText(self.chart_steps_3.get_min_value())
+
+    def date_selected_bp(self):
+        if self.ui.cbBP.currentText() == '1 week':
+            self.chart_bp_1 = ChartBp(self.user, 1)
+            self.bp_chart_2.hide()
+            self.bp_chart_3.hide()
+            self.bp_chart = self.chart_bp_1.get_chartview()
+            self.layout_chart_bp.addWidget(self.bp_chart)
+            self.ui.bpChart.setLayout(self.layout_chart_bp)
+            self.ui.lbAvgBpValue.setText(self.chart_bp_1.get_avg_value())
+            self.ui.lbMaxBpValue.setText(self.chart_bp_1.get_max_value())
+            self.ui.lbMinBpValue.setText(self.chart_bp_1.get_min_value())
+
+        if self.ui.cbBP.currentText() == '1 month':
+            self.chart_bp_2 = ChartBp(self.user, 1)
+            self.bp_chart.hide()
+            self.bp_chart_3.hide()
+            self.bp_chart_2 = self.chart_bp_2.get_chartview()
+            self.layout_chart_bp.addWidget(self.bp_chart_2)
+            self.ui.bpChart.setLayout(self.layout_chart_bp)
+            self.ui.lbAvgBpValue.setText(self.chart_bp_2.get_avg_value())
+            self.ui.lbMaxBpValue.setText(self.chart_bp_2.get_max_value())
+            self.ui.lbMinBpValue.setText(self.chart_bp_2.get_min_value())
+
+        if self.ui.cbBP.currentText() == 'complete':
+            self.chart_bp_3 = ChartBp(self.user, 1)
+            self.bp_chart.hide()
+            self.bp_chart_2.hide()
+            self.bp_chart_3 = self.chart_bp_3.get_chartview()
+            self.layout_chart_bp.addWidget(self.bp_chart_3)
+            self.ui.bpChart.setLayout(self.layout_chart_bp)
+            self.ui.lbAvgBpValue.setText(self.chart_bp_3.get_avg_value())
+            self.ui.lbMaxBpValue.setText(self.chart_bp_3.get_max_value())
+            self.ui.lbMinBpValue.setText(self.chart_bp_3.get_min_value())
 
     def validate_email(self):
         try:

@@ -8,6 +8,7 @@ from datetime import date
 import calendar
 from src.controllers.user_management.calorie_management import *
 
+
 class ChartSteps:
     def __init__(self, user, period):
         self.results = get_stat_steps(user, period)
