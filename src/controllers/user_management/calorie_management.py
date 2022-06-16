@@ -44,12 +44,11 @@ def get_stat_kcal(user, period):
         db = Database()
         cursor = db.get_cursor()
         if period == 1:
-            cursor.execute("SELECT CaloriesEaten FROM calories WHERE UserID LIKE %s AND "
-                           "Date BETWEEN  DATE_SUB(now(), INTERVAL 1 WEEK) AND now();",
+            cursor.execute("SELECT CaloriesEaten FROM calories WHERE UserID LIKE %s and Date > now() - INTERVAL 1 week;",
                            (user.get_id(),))
         elif period == 2:
             cursor.execute(
-                "SELECT CaloriesEaten FROM calories WHERE MONTH(now() - INTERVAL 1 MONTH) AND UserID LIKE %s",
+                "SELECT CaloriesEaten FROM calories WHERE UserID LIKE %s AND Date > now() - INTERVAL 1 month;",
                 (user.get_id(),))
         elif period == 3:
             cursor.execute("SELECT CaloriesEaten FROM calories WHERE UserID LIKE %s ORDER BY Date",
@@ -75,12 +74,11 @@ def get_stat_steps(user, period):
         db = Database()
         cursor = db.get_cursor()
         if period == 1:
-            cursor.execute("SELECT Steps FROM steps WHERE UserID LIKE %s AND "
-                           "Date BETWEEN  DATE_SUB(now(), INTERVAL 1 WEEK) AND now();",
+            cursor.execute("SELECT Steps FROM steps WHERE UserID LIKE %s and Date > now() - INTERVAL 1 week;",
                            (user.get_id(),))
         elif period == 2:
             cursor.execute(
-                "SELECT Steps FROM steps WHERE MONTH(now() - INTERVAL 1 MONTH) AND UserID LIKE %s",
+                "SELECT Steps FROM steps WHERE UserID LIKE %s and Date > now() - INTERVAL 1 month;",
                 (user.get_id(),))
         elif period == 3:
             cursor.execute("SELECT Steps FROM steps WHERE UserID LIKE %s ORDER BY Date",
@@ -102,12 +100,11 @@ def get_stat_sys(user, period):
         db = Database()
         cursor = db.get_cursor()
         if period == 1:
-            cursor.execute("SELECT Systolic FROM bloodpressure WHERE UserID LIKE %s AND "
-                           "Date BETWEEN DATE_SUB(now(), INTERVAL 1 WEEK) AND now();",
+            cursor.execute("SELECT Systolic FROM bloodpressure WHERE UserID LIKE %s AND Date > now() - INTERVAL 1 week;",
                            (user.get_id(),))
         elif period == 2:
             cursor.execute(
-                "SELECT Systolic FROM bloodpressure WHERE MONTH(now() - INTERVAL 1 MONTH) AND UserID LIKE %s",
+                "SELECT Systolic FROM bloodpressure WHERE UserID LIKE %s AND Date > now() - INTERVAL 1 month;",
                 (user.get_id(),))
         elif period == 3:
             cursor.execute("SELECT Systolic FROM bloodpressure WHERE UserID LIKE %s ORDER BY Date",
@@ -127,12 +124,11 @@ def get_stat_dia(user, period):
         db = Database()
         cursor = db.get_cursor()
         if period == 1:
-            cursor.execute("SELECT Diastolic FROM bloodpressure WHERE UserID LIKE %s AND "
-                           "Date BETWEEN DATE_SUB(now(), INTERVAL 1 WEEK) AND now();",
+            cursor.execute("SELECT Diastolic FROM bloodpressure WHERE UserID LIKE %s AND Date > now() - INTERVAL 1 week;",
                            (user.get_id(),))
         elif period == 2:
             cursor.execute(
-                "SELECT Diastolic FROM bloodpressure WHERE MONTH(now() - INTERVAL 1 MONTH) AND UserID LIKE %s",
+                "SELECT Diastolic FROM bloodpressure WHERE UserID LIKE %s AND Date > now() - INTERVAL 1 month;",
                 (user.get_id(),))
         elif period == 3:
             cursor.execute("SELECT Diastolic FROM bloodpressure WHERE UserID LIKE %s ORDER BY Date",
