@@ -11,7 +11,7 @@ from src.models.user_management.user import User
 from src.controllers.user_management.calc_kcal import calc_kcal
 
 
-class Chart:
+class ChartKcal:
     def __init__(self, user, period):
         # Create Set of Kcal for one week
         self.results = get_stat_kcal(user, period)
