@@ -36,7 +36,12 @@ class RegistrationWindow(QMainWindow, Ui_WndRegistration):
         self.ui.btnNext.clicked.connect(self.next_page)
         self.ui.leFirstName.textChanged.connect(self.validate_first_name)
         self.ui.leLastName.textChanged.connect(self.validate_last_name)
-        self.ui.dpBirthdate.dateChanged.connect(self.validate_birthday)
+        self.ui.sbDay1.valueChanged.connect(self.validate_birthday)
+        self.ui.sbDay2.valueChanged.connect(self.validate_birthday)
+        self.ui.sbMonth1.valueChanged.connect(self.validate_birthday)
+        self.ui.sbMonth2.valueChanged.connect(self.validate_birthday)
+        self.ui.sbYear1.valueChanged.connect(self.validate_birthday)
+        self.ui.sbYear2.valueChanged.connect(self.validate_birthday)
         self.ui.cbSex.addItems(sex)
         self.ui.cbSex.activated.connect(self.validate_sex)
         self.ui.leWeight.textChanged.connect(self.validate_weight)
@@ -193,10 +198,18 @@ class RegistrationWindow(QMainWindow, Ui_WndRegistration):
             True if user is older than 18
             False if user is < 18
         """
-        birthday = self.ui.dpBirthdate.date()
-        if datetime.now().year - birthday.year() >= 18:
-            self.user.set_birthday(self.ui.dpBirthdate.text())
-            return True
+        try:
+            birthday = self.ui.sbDay1.text() + self.ui.sbDay2.text() + "." + \
+                       self.ui.sbMonth1.text() + self.ui.sbMonth2.text() + "." + \
+                       self.ui.sbYear1.text() + self.ui.sbYear2.text()
+
+            birthday = datetime.strptime(birthday, "%d.%m.%y")
+
+            if datetime.now().year - birthday.year >= 18:
+                self.user.set_birthday(birthday)
+                return True
+        except Exception as e:
+            print(e)
         else:
             return False
 
@@ -248,21 +261,18 @@ class RegistrationWindow(QMainWindow, Ui_WndRegistration):
 
     # def cancel_registration(self):
 
-
     def next_page(self):
         """
         Switches the page from first login page to second
         """
         self.ui.leFirstName.setText(self.user.get_first_name())
         self.ui.leLastName.setText(self.user.get_last_name())
-        self.ui.dpBirthdate.setDate(QtCore.QDate.fromString(self.user.get_birthday()))
         self.ui.cbSex.setCurrentText(self.user.get_sex())
         self.ui.leWeight.setText(self.user.get_weight())
         if self.user.get_height():
             self.ui.sbHeight.setValue(int(self.user.get_height()))
         else:
             self.ui.sbHeight.setValue(170)
-        #
         if self.validate_email() and self.validate_passwd() and self.confirm_passwd() == True:
             self.ui.lbError.setVisible(False)
             self.ui.stackedWidget.setCurrentIndex(1)

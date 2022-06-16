@@ -15,10 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QAbstractSpinBox, QApplication, QComboBox, QDateEdit,
-    QDoubleSpinBox, QFormLayout, QFrame, QHBoxLayout,
-    QLabel, QLineEdit, QMainWindow, QPushButton,
-    QSizePolicy, QStackedWidget, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QAbstractSpinBox, QApplication, QComboBox, QDoubleSpinBox,
+    QFormLayout, QFrame, QHBoxLayout, QLabel,
+    QLineEdit, QMainWindow, QPushButton, QSizePolicy,
+    QSpinBox, QStackedWidget, QVBoxLayout, QWidget)
 
 class Ui_WndRegistration(object):
     def setupUi(self, WndRegistration):
@@ -182,10 +182,56 @@ class Ui_WndRegistration(object):
 
         self.formLayout_2.setWidget(2, QFormLayout.LabelRole, self.lbBirthdate)
 
-        self.dpBirthdate = QDateEdit(self.frame)
-        self.dpBirthdate.setObjectName(u"dpBirthdate")
+        self.horizontalLayout_4 = QHBoxLayout()
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.sbDay1 = QSpinBox(self.frame)
+        self.sbDay1.setObjectName(u"sbDay1")
+        self.sbDay1.setMaximum(3)
 
-        self.formLayout_2.setWidget(2, QFormLayout.FieldRole, self.dpBirthdate)
+        self.horizontalLayout_4.addWidget(self.sbDay1)
+
+        self.sbDay2 = QSpinBox(self.frame)
+        self.sbDay2.setObjectName(u"sbDay2")
+        self.sbDay2.setMaximum(9)
+
+        self.horizontalLayout_4.addWidget(self.sbDay2)
+
+        self.label = QLabel(self.frame)
+        self.label.setObjectName(u"label")
+        self.label.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_4.addWidget(self.label)
+
+        self.sbMonth1 = QSpinBox(self.frame)
+        self.sbMonth1.setObjectName(u"sbMonth1")
+        self.sbMonth1.setMaximum(1)
+
+        self.horizontalLayout_4.addWidget(self.sbMonth1)
+
+        self.sbMonth2 = QSpinBox(self.frame)
+        self.sbMonth2.setObjectName(u"sbMonth2")
+        self.sbMonth2.setMaximum(9)
+
+        self.horizontalLayout_4.addWidget(self.sbMonth2)
+
+        self.label_2 = QLabel(self.frame)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_4.addWidget(self.label_2)
+
+        self.sbYear1 = QSpinBox(self.frame)
+        self.sbYear1.setObjectName(u"sbYear1")
+
+        self.horizontalLayout_4.addWidget(self.sbYear1)
+
+        self.sbYear2 = QSpinBox(self.frame)
+        self.sbYear2.setObjectName(u"sbYear2")
+
+        self.horizontalLayout_4.addWidget(self.sbYear2)
+
+
+        self.formLayout_2.setLayout(2, QFormLayout.FieldRole, self.horizontalLayout_4)
 
         self.lbSex = QLabel(self.frame)
         self.lbSex.setObjectName(u"lbSex")
@@ -259,7 +305,7 @@ class Ui_WndRegistration(object):
 
         self.retranslateUi(WndRegistration)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(WndRegistration)
@@ -278,6 +324,8 @@ class Ui_WndRegistration(object):
         self.lbFirstName.setText(QCoreApplication.translate("WndRegistration", u"First Name", None))
         self.lbLastName.setText(QCoreApplication.translate("WndRegistration", u"Last Name", None))
         self.lbBirthdate.setText(QCoreApplication.translate("WndRegistration", u"Birthdate", None))
+        self.label.setText(QCoreApplication.translate("WndRegistration", u".", None))
+        self.label_2.setText(QCoreApplication.translate("WndRegistration", u".", None))
         self.lbSex.setText(QCoreApplication.translate("WndRegistration", u"Sex", None))
         self.lbWeight.setText(QCoreApplication.translate("WndRegistration", u"Weight (kg)", None))
         self.lbHeight.setText(QCoreApplication.translate("WndRegistration", u"Height (cm)", None))

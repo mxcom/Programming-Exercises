@@ -60,7 +60,7 @@ class User:
         self._birthday = birthday
 
     def set_height(self, height):
-        self._height = float(height)
+        self._height = int(height)
 
     def set_weight(self, weight):
         self._weight = int(weight)
