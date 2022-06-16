@@ -114,8 +114,8 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.lbAvgKcalValue.setText(self.chart_kcal_1.get_avg_value())
         self.ui.lbMaxKcalValue.setText(self.chart_kcal_1.get_max_value())
         self.ui.lbMinKcalValue.setText(self.chart_kcal_1.get_min_value())
-        self.chart_kcal_3 = ChartKcal(self.user, 3)
-        self.kcal_chart_3 = self.chart_kcal_3.get_chartview()
+        # self.chart_kcal_3 = ChartKcal(self.user, 3)
+        self.kcal_chart_3 = self.chart_kcal_1.get_chartview()
         self.kcal_chart_2 = self.chart_kcal_1.get_chartview()
 
         self.chart_steps_1 = ChartSteps(self.user, 1)
@@ -137,6 +137,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.lbAvgBpValue.setText(self.chart_bp_1.get_avg_value())
         self.ui.lbMaxBpValue.setText(self.chart_bp_1.get_max_value())
         self.ui.lbMinBpValue.setText(self.chart_bp_1.get_min_value())
+        # self.chart_bp_3 = ChartBp(self.user, 3)
         self.bp_chart_2 = self.chart_bp_1.get_chartview()
         self.bp_chart_3 = self.chart_bp_1.get_chartview()
 
