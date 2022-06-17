@@ -28,5 +28,5 @@ def fetch_id_from_api(id):
         return None
 
 def search_name(name):
-    print(openfoodfacts.products.search(name,1,2))
+    return openfoodfacts.products.search(name,0,10)
 

@@ -1,10 +1,10 @@
 from datetime import datetime
-import re
+import re, json
 
 from PySide6.QtCharts import QLineSeries, QChartView, QChart
 from PySide6.QtCore import Qt, QPointF
 from PySide6.QtGui import QPainter
-from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QHBoxLayout
+from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QHBoxLayout , QTableWidgetItem
 from PySide6 import QtCore
 from PySide6.examples.charts.dynamicspline import chart
 
@@ -157,17 +157,20 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.lbSetEmailValue.setStyleSheet("color: rgb(211, 201, 242);")
 
         self.ui.btnChangeInfo.clicked.connect(self.change_infos)
-    # OpenFoodfacts
-        self.ui.leSearchFood.textChanged.connect(self.search_name)
-        self.ui.tbFood.cellClicked.connect(self.)
+    # OpenFoodfa%ztdtz-m/TH1cts
+        self.ui.btnSearchFood.clicked.connect(self.search_name)
+        #self.ui.tbFood.cellClicked.connect()
     
     def search_name(self):
         results = open_food_facts.search_name(self)
         i=0
-        for product in results:
+        self.ui.tbFood.clearContents()
+        self.ui.tbFood.setRowCount(len(results["products"]))
+        for key in results["products"]:
+            self.ui.tbFood.setItem(i, 0,  QTableWidgetItem(key['product_name']))
+            self.ui.tbFood.setItem(i, 1,  QTableWidgetItem(str(key['nutriments']['energy-kcal_100g'])))
             i=i+1
-            item = QTableWidgetItem(product['product_name'])
-            self.tbFood.setItem(i, 0, item)
+
 
     # Methods for Menu Button clicked
     def home_page(self):

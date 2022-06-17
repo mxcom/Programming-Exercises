@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
     QHeaderView, QLabel, QLineEdit, QMainWindow,
     QPushButton, QSizePolicy, QStackedWidget, QTableWidget,
     QTableWidgetItem, QVBoxLayout, QWidget)
-import icons_rc
+import src.views.icons.rc_icons
 
 class Ui_WndMain(object):
     def setupUi(self, WndMain):
@@ -654,14 +654,14 @@ class Ui_WndMain(object):
 
         self.horizontalLayout_23.addWidget(self.leSearchFood)
 
-        self.btnAddFood_2 = QPushButton(self.frmSearchbar)
-        self.btnAddFood_2.setObjectName(u"btnAddFood_2")
-        sizePolicy1.setHeightForWidth(self.btnAddFood_2.sizePolicy().hasHeightForWidth())
-        self.btnAddFood_2.setSizePolicy(sizePolicy1)
-        self.btnAddFood_2.setMinimumSize(QSize(140, 0))
-        self.btnAddFood_2.setMaximumSize(QSize(140, 40))
-        self.btnAddFood_2.setFont(font)
-        self.btnAddFood_2.setStyleSheet(u"QPushButton{\n"
+        self.btnSearchFood = QPushButton(self.frmSearchbar)
+        self.btnSearchFood.setObjectName(u"btnSearchFood")
+        sizePolicy1.setHeightForWidth(self.btnSearchFood.sizePolicy().hasHeightForWidth())
+        self.btnSearchFood.setSizePolicy(sizePolicy1)
+        self.btnSearchFood.setMinimumSize(QSize(140, 0))
+        self.btnSearchFood.setMaximumSize(QSize(140, 40))
+        self.btnSearchFood.setFont(font)
+        self.btnSearchFood.setStyleSheet(u"QPushButton{\n"
 "	background-color: rgb(155, 127, 240);\n"
 "	border-radius: 15px ;\n"
 "	border: 3px solid rgb(122, 100, 189);\n"
@@ -677,7 +677,7 @@ class Ui_WndMain(object):
 "}\n"
 "")
 
-        self.horizontalLayout_23.addWidget(self.btnAddFood_2)
+        self.horizontalLayout_23.addWidget(self.btnSearchFood)
 
 
         self.verticalLayout_10.addWidget(self.frmSearchbar)
@@ -692,6 +692,12 @@ class Ui_WndMain(object):
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
         self.tbFood = QTableWidget(self.frmfoodTbl)
+        if (self.tbFood.columnCount() < 2):
+            self.tbFood.setColumnCount(2)
+        __qtablewidgetitem = QTableWidgetItem()
+        self.tbFood.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.tbFood.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         self.tbFood.setObjectName(u"tbFood")
         font2 = QFont()
         font2.setPointSize(12)
@@ -2228,7 +2234,11 @@ class Ui_WndMain(object):
         self.leBPHigh.setPlaceholderText(QCoreApplication.translate("WndMain", u"Systolic", None))
         self.btnSubmit.setText(QCoreApplication.translate("WndMain", u"Submit", None))
         self.lbSearchFood.setText(QCoreApplication.translate("WndMain", u"Search:", None))
-        self.btnAddFood_2.setText(QCoreApplication.translate("WndMain", u"Add", None))
+        self.btnSearchFood.setText(QCoreApplication.translate("WndMain", u"Find", None))
+        ___qtablewidgetitem = self.tbFood.horizontalHeaderItem(0)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("WndMain", u"Name", None));
+        ___qtablewidgetitem1 = self.tbFood.horizontalHeaderItem(1)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("WndMain", u"Calories per 100g", None));
         self.lbAmount.setText(QCoreApplication.translate("WndMain", u"Amount:", None))
         self.btnAddFood.setText(QCoreApplication.translate("WndMain", u"Add", None))
         self.btnKcal1.setText(QCoreApplication.translate("WndMain", u"Kcal", None))

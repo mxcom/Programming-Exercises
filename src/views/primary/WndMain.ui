@@ -1305,7 +1305,7 @@ border-radius: 15px;
                      </widget>
                     </item>
                     <item>
-                     <widget class="QPushButton" name="btnAddFood_2">
+                     <widget class="QPushButton" name="btnSearchFood">
                       <property name="sizePolicy">
                        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                         <horstretch>0</horstretch>
@@ -1348,7 +1348,7 @@ QPushButton:pressed {
 </string>
                       </property>
                       <property name="text">
-                       <string>Add</string>
+                       <string>Find</string>
                       </property>
                      </widget>
                     </item>
@@ -1397,6 +1397,16 @@ QPushButton:pressed {
 border-radius: 15px;
 </string>
                       </property>
+                      <column>
+                       <property name="text">
+                        <string>Name</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Calories per 100g</string>
+                       </property>
+                      </column>
                      </widget>
                     </item>
                    </layout>

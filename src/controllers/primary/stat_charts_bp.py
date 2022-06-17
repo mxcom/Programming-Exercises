@@ -53,7 +53,6 @@ class ChartBp:
             self.axisX.append(categories[::-1])
             self.axisY = QValueAxis()
             self.axisY.setRange(0, max(self.results_sys))
-            self.setRange(self.axisY,self.results_sys)
             self.axisY.setLabelFormat("%.0f")
             self.chart.setAxisY(self.axisY)
             self.chart.setAxisX(self.axisX)
@@ -88,8 +87,7 @@ class ChartBp:
             self.axisX = QBarCategoryAxis()
             self.axisX.append(categories)
             self.axisY = QValueAxis()
-           # self.axisY.setRange(0, max(self.results_sys))
-            self.setRange(self.axisY,self.results_sys)
+            self.axisY.setRange(0, max(self.results_sys))
             self.axisY.setLabelFormat("%.0f")
             self.chart.setAxisY(self.axisY)
             self.chart.setAxisX(self.axisX)
@@ -158,52 +156,24 @@ class ChartBp:
             self.chart.legend().setVisible(False)
 
             self.axisY = QValueAxis()
-            self.setRange(self.axisY,self.results_dia)
+            self.axisY.setRange(0, max(self.results_sys))
             self.axisY.setLabelFormat("%.0f")
             self.chart.setAxisY(self.axisY)
 
 
             self.chartview = QChartView(self.chart)
 
-        self.axisX = QBarCategoryAxis()
-        self.axisX.append(categories[::-1])
-        self.axisY = QValueAxis()
-        self.setRange(self.axisY,self.results_dia)
-        self.axisY.setLabelFormat("%.0f")
-        self.chart.setAxisY(self.axisY)
-        self.chart.setAxisX(self.axisX)
 
-
-    def setRange(axis,results):
-        if len(self.results) > 0:
-            x = float(max(results))    
-        else:
-            x= float(0)
-        axis.setRange(float(0,x))
 
     def get_chartview(self):
         return self.chartview
 
     def get_max_value(self):
-        if len(self.results_sys) > 0 & len(self.results_dia)  > 0 :
-           return str(max(self.results_sys)) + "/" + str(max(self.results_dia))
-
-        else:
-            return "Keine Werte Vorhanden"
-
+        return str(max(self.results_sys)) + "/" + str(max(self.results_dia))
 
     def get_min_value(self):
-        if len(self.results_sys) > 0 & len(self.results_dia)  > 0 :
-           return str(min(self.results_sys)) + "/" + str(min(self.results_dia))
-
-        else:
-            return "Keine Werte Vorhanden"
+        return str(min(self.results_sys)) + "/" + str(min(self.results_dia))
 
     def get_avg_value(self):
-        if len(self.results_sys) > 0 & len(self.results_dia)  > 0 :
-            return str(int(sum(self.results_sys) / len(self.results_sys))) + "/" + str(int(sum(self.results_dia) / len(self.results_dia)))        
-        else:
-            return "Keine Werte Vorhanden"
-            
-    def get_chartview(self):
-        return self.chartview
+        return str(int(sum(self.results_sys) / len(self.results_sys))) + "/" + str(
+            int(sum(self.results_dia) / len(self.results_dia)))
