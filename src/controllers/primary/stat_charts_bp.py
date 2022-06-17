@@ -53,6 +53,7 @@ class ChartBp:
             self.axisX.append(categories[::-1])
             self.axisY = QValueAxis()
             self.axisY.setRange(0, max(self.results_sys))
+            self.setRange(self.axisY,self.results_sys)
             self.axisY.setLabelFormat("%.0f")
             self.chart.setAxisY(self.axisY)
             self.chart.setAxisX(self.axisX)
@@ -87,7 +88,8 @@ class ChartBp:
             self.axisX = QBarCategoryAxis()
             self.axisX.append(categories)
             self.axisY = QValueAxis()
-            self.axisY.setRange(0, max(self.results_sys))
+           # self.axisY.setRange(0, max(self.results_sys))
+            self.setRange(self.axisY,self.results_sys)
             self.axisY.setLabelFormat("%.0f")
             self.chart.setAxisY(self.axisY)
             self.chart.setAxisX(self.axisX)
@@ -156,7 +158,7 @@ class ChartBp:
             self.chart.legend().setVisible(False)
 
             self.axisY = QValueAxis()
-            self.setRangeY
+            self.setRange(self.axisY,self.results_dia)
             self.axisY.setLabelFormat("%.0f")
             self.chart.setAxisY(self.axisY)
 
@@ -166,19 +168,18 @@ class ChartBp:
         self.axisX = QBarCategoryAxis()
         self.axisX.append(categories[::-1])
         self.axisY = QValueAxis()
-    #    self.axisY.setRange(0, max(self.results_sys))
-        self.setRangeY
+        self.setRange(self.axisY,self.results_dia)
         self.axisY.setLabelFormat("%.0f")
         self.chart.setAxisY(self.axisY)
         self.chart.setAxisX(self.axisX)
 
 
-    def setRangeY(stats):
+    def setRange(axis,results):
         if len(self.results) > 0:
-            x = float(max())    
+            x = float(max(results))    
         else:
             x= float(0)
-        self.axisY.setRange(float(0,x))
+        axis.setRange(float(0,x))
 
     def get_chartview(self):
         return self.chartview

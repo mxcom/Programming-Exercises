@@ -159,7 +159,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.btnChangeInfo.clicked.connect(self.change_infos)
     # OpenFoodfacts
         self.ui.leSearchFood.textChanged.connect(self.search_name)
-        #self.ui.tbFood.cellClicked.connect()
+        self.ui.tbFood.cellClicked.connect(self.)
     
     def search_name(self):
         results = open_food_facts.search_name(self)
