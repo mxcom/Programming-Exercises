@@ -164,9 +164,9 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
     def search_name(self):
         results = open_food_facts.search_name(self)
         i=0
-        self.ui.tbFood.clearContents()
-        self.ui.tbFood.setRowCount(len(results["products"]))
+        self.ui.tbFood.clear()
         for key in results["products"]:
+            self.ui.tbFood.insertRow(i)
             self.ui.tbFood.setItem(i, 0,  QTableWidgetItem(key['product_name']))
             self.ui.tbFood.setItem(i, 1,  QTableWidgetItem(str(key['nutriments']['energy-kcal_100g'])))
             i=i+1
