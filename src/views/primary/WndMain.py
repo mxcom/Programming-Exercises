@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
     QHeaderView, QLabel, QLineEdit, QMainWindow,
     QPushButton, QSizePolicy, QStackedWidget, QTableWidget,
     QTableWidgetItem, QVBoxLayout, QWidget)
-import src.views.icons.rc_icons
+import icons_rc
 
 class Ui_WndMain(object):
     def setupUi(self, WndMain):
@@ -638,13 +638,13 @@ class Ui_WndMain(object):
 "")
         self.frmSearchbar.setFrameShape(QFrame.StyledPanel)
         self.frmSearchbar.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_47 = QHBoxLayout(self.frmSearchbar)
-        self.horizontalLayout_47.setObjectName(u"horizontalLayout_47")
+        self.horizontalLayout_23 = QHBoxLayout(self.frmSearchbar)
+        self.horizontalLayout_23.setObjectName(u"horizontalLayout_23")
         self.lbSearchFood = QLabel(self.frmSearchbar)
         self.lbSearchFood.setObjectName(u"lbSearchFood")
         self.lbSearchFood.setFont(font)
 
-        self.horizontalLayout_47.addWidget(self.lbSearchFood)
+        self.horizontalLayout_23.addWidget(self.lbSearchFood)
 
         self.leSearchFood = QLineEdit(self.frmSearchbar)
         self.leSearchFood.setObjectName(u"leSearchFood")
@@ -652,7 +652,32 @@ class Ui_WndMain(object):
         self.leSearchFood.setStyleSheet(u"border-bottom: 2px solid rgb(211, 201, 242);\n"
 "")
 
-        self.horizontalLayout_47.addWidget(self.leSearchFood)
+        self.horizontalLayout_23.addWidget(self.leSearchFood)
+
+        self.btnAddFood_2 = QPushButton(self.frmSearchbar)
+        self.btnAddFood_2.setObjectName(u"btnAddFood_2")
+        sizePolicy1.setHeightForWidth(self.btnAddFood_2.sizePolicy().hasHeightForWidth())
+        self.btnAddFood_2.setSizePolicy(sizePolicy1)
+        self.btnAddFood_2.setMinimumSize(QSize(140, 0))
+        self.btnAddFood_2.setMaximumSize(QSize(140, 40))
+        self.btnAddFood_2.setFont(font)
+        self.btnAddFood_2.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(155, 127, 240);\n"
+"	border-radius: 15px ;\n"
+"	border: 3px solid rgb(122, 100, 189);\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(122, 100, 189);\n"
+"	border-radius: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: rgb(211, 201, 242);\n"
+"	border-radius: 15px;\n"
+"}\n"
+"")
+
+        self.horizontalLayout_23.addWidget(self.btnAddFood_2)
 
 
         self.verticalLayout_10.addWidget(self.frmSearchbar)
@@ -2178,7 +2203,7 @@ class Ui_WndMain(object):
 
         self.retranslateUi(WndMain)
 
-        self.pages.setCurrentIndex(4)
+        self.pages.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(WndMain)
@@ -2203,6 +2228,7 @@ class Ui_WndMain(object):
         self.leBPHigh.setPlaceholderText(QCoreApplication.translate("WndMain", u"Systolic", None))
         self.btnSubmit.setText(QCoreApplication.translate("WndMain", u"Submit", None))
         self.lbSearchFood.setText(QCoreApplication.translate("WndMain", u"Search:", None))
+        self.btnAddFood_2.setText(QCoreApplication.translate("WndMain", u"Add", None))
         self.lbAmount.setText(QCoreApplication.translate("WndMain", u"Amount:", None))
         self.btnAddFood.setText(QCoreApplication.translate("WndMain", u"Add", None))
         self.btnKcal1.setText(QCoreApplication.translate("WndMain", u"Kcal", None))
