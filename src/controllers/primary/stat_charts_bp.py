@@ -156,7 +156,7 @@ class ChartBp:
             self.chart.legend().setVisible(False)
 
             self.axisY = QValueAxis()
-            self.axisY.setRange(0, max(self.results_sys))
+            self.setRangeY
             self.axisY.setLabelFormat("%.0f")
             self.chart.setAxisY(self.axisY)
 
@@ -167,15 +167,15 @@ class ChartBp:
         self.axisX.append(categories[::-1])
         self.axisY = QValueAxis()
     #    self.axisY.setRange(0, max(self.results_sys))
-        self.setRange
+        self.setRangeY
         self.axisY.setLabelFormat("%.0f")
         self.chart.setAxisY(self.axisY)
         self.chart.setAxisX(self.axisX)
 
 
-    def setRange():
+    def setRangeY(stats):
         if len(self.results) > 0:
-            x = float(max(self.results))    
+            x = float(max())    
         else:
             x= float(0)
         self.axisY.setRange(float(0,x))
