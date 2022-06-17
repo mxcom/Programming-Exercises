@@ -22,6 +22,7 @@ from src.views.primary.uiFunctions import UIFunctions
 from src.controllers.primary.stat_charts import Chart
 from src.controllers.user_management.user_management import add_steps, add_weight, add_bp
 from src.controllers.cryptography.cryptography import hash_passwd
+from src.controllers.open_food_facts import open_food_facts
 
 regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
 special_char = ['$', '@', '#', '%', '_', '-', '!']
@@ -42,7 +43,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
 
         # Fill top Bar
         current_date = datetime.now()
-        self.ui.lbName.setText(user.get_first_name() + " " + user.get_last_name())
+        self.ui.lbName.setText(str(user.get_first_name()) + " " + str(user.get_last_name()))
         self.ui.lbDate.setText(current_date.strftime("%d.%m.%Y"))
 
         # Create Layout
@@ -57,7 +58,6 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         # self.progress = CircularProgress(calc_kcal("male", 196, 80, bd))
 
         self.progress.setMinimumSize(self.progress.width, self.progress.height)
-
         # Add widgets
         self.layout.addWidget(self.progress, Qt.AlignCenter, Qt.AlignCenter)
 
@@ -89,7 +89,6 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.btnBP2.clicked.connect(self.stat_page_bp)
         self.ui.btnBP3.clicked.connect(self.stat_page_bp)
         self.ui.btnToggle.clicked.connect(lambda: UIFunctions.toggleMenu(self, 200, True))
-
         # Tracking interface button / line edit interaction
         self.ui.btnSubmit.clicked.connect(self.set_value)
 
@@ -123,9 +122,11 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.layout_chart_steps = QHBoxLayout()
         self.layout_chart_steps.addWidget(self.steps_chart)
         self.ui.stepsChart.setLayout(self.layout_chart_steps)
-        self.ui.lbAvgStepsValue.setText(self.chart_steps_1.get_avg_value())
-        self.ui.lbMaxStepsValue.setText(self.chart_steps_1.get_max_value())
-        self.ui.lbMinStepsValue.setText(self.chart_steps_1.get_min_value())
+        self.ui.lbAvgStepsValue.setText(str(self.chart_steps_1.get_avg_value()))
+        self.ui.lbMaxStepsValue.setText(str(self.chart_steps_1.get_max_value()))
+        self.ui.lbMinStepsValue.setText(str(self.chart_steps_1.get_min_value()))
+        self.chart_steps_2 = ChartSteps(self.user, 2)
+        self.chart_steps_3 = ChartSteps(self.user, 3)
         self.steps_chart_2 = self.chart_steps_1.get_chartview()
         self.steps_chart_3 = self.chart_steps_1.get_chartview()
 
@@ -156,6 +157,17 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.lbSetEmailValue.setStyleSheet("color: rgb(211, 201, 242);")
 
         self.ui.btnChangeInfo.clicked.connect(self.change_infos)
+    # OpenFoodfacts
+        self.ui.leSearchFood.textChanged.connect(self.search_name)
+        #self.ui.tbFood.cellClicked.connect()
+    
+    def search_name(self):
+        results = open_food_facts.search_name(self)
+        i=0
+        for product in results:
+            i=i+1
+            item = QTableWidgetItem(product['product_name'])
+            self.tbFood.setItem(i, 0, item)
 
     # Methods for Menu Button clicked
     def home_page(self):
@@ -273,6 +285,8 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         # if self.validate_bp_low() and self.validate_bp_high():
         #     add_bp(self.user.get_id(), int(self.ui.leBPLow.text()), int(self.ui.leBPHigh.text()))
 
+
+
     def date_selected_kcal(self):
         # kcla 1 week
         if self.ui.cbKcal.currentText() == '1 week':
@@ -385,6 +399,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             self.ui.lbMaxBpValue.setText(self.chart_bp_3.get_max_value())
             self.ui.lbMinBpValue.setText(self.chart_bp_3.get_min_value())
 
+
     def validate_email(self):
         try:
             email = self.ui.leSetEmail.text()
@@ -396,7 +411,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             else:
                 return False
         except Exception as e:
-            print(e)
+            print(e+"email validation failed")
             return False
 
     def validate_passwd(self):
@@ -424,7 +439,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             if passwd == self.ui.leSetConfirmPassword.text():
                 return True
         except Exception as e:
-            print(e)
+            print(e+"password validation failed.")
             return False
 
     def validate_height(self):
@@ -435,7 +450,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             else:
                 return False
         except Exception as e:
-            print(e)
+            print(e+"height validation failed")
             return False
 
     def change_infos(self):
