@@ -716,7 +716,7 @@ border:none;
 </string>
             </property>
             <property name="currentIndex">
-             <number>4</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="pageHome">
              <property name="styleSheet">
@@ -1276,7 +1276,7 @@ border-radius: 15px;
                    <property name="frameShadow">
                     <enum>QFrame::Raised</enum>
                    </property>
-                   <layout class="QHBoxLayout" name="horizontalLayout_47">
+                   <layout class="QHBoxLayout" name="horizontalLayout_23">
                     <item>
                      <widget class="QLabel" name="lbSearchFood">
                       <property name="font">
@@ -1301,6 +1301,54 @@ border-radius: 15px;
                       <property name="styleSheet">
                        <string notr="true">border-bottom: 2px solid rgb(211, 201, 242);
 </string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="btnAddFood_2">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>140</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>140</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+	background-color: rgb(155, 127, 240);
+	border-radius: 15px ;
+	border: 3px solid rgb(122, 100, 189);
+}
+QPushButton:hover{
+	background-color: rgb(122, 100, 189);
+	border-radius: 15px;
+}
+
+QPushButton:pressed {
+	background-color: rgb(211, 201, 242);
+	border-radius: 15px;
+}
+</string>
+                      </property>
+                      <property name="text">
+                       <string>Add</string>
                       </property>
                      </widget>
                     </item>
@@ -2144,8 +2192,7 @@ border-radius: 15px;</string>
                              </font>
                             </property>
                             <property name="styleSheet">
-                             <string notr="true">
-</string>
+                             <string notr="true"/>
                             </property>
                             <property name="editable">
                              <bool>false</bool>
