@@ -8,7 +8,6 @@ from datetime import date
 import calendar
 from src.controllers.user_management.calorie_management import *
 
-
 class ChartSteps:
     def __init__(self, user, period):
         # Create Set of Kcal for one week
@@ -43,16 +42,15 @@ class ChartSteps:
                 temp_date = calendar.day_name[curr_date.weekday()]
                 categories.append(temp_date[0:3])
                 i += 1
-
-            self.axisX = QBarCategoryAxis()
-            self.axisX.append(categories[::-1])
             self.axisY = QValueAxis()
-            self.axisY.setRange(0, max(self.results))
-            self.axisY.setLabelFormat("%.0f")
+            self.axisX = QBarCategoryAxis()
+            self.chartview = QChartView(self.chart)
             self.chart.setAxisY(self.axisY)
             self.chart.setAxisX(self.axisX)
-
-            self.chartview = QChartView(self.chart)
+            self.setRangeY
+ 
+            self.axisY.setLabelFormat("%.0f")
+            self.axisX.append(categories[::-1])
         elif period == 2:
             self.set2 = QBarSet("steps")
 
@@ -77,7 +75,7 @@ class ChartSteps:
             self.axisX_2 = QBarCategoryAxis()
             self.axisX_2.append(categories)
             self.axisY_2 = QValueAxis()
-            self.axisY_2.setRange(0, max(self.results))
+            self.setRangeY2
             self.axisY_2.setLabelFormat("%.0f")
             self.chart.setAxisY(self.axisY_2)
             self.chart.setAxisX(self.axisX_2)
@@ -103,49 +101,38 @@ class ChartSteps:
             self.chart.setAnimationOptions(QChart.SeriesAnimations)
             self.chart.legend().setVisible(False)
 
-            self.axisY_2 = QValueAxis()
-            self.axisY_2.setRange(0, max(self.results))
-            self.axisY_2.setLabelFormat("%.0f")
-            self.chart.setAxisY(self.axisY_2)
+    def setRangeY():
+        if len(self.results) > 0:
+            x = float(max(self.results))    
+        else:
+            x= float(0)
+        self.axisY.setRange(float(0,x))
 
-            self.chartview = QChartView(self.chart)
-
-            '''self.series = QSplineSeries()
-
-            j = 0
-            for i in self.results:
-                self.series.append(j, float(self.results[j]))
-                j += 1
-
-            self.series.setColor(QColor(0x7A64BD))
-
-            pen = QPen()
-            pen.setColor(QColor(0x7A64BD))
-            pen.setWidth(2)
-
-            self.series.setPen(pen)
-            self.series.setBestFitLinePen(pen)
-
-            self.chart = QChart()
-            self.chart.addSeries(self.series)
-            self.chart.setAnimationOptions(QChart.SeriesAnimations)
-            self.chart.legend().setVisible(False)
-
-            self.axisY = QValueAxis()
-            self.axisY.setRange(0, max(self.results))
-            self.axisY.setLabelFormat("%.0f")
-            self.chart.setAxisY(self.axisY)
-
-            self.chartview = QChartView(self.chart)'''
+    def setRangeY2():
+        if len(self.results) > 0:
+            x = float(max(self.results))    
+        else:
+            x= float(0)
+        self.axisY_2.setRange(float(0,x))
+    
 
     def get_chartview(self):
         return self.chartview
 
     def get_max_value(self):
-        return str(max(self.results))
+        if len(self.results) > 0:
+           return max(self.results)  
+        else:
+            return 0
 
     def get_min_value(self):
-        return str(min(self.results))
+        if len(self.results) > 0:
+           return min(self.results)  
+        else:
+            return 0
 
     def get_avg_value(self):
-        return str(int(sum(self.results) / len(self.results)))
+        if len(self.results)>0:
+            return str(int(sum(self.results) / len(self.results)))
+        else:
+            return 0

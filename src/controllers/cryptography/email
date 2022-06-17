@@ -17,7 +17,7 @@ def send_mail(mail : str):
     try:
         usr = keyring.get_credential(service_name="email_login", username='progex@t-online.de').username
         passwrd = keyring.get_credential(service_name="email_login", username='progex@t-online.de').password
-        mail_txt = 'Your 2FA code is:\n' + generate_code + '\n'
+    #    mail_txt = 'Your 2FA code is:\n' + generate_code + '\n'
         subject = 'Your 2FA code.'
         MAIL_FROM = 'progex@t-online.de'
         RCPT_TO = mail

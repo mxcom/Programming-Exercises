@@ -1,11 +1,11 @@
 import requests ,json,openfoodfacts
 from src.controllers.database.database import Database
-import dateti
+import datetime
 def search_id(id):
     db = Database()
     cursor = db.get_cursor()
     try:
-        cursor.execute("SELECT energy-kcal_100g FROM offcache WHERE id LIKE"+id)
+        cursor.execute("SELECT energy-kcal_100g FROM offcache WHERE id LIKE"+str(id))
         data = cursor.fetchall()
         if data != "":
             return data[0]
@@ -22,12 +22,11 @@ def fetch_id_from_api(id):
 
 
     if response_info['status'] != "0":
-        cursor.execute("INSERT INTO table_name (id, name, energy-kcal_100g ) VALUES ("+id+", "+int(response_info['product']['nutriments']['energy-kcal_100g'])+", "+int(response_info['product']['product_name'])+"); "+id)
+        cursor.execute("INSERT INTO table_name (id, name, energy-kcal_100g ) VALUES ("+str(id)+", "+response_info['product']['nutriments']['energy-kcal_100g']+", "+response_info['product']['product_name']+"); "+id)
         return int(response_info['product']['nutriments']['energy-kcal_100g'])
     else:
         return None
 
 def search_name(name):
-    for product in openfoodfacts.products.search_all(name):
-        print(product['product_name'])
+    print(openfoodfacts.products.search(name,1,2))
 
