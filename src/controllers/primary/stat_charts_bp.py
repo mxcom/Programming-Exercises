@@ -58,21 +58,44 @@ class ChartBp:
         self.axisX = QBarCategoryAxis()
         self.axisX.append(categories[::-1])
         self.axisY = QValueAxis()
-        self.axisY.setRange(0, max(self.results_sys))
+    #    self.axisY.setRange(0, max(self.results_sys))
+        self.setRange
         self.axisY.setLabelFormat("%.0f")
         self.chart.setAxisY(self.axisY)
         self.chart.setAxisX(self.axisX)
 
         self.chartview = QChartView(self.chart)
 
+    def setRange():
+        if len(self.results) > 0:
+            x = float(max(self.results))    
+        else:
+            x= float(0)
+        self.axisY.setRange(float(0,x))
+
     def get_chartview(self):
         return self.chartview
 
     def get_max_value(self):
-        return str(max(self.results_sys)) + "/" + str(max(self.results_dia))
+        if len(self.results_sys) > 0 & len(self.results_dia)  > 0 :
+           return str(max(self.results_sys)) + "/" + str(max(self.results_dia))
+
+        else:
+            return "Keine Werte Vorhanden"
+
 
     def get_min_value(self):
-        return str(min(self.results_sys)) + "/" + str(min(self.results_dia))
+        if len(self.results_sys) > 0 & len(self.results_dia)  > 0 :
+           return str(min(self.results_sys)) + "/" + str(min(self.results_dia))
+
+        else:
+            return "Keine Werte Vorhanden"
 
     def get_avg_value(self):
-        return str(int(sum(self.results_sys) / len(self.results_sys))) + "/" + str(int(sum(self.results_dia) / len(self.results_dia)))
+        if len(self.results_sys) > 0 & len(self.results_dia)  > 0 :
+            return str(int(sum(self.results_sys) / len(self.results_sys))) + "/" + str(int(sum(self.results_dia) / len(self.results_dia)))
+        else:
+            return "Keine Werte Vorhanden"
+            
+    def get_chartview(self):
+        return self.chartview

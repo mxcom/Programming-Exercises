@@ -51,21 +51,38 @@ class ChartSteps:
         self.axisX = QBarCategoryAxis()
         self.axisX.append(categories[::-1])
         self.axisY = QValueAxis()
-        self.axisY.setRange(0, max(self.results))
+        # self.axisY.setRange(float(0), self.get_max_steps )
+        self.setRange
         self.axisY.setLabelFormat("%.0f")
         self.chart.setAxisY(self.axisY)
         self.chart.setAxisX(self.axisX)
-
         self.chartview = QChartView(self.chart)
+
+    def setRange():
+        if len(self.results) > 0:
+            x = float(max(self.results))    
+        else:
+            x= float(0)
+        self.axisY.setRange(float(0,x))
 
     def get_chartview(self):
         return self.chartview
 
     def get_max_value(self):
-        return str(max(self.results))
+        if len(self.results) > 0:
+           return max(self.results)  
+        else:
+            return 0
+
 
     def get_min_value(self):
-        return str(min(self.results))
+        if len(self.results) > 0:
+           return min(self.results)  
+        else:
+            return 0
 
     def get_avg_value(self):
-        return str(int(sum(self.results) / len(self.results)))
+        if len(self.results)>0:
+            return str(int(sum(self.results) / len(self.results)))
+        else:
+            return 0
