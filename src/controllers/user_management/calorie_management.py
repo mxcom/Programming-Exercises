@@ -31,7 +31,7 @@ def update_calories(user, old_calories, new_calories):
         db = Database()
         cursor = db.get_cursor()
         total = old_calories + new_calories
-        cursor.execute("UPDATE calories SET CaloriesEaten = %s WHERE Date LIKE %s AND UserID LIKE %s",
+        cursor.execute("UPDATE calories SET CaloriesEaten = %s WHERE Date LIKE %s AND UserID LIKE %s ",
                        (total, date, user.get_id()))
 
         return total
@@ -44,7 +44,7 @@ def get_stat_kcal(user, period):
         db = Database()
         cursor = db.get_cursor()
         if period == 1:
-            cursor.execute("SELECT CaloriesEaten FROM calories WHERE UserID LIKE %s and Date > now() - INTERVAL 1 week;",
+            cursor.execute("SELECT CaloriesEaten FROM calories WHERE UserID LIKE %s and Date > now() - INTERVAL 1 week",
                            (user.get_id(),))
         elif period == 2:
             cursor.execute(

@@ -23,6 +23,12 @@ def add_user(user):
     cursor.execute("INSERT INTO weight (UserID, Grams, Date)"
                    " VALUES (%s, %s, %s);",
                    (id, user.get_weight(), date))
+    cursor.execute("INSERT INTO bloodpressure (UserID, Systolic, Diastolic, Date)"
+                   " VALUES (%s, %s, %s, %s);",
+                   (id, 0, 0, date))
+    cursor.execute("INSERT INTO steps (UserID, Steps, Date)"
+                   " VALUES (%s, %s, %s);",
+                   (id, 0, date))
     db.get_database().close()
 
 

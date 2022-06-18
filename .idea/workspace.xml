@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5db9e4db-cbb9-4f07-9ac6-b2efc05eee42" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/user_management/registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user_management/registration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/user_management/calorie_management.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user_management/calorie_management.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/user_management/user_management.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user_management/user_management.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/user_management/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/user_management/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/primary/WndMain.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/primary/WndMain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/user_management/WndRegistration.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/user_management/WndRegistration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/user_management/WndRegistration.ui" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/user_management/WndRegistration.ui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +153,11 @@
       <workItem from="1655303872843" duration="12357000" />
       <workItem from="1655368790682" duration="12427000" />
       <workItem from="1655385044656" duration="14857000" />
-      <workItem from="1655406251059" duration="1852000" />
+      <workItem from="1655406251059" duration="2581000" />
+      <workItem from="1655452137024" duration="1677000" />
+      <workItem from="1655460073295" duration="557000" />
+      <workItem from="1655461384466" duration="605000" />
+      <workItem from="1655545253856" duration="2210000" />
     </task>
     <servers />
   </component>
@@ -175,33 +175,7 @@
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/controllers/user_management/user_management.py</url>
-          <line>13</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/controllers/user_management/user_management.py</url>
-          <line>17</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/controllers/user_management/user_management.py</url>
-          <line>18</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/controllers/user_management/user_management.py</url>
-          <line>19</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ProgrammingExercise$main.coverage" NAME="main Coverage Results" MODIFIED="1655407988813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/ProgrammingExercise$main.coverage" NAME="main Coverage Results" MODIFIED="1655556145228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>
