@@ -3,7 +3,7 @@ import re, sys
 from PySide6.QtWidgets import QMainWindow, QApplication
 from PySide6 import QtCore
 
-from src.controllers.user_management.user_management import get_user
+from src.controllers.user_management.user_management import get_user, login
 from src.controllers.user_management.admin_management import get_admin
 from src.views.user_management.WndLogin import Ui_WndLogin
 from src.controllers.primary.primary import PrimaryWindow
@@ -96,6 +96,7 @@ class LoginWindow(QMainWindow, Ui_WndLogin):
                 user = get_user(self.ui.leEmail.text())
 
                 if compare_passwd(self.ui.lePassword.text(), user.get_passwd()):
+                    login(user)
                     self.destroy()
                     self.mw = PrimaryWindow(user)
                     self.mw.show()

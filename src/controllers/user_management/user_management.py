@@ -14,7 +14,7 @@ def add_user(user):
     cursor.execute("INSERT INTO user (Email, FirstName, LastName, Sex, Birthday, Height, Password)"
                    "VALUES (%s, %s, %s, %s, %s, %s, %s);",
                    (user.get_email(), user.get_first_name(), user.get_last_name(), user.get_sex(),
-                   user.get_birthday(), int(user.get_height()), hash_passwd(user.get_passwd())))
+                    user.get_birthday(), int(user.get_height()), hash_passwd(user.get_passwd())))
     cursor.execute("SELECT UserID FROM user WHERE Email LIKE %s;", (user.get_email(),))
     date = datetime.datetime.now().date().strftime("%Y-%m-%d")
     data = cursor.fetchall()
@@ -62,9 +62,16 @@ def add_steps(id, steps):
         db = Database()
         cursor = db.get_cursor()
         date = datetime.datetime.now().date().strftime("%Y-%m-%d")
-        cursor.execute("INSERT INTO steps (UserID, Steps, Date)"
-                       "VALUES (%s, %s, %s);",
-                       (id, steps, date))
+
+        cursor.execute("SELECT * FROM steps WHERE UserID LIKE %s AND date LIKE %s;",
+                       (id, date))
+
+        current_steps = None
+        for i in cursor.fetchall():
+            current_steps = i[0]
+
+        cursor.execute("UPDATE steps SET steps = %s WHERE UserID LIKE %s AND date %s",
+                       ((steps + current_steps), id, date))
         db.get_database().close()
     except Exception as e:
         print(e)
@@ -140,8 +147,10 @@ def get_all_users():
 
         users = []
         for i in cursor.fetchall():
-            users.append({"ID":str(i[0]), "Email":str(i[1]), "FirstName":str(i[2]), "LastName":str(i[3]), "Sex":str(i[4]), "Birthday":str(i[5]),
-                          "Height":str(i[6]), "Password":str(i[7])})
+            users.append(
+                {"ID": str(i[0]), "Email": str(i[1]), "FirstName": str(i[2]), "LastName": str(i[3]), "Sex": str(i[4]),
+                 "Birthday": str(i[5]),
+                 "Height": str(i[6]), "Password": str(i[7])})
         return users
     except Exception as e:
         print(e)
@@ -203,5 +212,33 @@ def update_height(user, height):
         db = Database()
         cursor = db.get_cursor()
         cursor.execute("UPDATE user SET Height = %s WHERE UserID LIKE %s", (height, user.get_id()))
+    except Exception as e:
+        print(e)
+
+
+def login(user):
+    try:
+        db = Database()
+        cursor = db.get_cursor()
+        date = datetime.datetime.now().date().strftime("%Y-%m-%d")
+        cursor.execute("SELECT * FROM steps WHERE UserID LIKE %s AND date LIKE %s;",
+                       (user.get_id(), date))
+        if cursor.rowcount == 0:
+            cursor.execute("INSERT INTO steps (UserID, Steps, Date) VALUES (%s, %s, %s);",
+                           (user.get_id(), 0, date))
+
+        cursor.execute("SELECT * FROM calories WHERE UserID LIKE %s AND date LIKE %s;",
+                       (user.get_id(), date))
+        if cursor.rowcount == 0:
+            cursor.execute("INSERT INTO calories (UserID, Calories, CaloriesEaten, Date) VALUES (%s, %s, %s, %s);",
+                           (user.get_id(), calc_kcal(user.get_sex(), user.get_height(), user.get_weight(), user.get_birthday()),
+                            0, date))
+
+        cursor.execute("SELECT * FROM bloodpressure WHERE UserID LIKE %s AND date LIKE %s;",
+                       (user.get_id(), date))
+        if cursor.rowcount == 0:
+            cursor.execute("INSERT INTO bloodpressure (UserID, Systolic, Diastolic, Date) VALUES (%s, %s, %s, %s);",
+                           (user.get_id(), 120, 70, date))
+
     except Exception as e:
         print(e)
