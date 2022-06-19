@@ -741,7 +741,7 @@ class Ui_WndMain(object):
         self.verticalLayout_42.setContentsMargins(0, 0, 9, 0)
         self.frame_45 = QFrame(self.frmControlBtns)
         self.frame_45.setObjectName(u"frame_45")
-        self.frame_45.setMinimumSize(QSize(0, 100))
+        self.frame_45.setMinimumSize(QSize(0, 150))
         self.frame_45.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
 "border-radius: 15px;\n"
 "")
@@ -756,6 +756,22 @@ class Ui_WndMain(object):
         self.lbAmount.setFont(font)
 
         self.verticalLayout_43.addWidget(self.lbAmount)
+
+        self.leCalories = QLineEdit(self.frame_45)
+        self.leCalories.setObjectName(u"leCalories")
+        font3 = QFont()
+        font3.setBold(True)
+        font3.setUnderline(False)
+        self.leCalories.setFont(font3)
+        self.leCalories.setStyleSheet(u"border-bottom: 2px solid rgb(211, 201, 242);")
+
+        self.verticalLayout_43.addWidget(self.leCalories)
+
+        self.label_2 = QLabel(self.frame_45)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setFont(font)
+
+        self.verticalLayout_43.addWidget(self.label_2)
 
         self.leAmount = QLineEdit(self.frame_45)
         self.leAmount.setObjectName(u"leAmount")
@@ -2239,7 +2255,8 @@ class Ui_WndMain(object):
         ___qtablewidgetitem.setText(QCoreApplication.translate("WndMain", u"Name", None));
         ___qtablewidgetitem1 = self.tbFood.horizontalHeaderItem(1)
         ___qtablewidgetitem1.setText(QCoreApplication.translate("WndMain", u"Calories per 100g", None));
-        self.lbAmount.setText(QCoreApplication.translate("WndMain", u"Amount:", None))
+        self.lbAmount.setText(QCoreApplication.translate("WndMain", u"Calories per 100g:", None))
+        self.label_2.setText(QCoreApplication.translate("WndMain", u"Amount:", None))
         self.btnAddFood.setText(QCoreApplication.translate("WndMain", u"Add", None))
         self.btnKcal1.setText(QCoreApplication.translate("WndMain", u"Kcal", None))
         self.btnSteps1.setText(QCoreApplication.translate("WndMain", u"Steps", None))

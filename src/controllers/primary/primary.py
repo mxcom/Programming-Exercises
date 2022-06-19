@@ -157,14 +157,26 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.lbSetEmailValue.setStyleSheet("color: rgb(211, 201, 242);")
 
         self.ui.btnChangeInfo.clicked.connect(self.change_infos)
-    # OpenFoodfa%ztdtz-m/TH1cts
+    # OpenFoodfacts
         self.ui.btnSearchFood.clicked.connect(self.search_name)
-        #self.ui.tbFood.cellClicked.connect()
-    
+        self.ui.tbFood.cellClicked.connect(self.table_click)
+        self.ui.btnAddFood.clicked.connect(self.add_food)
+    def table_click(self,row,column):
+        item=self.ui.tbFood.item(row,1)
+        self.ui.leCalories.setText(item.text())
+    def add_food(self):
+        old_calories = get_daily_calories(self.user)
+        calories = self.ui.leCalories.text()
+        amount = self.ui.leAmount.text()
+        new_calories = (float(calories)/100)*float(amount)
+        update_calories(self.user, old_calories, new_calories)
+
     def search_name(self):
         results = open_food_facts.search_name(self)
-        i=0
         self.ui.tbFood.clear()
+        self.ui.tbFood.clearContents()
+        self.ui.tbFood.setRowCount(0)
+        i=0
         for key in results["products"]:
             self.ui.tbFood.insertRow(i)
             self.ui.tbFood.setItem(i, 0,  QTableWidgetItem(key['product_name']))

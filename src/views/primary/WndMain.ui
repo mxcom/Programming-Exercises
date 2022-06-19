@@ -1490,7 +1490,7 @@ border-radius: 15px;
                       <property name="minimumSize">
                        <size>
                         <width>0</width>
-                        <height>100</height>
+                        <height>150</height>
                        </size>
                       </property>
                       <property name="styleSheet">
@@ -1519,6 +1519,32 @@ border-radius: 15px;
                            <height>40</height>
                           </size>
                          </property>
+                         <property name="font">
+                          <font>
+                           <pointsize>12</pointsize>
+                           <bold>true</bold>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>Calories per 100g:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="leCalories">
+                         <property name="font">
+                          <font>
+                           <bold>true</bold>
+                           <underline>false</underline>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">border-bottom: 2px solid rgb(211, 201, 242);</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_2">
                          <property name="font">
                           <font>
                            <pointsize>12</pointsize>
