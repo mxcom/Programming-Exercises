@@ -201,6 +201,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.btnSettings.setStyleSheet(Style.style_btn_default_settings)
         self.ui.lbPageDescription.setText("Food")
 
+
     def stat_page_kcal(self):
         self.ui.pages.setCurrentIndex(2)
         self.ui.btnHome.setStyleSheet(Style.style_btn_default_home)

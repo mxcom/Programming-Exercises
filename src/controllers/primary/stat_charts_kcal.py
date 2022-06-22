@@ -14,8 +14,9 @@ from src.controllers.user_management.calc_kcal import calc_kcal
 class ChartKcal:
     def __init__(self, user, period):
         # Create Set of Kcal for one week
-        self.fetch_results = get_stat_kcal(user, period)
-        self.results = self.fetch_results[::-1]
+        self.results = get_stat_kcal(user, period)
+
+
 
         if period == 1:
             # results = QBarSet("kcal")
