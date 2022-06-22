@@ -30,12 +30,13 @@ special_char = ['$', '@', '#', '%', '_', '-', '!']
 
 class PrimaryWindow(QMainWindow, Ui_WndMain):
 
-    def __init__(self, user, parent=None):
+    def __init__(self, user, LoginWindow, parent=None):
         super(PrimaryWindow, self).__init__(parent)
         self.ui = Ui_WndMain()
         self.ui.setupUi(self)
         self.user = user
 
+        self.LoginWindow = LoginWindow
         self.ui.pages.setCurrentIndex(0)
         self.ui.frmLeftContentKcal.setMinimumSize(466, 470)
 
@@ -79,6 +80,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.btnFood.clicked.connect(self.food_page)
         self.ui.btnStatistic.clicked.connect(self.stat_page_kcal)
         self.ui.btnSettings.clicked.connect(self.settings_page)
+        self.ui.btnLogout.clicked.connect(self.logout)
         self.ui.btnKcal1.clicked.connect(self.stat_page_kcal)
         self.ui.btnKcal2.clicked.connect(self.stat_page_kcal)
         self.ui.btnKcal3.clicked.connect(self.stat_page_kcal)
@@ -236,6 +238,13 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.btnStatistic.setStyleSheet(Style.style_btn_default_statistic)
         self.ui.btnSettings.setStyleSheet(Style.style_btn_selected_settings)
         self.ui.lbPageDescription.setText("Settings")
+
+    def logout(self):
+        try:
+            self.destroy()
+            self.LoginWindow.show()
+        except Exception as e:
+            print(e)
 
     # Methods to validate the entered tracking data
     def validate_weight(self):

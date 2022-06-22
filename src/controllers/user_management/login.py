@@ -97,8 +97,8 @@ class LoginWindow(QMainWindow, Ui_WndLogin):
 
                 if compare_passwd(self.ui.lePassword.text(), user.get_passwd()):
                     login(user)
-                    self.destroy()
-                    self.mw = PrimaryWindow(user)
+                    self.hide()
+                    self.mw = PrimaryWindow(user, LoginWindow=self)
                     self.mw.show()
                 else:
                     print("wrong email or password")
