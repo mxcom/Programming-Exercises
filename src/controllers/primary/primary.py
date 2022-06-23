@@ -163,9 +163,11 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.btnSearchFood.clicked.connect(self.search_name)
         self.ui.tbFood.cellClicked.connect(self.table_click)
         self.ui.btnAddFood.clicked.connect(self.add_food)
+
     def table_click(self,row,column):
         item=self.ui.tbFood.item(row,1)
         self.ui.leCalories.setText(item.text())
+
     def add_food(self):
         old_calories = get_daily_calories(self.user)
         calories = self.ui.leCalories.text()
@@ -185,9 +187,6 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             self.ui.tbFood.setItem(i, 1,  QTableWidgetItem(str(key['nutriments']['energy-kcal_100g'])))
             i = i + 1
 
-
-
-
     # Methods for Menu Button clicked
     def home_page(self):
         self.ui.pages.setCurrentIndex(0)
@@ -204,7 +203,6 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.btnStatistic.setStyleSheet(Style.style_btn_default_statistic)
         self.ui.btnSettings.setStyleSheet(Style.style_btn_default_settings)
         self.ui.lbPageDescription.setText("Food")
-
 
     def stat_page_kcal(self):
         self.ui.pages.setCurrentIndex(2)
@@ -311,8 +309,6 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
 
         # if self.validate_bp_low() and self.validate_bp_high():
         #     add_bp(self.user.get_id(), int(self.ui.leBPLow.text()), int(self.ui.leBPHigh.text()))
-
-
 
     def date_selected_kcal(self):
         # kcla 1 week
