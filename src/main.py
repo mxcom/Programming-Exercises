@@ -12,6 +12,7 @@ from src.models.user_management.user import User
 
 
 def main():
+    # print(hash_passwd("HelloWorld"))
     # print("hello, world")
     # uncomment next line for email (and replace receiver mail)
     # send_mail('reciever@gmail.com')

@@ -178,12 +178,14 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.tbFood.clear()
         self.ui.tbFood.clearContents()
         self.ui.tbFood.setRowCount(0)
-        i=0
+        i = 0
         for key in results["products"]:
             self.ui.tbFood.insertRow(i)
             self.ui.tbFood.setItem(i, 0,  QTableWidgetItem(key['product_name']))
             self.ui.tbFood.setItem(i, 1,  QTableWidgetItem(str(key['nutriments']['energy-kcal_100g'])))
-            i=i+1
+            i = i + 1
+
+
 
 
     # Methods for Menu Button clicked

@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5db9e4db-cbb9-4f07-9ac6-b2efc05eee42" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/user_management/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user_management/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/open_food_facts/open_food_facts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/open_food_facts/open_food_facts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/primary/primary.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/primary/primary.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/user_management/user_management.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user_management/user_management.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +160,11 @@
       <workItem from="1655460073295" duration="557000" />
       <workItem from="1655461384466" duration="605000" />
       <workItem from="1655545253856" duration="2850000" />
-      <workItem from="1655560389780" duration="4001000" />
+      <workItem from="1655560389780" duration="6261000" />
+      <workItem from="1655667141118" duration="1419000" />
+      <workItem from="1655893561758" duration="1221000" />
+      <workItem from="1655974704402" duration="335000" />
+      <workItem from="1655989048521" duration="3506000" />
     </task>
     <servers />
   </component>
@@ -180,14 +186,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/controllers/user_management/user_management.py</url>
-          <line>218</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/src/controllers/user_management/login.py</url>
+          <line>98</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ProgrammingExercise$main.coverage" NAME="main Coverage Results" MODIFIED="1655564354849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/ProgrammingExercise$main.coverage" NAME="main Coverage Results" MODIFIED="1655994867583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>

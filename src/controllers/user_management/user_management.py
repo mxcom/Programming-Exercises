@@ -223,22 +223,33 @@ def login(user):
         date = datetime.datetime.now().date().strftime("%Y-%m-%d")
         cursor.execute("SELECT * FROM steps WHERE UserID LIKE %s AND date LIKE %s;",
                        (user.get_id(), date))
-        if cursor.rowcount == 0:
+        if cursor.rowcount == 0 or cursor.rowcount == -1:
+            cursor.fetchall()
             cursor.execute("INSERT INTO steps (UserID, Steps, Date) VALUES (%s, %s, %s);",
                            (user.get_id(), 0, date))
+        else:
+            cursor.fetchall()
 
         cursor.execute("SELECT * FROM calories WHERE UserID LIKE %s AND date LIKE %s;",
                        (user.get_id(), date))
-        if cursor.rowcount == 0:
+
+        if cursor.rowcount == 0 or cursor.rowcount == -1:
+            cursor.fetchall()
             cursor.execute("INSERT INTO calories (UserID, Calories, CaloriesEaten, Date) VALUES (%s, %s, %s, %s);",
                            (user.get_id(), calc_kcal(user.get_sex(), user.get_height(), user.get_weight(), user.get_birthday()),
                             0, date))
+        else:
+            cursor.fetchall()
 
         cursor.execute("SELECT * FROM bloodpressure WHERE UserID LIKE %s AND date LIKE %s;",
                        (user.get_id(), date))
-        if cursor.rowcount == 0:
+
+        if cursor.rowcount == 0 or cursor.rowcount == -1:
+            cursor.fetchall()
             cursor.execute("INSERT INTO bloodpressure (UserID, Systolic, Diastolic, Date) VALUES (%s, %s, %s, %s);",
                            (user.get_id(), 120, 70, date))
+        else:
+            cursor.fetchall()
 
     except Exception as e:
         print(e)
