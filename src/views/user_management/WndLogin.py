@@ -19,19 +19,19 @@ from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QLineEdit, QMainWindow, QPushButton, QSizePolicy,
     QVBoxLayout, QWidget)
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        if not MainWindow.objectName():
-            MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(275, 350)
+class Ui_WndLogin(object):
+    def setupUi(self, WndLogin):
+        if not WndLogin.objectName():
+            WndLogin.setObjectName(u"WndLogin")
+        WndLogin.resize(275, 350)
         sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
-        MainWindow.setSizePolicy(sizePolicy)
-        MainWindow.setMinimumSize(QSize(275, 350))
-        MainWindow.setMaximumSize(QSize(275, 350))
-        self.centralwidget = QWidget(MainWindow)
+        sizePolicy.setHeightForWidth(WndLogin.sizePolicy().hasHeightForWidth())
+        WndLogin.setSizePolicy(sizePolicy)
+        WndLogin.setMinimumSize(QSize(275, 350))
+        WndLogin.setMaximumSize(QSize(275, 350))
+        self.centralwidget = QWidget(WndLogin)
         self.centralwidget.setObjectName(u"centralwidget")
         self.horizontalLayout = QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setSpacing(0)
@@ -198,20 +198,20 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addWidget(self.frame_2)
 
-        MainWindow.setCentralWidget(self.centralwidget)
+        WndLogin.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(MainWindow)
+        self.retranslateUi(WndLogin)
 
-        QMetaObject.connectSlotsByName(MainWindow)
+        QMetaObject.connectSlotsByName(WndLogin)
     # setupUi
 
-    def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"Login", None))
-        self.lbEmail.setText(QCoreApplication.translate("MainWindow", u"Email", None))
-        self.lbPassword.setText(QCoreApplication.translate("MainWindow", u"Password", None))
-        self.btnLogin.setText(QCoreApplication.translate("MainWindow", u"Login", None))
-        self.btnSignup.setText(QCoreApplication.translate("MainWindow", u"Sign Up", None))
+    def retranslateUi(self, WndLogin):
+        WndLogin.setWindowTitle(QCoreApplication.translate("WndLogin", u"MainWindow", None))
+        self.label.setText(QCoreApplication.translate("WndLogin", u"Login", None))
+        self.lbEmail.setText(QCoreApplication.translate("WndLogin", u"Email", None))
+        self.lbPassword.setText(QCoreApplication.translate("WndLogin", u"Password", None))
+        self.btnLogin.setText(QCoreApplication.translate("WndLogin", u"Login", None))
+        self.btnSignup.setText(QCoreApplication.translate("WndLogin", u"Sign Up", None))
         self.label_2.setText("")
     # retranslateUi
 
