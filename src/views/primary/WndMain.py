@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
     QHeaderView, QLabel, QLineEdit, QMainWindow,
     QPushButton, QSizePolicy, QStackedWidget, QTableWidget,
     QTableWidgetItem, QVBoxLayout, QWidget)
-import src.views.icons.rc_icons
+import icons_rc
 
 class Ui_WndMain(object):
     def setupUi(self, WndMain):
@@ -736,7 +736,7 @@ class Ui_WndMain(object):
         self.frmControlBtns.setFrameShape(QFrame.StyledPanel)
         self.frmControlBtns.setFrameShadow(QFrame.Raised)
         self.verticalLayout_42 = QVBoxLayout(self.frmControlBtns)
-        self.verticalLayout_42.setSpacing(0)
+        self.verticalLayout_42.setSpacing(5)
         self.verticalLayout_42.setObjectName(u"verticalLayout_42")
         self.verticalLayout_42.setContentsMargins(0, 0, 9, 0)
         self.frame_45 = QFrame(self.frmControlBtns)

@@ -15,118 +15,203 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QLineEdit,
-    QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
+from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
+    QLineEdit, QMainWindow, QPushButton, QSizePolicy,
     QVBoxLayout, QWidget)
 
-class Ui_WndLogin(object):
-    def setupUi(self, WndLogin):
-        if not WndLogin.objectName():
-            WndLogin.setObjectName(u"WndLogin")
-        WndLogin.resize(275, 350)
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        if not MainWindow.objectName():
+            MainWindow.setObjectName(u"MainWindow")
+        MainWindow.resize(275, 350)
         sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(WndLogin.sizePolicy().hasHeightForWidth())
-        WndLogin.setSizePolicy(sizePolicy)
-        self.centralwidget = QWidget(WndLogin)
+        sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
+        MainWindow.setSizePolicy(sizePolicy)
+        MainWindow.setMinimumSize(QSize(275, 350))
+        MainWindow.setMaximumSize(QSize(275, 350))
+        self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.horizontalLayoutWidget = QWidget(self.centralwidget)
-        self.horizontalLayoutWidget.setObjectName(u"horizontalLayoutWidget")
-        self.horizontalLayoutWidget.setGeometry(QRect(0, 111, 281, 27))
-        self.loEmail = QHBoxLayout(self.horizontalLayoutWidget)
-        self.loEmail.setSpacing(0)
-        self.loEmail.setObjectName(u"loEmail")
-        self.loEmail.setContentsMargins(0, 0, 0, 0)
-        self.hsLeft = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.loEmail.addItem(self.hsLeft)
-
-        self.leEmail = QLineEdit(self.horizontalLayoutWidget)
-        self.leEmail.setObjectName(u"leEmail")
-
-        self.loEmail.addWidget(self.leEmail)
-
-        self.hsRight = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.loEmail.addItem(self.hsRight)
-
-        self.lbEmail = QLabel(self.centralwidget)
-        self.lbEmail.setObjectName(u"lbEmail")
-        self.lbEmail.setGeometry(QRect(0, 80, 275, 27))
+        self.horizontalLayout = QHBoxLayout(self.centralwidget)
+        self.horizontalLayout.setSpacing(0)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.frame_2 = QFrame(self.centralwidget)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.verticalLayout = QVBoxLayout(self.frame_2)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.label = QLabel(self.frame_2)
+        self.label.setObjectName(u"label")
+        self.label.setMaximumSize(QSize(16777215, 50))
         font = QFont()
-        font.setPointSize(15)
-        self.lbEmail.setFont(font)
-        self.lbEmail.setAlignment(Qt.AlignCenter)
-        self.lbTitle = QLabel(self.centralwidget)
-        self.lbTitle.setObjectName(u"lbTitle")
-        self.lbTitle.setGeometry(QRect(0, 1, 275, 36))
+        font.setPointSize(18)
+        font.setBold(True)
+        self.label.setFont(font)
+        self.label.setStyleSheet(u"background-color: rgb(211, 201, 242);\n"
+"border-radius: 15px")
+        self.label.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout.addWidget(self.label)
+
+        self.frame_5 = QFrame(self.frame_2)
+        self.frame_5.setObjectName(u"frame_5")
+        self.frame_5.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
+"border-radius: 15px;\n"
+"")
+        self.frame_5.setFrameShape(QFrame.StyledPanel)
+        self.frame_5.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_2 = QVBoxLayout(self.frame_5)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.frame = QFrame(self.frame_5)
+        self.frame.setObjectName(u"frame")
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_3 = QVBoxLayout(self.frame)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.lbEmail = QLabel(self.frame)
+        self.lbEmail.setObjectName(u"lbEmail")
         font1 = QFont()
-        font1.setPointSize(20)
-        self.lbTitle.setFont(font1)
-        self.lbTitle.setAlignment(Qt.AlignCenter)
-        self.verticalLayoutWidget_2 = QWidget(self.centralwidget)
-        self.verticalLayoutWidget_2.setObjectName(u"verticalLayoutWidget_2")
-        self.verticalLayoutWidget_2.setGeometry(QRect(0, 221, 281, 58))
-        self.loBtn = QVBoxLayout(self.verticalLayoutWidget_2)
-        self.loBtn.setObjectName(u"loBtn")
-        self.loBtn.setContentsMargins(85, 0, 85, 0)
-        self.btnLogin = QPushButton(self.verticalLayoutWidget_2)
+        font1.setPointSize(12)
+        font1.setBold(True)
+        self.lbEmail.setFont(font1)
+
+        self.verticalLayout_3.addWidget(self.lbEmail)
+
+        self.leEmail = QLineEdit(self.frame)
+        self.leEmail.setObjectName(u"leEmail")
+        self.leEmail.setStyleSheet(u"border-bottom: 2px solid rgb(211, 201, 242);\n"
+"")
+
+        self.verticalLayout_3.addWidget(self.leEmail)
+
+
+        self.verticalLayout_2.addWidget(self.frame)
+
+        self.frame_3 = QFrame(self.frame_5)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setFrameShape(QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_4 = QVBoxLayout(self.frame_3)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.lbPassword = QLabel(self.frame_3)
+        self.lbPassword.setObjectName(u"lbPassword")
+        self.lbPassword.setFont(font1)
+
+        self.verticalLayout_4.addWidget(self.lbPassword)
+
+        self.lineEdit = QLineEdit(self.frame_3)
+        self.lineEdit.setObjectName(u"lineEdit")
+        self.lineEdit.setStyleSheet(u"border-bottom: 2px solid rgb(211, 201, 242);\n"
+"")
+
+        self.verticalLayout_4.addWidget(self.lineEdit)
+
+
+        self.verticalLayout_2.addWidget(self.frame_3)
+
+        self.frame_4 = QFrame(self.frame_5)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setFrameShape(QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_5 = QVBoxLayout(self.frame_4)
+        self.verticalLayout_5.setSpacing(0)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.frame_6 = QFrame(self.frame_4)
+        self.frame_6.setObjectName(u"frame_6")
+        self.frame_6.setFrameShape(QFrame.StyledPanel)
+        self.frame_6.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_2 = QHBoxLayout(self.frame_6)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.btnLogin = QPushButton(self.frame_6)
         self.btnLogin.setObjectName(u"btnLogin")
-
-        self.loBtn.addWidget(self.btnLogin)
-
-        self.btnSignup = QPushButton(self.verticalLayoutWidget_2)
-        self.btnSignup.setObjectName(u"btnSignup")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.btnLogin.sizePolicy().hasHeightForWidth())
+        self.btnLogin.setSizePolicy(sizePolicy1)
+        self.btnLogin.setMinimumSize(QSize(0, 0))
+        self.btnLogin.setMaximumSize(QSize(140, 40))
+        self.btnLogin.setFont(font1)
+        self.btnLogin.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(155, 127, 240);\n"
+"	border-radius: 15px ;\n"
+"	border: 3px solid rgb(122, 100, 189);\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(122, 100, 189);\n"
+"	border-radius: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: rgb(211, 201, 242);\n"
+"	border-radius: 15px;\n"
+"}\n"
+"")
+
+        self.horizontalLayout_2.addWidget(self.btnLogin)
+
+        self.btnSignup = QPushButton(self.frame_6)
+        self.btnSignup.setObjectName(u"btnSignup")
         sizePolicy1.setHeightForWidth(self.btnSignup.sizePolicy().hasHeightForWidth())
         self.btnSignup.setSizePolicy(sizePolicy1)
-        self.btnSignup.setStyleSheet(u"border: none;\n"
-"border-color: transparent;")
+        self.btnSignup.setMinimumSize(QSize(0, 0))
+        self.btnSignup.setMaximumSize(QSize(140, 40))
+        self.btnSignup.setFont(font1)
+        self.btnSignup.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(155, 127, 240);\n"
+"	border-radius: 15px ;\n"
+"	border: 3px solid rgb(122, 100, 189);\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(122, 100, 189);\n"
+"	border-radius: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: rgb(211, 201, 242);\n"
+"	border-radius: 15px;\n"
+"}\n"
+"")
 
-        self.loBtn.addWidget(self.btnSignup)
+        self.horizontalLayout_2.addWidget(self.btnSignup)
 
-        self.horizontalLayoutWidget_2 = QWidget(self.centralwidget)
-        self.horizontalLayoutWidget_2.setObjectName(u"horizontalLayoutWidget_2")
-        self.horizontalLayoutWidget_2.setGeometry(QRect(0, 181, 281, 27))
-        self.loPassword = QHBoxLayout(self.horizontalLayoutWidget_2)
-        self.loPassword.setSpacing(0)
-        self.loPassword.setObjectName(u"loPassword")
-        self.loPassword.setContentsMargins(0, 0, 0, 0)
-        self.hsLeft_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.loPassword.addItem(self.hsLeft_2)
+        self.verticalLayout_5.addWidget(self.frame_6)
 
-        self.lePassword = QLineEdit(self.horizontalLayoutWidget_2)
-        self.lePassword.setObjectName(u"lePassword")
-        self.lePassword.setEchoMode(QLineEdit.Password)
+        self.label_2 = QLabel(self.frame_4)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setMaximumSize(QSize(16777215, 25))
+        self.label_2.setAlignment(Qt.AlignCenter)
 
-        self.loPassword.addWidget(self.lePassword)
+        self.verticalLayout_5.addWidget(self.label_2)
 
-        self.hsRight_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.loPassword.addItem(self.hsRight_2)
+        self.verticalLayout_2.addWidget(self.frame_4)
 
-        self.lbPassword = QLabel(self.centralwidget)
-        self.lbPassword.setObjectName(u"lbPassword")
-        self.lbPassword.setGeometry(QRect(0, 150, 275, 27))
-        self.lbPassword.setFont(font)
-        self.lbPassword.setAlignment(Qt.AlignCenter)
-        WndLogin.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(WndLogin)
+        self.verticalLayout.addWidget(self.frame_5)
 
-        QMetaObject.connectSlotsByName(WndLogin)
+
+        self.horizontalLayout.addWidget(self.frame_2)
+
+        MainWindow.setCentralWidget(self.centralwidget)
+
+        self.retranslateUi(MainWindow)
+
+        QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
 
-    def retranslateUi(self, WndLogin):
-        WndLogin.setWindowTitle(QCoreApplication.translate("WndLogin", u"MainWindow", None))
-        self.lbEmail.setText(QCoreApplication.translate("WndLogin", u"Email", None))
-        self.lbTitle.setText(QCoreApplication.translate("WndLogin", u"Login", None))
-        self.btnLogin.setText(QCoreApplication.translate("WndLogin", u"Login", None))
-        self.btnSignup.setText(QCoreApplication.translate("WndLogin", u"Sign Up", None))
-        self.lbPassword.setText(QCoreApplication.translate("WndLogin", u"Password", None))
+    def retranslateUi(self, MainWindow):
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Login", None))
+        self.lbEmail.setText(QCoreApplication.translate("MainWindow", u"Email", None))
+        self.lbPassword.setText(QCoreApplication.translate("MainWindow", u"Password", None))
+        self.btnLogin.setText(QCoreApplication.translate("MainWindow", u"Login", None))
+        self.btnSignup.setText(QCoreApplication.translate("MainWindow", u"Sign Up", None))
+        self.label_2.setText("")
     # retranslateUi
 
