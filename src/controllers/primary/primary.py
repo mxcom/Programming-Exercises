@@ -163,9 +163,11 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.btnSearchFood.clicked.connect(self.search_name)
         self.ui.tbFood.cellClicked.connect(self.table_click)
         self.ui.btnAddFood.clicked.connect(self.add_food)
+
     def table_click(self,row,column):
         item=self.ui.tbFood.item(row,1)
         self.ui.leCalories.setText(item.text())
+
     def add_food(self):
         old_calories = get_daily_calories(self.user)
         calories = self.ui.leCalories.text()
@@ -185,9 +187,6 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             self.ui.tbFood.setItem(i, 1,  QTableWidgetItem(str(key['nutriments']['energy-kcal_100g'])))
             i = i + 1
 
-
-
-
     # Methods for Menu Button clicked
     def home_page(self):
         self.ui.pages.setCurrentIndex(0)
@@ -204,7 +203,6 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.btnStatistic.setStyleSheet(Style.style_btn_default_statistic)
         self.ui.btnSettings.setStyleSheet(Style.style_btn_default_settings)
         self.ui.lbPageDescription.setText("Food")
-
 
     def stat_page_kcal(self):
         self.ui.pages.setCurrentIndex(2)
@@ -251,13 +249,12 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
     # Methods to validate the entered tracking data
     def validate_weight(self):
         try:
-            input = int(self.ui.leWeight.text())
+            input = float(self.ui.leWeight.text())
             self.ui.leWeight.setStyleSheet("color: black")
             if input < 0:
-                self.ui.leWeight.setStyleSheet("color: rgb(255, 0, 65);")
                 return False
             else:
-                return False
+                return True
         except:
             self.ui.leWeight.setStyleSheet("color: rgb(255, 0, 65);")
             return False
@@ -266,7 +263,10 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         try:
             input = int(self.ui.leSteps.text())
             self.ui.leSteps.setStyleSheet("color: black")
-            return True
+            if input < 0:
+                return False
+            else:
+                return True
         except:
             self.ui.leSteps.setStyleSheet("color: rgb(255, 0, 65);")
             return False
@@ -274,14 +274,20 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
     def validate_bp_low(self):
         try:
             input = int(self.ui.leBPLow.text())
-            return True
+            if input < 0:
+                return False
+            else:
+                return True
         except:
             return False
 
     def validate_bp_high(self):
         try:
-            text = int(self.ui.leBPLow.text())
-            return True
+            input = int(self.ui.leBPLow.text())
+            if input < 0:
+                return False
+            else:
+                return True
         except:
             return False
 
@@ -299,20 +305,18 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.frmProgressBar.setLayout(self.layout)
 
     def set_value(self):
-        old_calories = get_daily_calories(self.user)
-        new_calories = update_calories(self.user, old_calories, 250)
-        self.add_calories(old_calories, new_calories)
+        # old_calories = get_daily_calories(self.user)
+        # new_calories = update_calories(self.user, old_calories, 250)
+        # self.add_calories(old_calories, new_calories)
 
-        # if self.validate_steps():
-        #     add_steps(self.user.get_id(), int(self.ui.leSteps.text()))
+        if self.validate_weight():
+            add_weight(self.user.get_id(), int(self.ui.leWeight.text()))
 
-        # if self.validate_steps():
-        #     add_weight(self.user.get_id(), int(self.ui.leWeight.text()))
+        if self.validate_steps():
+            add_steps(self.user.get_id(), int(self.ui.leSteps.text()))
 
-        # if self.validate_bp_low() and self.validate_bp_high():
-        #     add_bp(self.user.get_id(), int(self.ui.leBPLow.text()), int(self.ui.leBPHigh.text()))
-
-
+        if self.validate_bp_low() and self.validate_bp_high():
+            add_bp(self.user.get_id(), int(self.ui.leBPLow.text()), int(self.ui.leBPHigh.text()))
 
     def date_selected_kcal(self):
         # kcla 1 week

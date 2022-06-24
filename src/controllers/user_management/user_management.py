@@ -63,15 +63,16 @@ def add_steps(id, steps):
         cursor = db.get_cursor()
         date = datetime.datetime.now().date().strftime("%Y-%m-%d")
 
-        cursor.execute("SELECT * FROM steps WHERE UserID LIKE %s AND date LIKE %s;",
+        cursor.execute("SELECT * FROM steps WHERE UserID LIKE %s AND Date LIKE %s;",
                        (id, date))
 
         current_steps = None
         for i in cursor.fetchall():
-            current_steps = i[0]
+            current_steps = i[2]
 
-        cursor.execute("UPDATE steps SET steps = %s WHERE UserID LIKE %s AND date %s",
-                       ((steps + current_steps), id, date))
+        total = steps + current_steps
+        cursor.execute("UPDATE steps SET steps = %s WHERE UserID LIKE %s AND Date LIKE %s",
+                       (total, id, date))
         db.get_database().close()
     except Exception as e:
         print(e)
@@ -82,9 +83,8 @@ def add_weight(id, weight):
         db = Database()
         cursor = db.get_cursor()
         date = datetime.datetime.now().date().strftime("%Y-%m-%d")
-        cursor.execute("INSERT INTO weight (UserID, Grams, Date)"
-                       "VALUES (%s, %s, %s);",
-                       (id, weight, date))
+        cursor.execute("UPDATE weight SET Grams = %s WHERE UserID LIKE %s and Date LIKE %s;",
+                       (weight, id, date))
         db.get_database().close()
     except Exception as e:
         print(e)
@@ -95,9 +95,8 @@ def add_bp(id, low, high):
         db = Database()
         cursor = db.get_cursor()
         date = datetime.datetime.now().date().strftime("%Y-%m-%d")
-        cursor.execute("INSERT INTO bloodpressure (UserID, Diastolic, Systolic, Date)"
-                       "VALUES (%s, %s, %s, %s);",
-                       (id, low, high, date))
+        cursor.execute("UPDATE bloodpressure SET Diastolic = %s, Systolic = %s WHERE UserID LIKE %s AND DATE LIKE %s;",
+                       (low, high, id, date))
         db.get_database().close()
     except Exception as e:
         print(e)
@@ -221,35 +220,27 @@ def login(user):
         db = Database()
         cursor = db.get_cursor()
         date = datetime.datetime.now().date().strftime("%Y-%m-%d")
-        cursor.execute("SELECT * FROM steps WHERE UserID LIKE %s AND date LIKE %s;",
-                       (user.get_id(), date))
-        if cursor.rowcount == 0 or cursor.rowcount == -1:
-            cursor.fetchall()
-            cursor.execute("INSERT INTO steps (UserID, Steps, Date) VALUES (%s, %s, %s);",
-                           (user.get_id(), 0, date))
-        else:
-            cursor.fetchall()
 
-        cursor.execute("SELECT * FROM calories WHERE UserID LIKE %s AND date LIKE %s;",
-                       (user.get_id(), date))
+        cursor.execute("INSERT INTO steps (Steps, Date, UserID) "
+                       "SELECT %s, %s, %s FROM DUAL "
+                       "WHERE NOT EXISTS (SELECT * FROM steps WHERE Date=%s AND UserID=%s LIMIT 1);",
+                       (0, date, user.get_id(), date, user.get_id()))
 
-        if cursor.rowcount == 0 or cursor.rowcount == -1:
-            cursor.fetchall()
-            cursor.execute("INSERT INTO calories (UserID, Calories, CaloriesEaten, Date) VALUES (%s, %s, %s, %s);",
-                           (user.get_id(), calc_kcal(user.get_sex(), user.get_height(), user.get_weight(), user.get_birthday()),
-                            0, date))
-        else:
-            cursor.fetchall()
+        cursor.execute("INSERT INTO calories (Calories, CaloriesEaten, Date, UserID) "
+                       "SELECT %s, %s, %s, %s FROM DUAL "
+                       "WHERE NOT EXISTS (SELECT * FROM calories WHERE Date=%s AND UserID=%s LIMIT 1);",
+                       (calc_kcal(user.get_sex(), user.get_height(), user.get_weight(), user.get_birthday()), 0, date,
+                        user.get_id(), date, user.get_id()))
 
-        cursor.execute("SELECT * FROM bloodpressure WHERE UserID LIKE %s AND date LIKE %s;",
-                       (user.get_id(), date))
+        cursor.execute("INSERT INTO bloodpressure (Diastolic, Systolic, Date, UserID) "
+                       "SELECT %s, %s, %s, %s FROM DUAL "
+                       "WHERE NOT EXISTS (SELECT * FROM bloodpressure WHERE Date=%s AND UserID=%s LIMIT 1);",
+                       (70, 120, date, user.get_id(), date, user.get_id()))
 
-        if cursor.rowcount == 0 or cursor.rowcount == -1:
-            cursor.fetchall()
-            cursor.execute("INSERT INTO bloodpressure (UserID, Systolic, Diastolic, Date) VALUES (%s, %s, %s, %s);",
-                           (user.get_id(), 120, 70, date))
-        else:
-            cursor.fetchall()
+        cursor.execute("INSERT INTO weight (Grams, Date, UserID) "
+                       "SELECT %s, %s, %s FROM DUAL "
+                       "WHERE NOT EXISTS (SELECT * FROM weight WHERE Date=%s AND UserID=%s LIMIT 1);",
+                       (0, date, user.get_id(), date, user.get_id()))
 
     except Exception as e:
         print(e)
