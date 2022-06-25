@@ -608,6 +608,13 @@ class Ui_WndMain(object):
         self.bufferRight.setMinimumSize(QSize(0, 0))
         self.bufferRight.setFrameShape(QFrame.StyledPanel)
         self.bufferRight.setFrameShadow(QFrame.Raised)
+        self.label_3 = QLabel(self.bufferRight)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setGeometry(QRect(10, 10, 371, 21))
+        font2 = QFont()
+        font2.setPointSize(12)
+        self.label_3.setFont(font2)
+        self.label_3.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.horizontalLayout_11.addWidget(self.bufferRight)
 
@@ -700,8 +707,6 @@ class Ui_WndMain(object):
         __qtablewidgetitem1 = QTableWidgetItem()
         self.tbFood.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         self.tbFood.setObjectName(u"tbFood")
-        font2 = QFont()
-        font2.setPointSize(12)
         self.tbFood.setFont(font2)
         self.tbFood.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
 "border-radius: 15px;\n"
@@ -2636,7 +2641,7 @@ class Ui_WndMain(object):
 
         self.retranslateUi(WndMain)
 
-        self.pages.setCurrentIndex(5)
+        self.pages.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(WndMain)
@@ -2660,6 +2665,7 @@ class Ui_WndMain(object):
         self.leBPLow.setPlaceholderText(QCoreApplication.translate("WndMain", u"Diastolic", None))
         self.leBPHigh.setPlaceholderText(QCoreApplication.translate("WndMain", u"Systolic", None))
         self.btnSubmit.setText(QCoreApplication.translate("WndMain", u"Submit", None))
+        self.label_3.setText(QCoreApplication.translate("WndMain", u"Sucessfully added", None))
         self.lbSearchFood.setText(QCoreApplication.translate("WndMain", u"Search:", None))
         self.btnSearchFood.setText(QCoreApplication.translate("WndMain", u"Find", None))
         ___qtablewidgetitem = self.tbFood.horizontalHeaderItem(0)

@@ -2,7 +2,7 @@ from datetime import datetime
 import re, json
 
 from PySide6.QtCharts import QLineSeries, QChartView, QChart
-from PySide6.QtCore import Qt, QPointF
+from PySide6.QtCore import Qt, QPointF, QTimer
 from PySide6.QtGui import QPainter
 from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QHBoxLayout , QTableWidgetItem
 from PySide6 import QtCore
@@ -75,6 +75,8 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         # 6 Admin Page
 
         self.ui.btnHome.setStyleSheet(Style.style_btn_selected_home)
+
+        self.ui.label_3.hide()
 
         self.ui.btnHome.clicked.connect(self.home_page)
         self.ui.btnFood.clicked.connect(self.food_page)
@@ -334,6 +336,17 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         if self.validate_bp_low() and self.validate_bp_high():
             add_bp(self.user.get_id(), int(self.ui.leBPLow.text()), int(self.ui.leBPHigh.text()))
 
+        timer = QTimer()
+        timer.singleShot(0, self.show_label)
+        timer.singleShot(6000, self.hide_label)
+
+    def show_label(self):
+        self.ui.label_3.show()
+
+    def hide_label(self):
+        self.ui.label_3.hide()
+
+
     def date_selected_kcal(self):
         # kcla 1 week
         if self.ui.cbKcal.currentText() == '1 week':
@@ -445,7 +458,6 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             self.ui.lbAvgBpValue.setText(self.chart_bp_3.get_avg_value())
             self.ui.lbMaxBpValue.setText(self.chart_bp_3.get_max_value())
             self.ui.lbMinBpValue.setText(self.chart_bp_3.get_min_value())
-
 
     def validate_email(self):
         try:
