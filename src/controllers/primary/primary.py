@@ -84,12 +84,19 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.btnKcal1.clicked.connect(self.stat_page_kcal)
         self.ui.btnKcal2.clicked.connect(self.stat_page_kcal)
         self.ui.btnKcal3.clicked.connect(self.stat_page_kcal)
+        self.ui.btnKcal4.clicked.connect(self.stat_page_kcal)
         self.ui.btnSteps1.clicked.connect(self.stat_page_steps)
         self.ui.btnSteps2.clicked.connect(self.stat_page_steps)
         self.ui.btnSteps3.clicked.connect(self.stat_page_steps)
+        self.ui.btnSteps4.clicked.connect(self.stat_page_steps)
         self.ui.btnBP1.clicked.connect(self.stat_page_bp)
         self.ui.btnBP2.clicked.connect(self.stat_page_bp)
         self.ui.btnBP3.clicked.connect(self.stat_page_bp)
+        self.ui.btnBP4.clicked.connect(self.stat_page_bp)
+        self.ui.btnWeight1.clicked.connect(self.stat_page_weight)
+        self.ui.btnWeight2.clicked.connect(self.stat_page_weight)
+        self.ui.btnWeight3.clicked.connect(self.stat_page_weight)
+        self.ui.btnWeight4.clicked.connect(self.stat_page_weight)
         self.ui.btnToggle.clicked.connect(lambda: UIFunctions.toggleMenu(self, 200, True))
         # Tracking interface button / line edit interaction
         self.ui.btnSubmit.clicked.connect(self.set_value)
@@ -231,8 +238,17 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.btnSettings.setStyleSheet(Style.style_btn_default_settings)
         self.ui.lbPageDescription.setText("Statistics - Blood Pressure")
 
-    def settings_page(self):
+    def stat_page_weight(self):
         self.ui.pages.setCurrentIndex(5)
+        self.ui.btnHome.setStyleSheet(Style.style_btn_default_home)
+        self.ui.btnFood.setStyleSheet(Style.style_btn_default_food)
+        self.ui.btnSettings.setStyleSheet(Style.style_btn_default_settings)
+        self.ui.btnStatistic.setStyleSheet(Style.style_btn_selected_statistic)
+        self.ui.btnWeight4.setStyleSheet(Style.style_btn_selected_stat_controle)
+        self.ui.lbPageDescription.setText("Statistics - Weight")
+
+    def settings_page(self):
+        self.ui.pages.setCurrentIndex(6)
         self.ui.btnHome.setStyleSheet(Style.style_btn_default_home)
         self.ui.btnFood.setStyleSheet(Style.style_btn_default_food)
         self.ui.btnStatistic.setStyleSheet(Style.style_btn_default_statistic)
