@@ -115,7 +115,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.cbKcal.activated.connect(self.date_selected_kcal)
         self.ui.cbSteps.activated.connect(self.date_selected_steps)
         self.ui.cbBP.activated.connect(self.date_selected_bp)
-        self.ui.cbWeight.activated.connect(self.date_selected_weight())
+        self.ui.cbWeight.activated.connect(self.date_selected_weight)
 
         # Set statistics
         self.chart_kcal_1 = ChartKcal(self.user, 1)
@@ -475,6 +475,40 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             self.ui.lbAvgBpValue.setText(self.chart_bp_3.get_avg_value())
             self.ui.lbMaxBpValue.setText(self.chart_bp_3.get_max_value())
             self.ui.lbMinBpValue.setText(self.chart_bp_3.get_min_value())
+
+    def date_selected_weight(self):
+        if self.ui.cbWeight.currentText() == '1 week':
+            self.chart_weight_1 = ChartWeight(self.user, 1)
+            self.weight_chart_2.hide()
+            self.weight_chart_3.hide()
+            self.weight_chart = self.chart_weight_1.get_chartview()
+            self.layout_chart_weight.addWidget(self.weight_chart)
+            self.ui.weightChart.setLayout(self.layout_chart_weight)
+            self.ui.lbAvgWeightValue.setText(self.chart_weight_1.get_avg_value())
+            self.ui.lbMaxWeightValue.setText(self.chart_weight_1.get_max_value())
+            self.ui.lbMinWeightValue.setText(self.chart_weight_1.get_min_value())
+
+        elif self.ui.cbWeight.currentText() == '1 month':
+            self.chart_weight_2 = ChartWeight(self.user, 2)
+            self.weight_chart.hide()
+            self.weight_chart_3.hide()
+            self.weight_chart_2 = self.chart_weight_2.get_chartview()
+            self.layout_chart_weight.addWidget(self.weight_chart_2)
+            self.ui.weightChart.setLayout(self.layout_chart_weight)
+            self.ui.lbAvgWeightValue.setText(self.chart_weight_2.get_avg_value())
+            self.ui.lbMaxWeightValue.setText(self.chart_weight_2.get_max_value())
+            self.ui.lbMinWeightValue.setText(self.chart_weight_2.get_min_value())
+
+        elif self.ui.cbWeight.currentText() == 'complete':
+            self.chart_weight_3 = ChartWeight(self.user, 3)
+            self.weight_chart.hide()
+            self.weight_chart_2.hide()
+            self.weight_chart_3 = self.chart_weight_3.get_chartview()
+            self.layout_chart_weight.addWidget(self.weight_chart_3)
+            self.ui.weightChart.setLayout(self.layout_chart_weight)
+            self.ui.lbAvgWeightValue.setText(self.chart_weight_3.get_avg_value())
+            self.ui.lbMaxWeightValue.setText(self.chart_weight_3.get_max_value())
+            self.ui.lbMinWeightValue.setText(self.chart_weight_3.get_min_value())
 
     def validate_email(self):
         try:
