@@ -235,7 +235,7 @@ def login(user):
         cursor.execute("INSERT INTO bloodpressure (Diastolic, Systolic, Date, UserID) "
                        "SELECT %s, %s, %s, %s FROM DUAL "
                        "WHERE NOT EXISTS (SELECT * FROM bloodpressure WHERE Date=%s AND UserID=%s LIMIT 1);",
-                       (70, 120, date, user.get_id(), date, user.get_id()))
+                       (0, 0, date, user.get_id(), date, user.get_id()))
 
         cursor.execute("INSERT INTO weight (Grams, Date, UserID) "
                        "SELECT %s, %s, %s FROM DUAL "

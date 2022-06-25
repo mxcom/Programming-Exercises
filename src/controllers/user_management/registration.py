@@ -4,9 +4,10 @@ from datetime import datetime
 from PySide6 import QtCore
 from PySide6.QtWidgets import QMainWindow
 
-from src.controllers.user_management.user_management import add_user
+from src.controllers.user_management.user_management import get_user, add_user, login
 from src.models.user_management.user import User
 from src.views.user_management.WndRegistration import Ui_WndRegistration
+from src.controllers.primary.primary import PrimaryWindow
 
 sex = ["male", "female"]
 regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
@@ -259,8 +260,6 @@ class RegistrationWindow(QMainWindow, Ui_WndRegistration):
             print(e)
             return False
 
-    # def cancel_registration(self):
-
     def next_page(self):
         """
         Switches the page from first login page to second
@@ -268,9 +267,9 @@ class RegistrationWindow(QMainWindow, Ui_WndRegistration):
         self.ui.leFirstName.setText(self.user.get_first_name())
         self.ui.leLastName.setText(self.user.get_last_name())
         self.ui.cbSex.setCurrentText(self.user.get_sex())
-        self.ui.leWeight.setText(self.user.get_weight())
+        self.ui.leWeight.setText(str(self.user.get_weight()))
         if self.user.get_height():
-            self.ui.sbHeight.setValue(int(self.user.get_height()))
+            self.ui.sbHeight.setValue(self.user.get_height())
         else:
             self.ui.sbHeight.setValue(170)
         if self.validate_email() and self.validate_passwd() and self.confirm_passwd() == True:
@@ -301,6 +300,8 @@ class RegistrationWindow(QMainWindow, Ui_WndRegistration):
             try:
                 # add user to database
                 add_user(self.user)
+                self.destroy()
+                self.LoginWindow.show()
             except Exception as e:
                 print(e)
 

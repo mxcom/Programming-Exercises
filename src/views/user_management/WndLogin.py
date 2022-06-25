@@ -102,12 +102,13 @@ class Ui_WndLogin(object):
 
         self.verticalLayout_4.addWidget(self.lbPassword)
 
-        self.lineEdit = QLineEdit(self.frame_3)
-        self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setStyleSheet(u"border-bottom: 2px solid rgb(211, 201, 242);\n"
+        self.lePassword = QLineEdit(self.frame_3)
+        self.lePassword.setObjectName(u"lePassword")
+        self.lePassword.setStyleSheet(u"border-bottom: 2px solid rgb(211, 201, 242);\n"
 "")
+        self.lePassword.setEchoMode(QLineEdit.Password)
 
-        self.verticalLayout_4.addWidget(self.lineEdit)
+        self.verticalLayout_4.addWidget(self.lePassword)
 
 
         self.verticalLayout_2.addWidget(self.frame_3)

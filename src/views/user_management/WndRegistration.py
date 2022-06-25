@@ -17,14 +17,14 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QDoubleSpinBox, QFormLayout,
     QFrame, QHBoxLayout, QLabel, QLineEdit,
-    QMainWindow, QPushButton, QSizePolicy, QStackedWidget,
-    QVBoxLayout, QWidget)
+    QMainWindow, QPushButton, QSizePolicy, QSpinBox,
+    QStackedWidget, QVBoxLayout, QWidget)
 
 class Ui_WndRegistration(object):
     def setupUi(self, WndRegistration):
         if not WndRegistration.objectName():
             WndRegistration.setObjectName(u"WndRegistration")
-        WndRegistration.resize(408, 311)
+        WndRegistration.resize(411, 311)
         self.centralwidget = QWidget(WndRegistration)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
@@ -63,36 +63,38 @@ class Ui_WndRegistration(object):
 
         self.formLayout.setWidget(0, QFormLayout.LabelRole, self.lbEmail)
 
-        self.lineEdit = QLineEdit(self.frame)
-        self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setStyleSheet(u"border-bottom: 2px solid rgb(211, 201, 242);\n"
+        self.leEmail = QLineEdit(self.frame)
+        self.leEmail.setObjectName(u"leEmail")
+        self.leEmail.setStyleSheet(u"border-bottom: 2px solid rgb(211, 201, 242);\n"
 "")
 
-        self.formLayout.setWidget(0, QFormLayout.FieldRole, self.lineEdit)
+        self.formLayout.setWidget(0, QFormLayout.FieldRole, self.leEmail)
 
         self.lbPassword = QLabel(self.frame)
         self.lbPassword.setObjectName(u"lbPassword")
 
         self.formLayout.setWidget(1, QFormLayout.LabelRole, self.lbPassword)
 
-        self.lineEdit_2 = QLineEdit(self.frame)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
-        self.lineEdit_2.setStyleSheet(u"border-bottom: 2px solid rgb(211, 201, 242);\n"
+        self.lePassword = QLineEdit(self.frame)
+        self.lePassword.setObjectName(u"lePassword")
+        self.lePassword.setStyleSheet(u"border-bottom: 2px solid rgb(211, 201, 242);\n"
 "")
+        self.lePassword.setEchoMode(QLineEdit.Password)
 
-        self.formLayout.setWidget(1, QFormLayout.FieldRole, self.lineEdit_2)
+        self.formLayout.setWidget(1, QFormLayout.FieldRole, self.lePassword)
 
         self.lbConfirmPw = QLabel(self.frame)
         self.lbConfirmPw.setObjectName(u"lbConfirmPw")
 
         self.formLayout.setWidget(2, QFormLayout.LabelRole, self.lbConfirmPw)
 
-        self.lineEdit_3 = QLineEdit(self.frame)
-        self.lineEdit_3.setObjectName(u"lineEdit_3")
-        self.lineEdit_3.setStyleSheet(u"border-bottom: 2px solid rgb(211, 201, 242);\n"
+        self.leConfirmPw = QLineEdit(self.frame)
+        self.leConfirmPw.setObjectName(u"leConfirmPw")
+        self.leConfirmPw.setStyleSheet(u"border-bottom: 2px solid rgb(211, 201, 242);\n"
 "")
+        self.leConfirmPw.setEchoMode(QLineEdit.Password)
 
-        self.formLayout.setWidget(2, QFormLayout.FieldRole, self.lineEdit_3)
+        self.formLayout.setWidget(2, QFormLayout.FieldRole, self.leConfirmPw)
 
         self.lbError = QLabel(self.frame)
         self.lbError.setObjectName(u"lbError")
@@ -201,6 +203,69 @@ class Ui_WndRegistration(object):
 
         self.formLayout_2.setWidget(2, QFormLayout.LabelRole, self.lbBirthdate)
 
+        self.frame_5 = QFrame(self.frame_3)
+        self.frame_5.setObjectName(u"frame_5")
+        self.frame_5.setFrameShape(QFrame.StyledPanel)
+        self.frame_5.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_3 = QHBoxLayout(self.frame_5)
+        self.horizontalLayout_3.setSpacing(10)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.sbDay1 = QSpinBox(self.frame_5)
+        self.sbDay1.setObjectName(u"sbDay1")
+        self.sbDay1.setMinimum(0)
+        self.sbDay1.setMaximum(3)
+
+        self.horizontalLayout_3.addWidget(self.sbDay1)
+
+        self.sbDay2 = QSpinBox(self.frame_5)
+        self.sbDay2.setObjectName(u"sbDay2")
+        self.sbDay2.setMaximum(9)
+
+        self.horizontalLayout_3.addWidget(self.sbDay2)
+
+        self.label_2 = QLabel(self.frame_5)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_3.addWidget(self.label_2)
+
+        self.sbMonth1 = QSpinBox(self.frame_5)
+        self.sbMonth1.setObjectName(u"sbMonth1")
+        self.sbMonth1.setMinimum(0)
+        self.sbMonth1.setMaximum(1)
+        self.sbMonth1.setValue(0)
+
+        self.horizontalLayout_3.addWidget(self.sbMonth1)
+
+        self.sbMonth2 = QSpinBox(self.frame_5)
+        self.sbMonth2.setObjectName(u"sbMonth2")
+        self.sbMonth2.setMinimum(1)
+        self.sbMonth2.setMaximum(12)
+
+        self.horizontalLayout_3.addWidget(self.sbMonth2)
+
+        self.label_3 = QLabel(self.frame_5)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_3.addWidget(self.label_3)
+
+        self.sbYear1 = QSpinBox(self.frame_5)
+        self.sbYear1.setObjectName(u"sbYear1")
+        self.sbYear1.setMaximum(9)
+
+        self.horizontalLayout_3.addWidget(self.sbYear1)
+
+        self.sbYear2 = QSpinBox(self.frame_5)
+        self.sbYear2.setObjectName(u"sbYear2")
+        self.sbYear2.setMaximum(9)
+
+        self.horizontalLayout_3.addWidget(self.sbYear2)
+
+
+        self.formLayout_2.setWidget(2, QFormLayout.FieldRole, self.frame_5)
+
         self.lbSex = QLabel(self.frame_3)
         self.lbSex.setObjectName(u"lbSex")
 
@@ -216,35 +281,6 @@ class Ui_WndRegistration(object):
         self.lbWeight.setObjectName(u"lbWeight")
 
         self.formLayout_2.setWidget(4, QFormLayout.LabelRole, self.lbWeight)
-
-        self.frame_5 = QFrame(self.frame_3)
-        self.frame_5.setObjectName(u"frame_5")
-        self.frame_5.setFrameShape(QFrame.StyledPanel)
-        self.frame_5.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_3 = QHBoxLayout(self.frame_5)
-        self.horizontalLayout_3.setSpacing(10)
-        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.cbDay = QComboBox(self.frame_5)
-        self.cbDay.setObjectName(u"cbDay")
-        self.cbDay.setStyleSheet(u"border-bottom: 2px solid rgb(211, 201, 242);")
-
-        self.horizontalLayout_3.addWidget(self.cbDay)
-
-        self.cbMonth = QComboBox(self.frame_5)
-        self.cbMonth.setObjectName(u"cbMonth")
-        self.cbMonth.setStyleSheet(u"border-bottom: 2px solid rgb(211, 201, 242);")
-
-        self.horizontalLayout_3.addWidget(self.cbMonth)
-
-        self.cbYear = QComboBox(self.frame_5)
-        self.cbYear.setObjectName(u"cbYear")
-        self.cbYear.setStyleSheet(u"border-bottom: 2px solid rgb(211, 201, 242);")
-
-        self.horizontalLayout_3.addWidget(self.cbYear)
-
-
-        self.formLayout_2.setWidget(2, QFormLayout.FieldRole, self.frame_5)
 
         self.frame_6 = QFrame(self.frame_3)
         self.frame_6.setObjectName(u"frame_6")
@@ -276,6 +312,10 @@ class Ui_WndRegistration(object):
 
         self.sbHeight = QDoubleSpinBox(self.frame_6)
         self.sbHeight.setObjectName(u"sbHeight")
+        self.sbHeight.setDecimals(0)
+        self.sbHeight.setMinimum(140.000000000000000)
+        self.sbHeight.setMaximum(250.000000000000000)
+        self.sbHeight.setValue(170.000000000000000)
 
         self.horizontalLayout_4.addWidget(self.sbHeight)
 
@@ -347,7 +387,7 @@ class Ui_WndRegistration(object):
 
         self.retranslateUi(WndRegistration)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(WndRegistration)
@@ -365,6 +405,8 @@ class Ui_WndRegistration(object):
         self.lbFirstName.setText(QCoreApplication.translate("WndRegistration", u"First Name:", None))
         self.lbLastName.setText(QCoreApplication.translate("WndRegistration", u"Last Name:", None))
         self.lbBirthdate.setText(QCoreApplication.translate("WndRegistration", u"Birthdate:", None))
+        self.label_2.setText(QCoreApplication.translate("WndRegistration", u".", None))
+        self.label_3.setText(QCoreApplication.translate("WndRegistration", u".", None))
         self.lbSex.setText(QCoreApplication.translate("WndRegistration", u"Sex:", None))
         self.lbWeight.setText(QCoreApplication.translate("WndRegistration", u"Weight:", None))
         self.lbHeight.setText(QCoreApplication.translate("WndRegistration", u"Height:", None))

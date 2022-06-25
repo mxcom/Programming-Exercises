@@ -1,6 +1,6 @@
 import re, sys
 
-from PySide6.QtWidgets import QMainWindow, QApplication
+from PySide6.QtWidgets import QMainWindow, QApplication, QStyle
 from PySide6 import QtCore
 
 from src.controllers.user_management.user_management import get_user, login
@@ -51,6 +51,10 @@ class LoginWindow(QMainWindow, Ui_WndLogin):
             True if regex and input correspond
             False if regex and input don't correspond
         """
+        style_email = (u"QLineEdit{\n"
+                       "border-bottom: 2px solid rgb(211, 201, 242);\n"
+                       "}")
+        self.ui.leEmail.setStyleSheet(style_email)
         email = self.ui.leEmail.text()
         if re.fullmatch(regex, email):
             self.ui.leEmail.setStyleSheet("color: black;")
