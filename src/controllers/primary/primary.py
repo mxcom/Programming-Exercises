@@ -181,7 +181,11 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         i = 0
         for key in results["products"]:
             self.ui.tbFood.insertRow(i)
-            self.ui.tbFood.setItem(i, 0,  QTableWidgetItem(key['product_name']))
+            if 'product_name_de' in key:
+                if key['product_name_de'].isalnum() & len(key['product_name_de']) > 0:
+                    self.ui.tbFood.setItem(i, 0,  QTableWidgetItem(key['product_name_de']))
+                else:
+                    self.ui.tbFood.setItem(i, 0,  QTableWidgetItem(key['product_name']))
             self.ui.tbFood.setItem(i, 1,  QTableWidgetItem(str(key['nutriments']['energy-kcal_100g'])))
             i = i + 1
 
