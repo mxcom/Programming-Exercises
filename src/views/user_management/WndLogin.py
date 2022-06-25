@@ -185,7 +185,9 @@ class Ui_WndLogin(object):
 
         self.label_2 = QLabel(self.frame_4)
         self.label_2.setObjectName(u"label_2")
+        self.label_2.setEnabled(True)
         self.label_2.setMaximumSize(QSize(16777215, 25))
+        self.label_2.setStyleSheet(u"color: rgb(211, 201, 242)")
         self.label_2.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_5.addWidget(self.label_2)
@@ -213,6 +215,6 @@ class Ui_WndLogin(object):
         self.lbPassword.setText(QCoreApplication.translate("WndLogin", u"Password", None))
         self.btnLogin.setText(QCoreApplication.translate("WndLogin", u"Login", None))
         self.btnSignup.setText(QCoreApplication.translate("WndLogin", u"Sign Up", None))
-        self.label_2.setText("")
+        self.label_2.setText(QCoreApplication.translate("WndLogin", u"Wrong Email or Password", None))
     # retranslateUi
 
