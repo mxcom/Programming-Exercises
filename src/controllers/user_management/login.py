@@ -32,6 +32,7 @@ class LoginWindow(QMainWindow, Ui_WndLogin):
         # Settings for GUI
         self.ui.leEmail.textChanged.connect(self.validate_email)
         self.ui.btnLogin.clicked.connect(self.validate_login)
+        self.ui.label_2.hide()
 
         # Change Window
         self.ui.btnSignup.clicked.connect(self.switch_to_registration)
@@ -95,6 +96,7 @@ class LoginWindow(QMainWindow, Ui_WndLogin):
         """
         Validates user login credentials using obove validate methods
         """
+        self.ui.label_2.hide()
         if self.validate_email() and self.validate_passwd():
             try:
                 user = get_user(self.ui.leEmail.text())
@@ -105,7 +107,7 @@ class LoginWindow(QMainWindow, Ui_WndLogin):
                     self.mw = PrimaryWindow(user, LoginWindow=self)
                     self.mw.show()
                 else:
-                    print("wrong email or password")
+                    self.ui.label_2.show()
             except Exception as e:
                 print(e)
         elif self.validate_admin() and self.validate_passwd():
