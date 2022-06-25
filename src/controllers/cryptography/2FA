@@ -1,0 +1,31 @@
+import pyotp
+import smtplib
+
+def gen_key():
+    return pyotp.random_base32()
+
+def generate_code(key: str):
+    totp = pyotp.TOTP(key)
+    return totp.now()
+
+def verify_code(key: str, code: str):
+    totp = pyotp.TOTP(key)
+    return totp.verify(code)
+
+def send_mail(mail : str):
+    try:
+        usr = user.get_first_name     # Not sure about these two declarations
+        passwrd = user.get_passwd
+        mail_txt = 'Your 2FA code is:\n' + generate_code + '\n'
+        subject = 'Your 2FA code.'
+        MAIL_FROM = 'auto@progex.com'
+        RCPT_TO = mail
+        DATA = 'From:%s\nTo:%s\nSubject:%s\n\n' % (MAIL_FROM, RCPT_TO, subject, mail_txt)
+
+        server = smtplib.SMTP('exampleemailsrvr.com:587')   # Server?
+        server.starttls()
+        server.login(usr, passwrd)
+        server.sendmail(MAIL_FROM, RCPT_TO, DATA)
+        server.quit()
+    except Exception as e:
+        print(e)
