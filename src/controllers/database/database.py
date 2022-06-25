@@ -18,7 +18,6 @@ class Database(object):
             )
 
             self._ssh_tunnel.start()
-
             self._db = connector.MySQLConnection(
                 user=keyring.get_credential(service_name="db_login", username=None).username,
                 password=keyring.get_credential(service_name="db_login", username=None).password,

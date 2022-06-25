@@ -12,6 +12,7 @@ from PySide6.examples.charts.dynamicspline import chart
 from src.controllers.primary.stat_charts_kcal import ChartKcal
 from src.controllers.primary.stat_charts_steps import ChartSteps
 from src.controllers.primary.stat_charts_bp import ChartBp
+from src.controllers.primary.stat_charts_weight import ChartWeight
 from src.controllers.user_management.user_management import update_email, update_passwd, update_height
 from src.controllers.user_management.calorie_management import get_daily_calories, update_calories
 from src.controllers.primary.progress_bar import CircularProgress
@@ -114,6 +115,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.cbKcal.activated.connect(self.date_selected_kcal)
         self.ui.cbSteps.activated.connect(self.date_selected_steps)
         self.ui.cbBP.activated.connect(self.date_selected_bp)
+        self.ui.cbWeight.activated.connect(self.date_selected_weight())
 
         # Set statistics
         self.chart_kcal_1 = ChartKcal(self.user, 1)
@@ -152,6 +154,17 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         # self.chart_bp_3 = ChartBp(self.user, 3)
         self.bp_chart_2 = self.chart_bp_1.get_chartview()
         self.bp_chart_3 = self.chart_bp_1.get_chartview()
+
+        self.chart_weight_1 = ChartWeight(self.user, 1)
+        self.weight_chart = self.chart_weight_1.get_chartview()
+        self.layout_chart_weight = QHBoxLayout()
+        self.layout_chart_weight.addWidget(self.weight_chart)
+        self.ui.weightChart.setLayout(self.layout_chart_weight)
+        self.ui.lbAvgWeightValue.setText(self.chart_weight_1.get_avg_value())
+        self.ui.lbMaxWeightValue.setText(self.chart_weight_1.get_max_value())
+        self.ui.lbMinWeightValue.setText(self.chart_weight_1.get_min_value())
+        self.weight_chart_2 = self.chart_weight_1.get_chartview()
+        self.weight_chart_3 = self.chart_weight_1.get_chartview()
 
         # Set Setting page Functionalities
         self.ui.lbSetFirstNameValue.setText(self.user.get_first_name())
@@ -192,7 +205,11 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         i = 0
         for key in results["products"]:
             self.ui.tbFood.insertRow(i)
-            self.ui.tbFood.setItem(i, 0,  QTableWidgetItem(key['product_name']))
+            if 'product_name_de' in key:
+                if key['product_name_de'].isalnum() & len(key['product_name_de']) > 0:
+                    self.ui.tbFood.setItem(i, 0,  QTableWidgetItem(key['product_name_de']))
+                else:
+                    self.ui.tbFood.setItem(i, 0,  QTableWidgetItem(key['product_name']))
             self.ui.tbFood.setItem(i, 1,  QTableWidgetItem(str(key['nutriments']['energy-kcal_100g'])))
             i = i + 1
 
