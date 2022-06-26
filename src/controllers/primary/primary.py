@@ -198,7 +198,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         update_calories(self.user, old_calories, new_calories)
 
     def search_name(self):
-        results = open_food_facts.search_name(self)
+        results = open_food_facts.search_name(self.ui.leSearchFood.text())
         self.ui.tbFood.clear()
         self.ui.tbFood.clearContents()
         self.ui.tbFood.setRowCount(0)
