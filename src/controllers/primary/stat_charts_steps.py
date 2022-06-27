@@ -6,7 +6,7 @@ from PySide6.QtGui import QPen, QColor, Qt, QPainter
 from PySide6.QtWidgets import QWidget, QVBoxLayout
 from datetime import date
 import calendar
-from src.controllers.user_management.calorie_management import *
+from src.controllers.user_management.chart_management import *
 
 
 class ChartSteps:

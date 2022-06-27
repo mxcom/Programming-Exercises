@@ -6,7 +6,7 @@ from PySide6.QtGui import QPen, QColor, Qt, QPainter
 from PySide6.QtWidgets import QWidget, QVBoxLayout
 from datetime import date
 import calendar
-from src.controllers.user_management.calorie_management import get_stat_kcal
+from src.controllers.user_management.chart_management import *
 from src.models.user_management.user import User
 from src.controllers.user_management.calc_kcal import calc_kcal
 
