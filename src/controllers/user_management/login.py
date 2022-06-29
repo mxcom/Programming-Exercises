@@ -58,13 +58,13 @@ class LoginWindow(QMainWindow, Ui_WndLogin):
         self.ui.leEmail.setStyleSheet(style_email)
         email = self.ui.leEmail.text()
         if re.fullmatch(regex, email):
-            self.ui.leEmail.setStyleSheet("color: black;")
+            self.ui.leEmail.setStyleSheet("color: black; border-bottom: 2px solid rgb(211, 201, 242);")
             return True
         elif re.fullmatch(admin_regex, email):
-            self.ui.leEmail.setStyleSheet("color: black;")
+            self.ui.leEmail.setStyleSheet("color: black; border-bottom: 2px solid rgb(211, 201, 242);")
             return False
         else:
-            self.ui.leEmail.setStyleSheet("color: rgb(255, 0, 65);")
+            self.ui.leEmail.setStyleSheet("color: rgb(255, 0, 65); border-bottom: 2px solid rgb(211, 201, 242);")
             return False
 
     def validate_passwd(self):
@@ -87,7 +87,7 @@ class LoginWindow(QMainWindow, Ui_WndLogin):
     def validate_admin(self):
         id = self.ui.leEmail.text()
         if re.fullmatch(admin_regex, id):
-            self.ui.leEmail.setStyleSheet("color: black;")
+            self.ui.leEmail.setStyleSheet("color: black; border-bottom: 2px solid rgb(211, 201, 242);")
             return True
         else:
             return False
