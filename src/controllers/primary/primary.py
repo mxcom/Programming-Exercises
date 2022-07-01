@@ -199,19 +199,22 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
 
     def search_name(self):
         results = open_food_facts.search_name(self.ui.leSearchFood.text())
-        self.ui.tbFood.clear()
-        self.ui.tbFood.clearContents()
+        #self.ui.tbFood.clear()
+       # self.ui.tbFood.clearContents()
         self.ui.tbFood.setRowCount(0)
         i = 0
         for key in results["products"]:
             self.ui.tbFood.insertRow(i)
-            if 'product_name_de' in key:
-                if key['product_name_de'].isalnum() & len(key['product_name_de']) > 0:
-                    self.ui.tbFood.setItem(i, 0,  QTableWidgetItem(key['product_name_de']))
+            if 'energy-kcal_100g' in key['nutriments']:
+                self.ui.tbFood.setItem(i, 1,  QTableWidgetItem(str(key['nutriments']['energy-kcal_100g'])))
+                if 'product_name_de' in key:
+                    if key['product_name_de'].isalnum() & len(key['product_name_de']) > 0:
+                        self.ui.tbFood.setItem(i, 0,  QTableWidgetItem(key['product_name_de']))
+                    else:
+                        self.ui.tbFood.setItem(i, 0,  QTableWidgetItem(key['product_name']))
                 else:
                     self.ui.tbFood.setItem(i, 0,  QTableWidgetItem(key['product_name']))
-            self.ui.tbFood.setItem(i, 1,  QTableWidgetItem(str(key['nutriments']['energy-kcal_100g'])))
-            i = i + 1
+                i = i + 1
 
     # Methods for Menu Button clicked
     def home_page(self):
