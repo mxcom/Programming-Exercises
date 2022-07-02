@@ -196,6 +196,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         amount = self.ui.leAmount.text()
         new_calories = (float(calories)/100)*float(amount)
         update_calories(self.user, old_calories, new_calories)
+        update_calories(self.user, old_calories, new_calories)
 
     def search_name(self):
         results = open_food_facts.search_name(self.ui.leSearchFood.text())
@@ -285,25 +286,25 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
     def validate_weight(self):
         try:
             input = float(self.ui.leWeight.text())
-            self.ui.leWeight.setStyleSheet("color: black")
+            self.ui.leWeight.setStyleSheet("color: black; border-bottom: 2px solid rgb(211, 201, 242);")
             if input < 0:
                 return False
             else:
                 return True
         except:
-            self.ui.leWeight.setStyleSheet("color: rgb(255, 0, 65);")
+            self.ui.leWeight.setStyleSheet("color: black; border-bottom: 2px solid rgb(211, 201, 242);")
             return False
 
     def validate_steps(self):
         try:
             input = int(self.ui.leSteps.text())
-            self.ui.leSteps.setStyleSheet("color: black")
+            self.ui.leSteps.setStyleSheet("color: black; border-bottom: 2px solid rgb(211, 201, 242);")
             if input < 0:
                 return False
             else:
                 return True
         except:
-            self.ui.leSteps.setStyleSheet("color: rgb(255, 0, 65);")
+            self.ui.leSteps.setStyleSheet("color: black; border-bottom: 2px solid rgb(211, 201, 242);")
             return False
 
     def validate_bp_low(self):
