@@ -15,11 +15,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
-    QHeaderView, QLabel, QLineEdit, QMainWindow,
-    QPushButton, QSizePolicy, QStackedWidget, QTableWidget,
-    QTableWidgetItem, QVBoxLayout, QWidget)
-import src.views.icons.rc_icons
+from PySide6.QtWidgets import (QApplication, QCalendarWidget, QComboBox, QFrame,
+    QHBoxLayout, QHeaderView, QLabel, QLineEdit,
+    QMainWindow, QPushButton, QSizePolicy, QStackedWidget,
+    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
+import icons_rc
 
 class Ui_WndMain(object):
     def setupUi(self, WndMain):
@@ -311,6 +311,37 @@ class Ui_WndMain(object):
         self.btnSettings.setIconSize(QSize(25, 25))
 
         self.verticalLayout_3.addWidget(self.btnSettings)
+
+        self.btnCalendar = QPushButton(self.topMenus)
+        self.btnCalendar.setObjectName(u"btnCalendar")
+        self.btnCalendar.setMinimumSize(QSize(0, 40))
+        self.btnCalendar.setFont(font)
+        self.btnCalendar.setStyleSheet(u"QPushButton{\n"
+"background-image: url(:/icons/calemdarIcon.png);\n"
+"background-position: left center;\n"
+"background-repeat: no-repeat;\n"
+"border: none;\n"
+"border-left: 14px solid rgb(155, 127, 240);\n"
+"text-align: left;\n"
+"padding-left: 45px;\n"
+"background-color: rgb(155, 127, 240);\n"
+"\n"
+"\n"
+"\n"
+"}\n"
+"QPushButton:hover{\n"
+"	\n"
+"	background-color: rgb(122, 100, 189);\n"
+"	border-left: 14px solid rgb(122, 100, 189);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: rgb(211, 201, 242);\n"
+"    border-left: 14px solid rgb(211, 201, 242);\n"
+"}")
+        self.btnCalendar.setIconSize(QSize(25, 25))
+
+        self.verticalLayout_3.addWidget(self.btnCalendar)
 
 
         self.verticalLayout_2.addWidget(self.topMenus, 0, Qt.AlignTop)
@@ -2591,43 +2622,234 @@ class Ui_WndMain(object):
         self.horizontalLayout_41.addWidget(self.frame_13)
 
         self.pages.addWidget(self.pageSettings)
-        self.pageSpare = QWidget()
-        self.pageSpare.setObjectName(u"pageSpare")
-        self.horizontalLayout_46 = QHBoxLayout(self.pageSpare)
+        self.pageCalendar = QWidget()
+        self.pageCalendar.setObjectName(u"pageCalendar")
+        self.horizontalLayout_46 = QHBoxLayout(self.pageCalendar)
         self.horizontalLayout_46.setSpacing(0)
         self.horizontalLayout_46.setObjectName(u"horizontalLayout_46")
         self.horizontalLayout_46.setContentsMargins(0, 0, 0, 0)
-        self.frame_41 = QFrame(self.pageSpare)
+        self.frame_41 = QFrame(self.pageCalendar)
         self.frame_41.setObjectName(u"frame_41")
+        self.frame_41.setMaximumSize(QSize(470, 16777215))
         self.frame_41.setFrameShape(QFrame.StyledPanel)
         self.frame_41.setFrameShadow(QFrame.Raised)
         self.verticalLayout_41 = QVBoxLayout(self.frame_41)
         self.verticalLayout_41.setObjectName(u"verticalLayout_41")
-        self.frame_43 = QFrame(self.frame_41)
-        self.frame_43.setObjectName(u"frame_43")
-        self.frame_43.setFrameShape(QFrame.StyledPanel)
-        self.frame_43.setFrameShadow(QFrame.Raised)
+        self.frame_10 = QFrame(self.frame_41)
+        self.frame_10.setObjectName(u"frame_10")
+        self.frame_10.setFrameShape(QFrame.StyledPanel)
+        self.frame_10.setFrameShadow(QFrame.Raised)
 
-        self.verticalLayout_41.addWidget(self.frame_43)
+        self.verticalLayout_41.addWidget(self.frame_10)
 
-        self.frame_44 = QFrame(self.frame_41)
-        self.frame_44.setObjectName(u"frame_44")
-        self.frame_44.setFrameShape(QFrame.StyledPanel)
-        self.frame_44.setFrameShadow(QFrame.Raised)
+        self.frame_9 = QFrame(self.frame_41)
+        self.frame_9.setObjectName(u"frame_9")
+        self.frame_9.setMaximumSize(QSize(16777215, 300))
+        self.frame_9.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
+"border-radius: 15px;")
+        self.frame_9.setFrameShape(QFrame.StyledPanel)
+        self.frame_9.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_55 = QHBoxLayout(self.frame_9)
+        self.horizontalLayout_55.setSpacing(6)
+        self.horizontalLayout_55.setObjectName(u"horizontalLayout_55")
+        self.horizontalLayout_55.setContentsMargins(9, 9, 9, 9)
+        self.calendarWidget = QCalendarWidget(self.frame_9)
+        self.calendarWidget.setObjectName(u"calendarWidget")
+        self.calendarWidget.setFont(font)
 
-        self.verticalLayout_41.addWidget(self.frame_44)
+        self.horizontalLayout_55.addWidget(self.calendarWidget)
+
+
+        self.verticalLayout_41.addWidget(self.frame_9)
+
+        self.frame_55 = QFrame(self.frame_41)
+        self.frame_55.setObjectName(u"frame_55")
+        self.frame_55.setMaximumSize(QSize(16777215, 40))
+        self.frame_55.setFrameShape(QFrame.StyledPanel)
+        self.frame_55.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_60 = QHBoxLayout(self.frame_55)
+        self.horizontalLayout_60.setSpacing(0)
+        self.horizontalLayout_60.setObjectName(u"horizontalLayout_60")
+        self.horizontalLayout_60.setContentsMargins(0, 0, 0, 0)
+        self.frame_56 = QFrame(self.frame_55)
+        self.frame_56.setObjectName(u"frame_56")
+        self.frame_56.setFrameShape(QFrame.StyledPanel)
+        self.frame_56.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_60.addWidget(self.frame_56)
+
+        self.btnCalendarSelect = QPushButton(self.frame_55)
+        self.btnCalendarSelect.setObjectName(u"btnCalendarSelect")
+        sizePolicy1.setHeightForWidth(self.btnCalendarSelect.sizePolicy().hasHeightForWidth())
+        self.btnCalendarSelect.setSizePolicy(sizePolicy1)
+        self.btnCalendarSelect.setMinimumSize(QSize(140, 40))
+        self.btnCalendarSelect.setMaximumSize(QSize(140, 140))
+        self.btnCalendarSelect.setFont(font)
+        self.btnCalendarSelect.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(155, 127, 240);\n"
+"	border-radius: 15px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(122, 100, 189);\n"
+"	border-radius: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: rgb(211, 201, 242);\n"
+"	border-radius: 15px;\n"
+"}\n"
+"")
+
+        self.horizontalLayout_60.addWidget(self.btnCalendarSelect)
+
+        self.frame_57 = QFrame(self.frame_55)
+        self.frame_57.setObjectName(u"frame_57")
+        self.frame_57.setFrameShape(QFrame.StyledPanel)
+        self.frame_57.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_60.addWidget(self.frame_57)
+
+
+        self.verticalLayout_41.addWidget(self.frame_55)
+
+        self.frame_8 = QFrame(self.frame_41)
+        self.frame_8.setObjectName(u"frame_8")
+        self.frame_8.setFrameShape(QFrame.StyledPanel)
+        self.frame_8.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout_41.addWidget(self.frame_8)
 
 
         self.horizontalLayout_46.addWidget(self.frame_41)
 
-        self.frame_42 = QFrame(self.pageSpare)
+        self.frame_42 = QFrame(self.pageCalendar)
         self.frame_42.setObjectName(u"frame_42")
+        self.frame_42.setMaximumSize(QSize(500, 16777215))
         self.frame_42.setFrameShape(QFrame.StyledPanel)
         self.frame_42.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_47 = QVBoxLayout(self.frame_42)
+        self.verticalLayout_47.setObjectName(u"verticalLayout_47")
+        self.frame_58 = QFrame(self.frame_42)
+        self.frame_58.setObjectName(u"frame_58")
+        self.frame_58.setMaximumSize(QSize(16777215, 150))
+        self.frame_58.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
+"border-radius: 15px;")
+        self.frame_58.setFrameShape(QFrame.StyledPanel)
+        self.frame_58.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_48 = QVBoxLayout(self.frame_58)
+        self.verticalLayout_48.setObjectName(u"verticalLayout_48")
+        self.frame_59 = QFrame(self.frame_58)
+        self.frame_59.setObjectName(u"frame_59")
+        self.frame_59.setFrameShape(QFrame.StyledPanel)
+        self.frame_59.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_61 = QHBoxLayout(self.frame_59)
+        self.horizontalLayout_61.setObjectName(u"horizontalLayout_61")
+        self.horizontalLayout_61.setContentsMargins(-1, 0, -1, 0)
+        self.label_12 = QLabel(self.frame_59)
+        self.label_12.setObjectName(u"label_12")
+        self.label_12.setFont(font)
+
+        self.horizontalLayout_61.addWidget(self.label_12)
+
+        self.lbCalendarKcal = QLabel(self.frame_59)
+        self.lbCalendarKcal.setObjectName(u"lbCalendarKcal")
+        self.lbCalendarKcal.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.horizontalLayout_61.addWidget(self.lbCalendarKcal)
+
+
+        self.verticalLayout_48.addWidget(self.frame_59)
+
+        self.frame_60 = QFrame(self.frame_58)
+        self.frame_60.setObjectName(u"frame_60")
+        self.frame_60.setFrameShape(QFrame.StyledPanel)
+        self.frame_60.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_62 = QHBoxLayout(self.frame_60)
+        self.horizontalLayout_62.setObjectName(u"horizontalLayout_62")
+        self.horizontalLayout_62.setContentsMargins(-1, 0, -1, 0)
+        self.label_14 = QLabel(self.frame_60)
+        self.label_14.setObjectName(u"label_14")
+        self.label_14.setFont(font)
+
+        self.horizontalLayout_62.addWidget(self.label_14)
+
+        self.lbCalendarSteps = QLabel(self.frame_60)
+        self.lbCalendarSteps.setObjectName(u"lbCalendarSteps")
+        self.lbCalendarSteps.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.horizontalLayout_62.addWidget(self.lbCalendarSteps)
+
+
+        self.verticalLayout_48.addWidget(self.frame_60)
+
+        self.frame_61 = QFrame(self.frame_58)
+        self.frame_61.setObjectName(u"frame_61")
+        self.frame_61.setFrameShape(QFrame.StyledPanel)
+        self.frame_61.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_63 = QHBoxLayout(self.frame_61)
+        self.horizontalLayout_63.setSpacing(0)
+        self.horizontalLayout_63.setObjectName(u"horizontalLayout_63")
+        self.horizontalLayout_63.setContentsMargins(9, 0, 9, 0)
+        self.label_17 = QLabel(self.frame_61)
+        self.label_17.setObjectName(u"label_17")
+        self.label_17.setFont(font)
+
+        self.horizontalLayout_63.addWidget(self.label_17)
+
+        self.lbCalendarWeight = QLabel(self.frame_61)
+        self.lbCalendarWeight.setObjectName(u"lbCalendarWeight")
+        self.lbCalendarWeight.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.horizontalLayout_63.addWidget(self.lbCalendarWeight)
+
+
+        self.verticalLayout_48.addWidget(self.frame_61)
+
+        self.frame_62 = QFrame(self.frame_58)
+        self.frame_62.setObjectName(u"frame_62")
+        self.frame_62.setFrameShape(QFrame.StyledPanel)
+        self.frame_62.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_64 = QHBoxLayout(self.frame_62)
+        self.horizontalLayout_64.setObjectName(u"horizontalLayout_64")
+        self.horizontalLayout_64.setContentsMargins(-1, 0, -1, 0)
+        self.label_19 = QLabel(self.frame_62)
+        self.label_19.setObjectName(u"label_19")
+        self.label_19.setFont(font)
+
+        self.horizontalLayout_64.addWidget(self.label_19)
+
+        self.lbCalendarBP = QLabel(self.frame_62)
+        self.lbCalendarBP.setObjectName(u"lbCalendarBP")
+        self.lbCalendarBP.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.horizontalLayout_64.addWidget(self.lbCalendarBP)
+
+
+        self.verticalLayout_48.addWidget(self.frame_62)
+
+
+        self.verticalLayout_47.addWidget(self.frame_58)
+
+        self.frame_43 = QFrame(self.frame_42)
+        self.frame_43.setObjectName(u"frame_43")
+        self.frame_43.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
+"border-radius: 15px;")
+        self.frame_43.setFrameShape(QFrame.StyledPanel)
+        self.frame_43.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_49 = QVBoxLayout(self.frame_43)
+        self.verticalLayout_49.setObjectName(u"verticalLayout_49")
+        self.tableFoodCalendar = QTableWidget(self.frame_43)
+        self.tableFoodCalendar.setObjectName(u"tableFoodCalendar")
+
+        self.verticalLayout_49.addWidget(self.tableFoodCalendar)
+
+
+        self.verticalLayout_47.addWidget(self.frame_43)
+
 
         self.horizontalLayout_46.addWidget(self.frame_42)
 
-        self.pages.addWidget(self.pageSpare)
+        self.pages.addWidget(self.pageCalendar)
 
         self.verticalLayout_4.addWidget(self.pages)
 
@@ -2641,7 +2863,7 @@ class Ui_WndMain(object):
 
         self.retranslateUi(WndMain)
 
-        self.pages.setCurrentIndex(0)
+        self.pages.setCurrentIndex(7)
 
 
         QMetaObject.connectSlotsByName(WndMain)
@@ -2657,6 +2879,7 @@ class Ui_WndMain(object):
         self.btnFood.setText(QCoreApplication.translate("WndMain", u"Food", None))
         self.btnStatistic.setText(QCoreApplication.translate("WndMain", u"Statistics", None))
         self.btnSettings.setText(QCoreApplication.translate("WndMain", u"Settings", None))
+        self.btnCalendar.setText(QCoreApplication.translate("WndMain", u"Calendar", None))
         self.btnLogout.setText(QCoreApplication.translate("WndMain", u"Logout", None))
         self.lbWeight.setText(QCoreApplication.translate("WndMain", u"Weight:", None))
         self.lbSteps.setText(QCoreApplication.translate("WndMain", u"Steps:", None))
@@ -2762,5 +2985,14 @@ class Ui_WndMain(object):
         self.lbSetConfirmPassword.setText(QCoreApplication.translate("WndMain", u"Confirm Password:", None))
         self.btnChangeInfo.setText(QCoreApplication.translate("WndMain", u"Submit", None))
         self.lbSetError.setText(QCoreApplication.translate("WndMain", u"<html><head/><body><p><br/></p></body></html>", None))
+        self.btnCalendarSelect.setText(QCoreApplication.translate("WndMain", u"Select", None))
+        self.label_12.setText(QCoreApplication.translate("WndMain", u"Calories eaten:", None))
+        self.lbCalendarKcal.setText(QCoreApplication.translate("WndMain", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:700; color:#d3c9f2;\">1800</span></p></body></html>", None))
+        self.label_14.setText(QCoreApplication.translate("WndMain", u"Steps walked:", None))
+        self.lbCalendarSteps.setText(QCoreApplication.translate("WndMain", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:700; color:#d3c9f2;\">12000</span></p></body></html>", None))
+        self.label_17.setText(QCoreApplication.translate("WndMain", u"Weight:", None))
+        self.lbCalendarWeight.setText(QCoreApplication.translate("WndMain", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:700; color:#d3c9f2;\">80 kg</span></p></body></html>", None))
+        self.label_19.setText(QCoreApplication.translate("WndMain", u"Blood Pressure:", None))
+        self.lbCalendarBP.setText(QCoreApplication.translate("WndMain", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:700; color:#d3c9f2;\">80/120</span></p></body></html>", None))
     # retranslateUi
 

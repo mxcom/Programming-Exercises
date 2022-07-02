@@ -83,6 +83,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.btnFood.clicked.connect(self.food_page)
         self.ui.btnStatistic.clicked.connect(self.stat_page_kcal)
         self.ui.btnSettings.clicked.connect(self.settings_page)
+        self.ui.btnCalendar.clicked.connect(self.calendar_page)
         self.ui.btnLogout.clicked.connect(self.logout)
         self.ui.btnKcal1.clicked.connect(self.stat_page_kcal)
         self.ui.btnKcal2.clicked.connect(self.stat_page_kcal)
@@ -221,6 +222,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.btnFood.setStyleSheet(Style.style_btn_default_food)
         self.ui.btnStatistic.setStyleSheet(Style.style_btn_default_statistic)
         self.ui.btnSettings.setStyleSheet(Style.style_btn_default_settings)
+        self.ui.btnCalendar.setStyleSheet(Style.style_btn_default_calendar)
         self.ui.lbPageDescription.setText("Home")
 
     def food_page(self):
@@ -229,6 +231,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.btnFood.setStyleSheet(Style.style_btn_selected_food)
         self.ui.btnStatistic.setStyleSheet(Style.style_btn_default_statistic)
         self.ui.btnSettings.setStyleSheet(Style.style_btn_default_settings)
+        self.ui.btnCalendar.setStyleSheet(Style.style_btn_default_calendar)
         self.ui.lbPageDescription.setText("Food")
 
     def stat_page_kcal(self):
@@ -238,6 +241,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.btnStatistic.setStyleSheet(Style.style_btn_selected_statistic)
         self.ui.btnKcal1.setStyleSheet(Style.style_btn_selected_stat_controle)
         self.ui.btnSettings.setStyleSheet(Style.style_btn_default_settings)
+        self.ui.btnCalendar.setStyleSheet(Style.style_btn_default_calendar)
         self.ui.lbPageDescription.setText("Statistics - Kcal")
 
     def stat_page_steps(self):
@@ -247,6 +251,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.btnStatistic.setStyleSheet(Style.style_btn_selected_statistic)
         self.ui.btnSteps2.setStyleSheet(Style.style_btn_selected_stat_controle)
         self.ui.btnSettings.setStyleSheet(Style.style_btn_default_settings)
+        self.ui.btnCalendar.setStyleSheet(Style.style_btn_default_calendar)
         self.ui.lbPageDescription.setText("Statistics - Steps")
 
     def stat_page_bp(self):
@@ -256,6 +261,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.btnStatistic.setStyleSheet(Style.style_btn_selected_statistic)
         self.ui.btnBP3.setStyleSheet(Style.style_btn_selected_stat_controle)
         self.ui.btnSettings.setStyleSheet(Style.style_btn_default_settings)
+        self.ui.btnCalendar.setStyleSheet(Style.style_btn_default_calendar)
         self.ui.lbPageDescription.setText("Statistics - Blood Pressure")
 
     def stat_page_weight(self):
@@ -265,6 +271,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.btnSettings.setStyleSheet(Style.style_btn_default_settings)
         self.ui.btnStatistic.setStyleSheet(Style.style_btn_selected_statistic)
         self.ui.btnWeight4.setStyleSheet(Style.style_btn_selected_stat_controle)
+        self.ui.btnCalendar.setStyleSheet(Style.style_btn_default_calendar)
         self.ui.lbPageDescription.setText("Statistics - Weight")
 
     def settings_page(self):
@@ -273,7 +280,17 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.btnFood.setStyleSheet(Style.style_btn_default_food)
         self.ui.btnStatistic.setStyleSheet(Style.style_btn_default_statistic)
         self.ui.btnSettings.setStyleSheet(Style.style_btn_selected_settings)
+        self.ui.btnCalendar.setStyleSheet(Style.style_btn_default_calendar)
         self.ui.lbPageDescription.setText("Settings")
+
+    def calendar_page(self):
+        self.ui.pages.setCurrentIndex(7)
+        self.ui.btnHome.setStyleSheet(Style.style_btn_default_home)
+        self.ui.btnFood.setStyleSheet(Style.style_btn_default_food)
+        self.ui.btnStatistic.setStyleSheet(Style.style_btn_default_statistic)
+        self.ui.btnSettings.setStyleSheet(Style.style_btn_default_settings)
+        self.ui.btnCalendar.setStyleSheet(Style.style_btn_selected_calendar)
+        self.ui.lbPageDescription.setText("Calendar")
 
     def logout(self):
         try:

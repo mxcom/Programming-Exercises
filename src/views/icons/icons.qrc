@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="icons">
+    <file>calemdarIcon.png</file>
     <file>food.png</file>
     <file>homeIcon.png</file>
     <file>logoutIcon.png</file>
