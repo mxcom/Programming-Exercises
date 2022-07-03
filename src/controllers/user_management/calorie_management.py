@@ -67,7 +67,7 @@ def get_food_from_date(date, user):
         print(e)
 
 
-def add_dummy():
+def add_dummy_kcal():
     try:
         db = Database()
         cursor = db.get_cursor()
@@ -76,5 +76,44 @@ def add_dummy():
             date = date - datetime.timedelta(1)
             cursor.execute("INSERT INTO calories (UserID, Calories, CaloriesEaten, Date)  "
                            "VALUES (55, 2085, %s, %s)", (random.randint(1800, 2300), date.strftime("%Y-%m-%d")))
+    except Exception as e:
+        print(e)
+
+
+def add_dummy_bp():
+    try:
+        db = Database()
+        cursor = db.get_cursor()
+        date = datetime.datetime.now()
+        for i in range(100):
+            date = date - datetime.timedelta(1)
+            cursor.execute("INSERT INTO bloodpressure (UserID, Diastolic, Systolic, Date)  "
+                           "VALUES (55, %s, %s, %s)", (random.randint(65, 80), random.randint(115, 125), date.strftime("%Y-%m-%d")))
+    except Exception as e:
+        print(e)
+
+
+def add_dummy_steps():
+    try:
+        db = Database()
+        cursor = db.get_cursor()
+        date = datetime.datetime.now()
+        for i in range(100):
+            date = date - datetime.timedelta(1)
+            cursor.execute("INSERT INTO steps (UserID, Steps, Date)  "
+                           "VALUES (55, %s, %s)", (random.randint(2500, 15000), date.strftime("%Y-%m-%d")))
+    except Exception as e:
+        print(e)
+
+
+def add_dummy_weight():
+    try:
+        db = Database()
+        cursor = db.get_cursor()
+        date = datetime.datetime.now()
+        for i in range(100):
+            date = date - datetime.timedelta(1)
+            cursor.execute("INSERT INTO weight (UserID, Grams, Date)  "
+                           "VALUES (55, %s, %s)", (random.randint(80, 85), date.strftime("%Y-%m-%d")))
     except Exception as e:
         print(e)
