@@ -2,7 +2,7 @@ from datetime import datetime
 import re, json
 
 from PySide6.QtCharts import QLineSeries, QChartView, QChart
-from PySide6.QtCore import Qt, QPointF, QTimer
+from PySide6.QtCore import Qt, QPointF, QTimer, QDate
 from PySide6.QtGui import QPainter
 from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QHBoxLayout , QTableWidgetItem
 from PySide6 import QtCore
@@ -191,8 +191,13 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
 
     def calender_click(self):
         date = self.ui.calendarWidget.selectedDate().toPython()
-        if (date > datetime.today().date()):
-            print("false")
+        if date > datetime.today().date():
+            self.ui.calendarWidget.setSelectedDate(QDate.currentDate())
+            track = get_food_from_date(datetime.today().date(), self.user)
+            self.ui.lbCalendarKcal.setText(str(track.get_calories_eaten()))
+            self.ui.lbCalendarSteps.setText(str(track.get_steps_walked()))
+            self.ui.lbCalendarWeight.setText(str(track.get_weight()))
+            self.ui.lbCalendarBP.setText(str(track.get_bloodpressure()))
         else:
             track = get_food_from_date(self.ui.calendarWidget.selectedDate().toPython(), self.user)
             self.ui.lbCalendarKcal.setText(str(track.get_calories_eaten()))
