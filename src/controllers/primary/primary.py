@@ -237,6 +237,11 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             self.ui.tbFood.setItem(i, 1,  QTableWidgetItem(str(key['nutriments']['energy-kcal_100g'])))
             i = i + 1
 
+        self.ui.tbFood.setHorizontalHeaderItem(0, QTableWidgetItem("Names"))
+        self.ui.tbFood.setHorizontalHeaderItem(1, QTableWidgetItem("Calories per 100g"))
+        self.ui.tbFood.resizeColumnsToContents()
+
+
     # Methods for Menu Button clicked
     def home_page(self):
         self.ui.pages.setCurrentIndex(0)

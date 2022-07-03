@@ -772,7 +772,7 @@ border:none;
 </string>
             </property>
             <property name="currentIndex">
-             <number>7</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="pageHome">
              <property name="styleSheet">
@@ -1440,6 +1440,11 @@ QPushButton:pressed {
                      <height>16777215</height>
                     </size>
                    </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(155, 127, 240);
+border-radius: 15px;
+</string>
+                   </property>
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
                    </property>
@@ -1451,16 +1456,16 @@ QPushButton:pressed {
                      <number>0</number>
                     </property>
                     <property name="leftMargin">
-                     <number>0</number>
+                     <number>9</number>
                     </property>
                     <property name="topMargin">
-                     <number>0</number>
+                     <number>9</number>
                     </property>
                     <property name="rightMargin">
-                     <number>0</number>
+                     <number>9</number>
                     </property>
                     <property name="bottomMargin">
-                     <number>0</number>
+                     <number>9</number>
                     </property>
                     <item>
                      <widget class="QTableWidget" name="tbFood">
@@ -1470,9 +1475,7 @@ QPushButton:pressed {
                        </font>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">background-color: rgb(155, 127, 240);
-border-radius: 15px;
-</string>
+                       <string notr="true"/>
                       </property>
                       <column>
                        <property name="text">

@@ -724,12 +724,15 @@ class Ui_WndMain(object):
         self.frmfoodTbl = QFrame(self.frmContentFood)
         self.frmfoodTbl.setObjectName(u"frmfoodTbl")
         self.frmfoodTbl.setMaximumSize(QSize(16777215, 16777215))
+        self.frmfoodTbl.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
+"border-radius: 15px;\n"
+"")
         self.frmfoodTbl.setFrameShape(QFrame.StyledPanel)
         self.frmfoodTbl.setFrameShadow(QFrame.Raised)
         self.verticalLayout_12 = QVBoxLayout(self.frmfoodTbl)
         self.verticalLayout_12.setSpacing(0)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
-        self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_12.setContentsMargins(9, 9, 9, 9)
         self.tbFood = QTableWidget(self.frmfoodTbl)
         if (self.tbFood.columnCount() < 2):
             self.tbFood.setColumnCount(2)
@@ -739,9 +742,7 @@ class Ui_WndMain(object):
         self.tbFood.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         self.tbFood.setObjectName(u"tbFood")
         self.tbFood.setFont(font2)
-        self.tbFood.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
-"border-radius: 15px;\n"
-"")
+        self.tbFood.setStyleSheet(u"")
 
         self.verticalLayout_12.addWidget(self.tbFood)
 
@@ -2867,7 +2868,7 @@ class Ui_WndMain(object):
 
         self.retranslateUi(WndMain)
 
-        self.pages.setCurrentIndex(7)
+        self.pages.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(WndMain)
