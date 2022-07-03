@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (QApplication, QCalendarWidget, QComboBox, QFrame,
     QHBoxLayout, QHeaderView, QLabel, QLineEdit,
     QMainWindow, QPushButton, QSizePolicy, QStackedWidget,
     QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
-import src.views.icons.rc_icons
+import icons_rc
 
 class Ui_WndMain(object):
     def setupUi(self, WndMain):
@@ -2731,7 +2731,7 @@ class Ui_WndMain(object):
         self.verticalLayout_47.setObjectName(u"verticalLayout_47")
         self.frame_58 = QFrame(self.frame_42)
         self.frame_58.setObjectName(u"frame_58")
-        self.frame_58.setMaximumSize(QSize(16777215, 150))
+        self.frame_58.setMaximumSize(QSize(16777215, 124))
         self.frame_58.setStyleSheet(u"background-color: rgb(155, 127, 240);\n"
 "border-radius: 15px;")
         self.frame_58.setFrameShape(QFrame.StyledPanel)
@@ -2753,6 +2753,7 @@ class Ui_WndMain(object):
 
         self.lbCalendarKcal = QLabel(self.frame_59)
         self.lbCalendarKcal.setObjectName(u"lbCalendarKcal")
+        self.lbCalendarKcal.setFont(font)
         self.lbCalendarKcal.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.horizontalLayout_61.addWidget(self.lbCalendarKcal)
@@ -2775,6 +2776,7 @@ class Ui_WndMain(object):
 
         self.lbCalendarSteps = QLabel(self.frame_60)
         self.lbCalendarSteps.setObjectName(u"lbCalendarSteps")
+        self.lbCalendarSteps.setFont(font)
         self.lbCalendarSteps.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.horizontalLayout_62.addWidget(self.lbCalendarSteps)
@@ -2798,6 +2800,7 @@ class Ui_WndMain(object):
 
         self.lbCalendarWeight = QLabel(self.frame_61)
         self.lbCalendarWeight.setObjectName(u"lbCalendarWeight")
+        self.lbCalendarWeight.setFont(font)
         self.lbCalendarWeight.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.horizontalLayout_63.addWidget(self.lbCalendarWeight)
@@ -2820,6 +2823,7 @@ class Ui_WndMain(object):
 
         self.lbCalendarBP = QLabel(self.frame_62)
         self.lbCalendarBP.setObjectName(u"lbCalendarBP")
+        self.lbCalendarBP.setFont(font)
         self.lbCalendarBP.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.horizontalLayout_64.addWidget(self.lbCalendarBP)
@@ -2987,12 +2991,12 @@ class Ui_WndMain(object):
         self.lbSetError.setText(QCoreApplication.translate("WndMain", u"<html><head/><body><p><br/></p></body></html>", None))
         self.btnCalendarSelect.setText(QCoreApplication.translate("WndMain", u"Select", None))
         self.label_12.setText(QCoreApplication.translate("WndMain", u"Calories eaten:", None))
-        self.lbCalendarKcal.setText(QCoreApplication.translate("WndMain", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:700; color:#d3c9f2;\">1800</span></p></body></html>", None))
+        self.lbCalendarKcal.setText(QCoreApplication.translate("WndMain", u"<html><head/><body><p><br/></p></body></html>", None))
         self.label_14.setText(QCoreApplication.translate("WndMain", u"Steps walked:", None))
-        self.lbCalendarSteps.setText(QCoreApplication.translate("WndMain", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:700; color:#d3c9f2;\">12000</span></p></body></html>", None))
+        self.lbCalendarSteps.setText(QCoreApplication.translate("WndMain", u"<html><head/><body><p><br/></p></body></html>", None))
         self.label_17.setText(QCoreApplication.translate("WndMain", u"Weight:", None))
-        self.lbCalendarWeight.setText(QCoreApplication.translate("WndMain", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:700; color:#d3c9f2;\">80 kg</span></p></body></html>", None))
+        self.lbCalendarWeight.setText(QCoreApplication.translate("WndMain", u"<html><head/><body><p><br/></p></body></html>", None))
         self.label_19.setText(QCoreApplication.translate("WndMain", u"Blood Pressure:", None))
-        self.lbCalendarBP.setText(QCoreApplication.translate("WndMain", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:700; color:#d3c9f2;\">80/120</span></p></body></html>", None))
+        self.lbCalendarBP.setText(QCoreApplication.translate("WndMain", u"<html><head/><body><p><br/></p></body></html>", None))
     # retranslateUi
 

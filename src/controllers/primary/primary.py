@@ -187,9 +187,9 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.tbFood.cellClicked.connect(self.table_click)
         self.ui.btnAddFood.clicked.connect(self.add_food)
 
-        self.ui.calendarWidget.clicked[QtCore.QDate].connect(self.calender_click)
+        self.ui.calendarWidget.clicked[QtCore.QDate].connect(self.calendar_click)
 
-    def calender_click(self):
+    def calendar_click(self):
         date = self.ui.calendarWidget.selectedDate().toPython()
         if date > datetime.today().date():
             self.ui.calendarWidget.setSelectedDate(QDate.currentDate())
@@ -201,9 +201,13 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         else:
             track = get_food_from_date(self.ui.calendarWidget.selectedDate().toPython(), self.user)
             self.ui.lbCalendarKcal.setText(str(track.get_calories_eaten()))
+            self.ui.lbCalendarKcal.setStyleSheet(u"color: rgb(211, 201, 242);")
             self.ui.lbCalendarSteps.setText(str(track.get_steps_walked()))
+            self.ui.lbCalendarSteps.setStyleSheet(u"color: rgb(211, 201, 242);")
             self.ui.lbCalendarWeight.setText(str(track.get_weight()))
+            self.ui.lbCalendarWeight.setStyleSheet(u"color: rgb(211, 201, 242);")
             self.ui.lbCalendarBP.setText(str(track.get_bloodpressure()))
+            self.ui.lbCalendarBP.setStyleSheet(u"color: rgb(211, 201, 242);")
 
     def table_click(self,row,column):
         item=self.ui.tbFood.item(row,1)
