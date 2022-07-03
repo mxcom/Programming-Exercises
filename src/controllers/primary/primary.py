@@ -14,7 +14,7 @@ from src.controllers.primary.stat_charts_steps import ChartSteps
 from src.controllers.primary.stat_charts_bp import ChartBp
 from src.controllers.primary.stat_charts_weight import ChartWeight
 from src.controllers.user_management.user_management import update_email, update_passwd, update_height
-from src.controllers.user_management.calorie_management import get_daily_calories, update_calories
+from src.controllers.user_management.calorie_management import get_daily_calories, update_calories, get_food_from_date
 from src.controllers.primary.progress_bar import CircularProgress
 from src.controllers.user_management.calc_kcal import calc_kcal
 from src.views.primary.WndMain import Ui_WndMain
@@ -182,10 +182,19 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.lbSetEmailValue.setStyleSheet("color: rgb(211, 201, 242);")
 
         self.ui.btnChangeInfo.clicked.connect(self.change_infos)
-    # OpenFoodfacts
+        # OpenFoodfacts
         self.ui.btnSearchFood.clicked.connect(self.search_name)
         self.ui.tbFood.cellClicked.connect(self.table_click)
         self.ui.btnAddFood.clicked.connect(self.add_food)
+
+        self.ui.calendarWidget.clicked[QtCore.QDate].connect(self.calender_click)
+
+    def calender_click(self):
+        track = get_food_from_date(self.ui.calendarWidget.selectedDate().toPython(), self.user)
+        self.ui.lbCalendarKcal.setText(str(track.get_calories_eaten()))
+        self.ui.lbCalendarSteps.setText(str(track.get_steps_walked()))
+        self.ui.lbCalendarWeight.setText(str(track.get_weight()))
+        self.ui.lbCalendarBP.setText(str(track.get_bloodpressure()))
 
     def table_click(self,row,column):
         item=self.ui.tbFood.item(row,1)
