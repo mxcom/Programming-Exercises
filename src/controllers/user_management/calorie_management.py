@@ -1,7 +1,10 @@
 import datetime
+import random
+
 from src.controllers.database.database import Database
 from src.controllers.user_management.calc_kcal import calc_kcal
 from PySide6.QtCharts import QBarSet
+import random
 
 
 def get_daily_calories(user):
@@ -20,7 +23,6 @@ def get_daily_calories(user):
                        "VALUES (%s, %s, %s, %s);",
                        (user.get_id(), calories, 0, date))
         db.get_database().close()
-        return 0
     except Exception as e:
         print(e)
 
@@ -35,6 +37,18 @@ def update_calories(user, old_calories, new_calories):
                        (total, date, user.get_id()))
 
         return total
+    except Exception as e:
+        print(e)
+
+def add_dummy():
+    try:
+        db = Database()
+        cursor = db.get_cursor()
+        date = datetime.datetime.now()
+        for i in range(100):
+            date = date - datetime.timedelta(1)
+            cursor.execute("INSERT INTO calories (UserID, Calories, CaloriesEaten, Date)  "
+                           "VALUES (55, 2085, %s, %s)", (random.randint(1800, 2300), date.strftime("%Y-%m-%d")))
     except Exception as e:
         print(e)
 

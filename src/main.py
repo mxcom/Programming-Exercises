@@ -9,6 +9,7 @@ from src.controllers.user_management.user_management import get_user, add_user, 
 from src.controllers.cryptography.cryptography import hash_passwd
 from src.controllers.user_management.calorie_management import *
 from src.models.user_management.user import User
+from src.controllers.user_management.calorie_management import add_dummy
 
 
 def main():
@@ -16,10 +17,12 @@ def main():
     # print("hello, world")
     # uncomment next line for email (and replace receiver mail)
     # send_mail('reciever@gmail.com')
+
     app = QApplication(sys.argv)
     window = LoginWindow()
     window.show()
     app.exec()
+    # add_dummy()
 
 if __name__ == "__main__":
     main()
