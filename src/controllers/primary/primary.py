@@ -214,12 +214,21 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.leCalories.setText(item.text())
 
     def add_food(self):
+        # daily calories
         old_calories = get_daily_calories(self.user)
+
+        # calories from textfield
         calories = self.ui.leCalories.text()
+
+        # how many times calories
         amount = self.ui.leAmount.text()
-        new_calories = (float(calories)/100)*float(amount)
+
+        # calculate new calories
+        new_calories = int(float(calories))*int(float(amount))
+
+        # update calories in database
         update_calories(self.user, old_calories, new_calories)
-        update_calories(self.user, old_calories, new_calories)
+
         self.add_calories(old_calories, new_calories)
 
     def search_name(self):
