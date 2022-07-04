@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (QApplication, QCalendarWidget, QComboBox, QFrame,
     QHBoxLayout, QHeaderView, QLabel, QLineEdit,
     QMainWindow, QPushButton, QSizePolicy, QStackedWidget,
     QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
-import src.views.icons.rc_icons
+import icons_rc
 
 class Ui_WndMain(object):
     def setupUi(self, WndMain):
@@ -877,6 +877,18 @@ class Ui_WndMain(object):
         self.bufferBottom.setObjectName(u"bufferBottom")
         self.bufferBottom.setFrameShape(QFrame.StyledPanel)
         self.bufferBottom.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_50 = QVBoxLayout(self.bufferBottom)
+        self.verticalLayout_50.setObjectName(u"verticalLayout_50")
+        self.label_4 = QLabel(self.bufferBottom)
+        self.label_4.setObjectName(u"label_4")
+        font4 = QFont()
+        font4.setPointSize(12)
+        font4.setBold(False)
+        self.label_4.setFont(font4)
+        self.label_4.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_50.addWidget(self.label_4, 0, Qt.AlignTop)
+
 
         self.verticalLayout_11.addWidget(self.bufferBottom)
 
@@ -2663,56 +2675,6 @@ class Ui_WndMain(object):
 
         self.verticalLayout_41.addWidget(self.frame_9)
 
-        self.frame_55 = QFrame(self.frame_41)
-        self.frame_55.setObjectName(u"frame_55")
-        self.frame_55.setMaximumSize(QSize(16777215, 40))
-        self.frame_55.setFrameShape(QFrame.StyledPanel)
-        self.frame_55.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_60 = QHBoxLayout(self.frame_55)
-        self.horizontalLayout_60.setSpacing(0)
-        self.horizontalLayout_60.setObjectName(u"horizontalLayout_60")
-        self.horizontalLayout_60.setContentsMargins(0, 0, 0, 0)
-        self.frame_56 = QFrame(self.frame_55)
-        self.frame_56.setObjectName(u"frame_56")
-        self.frame_56.setFrameShape(QFrame.StyledPanel)
-        self.frame_56.setFrameShadow(QFrame.Raised)
-
-        self.horizontalLayout_60.addWidget(self.frame_56)
-
-        self.btnCalendarSelect = QPushButton(self.frame_55)
-        self.btnCalendarSelect.setObjectName(u"btnCalendarSelect")
-        sizePolicy1.setHeightForWidth(self.btnCalendarSelect.sizePolicy().hasHeightForWidth())
-        self.btnCalendarSelect.setSizePolicy(sizePolicy1)
-        self.btnCalendarSelect.setMinimumSize(QSize(140, 40))
-        self.btnCalendarSelect.setMaximumSize(QSize(140, 140))
-        self.btnCalendarSelect.setFont(font)
-        self.btnCalendarSelect.setStyleSheet(u"QPushButton{\n"
-"	background-color: rgb(155, 127, 240);\n"
-"	border-radius: 15px;\n"
-"}\n"
-"QPushButton:hover{\n"
-"	background-color: rgb(122, 100, 189);\n"
-"	border-radius: 15px;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"	background-color: rgb(211, 201, 242);\n"
-"	border-radius: 15px;\n"
-"}\n"
-"")
-
-        self.horizontalLayout_60.addWidget(self.btnCalendarSelect)
-
-        self.frame_57 = QFrame(self.frame_55)
-        self.frame_57.setObjectName(u"frame_57")
-        self.frame_57.setFrameShape(QFrame.StyledPanel)
-        self.frame_57.setFrameShadow(QFrame.Raised)
-
-        self.horizontalLayout_60.addWidget(self.frame_57)
-
-
-        self.verticalLayout_41.addWidget(self.frame_55)
-
         self.frame_8 = QFrame(self.frame_41)
         self.frame_8.setObjectName(u"frame_8")
         self.frame_8.setFrameShape(QFrame.StyledPanel)
@@ -2893,7 +2855,7 @@ class Ui_WndMain(object):
         self.leBPLow.setPlaceholderText(QCoreApplication.translate("WndMain", u"Diastolic", None))
         self.leBPHigh.setPlaceholderText(QCoreApplication.translate("WndMain", u"Systolic", None))
         self.btnSubmit.setText(QCoreApplication.translate("WndMain", u"Submit", None))
-        self.label_3.setText(QCoreApplication.translate("WndMain", u"Sucessfully added", None))
+        self.label_3.setText(QCoreApplication.translate("WndMain", u"Successfully added", None))
         self.lbSearchFood.setText(QCoreApplication.translate("WndMain", u"Search:", None))
         self.btnSearchFood.setText(QCoreApplication.translate("WndMain", u"Find", None))
         ___qtablewidgetitem = self.tbFood.horizontalHeaderItem(0)
@@ -2901,8 +2863,9 @@ class Ui_WndMain(object):
         ___qtablewidgetitem1 = self.tbFood.horizontalHeaderItem(1)
         ___qtablewidgetitem1.setText(QCoreApplication.translate("WndMain", u"Calories per 100g", None));
         self.lbAmount.setText(QCoreApplication.translate("WndMain", u"Calories per 100g:", None))
-        self.label_2.setText(QCoreApplication.translate("WndMain", u"Amount:", None))
+        self.label_2.setText(QCoreApplication.translate("WndMain", u"Amount (g):", None))
         self.btnAddFood.setText(QCoreApplication.translate("WndMain", u"Add", None))
+        self.label_4.setText(QCoreApplication.translate("WndMain", u"Successfully added!", None))
         self.btnKcal1.setText(QCoreApplication.translate("WndMain", u"Kcal", None))
         self.btnSteps1.setText(QCoreApplication.translate("WndMain", u"Steps", None))
         self.btnBP1.setText(QCoreApplication.translate("WndMain", u"Blood Pressure", None))
@@ -2990,7 +2953,6 @@ class Ui_WndMain(object):
         self.lbSetConfirmPassword.setText(QCoreApplication.translate("WndMain", u"Confirm Password:", None))
         self.btnChangeInfo.setText(QCoreApplication.translate("WndMain", u"Submit", None))
         self.lbSetError.setText(QCoreApplication.translate("WndMain", u"<html><head/><body><p><br/></p></body></html>", None))
-        self.btnCalendarSelect.setText(QCoreApplication.translate("WndMain", u"Select", None))
         self.label_12.setText(QCoreApplication.translate("WndMain", u"Calories eaten:", None))
         self.lbCalendarKcal.setText(QCoreApplication.translate("WndMain", u"<html><head/><body><p><br/></p></body></html>", None))
         self.label_14.setText(QCoreApplication.translate("WndMain", u"Steps walked:", None))
