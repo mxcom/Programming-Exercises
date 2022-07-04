@@ -2830,7 +2830,7 @@ class Ui_WndMain(object):
 
         self.retranslateUi(WndMain)
 
-        self.pages.setCurrentIndex(7)
+        self.pages.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(WndMain)
@@ -2863,7 +2863,7 @@ class Ui_WndMain(object):
         ___qtablewidgetitem1 = self.tbFood.horizontalHeaderItem(1)
         ___qtablewidgetitem1.setText(QCoreApplication.translate("WndMain", u"Calories per 100g", None));
         self.lbAmount.setText(QCoreApplication.translate("WndMain", u"Calories per 100g:", None))
-        self.label_2.setText(QCoreApplication.translate("WndMain", u"Amount:", None))
+        self.label_2.setText(QCoreApplication.translate("WndMain", u"Amount (g):", None))
         self.btnAddFood.setText(QCoreApplication.translate("WndMain", u"Add", None))
         self.label_4.setText(QCoreApplication.translate("WndMain", u"Successfully added!", None))
         self.btnKcal1.setText(QCoreApplication.translate("WndMain", u"Kcal", None))
