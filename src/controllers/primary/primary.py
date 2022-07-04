@@ -78,6 +78,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.btnHome.setStyleSheet(Style.style_btn_selected_home)
 
         self.ui.label_3.hide()
+        self.ui.lbFoodAdded.hide()
 
         self.ui.btnHome.clicked.connect(self.home_page)
         self.ui.btnFood.clicked.connect(self.food_page)
@@ -230,6 +231,10 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         update_calories(self.user, old_calories, new_calories)
 
         self.add_calories(old_calories, int(new_calories+old_calories))
+
+        timer = QTimer()
+        timer.singleShot(0, self.show_label_food)
+        timer.singleShot(5000, self.hide_label_food)
 
     def search_name(self):
         results = open_food_facts.search_name(self.ui.leSearchFood.text())
@@ -410,13 +415,19 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
 
         timer = QTimer()
         timer.singleShot(0, self.show_label)
-        timer.singleShot(6000, self.hide_label)
+        timer.singleShot(5000, self.hide_label)
 
     def show_label(self):
         self.ui.label_3.show()
 
     def hide_label(self):
         self.ui.label_3.hide()
+
+    def show_label_food(self):
+        self.ui.lbFoodAdded.show()
+
+    def hide_label_food(self):
+        self.ui.lbFoodAdded.hide()
 
 
     def date_selected_kcal(self):

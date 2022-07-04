@@ -1759,7 +1759,7 @@ QPushButton:pressed {
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_50">
                     <item alignment="Qt::AlignTop">
-                     <widget class="QLabel" name="label_4">
+                     <widget class="QLabel" name="lbFoodAdded">
                       <property name="font">
                        <font>
                         <pointsize>12</pointsize>

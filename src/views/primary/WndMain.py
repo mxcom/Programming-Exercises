@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (QApplication, QCalendarWidget, QComboBox, QFrame,
     QHBoxLayout, QHeaderView, QLabel, QLineEdit,
     QMainWindow, QPushButton, QSizePolicy, QStackedWidget,
     QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
-import icons_rc
+import src.views.icons.rc_icons
 
 class Ui_WndMain(object):
     def setupUi(self, WndMain):
@@ -879,15 +879,15 @@ class Ui_WndMain(object):
         self.bufferBottom.setFrameShadow(QFrame.Raised)
         self.verticalLayout_50 = QVBoxLayout(self.bufferBottom)
         self.verticalLayout_50.setObjectName(u"verticalLayout_50")
-        self.label_4 = QLabel(self.bufferBottom)
-        self.label_4.setObjectName(u"label_4")
+        self.lbFoodAdded = QLabel(self.bufferBottom)
+        self.lbFoodAdded.setObjectName(u"lbFoodAdded")
         font4 = QFont()
         font4.setPointSize(12)
         font4.setBold(False)
-        self.label_4.setFont(font4)
-        self.label_4.setAlignment(Qt.AlignCenter)
+        self.lbFoodAdded.setFont(font4)
+        self.lbFoodAdded.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_50.addWidget(self.label_4, 0, Qt.AlignTop)
+        self.verticalLayout_50.addWidget(self.lbFoodAdded, 0, Qt.AlignTop)
 
 
         self.verticalLayout_11.addWidget(self.bufferBottom)
@@ -2865,7 +2865,7 @@ class Ui_WndMain(object):
         self.lbAmount.setText(QCoreApplication.translate("WndMain", u"Calories per 100g:", None))
         self.label_2.setText(QCoreApplication.translate("WndMain", u"Amount (g):", None))
         self.btnAddFood.setText(QCoreApplication.translate("WndMain", u"Add", None))
-        self.label_4.setText(QCoreApplication.translate("WndMain", u"Successfully added!", None))
+        self.lbFoodAdded.setText(QCoreApplication.translate("WndMain", u"Successfully added!", None))
         self.btnKcal1.setText(QCoreApplication.translate("WndMain", u"Kcal", None))
         self.btnSteps1.setText(QCoreApplication.translate("WndMain", u"Steps", None))
         self.btnBP1.setText(QCoreApplication.translate("WndMain", u"Blood Pressure", None))
