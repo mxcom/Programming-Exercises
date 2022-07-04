@@ -220,6 +220,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         new_calories = (float(calories)/100)*float(amount)
         update_calories(self.user, old_calories, new_calories)
         update_calories(self.user, old_calories, new_calories)
+        self.add_calories(old_calories, new_calories)
 
     def search_name(self):
         results = open_food_facts.search_name(self.ui.leSearchFood.text())
