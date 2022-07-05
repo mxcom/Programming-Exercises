@@ -5,6 +5,7 @@ from src.controllers.cryptography.cryptography import hash_passwd, compare_passw
 from src.controllers.database.database import Database
 from src.models.user_management.user import User
 from src.controllers.user_management.calc_kcal import calc_kcal
+from src.controllers.primary.daily_track import DailyTrack
 
 
 def add_user(user):
@@ -242,5 +243,30 @@ def login(user):
                        "WHERE NOT EXISTS (SELECT * FROM weight WHERE Date=%s AND UserID=%s LIMIT 1);",
                        (0, date, user.get_id(), date, user.get_id()))
 
+    except Exception as e:
+        print(e)
+
+
+def get_food_from_date(date, user):
+    track = DailyTrack()
+    try:
+        db = Database()
+        cursor = db.get_cursor()
+        cursor.execute("SELECT calories.CaloriesEaten, steps.Steps, weight.Grams, bloodpressure.Diastolic, bloodpressure.Systolic "
+                       "FROM calories, steps, weight, bloodpressure "
+                       "WHERE calories.UserID LIKE %s AND calories.Date LIKE %s "
+                       "AND steps.UserID LIKE %s AND steps.Date LIKE %s "
+                       "AND weight.UserID LIKE %s AND weight.Date LIKE %s "
+                       "AND bloodpressure.UserID LIKE %s AND bloodpressure.Date LIKE %s",
+                       (user.get_id(), date, user.get_id(), date, user.get_id(), date, user.get_id(), date))
+
+        for i in cursor.fetchall():
+            bp = str(i[3]) + "/" + str(i[4])
+            track.set_calories_eaten(i[0])
+            track.set_steps_walked(i[1])
+            track.set_weight(i[2])
+            track.set_bloodpressure(bp)
+
+        return track
     except Exception as e:
         print(e)

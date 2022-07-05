@@ -13,8 +13,8 @@ from src.controllers.primary.stat_charts_kcal import ChartKcal
 from src.controllers.primary.stat_charts_steps import ChartSteps
 from src.controllers.primary.stat_charts_bp import ChartBp
 from src.controllers.primary.stat_charts_weight import ChartWeight
-from src.controllers.user_management.user_management import update_email, update_passwd, update_height
-from src.controllers.user_management.calorie_management import get_daily_calories, update_calories, get_food_from_date
+from src.controllers.user_management.user_management import update_email, update_passwd, update_height, get_food_from_date
+from src.controllers.user_management.calorie_management import get_daily_calories, update_calories
 from src.controllers.primary.progress_bar import CircularProgress
 from src.controllers.user_management.calc_kcal import calc_kcal
 from src.views.primary.WndMain import Ui_WndMain
