@@ -187,8 +187,12 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.btnAddFood.clicked.connect(self.add_food)
 
     def table_click(self,row,column):
-        item=self.ui.tbFood.item(row,1)
-        self.ui.leCalories.setText(item.text())
+        calorie_item=self.ui.tbFood.item(row,1)
+        global food_id
+        id_item=self.ui.tbFood.item(row,2)
+        food_id=id_item.text()
+        self.ui.leCalories.setText(calorie_item.text())
+
 
     def add_food(self):
         old_calories = get_daily_calories(self.user)
@@ -196,6 +200,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         amount = self.ui.leAmount.text()
         new_calories = (float(calories)/100)*float(amount)
         update_calories(self.user, old_calories, new_calories)
+        open_food_facts.add_food(id,amount,self.user)
 
     def search_name(self):
         results = open_food_facts.search_name(self.ui.leSearchFood.text())
@@ -205,6 +210,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         i = 0
         for key in results["products"]:
             self.ui.tbFood.insertRow(i)
+            self.ui.tbFood.setItem(i, 2,  QTableWidgetItem(str(key['code'])))
             if 'energy-kcal_100g' in key['nutriments']:
                 self.ui.tbFood.setItem(i, 1,  QTableWidgetItem(str(key['nutriments']['energy-kcal_100g'])))
                 if 'product_name_de' in key:
