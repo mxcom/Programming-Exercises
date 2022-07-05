@@ -211,8 +211,12 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             self.ui.lbCalendarBP.setStyleSheet(u"color: rgb(211, 201, 242);")
 
     def table_click(self,row,column):
-        item=self.ui.tbFood.item(row,1)
-        self.ui.leCalories.setText(item.text())
+        calorie_item=self.ui.tbFood.item(row,1)
+        global food_id
+        id_item=self.ui.tbFood.item(row,2)
+        food_id=id_item.text()
+        self.ui.leCalories.setText(calorie_item.text())
+
 
     def add_food(self):
         # daily calories
@@ -229,6 +233,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
 
         # update calories in database
         update_calories(self.user, old_calories, new_calories)
+        open_food_facts.add_food(id,amount,self.user)
 
         self.add_calories(old_calories, int(new_calories+old_calories))
 
@@ -238,19 +243,23 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
 
     def search_name(self):
         results = open_food_facts.search_name(self.ui.leSearchFood.text())
-        self.ui.tbFood.clear()
-        self.ui.tbFood.clearContents()
+        #self.ui.tbFood.clear()
+       # self.ui.tbFood.clearContents()
         self.ui.tbFood.setRowCount(0)
         i = 0
         for key in results["products"]:
             self.ui.tbFood.insertRow(i)
-            if 'product_name_de' in key:
-                if key['product_name_de'].isalnum() & len(key['product_name_de']) > 0:
-                    self.ui.tbFood.setItem(i, 0,  QTableWidgetItem(key['product_name_de']))
+            self.ui.tbFood.setItem(i, 2,  QTableWidgetItem(str(key['code'])))
+            if 'energy-kcal_100g' in key['nutriments']:
+                self.ui.tbFood.setItem(i, 1,  QTableWidgetItem(str(key['nutriments']['energy-kcal_100g'])))
+                if 'product_name_de' in key:
+                    if key['product_name_de'].isalnum() & len(key['product_name_de']) > 0:
+                        self.ui.tbFood.setItem(i, 0,  QTableWidgetItem(key['product_name_de']))
+                    else:
+                        self.ui.tbFood.setItem(i, 0,  QTableWidgetItem(key['product_name']))
                 else:
                     self.ui.tbFood.setItem(i, 0,  QTableWidgetItem(key['product_name']))
-            self.ui.tbFood.setItem(i, 1,  QTableWidgetItem(str(key['nutriments']['energy-kcal_100g'])))
-            i = i + 1
+                i = i + 1
 
         self.ui.tbFood.setHorizontalHeaderItem(0, QTableWidgetItem("Names"))
         self.ui.tbFood.setHorizontalHeaderItem(1, QTableWidgetItem("Calories per 100g"))
