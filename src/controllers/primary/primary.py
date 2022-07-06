@@ -409,19 +409,24 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             new_calories = get_calories_eaten(self.user)
             self.add_calories(0, new_calories)
             self.ui.leWeight.setText("")
+            timer = QTimer()
+            timer.singleShot(0, self.show_label)
+            timer.singleShot(5000, self.hide_label)
 
         if self.validate_steps():
             add_steps(self.user.get_id(), int(self.ui.leSteps.text()))
             self.ui.leSteps.setText("")
+            timer = QTimer()
+            timer.singleShot(0, self.show_label)
+            timer.singleShot(5000, self.hide_label)
 
         if self.validate_bp_low() and self.validate_bp_high():
             add_bp(self.user.get_id(), int(self.ui.leBPLow.text()), int(self.ui.leBPHigh.text()))
             self.ui.leBPLow.setText("")
             self.ui.leBPHigh.setText("")
-
-        timer = QTimer()
-        timer.singleShot(0, self.show_label)
-        timer.singleShot(5000, self.hide_label)
+            timer = QTimer()
+            timer.singleShot(0, self.show_label)
+            timer.singleShot(5000, self.hide_label)
 
     def show_label(self):
         self.ui.label_3.show()
