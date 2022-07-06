@@ -1,4 +1,6 @@
 import openfoodfacts
+import datetime
+
 from src.controllers.database.database import Database
 
 
@@ -43,9 +45,10 @@ def search_name(name):
                         product_name = key['product_name_de']
                         cursor.execute("INSERT IGNORE INTO food (FoodID, Name, Calories ) VALUES (%s, %s, %s)",(code,product_name,kcal))
                     else:
-                        product_name = key['product_name_de']
+                        product_name = key['product_name']
                         cursor.execute("INSERT IGNORE INTO food (FoodID, Name, Calories ) VALUES (%s, %s, %s)",(code,product_name,kcal))
                 else:
+                    product_name = key['product_name']
                     cursor.execute("INSERT IGNORE INTO food (FoodID, Name, Calories ) VALUES (%s, %s, %s)",(code,product_name,kcal))
     return results
 
@@ -57,5 +60,5 @@ def add_food(food_id,food_amount,user):
     cursor.execute("SELECT CaloriesID FROM calories WHERE Date LIKE %s AND UserID LIKE %s ",( date, user.get_id()))
     i=cursor.fetchall()
     print(i)
-    calories_id = i[0]
-    cursor.execute("INSERT INTO food_track (CaloriesID,FoodID, Count ) VALUES (%s, %s, %s)",(calories_id,food_id,food_amount))
+    calories_id = int(i[0][0])
+    cursor.execute("INSERT INTO food_track (CaloriesID,FoodID, Count ) VALUES (%s, %s, %s)",(str(calories_id),food_id,food_amount))
