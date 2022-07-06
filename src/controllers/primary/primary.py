@@ -14,7 +14,7 @@ from src.controllers.primary.stat_charts_steps import ChartSteps
 from src.controllers.primary.stat_charts_bp import ChartBp
 from src.controllers.primary.stat_charts_weight import ChartWeight
 from src.controllers.user_management.user_management import update_email, update_passwd, update_height, get_food_from_date
-from src.controllers.user_management.calorie_management import get_daily_calories, update_calories
+from src.controllers.user_management.calorie_management import get_daily_calories, update_calories, get_calories_eaten
 from src.controllers.primary.progress_bar import CircularProgress
 from src.controllers.user_management.calc_kcal import calc_kcal
 from src.views.primary.WndMain import Ui_WndMain
@@ -256,7 +256,6 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
         self.ui.tbFood.setHorizontalHeaderItem(1, QTableWidgetItem("Calories per 100g"))
         self.ui.tbFood.resizeColumnsToContents()
 
-
     # Methods for Menu Button clicked
     def home_page(self):
         self.ui.pages.setCurrentIndex(0)
@@ -406,12 +405,19 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
 
         if self.validate_weight():
             add_weight(self.user.get_id(), int(self.ui.leWeight.text()))
+            self.user.set_weight(int(self.ui.leWeight.text()))
+            new_calories = get_calories_eaten(self.user)
+            self.add_calories(0, new_calories)
+            self.ui.leWeight.setText("")
 
         if self.validate_steps():
             add_steps(self.user.get_id(), int(self.ui.leSteps.text()))
+            self.ui.leSteps.setText("")
 
         if self.validate_bp_low() and self.validate_bp_high():
             add_bp(self.user.get_id(), int(self.ui.leBPLow.text()), int(self.ui.leBPHigh.text()))
+            self.ui.leBPLow.setText("")
+            self.ui.leBPHigh.setText("")
 
         timer = QTimer()
         timer.singleShot(0, self.show_label)
@@ -428,7 +434,6 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
 
     def hide_label_food(self):
         self.ui.lbFoodAdded.hide()
-
 
     def date_selected_kcal(self):
         # kcla 1 week
@@ -587,7 +592,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             else:
                 return False
         except Exception as e:
-            print(e+"email validation failed")
+            print(e, " email validation failed")
             return False
 
     def validate_passwd(self):
@@ -615,7 +620,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             if passwd == self.ui.leSetConfirmPassword.text():
                 return True
         except Exception as e:
-            print(e+"password validation failed.")
+            print(e, " password validation failed.")
             return False
 
     def validate_height(self):
@@ -626,7 +631,7 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             else:
                 return False
         except Exception as e:
-            print(e+"height validation failed")
+            print(e + "height validation failed")
             return False
 
     def change_infos(self):

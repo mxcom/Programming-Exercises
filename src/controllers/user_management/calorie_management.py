@@ -42,6 +42,23 @@ def update_calories(user, old_calories, new_calories):
         print(e)
 
 
+def get_calories_eaten(user):
+    try:
+        new_calories = 0
+        date = datetime.datetime.now().date().strftime("%Y-%m-%d")
+        db = Database()
+        cursor = db.get_cursor()
+        cursor.execute("SELECT CaloriesEaten FROM calories WHERE Date LIKE %s AND UserID LIKE %s ",
+                       (date, user.get_id()))
+
+        for i in cursor.fetchall():
+            new_calories = i[0]
+
+        return new_calories
+    except Exception as e:
+        print(e)
+
+
 def add_dummy_kcal():
     try:
         db = Database()
