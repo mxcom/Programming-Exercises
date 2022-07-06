@@ -27,7 +27,7 @@ from src.controllers.open_food_facts import open_food_facts
 
 regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
 special_char = ['$', '@', '#', '%', '_', '-', '!']
-
+food_id = "123567890"
 
 class PrimaryWindow(QMainWindow, Ui_WndMain):
 
@@ -211,8 +211,11 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             self.ui.lbCalendarBP.setStyleSheet(u"color: rgb(211, 201, 242);")
 
     def table_click(self,row,column):
-        item=self.ui.tbFood.item(row,1)
-        self.ui.leCalories.setText(item.text())
+        calorie_item=self.ui.tbFood.item(row,1)
+        global food_id
+        food_id=self.ui.tbFood.item(row,1).data(Qt.UserRole)
+        self.ui.leCalories.setText(calorie_item.text())
+
 
     def add_food(self):
         # daily calories
@@ -220,37 +223,45 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
 
         # calories from textfield
         calories = self.ui.leCalories.text()
-
         # how many times calories
         amount = self.ui.leAmount.text()
+        if len(calories) > 0 or len(amount) > 0: 
 
-        # calculate new calories
-        new_calories = (float(calories)/100)*float(amount)
+            # calculate new calories
+            new_calories = (float(calories)/100)*float(amount)
 
-        # update calories in database
-        update_calories(self.user, old_calories, new_calories)
+            # update calories in database
+            update_calories(self.user, old_calories, new_calories)
+            open_food_facts.add_food(food_id,amount,self.user)
 
-        self.add_calories(old_calories, int(new_calories+old_calories))
+            self.add_calories(old_calories, int(new_calories+old_calories))
 
-        timer = QTimer()
-        timer.singleShot(0, self.show_label_food)
-        timer.singleShot(5000, self.hide_label_food)
+            timer = QTimer()
+            timer.singleShot(0, self.show_label_food)
+            timer.singleShot(5000, self.hide_label_food)
+        else: 
+            self.ui.leAmount.setText("Amount missing")
 
     def search_name(self):
         results = open_food_facts.search_name(self.ui.leSearchFood.text())
-        self.ui.tbFood.clear()
-        self.ui.tbFood.clearContents()
+        #self.ui.tbFood.clear()
+       # self.ui.tbFood.clearContents()
         self.ui.tbFood.setRowCount(0)
         i = 0
         for key in results["products"]:
             self.ui.tbFood.insertRow(i)
-            if 'product_name_de' in key:
-                if key['product_name_de'].isalnum() & len(key['product_name_de']) > 0:
-                    self.ui.tbFood.setItem(i, 0,  QTableWidgetItem(key['product_name_de']))
+            if 'energy-kcal_100g' in key['nutriments']:
+                calorieItem =   QTableWidgetItem(str(key['nutriments']['energy-kcal_100g']))
+                calorieItem.setData(Qt.UserRole, key['code'])
+                self.ui.tbFood.setItem(i, 1,calorieItem)
+                if 'product_name_de' in key:
+                    if key['product_name_de'].isalnum() & len(key['product_name_de']) > 0:
+                        self.ui.tbFood.setItem(i, 0,  QTableWidgetItem(key['product_name_de']))
+                    else:
+                        self.ui.tbFood.setItem(i, 0,  QTableWidgetItem(key['product_name']))
                 else:
                     self.ui.tbFood.setItem(i, 0,  QTableWidgetItem(key['product_name']))
-            self.ui.tbFood.setItem(i, 1,  QTableWidgetItem(str(key['nutriments']['energy-kcal_100g'])))
-            i = i + 1
+                i = i + 1
 
         self.ui.tbFood.setHorizontalHeaderItem(0, QTableWidgetItem("Names"))
         self.ui.tbFood.setHorizontalHeaderItem(1, QTableWidgetItem("Calories per 100g"))
