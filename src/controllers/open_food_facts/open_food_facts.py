@@ -34,7 +34,7 @@ def fetch_id_from_api(id):
 def search_name(name):
     db = Database()
     cursor = db.get_cursor()
-    results = openfoodfacts.products.search(name, 0, 10)
+    results = openfoodfacts.products.search(name, 0, 10, locale='de')
     for key in results["products"]:
         code = str(key['code'])
         if 'energy-kcal_100g' in key['nutriments']:
