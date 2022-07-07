@@ -199,6 +199,15 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             self.ui.lbCalendarSteps.setText(str(track.get_steps_walked()))
             self.ui.lbCalendarWeight.setText(str(track.get_weight()))
             self.ui.lbCalendarBP.setText(str(track.get_bloodpressure()))
+            self.ui.tableFoodCalendar.setRowCount(len(track.get_food()))
+            row = 0
+            food_eaten = track.get_food()
+            for key, value in food_eaten.items():
+                print(key)
+                self.ui.tableFoodCalendar.setItem(row, 0, QTableWidgetItem(key))
+                self.ui.tableFoodCalendar.setItem(row, 1, QTableWidgetItem(value))
+
+
         else:
             track = get_food_from_date(self.ui.calendarWidget.selectedDate().toPython(), self.user)
             self.ui.lbCalendarKcal.setText(str(track.get_calories_eaten()))
@@ -209,6 +218,13 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             self.ui.lbCalendarWeight.setStyleSheet(u"color: rgb(211, 201, 242);")
             self.ui.lbCalendarBP.setText(str(track.get_bloodpressure()))
             self.ui.lbCalendarBP.setStyleSheet(u"color: rgb(211, 201, 242);")
+            self.ui.tableFoodCalendar.setRowCount(len(track.get_food()))
+            row = 0
+            food_eaten = track.get_food()
+            for key, value in food_eaten.items():
+                print(key)
+                self.ui.tableFoodCalendar.setItem(row, 0, QTableWidgetItem(key))
+                self.ui.tableFoodCalendar.setItem(row, 1, QTableWidgetItem(value))
 
     def table_click(self,row,column):
         calorie_item=self.ui.tbFood.item(row,1)
