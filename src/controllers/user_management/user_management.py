@@ -252,13 +252,14 @@ def get_food_from_date(date, user):
     try:
         db = Database()
         cursor = db.get_cursor()
-        cursor.execute("SELECT calories.CaloriesEaten, steps.Steps, weight.Grams, bloodpressure.Diastolic, bloodpressure.Systolic "
-                       "FROM calories, steps, weight, bloodpressure "
-                       "WHERE calories.UserID LIKE %s AND calories.Date LIKE %s "
-                       "AND steps.UserID LIKE %s AND steps.Date LIKE %s "
-                       "AND weight.UserID LIKE %s AND weight.Date LIKE %s "
-                       "AND bloodpressure.UserID LIKE %s AND bloodpressure.Date LIKE %s",
-                       (user.get_id(), date, user.get_id(), date, user.get_id(), date, user.get_id(), date))
+        cursor.execute(
+            "SELECT calories.CaloriesEaten, steps.Steps, weight.Grams, bloodpressure.Diastolic, bloodpressure.Systolic "
+            "FROM calories, steps, weight, bloodpressure "
+            "WHERE calories.UserID LIKE %s AND calories.Date LIKE %s "
+            "AND steps.UserID LIKE %s AND steps.Date LIKE %s "
+            "AND weight.UserID LIKE %s AND weight.Date LIKE %s "
+            "AND bloodpressure.UserID LIKE %s AND bloodpressure.Date LIKE %s",
+            (user.get_id(), date, user.get_id(), date, user.get_id(), date, user.get_id(), date))
 
         for i in cursor.fetchall():
             bp = str(i[3]) + "/" + str(i[4])
@@ -266,6 +267,20 @@ def get_food_from_date(date, user):
             track.set_steps_walked(i[1])
             track.set_weight(i[2])
             track.set_bloodpressure(bp)
+
+        cursor.execute("SELECT food.Name, food_track.Count FROM food_track "
+                       "INNER JOIN food on food_track.FoodID = food.FoodID "
+                       "INNER JOIN calories on food_track.CaloriesID = calories.CaloriesID "
+                       "INNER JOIN user u on calories.UserID = u.UserID "
+                       "WHERE u.UserID LIKE %s AND calories.Date LIKE %s;",
+                       (user.get_id(), date))
+
+        food_amount = {}
+
+        for i in cursor.fetchall():
+            food_amount.update({i[0]: i[1]})
+
+        track.set_food(food_amount)
 
         return track
     except Exception as e:
