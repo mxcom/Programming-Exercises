@@ -2809,6 +2809,12 @@ class Ui_WndMain(object):
         self.verticalLayout_49 = QVBoxLayout(self.frame_43)
         self.verticalLayout_49.setObjectName(u"verticalLayout_49")
         self.tableFoodCalendar = QTableWidget(self.frame_43)
+        if (self.tableFoodCalendar.columnCount() < 2):
+            self.tableFoodCalendar.setColumnCount(2)
+        __qtablewidgetitem2 = QTableWidgetItem()
+        self.tableFoodCalendar.setHorizontalHeaderItem(0, __qtablewidgetitem2)
+        __qtablewidgetitem3 = QTableWidgetItem()
+        self.tableFoodCalendar.setHorizontalHeaderItem(1, __qtablewidgetitem3)
         self.tableFoodCalendar.setObjectName(u"tableFoodCalendar")
 
         self.verticalLayout_49.addWidget(self.tableFoodCalendar)
@@ -2833,7 +2839,7 @@ class Ui_WndMain(object):
 
         self.retranslateUi(WndMain)
 
-        self.pages.setCurrentIndex(6)
+        self.pages.setCurrentIndex(7)
 
 
         QMetaObject.connectSlotsByName(WndMain)
@@ -2964,5 +2970,9 @@ class Ui_WndMain(object):
         self.lbCalendarWeight.setText(QCoreApplication.translate("WndMain", u"<html><head/><body><p><br/></p></body></html>", None))
         self.label_19.setText(QCoreApplication.translate("WndMain", u"Blood Pressure:", None))
         self.lbCalendarBP.setText(QCoreApplication.translate("WndMain", u"<html><head/><body><p><br/></p></body></html>", None))
+        ___qtablewidgetitem2 = self.tableFoodCalendar.horizontalHeaderItem(0)
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("WndMain", u"Food", None));
+        ___qtablewidgetitem3 = self.tableFoodCalendar.horizontalHeaderItem(1)
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("WndMain", u"Amount (g)", None));
     # retranslateUi
 

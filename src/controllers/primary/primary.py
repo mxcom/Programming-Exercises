@@ -204,9 +204,10 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             food_eaten = track.get_food()
             for key, value in food_eaten.items():
                 print(key)
-                self.ui.tableFoodCalendar.setItem(row, 0, QTableWidgetItem(key))
-                self.ui.tableFoodCalendar.setItem(row, 1, QTableWidgetItem(value))
-
+                print(value)
+                self.ui.tableFoodCalendar.setItem(row, 0, QTableWidgetItem(str(key)))
+                self.ui.tableFoodCalendar.setItem(row, 1, QTableWidgetItem(str(value)))
+                row = row + 1
 
         else:
             track = get_food_from_date(self.ui.calendarWidget.selectedDate().toPython(), self.user)
@@ -223,8 +224,10 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
             food_eaten = track.get_food()
             for key, value in food_eaten.items():
                 print(key)
-                self.ui.tableFoodCalendar.setItem(row, 0, QTableWidgetItem(key))
-                self.ui.tableFoodCalendar.setItem(row, 1, QTableWidgetItem(value))
+                print(value)
+                self.ui.tableFoodCalendar.setItem(row, 0, QTableWidgetItem(str(key)))
+                self.ui.tableFoodCalendar.setItem(row, 1, QTableWidgetItem(str(value)))
+                row = row + 1
 
     def table_click(self,row,column):
         calorie_item=self.ui.tbFood.item(row,1)

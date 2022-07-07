@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5db9e4db-cbb9-4f07-9ac6-b2efc05eee42" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/primary/daily_track.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/primary/daily_track.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/user_management/user_management.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user_management/user_management.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/primary/primary.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/primary/primary.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/primary/WndMain.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/primary/WndMain.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/primary/WndMain.ui" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/primary/WndMain.ui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +194,7 @@
       <workItem from="1657116905467" duration="2820000" />
       <workItem from="1657185426097" duration="678000" />
       <workItem from="1657203220420" duration="609000" />
-      <workItem from="1657203892656" duration="1017000" />
+      <workItem from="1657203892656" duration="2081000" />
     </task>
     <servers />
   </component>
@@ -212,6 +213,6 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ProgrammingExercise$main.coverage" NAME="main Coverage Results" MODIFIED="1657204822537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/ProgrammingExercise$main.coverage" NAME="main Coverage Results" MODIFIED="1657207457101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>

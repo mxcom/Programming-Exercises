@@ -772,7 +772,7 @@ border:none;
 </string>
             </property>
             <property name="currentIndex">
-             <number>6</number>
+             <number>7</number>
             </property>
             <widget class="QWidget" name="pageHome">
              <property name="styleSheet">
@@ -5613,7 +5613,18 @@ border-radius: 15px;</string>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_49">
                     <item>
-                     <widget class="QTableWidget" name="tableFoodCalendar"/>
+                     <widget class="QTableWidget" name="tableFoodCalendar">
+                      <column>
+                       <property name="text">
+                        <string>Food</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Amount (g)</string>
+                       </property>
+                      </column>
+                     </widget>
                     </item>
                    </layout>
                   </widget>
