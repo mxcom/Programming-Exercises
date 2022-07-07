@@ -2547,6 +2547,8 @@ class Ui_WndMain(object):
         self.leSetPassword.setFont(font)
         self.leSetPassword.setStyleSheet(u"border-bottom: 2px solid rgb(211, 201, 242);\n"
 "")
+        self.leSetPassword.setEchoMode(QLineEdit.Password)
+        self.leSetPassword.setReadOnly(False)
 
         self.verticalLayout_39.addWidget(self.leSetPassword)
 
@@ -2571,6 +2573,7 @@ class Ui_WndMain(object):
         self.leSetConfirmPassword.setFont(font)
         self.leSetConfirmPassword.setStyleSheet(u"border-bottom: 2px solid rgb(211, 201, 242);\n"
 "")
+        self.leSetConfirmPassword.setEchoMode(QLineEdit.Password)
 
         self.verticalLayout_40.addWidget(self.leSetConfirmPassword)
 
@@ -2830,7 +2833,7 @@ class Ui_WndMain(object):
 
         self.retranslateUi(WndMain)
 
-        self.pages.setCurrentIndex(1)
+        self.pages.setCurrentIndex(6)
 
 
         QMetaObject.connectSlotsByName(WndMain)

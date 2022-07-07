@@ -772,7 +772,7 @@ border:none;
 </string>
             </property>
             <property name="currentIndex">
-             <number>1</number>
+             <number>6</number>
             </property>
             <widget class="QWidget" name="pageHome">
              <property name="styleSheet">
@@ -5077,6 +5077,12 @@ border-radius: 15px;</string>
                          <property name="text">
                           <string/>
                          </property>
+                         <property name="echoMode">
+                          <enum>QLineEdit::Password</enum>
+                         </property>
+                         <property name="readOnly">
+                          <bool>false</bool>
+                         </property>
                         </widget>
                        </item>
                       </layout>
@@ -5121,6 +5127,9 @@ border-radius: 15px;</string>
                          <property name="styleSheet">
                           <string notr="true">border-bottom: 2px solid rgb(211, 201, 242);
 </string>
+                         </property>
+                         <property name="echoMode">
+                          <enum>QLineEdit::Password</enum>
                          </property>
                         </widget>
                        </item>
