@@ -2809,12 +2809,14 @@ class Ui_WndMain(object):
         self.verticalLayout_49 = QVBoxLayout(self.frame_43)
         self.verticalLayout_49.setObjectName(u"verticalLayout_49")
         self.tableFoodCalendar = QTableWidget(self.frame_43)
-        if (self.tableFoodCalendar.columnCount() < 2):
-            self.tableFoodCalendar.setColumnCount(2)
+        if (self.tableFoodCalendar.columnCount() < 3):
+            self.tableFoodCalendar.setColumnCount(3)
         __qtablewidgetitem2 = QTableWidgetItem()
         self.tableFoodCalendar.setHorizontalHeaderItem(0, __qtablewidgetitem2)
         __qtablewidgetitem3 = QTableWidgetItem()
         self.tableFoodCalendar.setHorizontalHeaderItem(1, __qtablewidgetitem3)
+        __qtablewidgetitem4 = QTableWidgetItem()
+        self.tableFoodCalendar.setHorizontalHeaderItem(2, __qtablewidgetitem4)
         self.tableFoodCalendar.setObjectName(u"tableFoodCalendar")
 
         self.verticalLayout_49.addWidget(self.tableFoodCalendar)
@@ -2973,6 +2975,8 @@ class Ui_WndMain(object):
         ___qtablewidgetitem2 = self.tableFoodCalendar.horizontalHeaderItem(0)
         ___qtablewidgetitem2.setText(QCoreApplication.translate("WndMain", u"Food", None));
         ___qtablewidgetitem3 = self.tableFoodCalendar.horizontalHeaderItem(1)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("WndMain", u"Amount (g)", None));
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("WndMain", u"Calories", None));
+        ___qtablewidgetitem4 = self.tableFoodCalendar.horizontalHeaderItem(2)
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("WndMain", u"Amount (g)", None));
     # retranslateUi
 

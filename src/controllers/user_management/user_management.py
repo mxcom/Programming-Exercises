@@ -268,7 +268,7 @@ def get_food_from_date(date, user):
             track.set_weight(i[2])
             track.set_bloodpressure(bp)
 
-        cursor.execute("SELECT food.Name, food_track.Count FROM food_track "
+        cursor.execute("SELECT food.Name, food.Calories, food_track.Count FROM food_track "
                        "INNER JOIN food on food_track.FoodID = food.FoodID "
                        "INNER JOIN calories on food_track.CaloriesID = calories.CaloriesID "
                        "INNER JOIN user u on calories.UserID = u.UserID "
@@ -278,7 +278,7 @@ def get_food_from_date(date, user):
         food_amount = {}
 
         for i in cursor.fetchall():
-            food_amount.update({i[0]: i[1]})
+            food_amount.update({i[0]: [i[1], i[2]]})
 
         track.set_food(food_amount)
 

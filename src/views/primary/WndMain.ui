@@ -5621,6 +5621,11 @@ border-radius: 15px;</string>
                       </column>
                       <column>
                        <property name="text">
+                        <string>Calories</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
                         <string>Amount (g)</string>
                        </property>
                       </column>
