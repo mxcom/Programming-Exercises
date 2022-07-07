@@ -238,8 +238,9 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
     def table_click(self,row,column):
         calorie_item=self.ui.tbFood.item(row,1)
         global food_id
-        food_id=self.ui.tbFood.item(row,1).data(Qt.UserRole)
-        self.ui.leCalories.setText(calorie_item.text())
+        if calorie_item != None:
+            food_id=self.ui.tbFood.item(row,1).data(Qt.UserRole)
+            self.ui.leCalories.setText(calorie_item.text())
 
 
     def add_food(self):
@@ -282,11 +283,13 @@ class PrimaryWindow(QMainWindow, Ui_WndMain):
                 if 'product_name_de' in key:
                     if key['product_name_de'].isalnum() & len(key['product_name_de']) > 0:
                         self.ui.tbFood.setItem(i, 0,  QTableWidgetItem(key['product_name_de']))
+                        i = i + 1
                     else:
                         self.ui.tbFood.setItem(i, 0,  QTableWidgetItem(key['product_name']))
+                        i = i + 1
                 else:
                     self.ui.tbFood.setItem(i, 0,  QTableWidgetItem(key['product_name']))
-                i = i + 1
+                    i = i + 1
 
         self.ui.tbFood.setHorizontalHeaderItem(0, QTableWidgetItem("Names"))
         self.ui.tbFood.setHorizontalHeaderItem(1, QTableWidgetItem("Calories per 100g"))
