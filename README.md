@@ -1,8 +1,4 @@
-# Programming Exercise
-
-## Getting Started
-
-### Installation
+# Programming Exercises
 
 ### Execution
 
@@ -15,9 +11,3 @@ $ python
 >>> keyring.set_password(service_name="db_login", username="db_username", password="db_password")
 >>> keyring.set_password(service_name="email_login", username="email_username", password="email_password")
 ```
-
-## Build With
-
-## Authors
-
-## License
