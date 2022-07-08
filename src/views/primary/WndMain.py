@@ -2975,7 +2975,7 @@ class Ui_WndMain(object):
         ___qtablewidgetitem2 = self.tableFoodCalendar.horizontalHeaderItem(0)
         ___qtablewidgetitem2.setText(QCoreApplication.translate("WndMain", u"Food", None));
         ___qtablewidgetitem3 = self.tableFoodCalendar.horizontalHeaderItem(1)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("WndMain", u"Calories", None));
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("WndMain", u"Calories per 100 g", None));
         ___qtablewidgetitem4 = self.tableFoodCalendar.horizontalHeaderItem(2)
         ___qtablewidgetitem4.setText(QCoreApplication.translate("WndMain", u"Amount (g)", None));
     # retranslateUi

@@ -5621,7 +5621,7 @@ border-radius: 15px;</string>
                       </column>
                       <column>
                        <property name="text">
-                        <string>Calories</string>
+                        <string>Calories per 100 g</string>
                        </property>
                       </column>
                       <column>
